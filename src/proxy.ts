@@ -7,7 +7,3 @@ const handleI18nRouting = createMiddleware(routing);
 export function proxy(request: NextRequest) {
   return handleI18nRouting(request);
 }
-
-export const config = {
-  matcher: ["/((?!_next|_vercel|.*\\..*).*)"],
-};
