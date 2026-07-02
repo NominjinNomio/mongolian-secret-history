@@ -14,15 +14,6 @@ const regions = [
   { name: "Western Mongolia", provinces: "Bayan-Ulgii, Khovd, Uvs, Zavkhan, Govi-Altai" },
 ];
 
-const mapLabels = [
-  { name: "Ulaanbaatar", top: "38.9%", left: "54.3%" },
-  { name: "Central Mongolia", top: "48.1%", left: "51.4%" },
-  { name: "Eastern Mongolia", top: "44.4%", left: "74.3%" },
-  { name: "Northern Mongolia", top: "27.8%", left: "57.1%" },
-  { name: "Southern Mongolia", top: "68.5%", left: "48.6%" },
-  { name: "Western Mongolia", top: "38.9%", left: "25.7%" },
-];
-
 const climate = [
   { season: "Spring", months: "Mar–May", desc: "Mild but windy. Landscapes begin to green. Good for photography and fewer crowds." },
   { season: "Summer", months: "Jun–Aug", desc: "Warm days, cool nights. Peak travel season with Naadam festivals and green pastures." },
@@ -72,33 +63,37 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+      <section className="relative py-20 lg:py-[120px] overflow-hidden">
+        <Image
+          src="/images/mongolia-destinations-bg.jpg"
+          alt="Mongolia landscape"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0f1e32]/65" />
+
+        <div className="relative z-10 mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">Travel Destinations</span>
-            <h2 className="font-display text-3xl md:text-[44px] mt-4">Regions & Provinces</h2>
+            <span className="text-sm tracking-[3px] text-accent uppercase">Travel Destinations</span>
+            <h2 className="font-display text-3xl md:text-[44px] mt-4 text-white">Regions & Provinces</h2>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative w-full lg:w-[700px] aspect-[700/540] rounded-[20px] overflow-hidden shrink-0"
+              className="relative w-full lg:w-[620px] aspect-[4/3] shrink-0"
             >
-              <Image src="mongolia-map-bg.jpg" alt="Mongolia destinations map" fill className="object-cover" />
-              <div className="absolute inset-0 bg-[#0f1e32]/55" />
-              {mapLabels.map((label) => (
-                <div
-                  key={label.name}
-                  className="absolute flex items-center gap-2"
-                  style={{ top: label.top, left: label.left }}
-                >
-                  <span className="text-white text-xs">★</span>
-                  <span className="text-white text-sm font-medium whitespace-nowrap">{label.name}</span>
-                </div>
-              ))}
+              <Image
+                src="/images/mongolia-map.svg"
+                alt="Mongolia provinces map"
+                width={620}
+                height={465}
+                className="w-full h-full object-contain drop-shadow-lg"
+                unoptimized
+              />
             </motion.div>
 
             <motion.div
@@ -106,15 +101,15 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col gap-5 w-full lg:w-[400px]"
+              className="flex flex-col gap-5 w-full lg:w-[420px]"
             >
               {regions.map((region) => (
-                <div key={region.name} className="rounded-xl bg-[#F8F6F1] p-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-primary-dark text-sm">★</span>
-                    <h3 className="font-display text-lg text-foreground">{region.name}</h3>
+                <div key={region.name} className="flex items-start gap-3">
+                  <span className="text-white text-lg mt-0.5">★</span>
+                  <div>
+                    <h3 className="font-display text-xl text-white">{region.name}</h3>
+                    <p className="text-sm text-white/75">{region.provinces}</p>
                   </div>
-                  <p className="text-sm text-muted-foreground">{region.provinces}</p>
                 </div>
               ))}
             </motion.div>

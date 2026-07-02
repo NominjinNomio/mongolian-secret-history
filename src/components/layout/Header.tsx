@@ -55,8 +55,8 @@ export default function Header() {
           <button className="text-sm text-[#5C5C5C] hover:text-foreground">
             EN ▾
           </button>
-          <Button href={`/${locale}/contact`} variant="primary">
-            Book Now
+          <Button href={`/${locale}/login`} variant="primary">
+            Login
           </Button>
         </div>
 
@@ -88,8 +88,8 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Button href={`/${locale}/contact`} variant="primary">
-                Book Now
+              <Button href={`/${locale}/login`} variant="primary">
+                Login
               </Button>
             </nav>
           </motion.div>
