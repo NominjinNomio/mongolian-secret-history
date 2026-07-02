@@ -2,24 +2,26 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const footerNav = [
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Accommodation", href: "/accommodation" },
-  { label: "Tours", href: "/portfolio" },
-  { label: "Testimonials", href: "/testimonials" },
-  { label: "Contact", href: "/contact" },
+  { key: "about", href: "/about" },
+  { key: "services", href: "/services" },
+  { key: "accommodation", href: "/accommodation" },
+  { key: "tours", href: "/portfolio" },
+  { key: "contact", href: "/contact" },
 ];
 
 const legalNav = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms & Conditions", href: "/terms" },
+  { key: "privacy", href: "/privacy" },
+  { key: "terms", href: "/terms" },
 ];
 
 export default function Footer() {
+  const t = useTranslations("nav");
+  const tf = useTranslations("footer");
   const pathname = usePathname();
-  const locale = pathname.split("/")[1] || "mn";
+  const locale = pathname.split("/")[1] || "en";
 
   return (
     <footer className="bg-footer text-white">
@@ -36,7 +38,7 @@ export default function Footer() {
                 href={`/${locale}${item.href}`}
                 className="text-[15px] text-white/70 hover:text-white transition-colors"
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             ))}
           </nav>
@@ -44,7 +46,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-10">
           <p className="text-sm text-white/50 text-center md:text-left">
-            Copyright © 2026. All rights reserved. Mongolian Secret History
+            {tf("copyright")}
           </p>
           <nav className="flex items-center gap-6">
             {legalNav.map((item) => (
@@ -53,7 +55,7 @@ export default function Footer() {
                 href={`/${locale}${item.href}`}
                 className="text-sm text-white/50 hover:text-white transition-colors"
               >
-                {item.label}
+                {tf(item.key)}
               </Link>
             ))}
           </nav>

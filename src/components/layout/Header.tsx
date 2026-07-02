@@ -5,26 +5,28 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Accommodation", href: "/accommodation" },
-  { label: "Tours", href: "/portfolio" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { key: "home", href: "/" },
+  { key: "about", href: "/about" },
+  { key: "services", href: "/services" },
+  { key: "accommodation", href: "/accommodation" },
+  { key: "tours", href: "/portfolio" },
+  { key: "blog", href: "/blog" },
+  { key: "contact", href: "/contact" },
 ];
 
 const languages = [
   { code: "en", label: "EN" },
   { code: "mn", label: "MN" },
-  { code: "zh", label: "中文" },
 ];
 
 export default function Header() {
+  const t = useTranslations("nav");
+  const th = useTranslations("header");
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
@@ -53,7 +55,7 @@ export default function Header() {
                   isActive ? "text-primary-dark" : "text-[#5C5C5C] hover:text-primary-dark"
                 )}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             );
           })}
@@ -64,7 +66,7 @@ export default function Header() {
             <button
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-2 text-sm text-[#5C5C5C] hover:text-foreground"
-              aria-label="Select language"
+              aria-label={th("language")}
             >
               <Globe size={16} />
               {currentLang.label} ▾
@@ -88,7 +90,7 @@ export default function Header() {
             )}
           </div>
           <Button href={`/${locale}/login`} variant="primary">
-            Login
+            {th("login")}
           </Button>
         </div>
 
@@ -117,7 +119,7 @@ export default function Header() {
                   className="text-lg text-foreground"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {item.label}
+                  {t(item.key)}
                 </Link>
               ))}
               <div className="flex items-center gap-4">
@@ -138,7 +140,7 @@ export default function Header() {
                 ))}
               </div>
               <Button href={`/${locale}/login`} variant="primary">
-                Login
+                {th("login")}
               </Button>
             </nav>
           </motion.div>
