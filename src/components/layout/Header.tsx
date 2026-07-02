@@ -51,11 +51,17 @@ export default function Header() {
                 key={item.href}
                 href={itemHref}
                 className={cn(
-                  "text-[15px] transition-colors duration-150",
+                  "relative text-[15px] transition-colors duration-150 py-1 group",
                   isActive ? "text-primary-dark" : "text-[#5C5C5C] hover:text-primary-dark"
                 )}
               >
                 {t(item.key)}
+                <span
+                  className={cn(
+                    "absolute left-0 bottom-0 h-[2px] bg-primary-dark transition-all duration-300",
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  )}
+                />
               </Link>
             );
           })}
@@ -112,16 +118,29 @@ export default function Header() {
             className="lg:hidden bg-[#F8F5F0] border-t border-border"
           >
             <nav className="flex flex-col items-center gap-6 py-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={`/${locale}${item.href}`}
-                  className="text-lg text-foreground"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {t(item.key)}
-                </Link>
-              ))}
+              {navItems.map((item) => {
+                const itemHref = `/${locale}${item.href}`;
+                const isActive = pathWithoutLocale === item.href;
+                return (
+                  <Link
+                    key={item.href}
+                    href={itemHref}
+                    className={cn(
+                      "relative text-lg py-1 group",
+                      isActive ? "text-primary-dark" : "text-foreground hover:text-primary-dark"
+                    )}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {t(item.key)}
+                    <span
+                      className={cn(
+                        "absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] bg-primary-dark transition-all duration-300",
+                        isActive ? "w-8" : "w-0 group-hover:w-8"
+                      )}
+                    />
+                  </Link>
+                );
+              })}
               <div className="flex items-center gap-4">
                 {languages.map((lang) => (
                   <Link
