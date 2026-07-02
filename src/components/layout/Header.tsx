@@ -51,14 +51,14 @@ export default function Header() {
                 key={item.href}
                 href={itemHref}
                 className={cn(
-                  "relative text-[15px] transition-colors duration-150 py-1 group",
-                  isActive ? "text-primary-dark" : "text-[#5C5C5C] hover:text-primary-dark"
+                  "relative text-[15px] font-medium transition-colors duration-200 py-1 group",
+                  isActive ? "text-[#D32F2F]" : "text-[#5C5C5C] hover:text-[#D32F2F]"
                 )}
               >
                 {t(item.key)}
                 <span
                   className={cn(
-                    "absolute left-0 bottom-0 h-[2px] bg-primary-dark transition-all duration-300",
+                    "absolute left-0 -bottom-1 h-[3px] bg-[#D32F2F] rounded-full transition-all duration-300",
                     isActive ? "w-full" : "w-0 group-hover:w-full"
                   )}
                 />
@@ -126,15 +126,15 @@ export default function Header() {
                     key={item.href}
                     href={itemHref}
                     className={cn(
-                      "relative text-lg py-1 group",
-                      isActive ? "text-primary-dark" : "text-foreground hover:text-primary-dark"
+                      "relative text-lg font-medium py-1 group",
+                      isActive ? "text-[#D32F2F]" : "text-foreground hover:text-[#D32F2F]"
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
                     {t(item.key)}
                     <span
                       className={cn(
-                        "absolute left-1/2 -translate-x-1/2 bottom-0 h-[2px] bg-primary-dark transition-all duration-300",
+                        "absolute left-1/2 -translate-x-1/2 -bottom-1 h-[3px] bg-[#D32F2F] rounded-full transition-all duration-300",
                         isActive ? "w-8" : "w-0 group-hover:w-8"
                       )}
                     />
