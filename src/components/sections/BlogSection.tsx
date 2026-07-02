@@ -1,0 +1,80 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Button from "@/components/ui/Button";
+import Image from "@/components/common/Image";
+
+const posts = [
+  { title: "10 Reasons to Visit Mongolia This Summer", date: "June 15, 2026", excerpt: "Discover why summer is the perfect season to explore Mongolia." },
+  { title: "A Guide to Mongolian Nomadic Culture", date: "May 28, 2026", excerpt: "Learn about ger life, hospitality, and timeless traditions." },
+  { title: "What to Pack for a Mongolia Tour", date: "May 10, 2026", excerpt: "Essential items for a comfortable journey across the steppe." },
+];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function BlogSection() {
+  return (
+    <section className="bg-white py-20 lg:py-[120px]">
+      <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+        <SectionHeader
+          label="Travel Journal"
+          title="Stories \u0026 Inspiration from Mongolia"
+        />
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          {posts.map((post) => (
+            <motion.div
+              key={post.title}
+              variants={item}
+              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
+              className="rounded-[20px] bg-[#F8F5F0] border border-border overflow-hidden transition-shadow"
+            >
+              <div className="relative h-[220px] w-full">
+                <Image
+                  src="blog-placeholder.jpg"
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6 flex flex-col gap-2">
+                <span className="text-xs text-muted-foreground">{post.date}</span>
+                <Link href="/blog" className="group">
+                  <h3 className="font-display text-xl text-foreground group-hover:text-primary-dark transition-colors">
+                    {post.title}
+                  </h3>
+                </Link>
+                <p className="text-sm text-muted-foreground leading-relaxed">{post.excerpt}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <div className="mt-10 flex justify-center">
+          <Button href="/blog" variant="dark">
+            Read All Stories
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

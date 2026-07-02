@@ -1,0 +1,44 @@
+{
+  "motion_level": 2,
+  "visual_direction": "organic-luxury",
+  "packages": [
+    "framer-motion",
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "next-themes"
+  ],
+  "shadcn_components": [
+    "accordion",
+    "button",
+    "card",
+    "input",
+    "textarea"
+  ],
+  "custom_components": [
+    "Hero",
+    "SectionHeader",
+    "TourCard",
+    "ServiceCard",
+    "PricingCard",
+    "TestimonialCard",
+    "TeamMemberCard",
+    "BlogCard",
+    "ContactForm",
+    "PageHero",
+    "FAQAccordion",
+    "GalleryGrid",
+    "Header",
+    "Footer",
+    "LanguageSwitcher"
+  ],
+  "animation_config": {
+    "core_library": "framer-motion",
+    "scroll_library": "lenis",
+    "text_animation": "custom",
+    "page_transition": "framer",
+    "ambient_system": "css",
+    "micro_interactions": "framer-motion",
+    "gsap_plugins": []
+  }
+}
