@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
@@ -18,12 +18,20 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+const languages = [
+  { code: "en", label: "EN" },
+  { code: "mn", label: "MN" },
+  { code: "zh", label: "中文" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
-  const locale = pathname.split("/")[1] || "mn";
+  const locale = pathname.split("/")[1] || "en";
 
   const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/";
+  const currentLang = languages.find((l) => l.code === locale) || languages[0];
 
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
@@ -52,9 +60,33 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
-          <button className="text-sm text-[#5C5C5C] hover:text-foreground">
-            EN ▾
-          </button>
+          <div className="relative">
+            <button
+              onClick={() => setLangOpen(!langOpen)}
+              className="flex items-center gap-2 text-sm text-[#5C5C5C] hover:text-foreground"
+              aria-label="Select language"
+            >
+              <Globe size={16} />
+              {currentLang.label} ▾
+            </button>
+            {langOpen && (
+              <div className="absolute right-0 top-full mt-2 w-28 rounded-xl bg-white border border-border shadow-lg py-2">
+                {languages.map((lang) => (
+                  <Link
+                    key={lang.code}
+                    href={`/${lang.code}${pathWithoutLocale}`}
+                    className={cn(
+                      "block px-4 py-2 text-sm hover:bg-[#F8F6F1] transition-colors",
+                      locale === lang.code ? "text-primary-dark font-medium" : "text-[#5C5C5C]"
+                    )}
+                    onClick={() => setLangOpen(false)}
+                  >
+                    {lang.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <Button href={`/${locale}/login`} variant="primary">
             Login
           </Button>
@@ -88,6 +120,23 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
+              <div className="flex items-center gap-4">
+                {languages.map((lang) => (
+                  <Link
+                    key={lang.code}
+                    href={`/${lang.code}${pathWithoutLocale}`}
+                    className={cn(
+                      "text-sm px-3 py-1 rounded-full border",
+                      locale === lang.code
+                        ? "bg-primary-dark text-white border-primary-dark"
+                        : "text-[#5C5C5C] border-border hover:border-primary-dark"
+                    )}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {lang.label}
+                  </Link>
+                ))}
+              </div>
               <Button href={`/${locale}/login`} variant="primary">
                 Login
               </Button>
