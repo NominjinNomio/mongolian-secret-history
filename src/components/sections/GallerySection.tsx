@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 const row1 = ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"];
 const row2 = ["gallery-4.jpg", "gallery-5.jpg"];
@@ -21,12 +22,14 @@ const item = {
 };
 
 export default function GallerySection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-white py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
-          label="Gallery"
-          title="Moments from Mongolia"
+          label={t("galleryLabel")}
+          title={t("galleryTitle")}
         />
 
         <motion.div
@@ -43,7 +46,7 @@ export default function GallerySection() {
                 variants={item}
                 className="relative h-[260px] rounded-xl overflow-hidden"
               >
-                <Image src={src} alt="Mongolia gallery" fill className="object-cover" />
+                <Image src={src} alt={t("galleryTitle")} fill className="object-cover" />
               </motion.div>
             ))}
           </div>
@@ -54,7 +57,7 @@ export default function GallerySection() {
                 variants={item}
                 className="relative h-[320px] rounded-xl overflow-hidden"
               >
-                <Image src={src} alt="Mongolia gallery" fill className="object-cover" />
+                <Image src={src} alt={t("galleryTitle")} fill className="object-cover" />
               </motion.div>
             ))}
           </div>

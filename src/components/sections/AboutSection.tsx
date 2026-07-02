@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 export default function AboutSection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
@@ -17,20 +20,17 @@ export default function AboutSection() {
             className="flex flex-col gap-6 max-w-[520px]"
           >
             <span className="text-sm tracking-[3px] text-primary-dark uppercase">
-              About Us
+              {t("aboutLabel")}
             </span>
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">
-              Authentic, Immersive Journeys Across Mongolia
+              {t("aboutTitle")}
             </h2>
             <p className="text-[17px] leading-[1.7] text-muted-foreground">
-              We are a Mongolia-based travel company specializing in authentic, immersive journeys across the country&apos;s most iconic and remote destinations. Our mission is to share the beauty of Mongolia&apos;s vast landscapes, nomadic culture, and rich history with travelers from around the world.
-            </p>
-            <p className="text-[17px] leading-[1.7] text-muted-foreground">
-              Every journey is guided by local experts who ensure safety, comfort, and meaningful connections along the way.
+              {t("aboutDesc")}
             </p>
             <div className="pt-2">
               <Button href="/about" variant="primary">
-                Learn More
+                {t("aboutButton")}
               </Button>
             </div>
           </motion.div>
@@ -44,7 +44,7 @@ export default function AboutSection() {
           >
             <Image
               src="about-nomads.jpg"
-              alt="Mongolian nomads"
+              alt={t("aboutTitle")}
               fill
               className="object-cover"
             />

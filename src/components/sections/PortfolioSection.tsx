@@ -5,11 +5,12 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 const tours = [
   { title: "Gobi Desert Adventure", duration: "8 days", price: "$1,100" },
   { title: "Central Mongolia Heritage Tour", duration: "6 days", price: "$950" },
-  { title: "Khustai \u0026 Terelj National Parks", duration: "4 days", price: "$700" },
+  { title: "Khustai & Terelj National Parks", duration: "4 days", price: "$700" },
 ];
 
 const container = {
@@ -26,12 +27,14 @@ const item = {
 };
 
 export default function PortfolioSection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
-          label="Featured Tours"
-          title="Explore Our Most Popular Journeys"
+          label={t("toursLabel")}
+          title={t("toursTitle")}
         />
 
         <motion.div
@@ -65,7 +68,7 @@ export default function PortfolioSection() {
                     href="/portfolio"
                     className="flex items-center gap-1 text-sm text-accent hover:text-accent-dark transition-colors"
                   >
-                    View Details <ArrowRight size={14} />
+                    {t("toursButton")} <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>

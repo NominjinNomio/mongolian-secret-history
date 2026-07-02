@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
   {
     quote: "Of all the awesome new friends we made on our trip, the guides were the best. We plan to return in a few years and head East.",
-    author: "Sarah \u0026 Tom, USA",
+    author: "Sarah & Tom, USA",
   },
   {
     quote: "The high level of service that the team at Mongolian Secret History provided made this a happy memory to take on my next adventure.",
@@ -32,12 +33,14 @@ const item = {
 };
 
 export default function TestimonialsSection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
-          label="Testimonials"
-          title="What Our Travelers Say"
+          label={t("testimonialsLabel")}
+          title={t("testimonialsTitle")}
         />
 
         <motion.div
@@ -47,17 +50,17 @@ export default function TestimonialsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {testimonials.map((t) => (
+          {testimonials.map((testimonial) => (
             <motion.div
-              key={t.author}
+              key={testimonial.author}
               variants={item}
               whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
               className="rounded-[20px] bg-white border border-border p-9 flex flex-col gap-5 transition-shadow"
             >
               <blockquote className="font-display text-lg lg:text-xl leading-relaxed text-foreground">
-                &ldquo;{t.quote}&rdquo;
+                &ldquo;{testimonial.quote}&rdquo;
               </blockquote>
-              <span className="text-sm text-muted-foreground">{t.author}</span>
+              <span className="text-sm text-muted-foreground">{testimonial.author}</span>
             </motion.div>
           ))}
         </motion.div>

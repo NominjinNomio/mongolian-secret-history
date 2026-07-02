@@ -5,6 +5,7 @@ import Link from "next/link";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 const posts = [
   { title: "10 Reasons to Visit Mongolia This Summer", date: "June 15, 2026", excerpt: "Discover why summer is the perfect season to explore Mongolia." },
@@ -26,12 +27,14 @@ const item = {
 };
 
 export default function BlogSection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-white py-20 lg:py-[120px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
-          label="Travel Journal"
-          title="Stories \u0026 Inspiration from Mongolia"
+          label={t("blogLabel")}
+          title={t("blogTitle")}
         />
 
         <motion.div
@@ -71,7 +74,7 @@ export default function BlogSection() {
 
         <div className="mt-10 flex justify-center">
           <Button href="/blog" variant="dark">
-            Read All Stories
+            {t("blogButton")}
           </Button>
         </div>
       </div>

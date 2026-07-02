@@ -6,6 +6,7 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 interface TourData {
   title: string;
@@ -245,15 +246,17 @@ const baseExcluded = [
 
 export default function TourDetailPage() {
   const params = useParams();
-  const locale = (params.locale as string) || "mn";
+  const locale = (params.locale as string) || "en";
+  const t = useTranslations("tourDetail");
+  const tc = useTranslations("common");
   const slug = (params.slug as string) || "highlights-of-mongolia";
   const tour = tours[slug] || tours["highlights-of-mongolia"];
 
   const quickInfo = [
-    { label: "Duration", value: tour.duration },
-    { label: "Group Size", value: tour.groupSize },
-    { label: "Price", value: tour.price },
-    { label: "Best Season", value: tour.season },
+    { label: t("duration"), value: tour.duration },
+    { label: t("groupSize"), value: tour.groupSize },
+    { label: t("price"), value: tour.price },
+    { label: t("bestSeason"), value: tour.season },
   ];
 
   const included = tour.included.length ? tour.included : baseIncluded;
@@ -283,7 +286,7 @@ export default function TourDetailPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-col gap-5 max-w-[520px]"
             >
-              <span className="text-sm tracking-[3px] text-primary-dark uppercase">Overview</span>
+              <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("overviewLabel")}</span>
               <h2 className="font-display text-3xl md:text-[40px] leading-[1.15]">{tour.overviewTitle}</h2>
               {tour.overview.map((paragraph, idx) => (
                 <p key={idx} className="text-base leading-[1.7] text-muted-foreground">
@@ -298,7 +301,7 @@ export default function TourDetailPage() {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">At a Glance</h2>
+            <h2 className="font-display text-3xl md:text-[44px]">{t("atAGlance")}</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -329,7 +332,7 @@ export default function TourDetailPage() {
               transition={{ duration: 0.4 }}
               className="rounded-[20px] bg-white p-10"
             >
-              <h3 className="font-display text-[28px] text-foreground mb-6">What&apos;s Included</h3>
+              <h3 className="font-display text-[28px] text-foreground mb-6">{tc("whatIsIncluded")}</h3>
               <ul className="flex flex-col gap-4">
                 {included.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-muted-foreground">
@@ -347,7 +350,7 @@ export default function TourDetailPage() {
               transition={{ duration: 0.4, delay: 0.1 }}
               className="rounded-[20px] bg-white p-10"
             >
-              <h3 className="font-display text-[28px] text-foreground mb-6">Not Included</h3>
+              <h3 className="font-display text-[28px] text-foreground mb-6">{tc("notIncluded")}</h3>
               <ul className="flex flex-col gap-4">
                 {excluded.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-muted-foreground">
@@ -364,7 +367,7 @@ export default function TourDetailPage() {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[900px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">Day-by-Day Itinerary</h2>
+            <h2 className="font-display text-3xl md:text-[44px]">{tc("itinerary")}</h2>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -377,7 +380,7 @@ export default function TourDetailPage() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="rounded-xl bg-[#F8F6F1] p-6 flex flex-col sm:flex-row gap-6"
               >
-                <span className="font-display text-2xl text-accent shrink-0">Day {day.day}</span>
+                <span className="font-display text-2xl text-accent shrink-0">{tc("day", { day: day.day })}</span>
                 <div>
                   <h3 className="font-display text-xl text-foreground">{day.title}</h3>
                   <p className="text-[15px] text-muted-foreground mt-1 leading-relaxed">{day.desc}</p>
@@ -392,11 +395,11 @@ export default function TourDetailPage() {
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-[700px] text-center md:text-left">
-              <h2 className="font-display text-[28px] text-white">Ready to Book This Tour?</h2>
-              <p className="text-white/80 mt-2">Reserve your spot today. Our team will confirm availability and send you a detailed itinerary.</p>
+              <h2 className="font-display text-[28px] text-white">{tc("readyToBook")}</h2>
+              <p className="text-white/80 mt-2">{tc("reserveSpot")}</p>
             </div>
             <Button href={`/${locale}/book-online`} variant="primary">
-              Book This Tour
+              {t("bookThisTour")}
             </Button>
           </div>
         </div>
@@ -405,7 +408,7 @@ export default function TourDetailPage() {
       <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">Tour Gallery</h2>
+            <h2 className="font-display text-3xl md:text-[44px]">{tc("gallery")}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

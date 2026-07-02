@@ -8,16 +8,27 @@ import Link from "next/link";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
-const categories = [
-  "All",
-  "Adventure Tours",
-  "Best Sellers",
-  "Festival tours",
-  "Tailored Tours",
-  "Winter tours",
-  "classic tours",
+const categoryKeys = [
+  "all",
+  "adventureTours",
+  "bestSellers",
+  "festivalTours",
+  "tailoredTours",
+  "winterTours",
+  "classicTours",
 ];
+
+const categoryMap: Record<string, string> = {
+  all: "All",
+  adventureTours: "Adventure Tours",
+  bestSellers: "Best Sellers",
+  festivalTours: "Festival tours",
+  tailoredTours: "Tailored Tours",
+  winterTours: "Winter tours",
+  classicTours: "classic tours",
+};
 
 const tours = [
   {
@@ -120,32 +131,33 @@ const tours = [
 
 export default function PortfolioPage() {
   const params = useParams();
-  const locale = (params.locale as string) || "mn";
-  const [activeCategory, setActiveCategory] = useState("All");
+  const locale = (params.locale as string) || "en";
+  const t = useTranslations("tours");
+  const tc = useTranslations("common");
+  const [activeCategory, setActiveCategory] = useState("all");
 
+  const activeEnglishCategory = categoryMap[activeCategory];
   const filteredTours =
-    activeCategory === "All"
+    activeCategory === "all"
       ? tours
-      : tours.filter((tour) => tour.category === activeCategory);
+      : tours.filter((tour) => tour.category === activeEnglishCategory);
 
   return (
     <InnerPageLayout>
       <PageHero
-        label="Featured Journeys"
-        title="Our Tours"
-        subtitle="Handcrafted itineraries for every kind of traveler"
+        label={t("heroLabel")}
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
       />
 
       <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-10">
-            <p className="text-lg leading-[1.7] text-muted-foreground">
-              Choose from our most popular Mongolia tours, or ask us to customize any itinerary to match your interests, dates, and travel style.
-            </p>
+            <p className="text-lg leading-[1.7] text-muted-foreground">{t("intro")}</p>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
-            {categories.map((category) => (
+            {categoryKeys.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
@@ -155,7 +167,7 @@ export default function PortfolioPage() {
                     : "bg-white text-primary-dark border-primary-dark hover:bg-primary-dark/5"
                 }`}
               >
-                {category}
+                {t(category)}
               </button>
             ))}
           </div>
@@ -194,7 +206,7 @@ export default function PortfolioPage() {
                         href={`/${locale}/portfolio/${tour.slug}`}
                         className="flex items-center gap-1 text-sm text-accent hover:text-accent-dark transition-colors"
                       >
-                        View Details <ArrowRight size={14} />
+                        {tc("viewDetails")} <ArrowRight size={14} />
                       </Link>
                     </div>
                   </div>

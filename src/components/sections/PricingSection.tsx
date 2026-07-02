@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
+import { useTranslations } from "next-intl";
 
 const plans = [
   {
@@ -43,12 +44,14 @@ const item = {
 };
 
 export default function PricingSection() {
+  const t = useTranslations("home");
+
   return (
     <section className="bg-white py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
-          label="Pricing"
-          title="Transparent \u0026 Flexible Pricing"
+          label={t("pricingLabel")}
+          title={t("pricingTitle")}
         />
 
         <motion.div
@@ -79,7 +82,7 @@ export default function PricingSection() {
               </ul>
               <div className="mt-4">
                 <Button href="/contact" variant="dark" className="w-full">
-                  Request Quote
+                  {t("requestQuote")}
                 </Button>
               </div>
             </motion.div>
@@ -94,13 +97,11 @@ export default function PricingSection() {
           className="mt-12 rounded-[20px] bg-primary-dark p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8"
         >
           <div className="max-w-[700px]">
-            <h3 className="font-display text-2xl lg:text-[28px] text-white">Need a Custom Itinerary?</h3>
-            <p className="text-white/85 mt-2 leading-relaxed">
-              Tell us your travel dates, interests, and budget. We&apos;ll design a tailor-made Mongolia journey just for you.
-            </p>
+            <h3 className="font-display text-2xl lg:text-[28px] text-white">{t("pricingCtaTitle")}</h3>
+            <p className="text-white/85 mt-2 leading-relaxed">{t("pricingCtaDesc")}</p>
           </div>
           <Button href="/contact" variant="primary">
-            Request Custom Quote
+            {t("pricingCtaButton")}
           </Button>
         </motion.div>
       </div>

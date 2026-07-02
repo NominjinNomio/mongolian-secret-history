@@ -6,6 +6,7 @@ import Link from "next/link";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 interface PostData {
   title: string;
@@ -203,7 +204,9 @@ const relatedPosts = [
 
 export default function BlogDetailPage() {
   const params = useParams();
-  const locale = (params.locale as string) || "mn";
+  const locale = (params.locale as string) || "en";
+  const t = useTranslations("blog");
+  const tc = useTranslations("common");
   const slug = (params.slug as string) || "reasons-to-visit-mongolia-summer";
   const post = posts[slug] || posts["reasons-to-visit-mongolia-summer"];
 
@@ -265,10 +268,10 @@ export default function BlogDetailPage() {
                 <div className="relative w-20 h-20 rounded-full overflow-hidden mb-3">
                   <Image src="team-placeholder.jpg" alt="Author" fill className="object-cover" />
                 </div>
-                <h3 className="font-display text-xl text-foreground">Oyungerel</h3>
-                <span className="text-sm text-primary-dark">Cultural Guide</span>
+                <h3 className="font-display text-xl text-foreground">{t("authorName")}</h3>
+                <span className="text-sm text-primary-dark">{t("authorRole")}</span>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                  Historian and storyteller who brings ancient Mongolia to life through words and journeys.
+                  {t("authorBio")}
                 </p>
               </motion.div>
 
@@ -279,7 +282,7 @@ export default function BlogDetailPage() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="rounded-2xl bg-[#F8F6F1] p-7 flex flex-col gap-4"
               >
-                <h3 className="font-display text-[22px] text-foreground">Related Stories</h3>
+                <h3 className="font-display text-[22px] text-foreground">{tc("relatedStories")}</h3>
                 {sidebarPosts.map((postItem) => (
                   <Link
                     key={postItem.slug}

@@ -4,40 +4,35 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
+import { useTranslations } from "next-intl";
 
-const tabs = ["Tours", "Accommodation", "Travel Services"];
+type TabKey = "tours" | "accommodation" | "travelServices";
 
-const steps = [
-  {
-    title: "1. Submit your request",
-    desc: "Fill in the form with your preferred dates and group size.",
-  },
-  {
-    title: "2. We check availability",
-    desc: "Our team will confirm availability and send a detailed itinerary.",
-  },
-  {
-    title: "3. Confirm with deposit",
-    desc: "Pay a deposit to secure your booking and prepare for your journey.",
-  },
-];
+const tabs: TabKey[] = ["tours", "accommodation", "travelServices"];
+
+const tabConfig: Record<TabKey, { title: string; label: string; placeholder: string }> = {
+  tours: { title: "bookYourTours", label: "preferredTour", placeholder: "preferredTourPlaceholder" },
+  accommodation: { title: "bookYourAccommodation", label: "preferredRoom", placeholder: "preferredRoomPlaceholder" },
+  travelServices: { title: "bookYourTravelServices", label: "preferredService", placeholder: "preferredServicePlaceholder" },
+};
+
+const stepKeys = ["step1", "step2", "step3"];
 
 export default function BookOnlinePage() {
-  const [activeTab, setActiveTab] = useState("Tours");
+  const [activeTab, setActiveTab] = useState<TabKey>("tours");
+  const t = useTranslations("bookOnline");
 
   return (
     <InnerPageLayout>
       <PageHero
-        label="Reservations"
-        title="Book Online"
-        subtitle="Reserve your tour, accommodation, or travel services with our team"
+        label={t("heroLabel")}
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
       />
 
       <section className="bg-[#F8F5F0] pt-20 pb-10 lg:pt-[80px] lg:pb-[40px]">
         <div className="mx-auto max-w-[800px] px-6 lg:px-0 text-center">
-          <p className="text-lg leading-[1.7] text-muted-foreground">
-            When you have made your decision and are ready to book, please use this form to let us know your plans. The following services can be booked online through this page.
-          </p>
+          <p className="text-lg leading-[1.7] text-muted-foreground">{t("intro")}</p>
         </div>
       </section>
 
@@ -54,7 +49,7 @@ export default function BookOnlinePage() {
                     : "bg-white text-foreground hover:bg-white/80"
                 }`}
               >
-                {tab}
+                {t(tab)}
               </button>
             ))}
           </div>
@@ -71,60 +66,60 @@ export default function BookOnlinePage() {
               transition={{ duration: 0.5 }}
               className="w-full max-w-[520px] rounded-[20px] bg-white p-10"
             >
-              <h2 className="font-display text-[28px] text-foreground mb-6">Book Your {activeTab}</h2>
+              <h2 className="font-display text-[28px] text-foreground mb-6">{t(tabConfig[activeTab].title)}</h2>
 
               <form className="flex flex-col gap-5">
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Full Name</label>
+                  <label className="text-sm text-muted-foreground">{t("fullName")}</label>
                   <input
                     type="text"
                     className="w-full h-[52px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                    placeholder="Your full name"
+                    placeholder={t("fullName")}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Email Address</label>
+                  <label className="text-sm text-muted-foreground">{t("email")}</label>
                   <input
                     type="email"
                     className="w-full h-[52px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                    placeholder="you@example.com"
+                    placeholder={t("email")}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Phone Number</label>
+                  <label className="text-sm text-muted-foreground">{t("phone")}</label>
                   <input
                     type="tel"
                     className="w-full h-[52px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                    placeholder="+976 ..."
+                    placeholder={t("phone")}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Preferred {activeTab === "Accommodation" ? "Room Type" : activeTab === "Travel Services" ? "Service" : "Tour"}</label>
+                  <label className="text-sm text-muted-foreground">{t(tabConfig[activeTab].label)}</label>
                   <input
                     type="text"
                     className="w-full h-[52px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                    placeholder={activeTab === "Accommodation" ? "Hotel room or ger" : activeTab === "Travel Services" ? "Guide, driver, etc." : "Tour name"}
+                    placeholder={t(tabConfig[activeTab].placeholder)}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Travel Dates</label>
+                  <label className="text-sm text-muted-foreground">{t("travelDates")}</label>
                   <input
                     type="text"
                     className="w-full h-[52px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                    placeholder="e.g. July 10–20, 2026"
+                    placeholder={t("travelDatesPlaceholder")}
                   />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm text-muted-foreground">Additional Requests</label>
+                  <label className="text-sm text-muted-foreground">{t("requests")}</label>
                   <textarea
                     rows={4}
                     className="w-full rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] p-4 text-sm outline-none focus:border-primary-dark resize-none"
-                    placeholder="Tell us more about your group size, dietary needs, or special requests."
+                    placeholder={t("requestsPlaceholder")}
                   />
                 </div>
 
@@ -132,7 +127,7 @@ export default function BookOnlinePage() {
                   type="submit"
                   className="inline-flex items-center justify-center rounded-full bg-accent text-foreground px-8 py-4 text-sm font-medium hover:bg-accent-dark transition-colors"
                 >
-                  Submit Booking Request
+                  {t("submit")}
                 </button>
               </form>
             </motion.div>
@@ -144,11 +139,11 @@ export default function BookOnlinePage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="w-full max-w-[460px] flex flex-col gap-7"
             >
-              <h2 className="font-display text-[30px] text-foreground">What Happens Next?</h2>
-              {steps.map((step) => (
-                <div key={step.title} className="flex flex-col gap-1">
-                  <h3 className="font-display text-xl text-primary-dark">{step.title}</h3>
-                  <p className="text-[15px] text-muted-foreground leading-relaxed">{step.desc}</p>
+              <h2 className="font-display text-[30px] text-foreground">{t("whatHappensNext")}</h2>
+              {stepKeys.map((step) => (
+                <div key={step} className="flex flex-col gap-1">
+                  <h3 className="font-display text-xl text-primary-dark">{t(`${step}Title`)}</h3>
+                  <p className="text-[15px] text-muted-foreground leading-relaxed">{t(`${step}Desc`)}</p>
                 </div>
               ))}
             </motion.div>

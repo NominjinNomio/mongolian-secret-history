@@ -5,15 +5,17 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 export default function RegisterPage() {
   const [agreed, setAgreed] = useState(false);
+  const t = useTranslations("register");
 
   return (
     <InnerPageLayout>
       <section className="min-h-[calc(100vh-88px)] flex flex-col lg:flex-row">
         <div className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-full flex items-center justify-center overflow-hidden">
-          <Image src="hero-steppe.jpg" alt="Mongolian steppe" fill className="object-cover" />
+          <Image src="hero-steppe.jpg" alt={t("welcomeTitle")} fill className="object-cover" />
           <div className="absolute inset-0 bg-[#0f1e32]/60" />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -21,8 +23,8 @@ export default function RegisterPage() {
             transition={{ duration: 0.6 }}
             className="relative z-10 max-w-[520px] px-8 text-center"
           >
-            <h1 className="font-display text-4xl md:text-5xl text-white">Join Our Journey</h1>
-            <p className="text-white/80 mt-4 leading-relaxed">Create an account to book tours, save your favorite trips, and receive exclusive travel inspiration from Mongolia.</p>
+            <h1 className="font-display text-4xl md:text-5xl text-white">{t("welcomeTitle")}</h1>
+            <p className="text-white/80 mt-4 leading-relaxed">{t("welcomeSubtitle")}</p>
           </motion.div>
         </div>
 
@@ -34,40 +36,40 @@ export default function RegisterPage() {
             className="w-full max-w-[480px] rounded-[20px] bg-white p-10 lg:p-12"
           >
             <div className="text-center mb-8">
-              <h2 className="font-display text-[32px] text-foreground">Create Account</h2>
-              <p className="text-sm text-muted-foreground mt-2">Fill in your details to get started</p>
+              <h2 className="font-display text-[32px] text-foreground">{t("title")}</h2>
+              <p className="text-sm text-muted-foreground mt-2">{t("subtitle")}</p>
             </div>
 
             <form className="flex flex-col gap-4">
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-muted-foreground">Full Name</label>
+                <label className="text-sm text-muted-foreground">{t("fullName")}</label>
                 <input
                   type="text"
                   className="w-full h-[48px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                  placeholder="Your full name"
+                  placeholder={t("fullName")}
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-muted-foreground">Email Address</label>
+                <label className="text-sm text-muted-foreground">{t("email")}</label>
                 <input
                   type="email"
                   className="w-full h-[48px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                  placeholder="you@example.com"
+                  placeholder={t("email")}
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-muted-foreground">Phone Number</label>
+                <label className="text-sm text-muted-foreground">{t("phone")}</label>
                 <input
                   type="tel"
                   className="w-full h-[48px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
-                  placeholder="+976 ..."
+                  placeholder={t("phone")}
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="text-sm text-muted-foreground">Password</label>
+                <label className="text-sm text-muted-foreground">{t("password")}</label>
                 <input
                   type="password"
                   className="w-full h-[48px] rounded-xl bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-primary-dark"
@@ -83,10 +85,7 @@ export default function RegisterPage() {
                   className="w-4 h-4 mt-0.5 rounded border-border"
                 />
                 <span>
-                  I agree to the{" "}
-                  <Link href="/terms" className="text-primary-dark hover:text-accent transition-colors">Terms & Conditions</Link>{" "}
-                  and{" "}
-                  <Link href="/privacy" className="text-primary-dark hover:text-accent transition-colors">Privacy Policy</Link>
+                  {t("agree")}
                 </span>
               </label>
 
@@ -94,13 +93,13 @@ export default function RegisterPage() {
                 type="submit"
                 className="w-full inline-flex items-center justify-center rounded-full bg-accent text-foreground px-8 py-4 text-sm font-medium hover:bg-accent-dark transition-colors"
               >
-                Create Account
+                {t("createAccount")}
               </button>
             </form>
 
             <div className="flex items-center gap-4 my-6">
               <div className="flex-1 h-px bg-[#E5E2DC]" />
-              <span className="text-sm text-muted-foreground">or</span>
+              <span className="text-sm text-muted-foreground">{t("or")}</span>
               <div className="flex-1 h-px bg-[#E5E2DC]" />
             </div>
 
@@ -109,13 +108,13 @@ export default function RegisterPage() {
               className="w-full inline-flex items-center justify-center gap-3 rounded-full bg-[#F8F6F1] border border-[#E5E2DC] text-foreground px-8 py-3.5 text-sm font-medium hover:bg-[#F0EDE8] transition-colors"
             >
               <span className="text-lg">G</span>
-              Sign up with Google
+              {t("google")}
             </button>
 
             <p className="text-center text-sm text-muted-foreground mt-6">
-              Already have an account?{" "}
+              {t("hasAccount")}{" "}
               <Link href="/login" className="text-primary-dark hover:text-accent transition-colors">
-                Sign in
+                {t("signIn")}
               </Link>
             </p>
           </motion.div>

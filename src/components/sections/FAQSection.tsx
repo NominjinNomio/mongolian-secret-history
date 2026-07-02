@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
+import { useTranslations } from "next-intl";
 
 const faqs = [
   {
@@ -30,13 +31,14 @@ const faqs = [
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const t = useTranslations("home");
 
   return (
     <section className="bg-white py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[900px] px-6 lg:px-0">
         <SectionHeader
-          label="FAQ"
-          title="Common Questions"
+          label={t("faqLabel")}
+          title={t("faqTitle")}
         />
 
         <div className="mt-14 flex flex-col gap-4">

@@ -6,6 +6,7 @@ import Link from "next/link";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
+import { useTranslations } from "next-intl";
 
 const posts = [
   { title: "10 Reasons to Visit Mongolia This Summer", slug: "reasons-to-visit-mongolia-summer", date: "June 15, 2026", excerpt: "Discover why summer is the perfect season to explore Mongolia." },
@@ -18,22 +19,21 @@ const posts = [
 
 export default function BlogPage() {
   const params = useParams();
-  const locale = (params.locale as string) || "mn";
+  const locale = (params.locale as string) || "en";
+  const t = useTranslations("blog");
 
   return (
     <InnerPageLayout>
       <PageHero
-        label="Journal"
-        title="Travel Stories"
-        subtitle="Tips, inspiration, and stories from Mongolia"
+        label={t("heroLabel")}
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
       />
 
       <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
-            <p className="text-lg leading-[1.7] text-muted-foreground">
-              Explore our collection of articles about Mongolia&apos;s destinations, culture, wildlife, and travel tips to help you plan your perfect journey.
-            </p>
+            <p className="text-lg leading-[1.7] text-muted-foreground">{t("intro")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
