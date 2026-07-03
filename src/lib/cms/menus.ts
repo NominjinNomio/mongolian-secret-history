@@ -2,7 +2,7 @@ import { getServerApolloClient } from "@/lib/apollo/server-client";
 import { CP_MENUS } from "@/graphql/cms/queries/menu";
 import type { MenuItem, CpMenusData } from "@/graphql/cms/queries/menu";
 
-const CMS_ID = process.env.ERXES_CMS_ID;
+const CLIENT_PORTAL_ID = process.env.ERXES_CLIENT_PORTAL_ID;
 
 export async function getCmsMenus(locale: string) {
   const client = await getServerApolloClient();
@@ -10,12 +10,12 @@ export async function getCmsMenus(locale: string) {
   const [{ data: headerData }, { data: footerData }] = await Promise.all([
     client.query<CpMenusData>({
       query: CP_MENUS,
-      variables: { clientPortalId: CMS_ID, language: locale, kind: "header" },
+      variables: { clientPortalId: CLIENT_PORTAL_ID, language: locale, kind: "header" },
       context: { revalidate: 60 },
     }),
     client.query<CpMenusData>({
       query: CP_MENUS,
-      variables: { clientPortalId: CMS_ID, language: locale, kind: "footer" },
+      variables: { clientPortalId: CLIENT_PORTAL_ID, language: locale, kind: "footer" },
       context: { revalidate: 60 },
     }),
   ]);
