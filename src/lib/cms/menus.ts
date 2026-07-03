@@ -2,7 +2,7 @@ import { getServerApolloClient } from "@/lib/apollo/server-client";
 import { CP_MENUS } from "@/graphql/cms/queries/menu";
 import type { MenuItem, CpMenusData } from "@/graphql/cms/queries/menu";
 
-export async function getCmsMenus(locale: string) {
+export async function getCmsMenus(locale: string, cmsId?: string) {
   const client = await getServerApolloClient();
 
   const [{ data: headerData }, { data: footerData }] = await Promise.all([
