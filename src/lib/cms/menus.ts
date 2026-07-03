@@ -2,18 +2,20 @@ import { getServerApolloClient } from "@/lib/apollo/server-client";
 import { CP_MENUS } from "@/graphql/cms/queries/menu";
 import type { MenuItem, CpMenusData } from "@/graphql/cms/queries/menu";
 
-export async function getCmsMenus(locale: string, cmsId?: string) {
+const CMS_ID = process.env.ERXES_CMS_ID;
+
+export async function getCmsMenus(locale: string) {
   const client = await getServerApolloClient();
 
   const [{ data: headerData }, { data: footerData }] = await Promise.all([
     client.query<CpMenusData>({
       query: CP_MENUS,
-      variables: { language: locale, kind: "header" },
+      variables: { clientPortalId: CMS_ID, language: locale, kind: "header" },
       context: { revalidate: 60 },
     }),
     client.query<CpMenusData>({
       query: CP_MENUS,
-      variables: { language: locale, kind: "footer" },
+      variables: { clientPortalId: CMS_ID, language: locale, kind: "footer" },
       context: { revalidate: 60 },
     }),
   ]);
@@ -24,7 +26,7 @@ export async function getCmsMenus(locale: string, cmsId?: string) {
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return {
-    header: sort(headerData?.cpMenus || []),
-    footer: sort(footerData?.cpMenus || []),
+    header: sort(headerData?.cpCmsMenuList || []),
+    footer: sort(footerData?.cpCmsMenuList || []),
   };
 }

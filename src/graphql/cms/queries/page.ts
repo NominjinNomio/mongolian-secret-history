@@ -91,14 +91,15 @@ const PAGE_FRAGMENT = gql`
 
 export const CP_PAGES = gql`
   ${PAGE_FRAGMENT}
-  query CpPages($language: String) {
-    cpPages(language: $language) {
+  query CpPages($clientPortalId: String, $language: String) {
+    cpPages(clientPortalId: $clientPortalId, language: $language) {
       ...PageFields
     }
   }
 `;
 
 export type CpPagesVariables = {
+  clientPortalId?: string;
   language?: string;
 };
 
@@ -134,14 +135,25 @@ export type CpPageListData = {
 
 export const CP_PAGE = gql`
   ${PAGE_FRAGMENT}
-  query CpCmsPageDetail($slug: String, $_id: String, $language: String) {
-    cpCmsPageDetail(slug: $slug, _id: $_id, language: $language) {
+  query CpCmsPageDetail(
+    $clientPortalId: String
+    $slug: String
+    $_id: String
+    $language: String
+  ) {
+    cpCmsPageDetail(
+      clientPortalId: $clientPortalId
+      slug: $slug
+      _id: $_id
+      language: $language
+    ) {
       ...PageFields
     }
   }
 `;
 
 export type CpPageVariables = {
+  clientPortalId?: string;
   slug?: string;
   _id?: string;
   language?: string;

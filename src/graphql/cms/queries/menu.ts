@@ -35,8 +35,20 @@ const MENU_ITEM_FRAGMENT = gql`
 
 export const CP_MENUS = gql`
   ${MENU_ITEM_FRAGMENT}
-  query CpMenus($language: String, $kind: String, $webId: String) {
-    cpMenus(language: $language, kind: $kind, webId: $webId) {
+  query CpCmsMenuList(
+    $clientPortalId: String
+    $kind: String
+    $language: String
+    $cursor: String
+    $limit: Int
+  ) {
+    cpCmsMenuList(
+      clientPortalId: $clientPortalId
+      kind: $kind
+      language: $language
+      cursor: $cursor
+      limit: $limit
+    ) {
       ...MenuItemFields
       parent {
         ...MenuItemFields
@@ -46,13 +58,15 @@ export const CP_MENUS = gql`
 `;
 
 export type CpMenusVariables = {
-  language?: string;
+  clientPortalId?: string;
   kind?: string;
-  webId?: string;
+  language?: string;
+  cursor?: string;
+  limit?: number;
 };
 
 export type CpMenusData = {
-  cpMenus: MenuItem[];
+  cpCmsMenuList: MenuItem[];
 };
 
 export const CP_CMS_MENU_LIST = gql`
