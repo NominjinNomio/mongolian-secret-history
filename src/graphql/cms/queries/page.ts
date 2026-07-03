@@ -131,3 +131,21 @@ export type CpPageListVariables = {
 export type CpPageListData = {
   cpPageList: PageList;
 };
+
+export const CP_PAGE = gql`
+  ${PAGE_FRAGMENT}
+  query CpPage($slug: String, $language: String) {
+    cpPage(slug: $slug, language: $language) {
+      ...PageFields
+    }
+  }
+`;
+
+export type CpPageVariables = {
+  slug?: string;
+  language?: string;
+};
+
+export type CpPageData = {
+  cpPage: Page | null;
+};

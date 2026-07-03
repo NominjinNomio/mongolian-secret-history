@@ -1,5 +1,3 @@
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import AboutSection from "@/components/sections/AboutSection";
 import DestinationsSection from "@/components/sections/DestinationsSection";
@@ -16,22 +14,18 @@ import ContactSection from "@/components/sections/ContactSection";
 export default function HomePage() {
   return (
     <>
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <AboutSection />
-        <DestinationsSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <PricingSection />
-        <TeamSection />
-        <GallerySection />
-        <TestimonialsSection />
-        <FAQSection />
-        <BlogSection />
-        <ContactSection />
-      </main>
-      <Footer />
+      <Hero />
+      <AboutSection />
+      <DestinationsSection />
+      <ServicesSection />
+      <PortfolioSection />
+      <PricingSection />
+      <TeamSection />
+      <GallerySection />
+      <TestimonialsSection />
+      <FAQSection />
+      <BlogSection />
+      <ContactSection />
     </>
   );
 }

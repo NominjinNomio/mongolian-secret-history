@@ -1,6 +1,5 @@
 "use client";
 
-import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
@@ -9,15 +8,18 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
-import { CP_MENUS } from "@/graphql/cms/queries/menu";
-import type { CpMenusData, CpMenusVariables } from "@/graphql/cms/queries/menu";
+import type { MenuItem } from "@/graphql/cms/queries/menu";
 
 const languages = [
   { code: "en", label: "EN" },
   { code: "mn", label: "MN" },
 ];
 
-export default function Header() {
+interface HeaderProps {
+  navItems: MenuItem[];
+}
+
+export default function Header({ navItems }: HeaderProps) {
   const t = useTranslations("nav");
   const th = useTranslations("header");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -27,15 +29,6 @@ export default function Header() {
 
   const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/";
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
-
-  const { data: headerData } = useQuery<CpMenusData, CpMenusVariables>(CP_MENUS, {
-    variables: { language: locale, kind: "header" },
-  });
-
-  const navItems =
-    headerData?.cpMenus
-      ?.filter((item) => !item.parentId)
-      ?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) || [];
 
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
