@@ -1,23 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useQuery } from "@apollo/client/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
-
-const navItems = [
-  { key: "home", href: "/" },
-  { key: "about", href: "/about" },
-  { key: "services", href: "/services" },
-  { key: "accommodation", href: "/accommodation" },
-  { key: "tours", href: "/portfolio" },
-  { key: "blog", href: "/blog" },
-  { key: "contact", href: "/contact" },
-];
+import { CP_MENUS } from "@/graphql/cms/queries/menu";
+import type { CpMenusData, CpMenusVariables } from "@/graphql/cms/queries/menu";
 
 const languages = [
   { code: "en", label: "EN" },
@@ -35,6 +28,15 @@ export default function Header() {
   const pathWithoutLocale = pathname.replace(new RegExp(`^/${locale}`), "") || "/";
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
 
+  const { data: headerData } = useQuery<CpMenusData, CpMenusVariables>(CP_MENUS, {
+    variables: { language: locale, kind: "header" },
+  });
+
+  const navItems =
+    headerData?.cpMenus
+      ?.filter((item) => !item.parentId)
+      ?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) || [];
+
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-6 lg:px-20">
@@ -44,18 +46,18 @@ export default function Header() {
 
         <nav className="hidden lg:flex items-center gap-10">
           {navItems.map((item) => {
-            const itemHref = `/${locale}${item.href}`;
-            const isActive = pathWithoutLocale === item.href;
+            const itemHref = `/${locale}${item.url || "/"}`;
+            const isActive = pathWithoutLocale === (item.url || "/");
             return (
               <Link
-                key={item.href}
+                key={item._id}
                 href={itemHref}
                 className={cn(
                   "relative text-[15px] font-medium transition-colors duration-200 py-1 group",
                   isActive ? "text-[#1A2B4A]" : "text-[#5C5C5C] hover:text-[#1A2B4A]"
                 )}
               >
-                {t(item.key)}
+                {item.label || t(item.url?.replace("/", "") || "home")}
                 <span
                   className={cn(
                     "absolute left-0 -bottom-1 h-[3px] bg-[#1A2B4A] rounded-full transition-all duration-300",
@@ -119,11 +121,11 @@ export default function Header() {
           >
             <nav className="flex flex-col items-center gap-6 py-8">
               {navItems.map((item) => {
-                const itemHref = `/${locale}${item.href}`;
-                const isActive = pathWithoutLocale === item.href;
+                const itemHref = `/${locale}${item.url || "/"}`;
+                const isActive = pathWithoutLocale === (item.url || "/");
                 return (
                   <Link
-                    key={item.href}
+                    key={item._id}
                     href={itemHref}
                     className={cn(
                       "relative text-lg font-medium py-1 group",
@@ -131,7 +133,7 @@ export default function Header() {
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
-                    {t(item.key)}
+                    {item.label || t(item.url?.replace("/", "") || "home")}
                     <span
                       className={cn(
                         "absolute left-1/2 -translate-x-1/2 -bottom-1 h-[3px] bg-[#1A2B4A] rounded-full transition-all duration-300",

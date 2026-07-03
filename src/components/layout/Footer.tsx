@@ -2,26 +2,25 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useQuery } from "@apollo/client/react";
 import { useTranslations } from "next-intl";
-
-const footerNav = [
-  { key: "about", href: "/about" },
-  { key: "services", href: "/services" },
-  { key: "accommodation", href: "/accommodation" },
-  { key: "tours", href: "/portfolio" },
-  { key: "contact", href: "/contact" },
-];
-
-const legalNav = [
-  { key: "privacy", href: "/privacy" },
-  { key: "terms", href: "/terms" },
-];
+import { CP_MENUS } from "@/graphql/cms/queries/menu";
+import type { CpMenusData, CpMenusVariables } from "@/graphql/cms/queries/menu";
 
 export default function Footer() {
   const t = useTranslations("nav");
   const tf = useTranslations("footer");
   const pathname = usePathname();
   const locale = pathname.split("/")[1] || "en";
+
+  const { data: footerData } = useQuery<CpMenusData, CpMenusVariables>(CP_MENUS, {
+    variables: { language: locale, kind: "footer" },
+  });
+
+  const footerNav =
+    footerData?.cpMenus
+      ?.filter((item) => !item.parentId)
+      ?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0)) || [];
 
   return (
     <footer className="bg-footer text-white">
@@ -34,11 +33,11 @@ export default function Footer() {
           <nav className="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
             {footerNav.map((item) => (
               <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
+                key={item._id}
+                href={`/${locale}${item.url || "/"}`}
                 className="text-[15px] text-white/70 hover:text-white transition-colors"
               >
-                {t(item.key)}
+                {item.label || t(item.url?.replace("/", "") || "home")}
               </Link>
             ))}
           </nav>
@@ -48,17 +47,6 @@ export default function Footer() {
           <p className="text-sm text-white/50 text-center md:text-left">
             {tf("copyright")}
           </p>
-          <nav className="flex items-center gap-6">
-            {legalNav.map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="text-sm text-white/50 hover:text-white transition-colors"
-              >
-                {tf(item.key)}
-              </Link>
-            ))}
-          </nav>
         </div>
       </div>
     </footer>

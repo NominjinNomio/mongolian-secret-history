@@ -1,0 +1,47 @@
+{
+  "category": { "name": "Блог", "slug": "blog", "translations": [{ "language": "en", "name": "Blog" }] },
+  "posts": [
+    {
+      "title": "Монголыг энэ зун зорих 10 шалтгаан",
+      "slug": "10-reasons-to-visit-mongolia-this-summer",
+      "excerpt": "Зун бол Монголыг судлах хамгийн тохиромжтой улирал. Урт өдөр, тайван цаг агаар, нүүдэлчдийн наадам зэрэг олон онцлог таныг хүлээж байна.",
+      "content": "<p>Монгол улс нь Азийн хойд хэсэгт Орос, Хятадтай хиллэдэг, хүн амын нягтшил хамгийн бага улсуудын нэг юм. Энд та өргөн уудам тал хээр, драматик Говийн цөл, мөсөн Хөвсгөл нуур зэргийг нээх болно.</p><p>Зуны улиралд дундаж температур 20–25°C байх бөгөөд өдөр урт, шөнө тод ододтой. Нүүдэлчин гэрт хонож, морь унаж, тэмээ унаж, орон нутгийн соёлыг мэдэрч болно.</p>",
+      "translations": [
+        {
+          "language": "en",
+          "title": "10 Reasons to Visit Mongolia This Summer",
+          "excerpt": "Summer is the perfect season to explore Mongolia. Long days, mild weather, and the Naadam festival are just a few highlights waiting for you.",
+          "content": "<p>Mongolia is one of the least densely populated countries in the world, located between Russia and China. Here you can discover vast steppe, dramatic Gobi desert, and icy Khuvsgul lake.</p><p>In summer, average temperatures range from 20–25°C, with long days and star-filled nights. You can stay in a traditional ger, ride horses and camels, and experience local nomadic culture.</p>"
+        }
+      ]
+    },
+    {
+      "title": "Монголын нүүдэлчин соёлын гарын авлага",
+      "slug": "guide-to-mongolian-nomadic-culture",
+      "excerpt": "Гэрт хонох, уламжлалт хоол идэх, малчидтай хамт амьдрах зэрэг нүүдэлчин амьдралын талаар бүх зүйл.",
+      "content": "<p>Монголын нүүдэлчин соёл нь мал аж ахуй, уламжлалт ёс заншил, зочломтгой байдлаар дамжин өнөөдөр хүрчээ. Гэр бүл бүр уламжлалт гэрт амьдарч, улирлаар малтайгаа нүүдэллэдэг.</p><p>Зочин гэрт орсон үед хуушуур, ааруул, цай, айраг зэргээр дайлдаг. Бид аялагчдыг жинхэнэ малчин айлд хонуулах, хонь саах, морь унах, гэр босгох зэрэг туршлагаар дамжуулан нүүдэлчин амьдралд ойртуулдаг.</p>",
+      "translations": [
+        {
+          "language": "en",
+          "title": "A Guide to Mongolian Nomadic Culture",
+          "excerpt": "Everything about nomadic life: staying in a ger, eating traditional food, and living alongside herder families.",
+          "content": "<p>Mongolian nomadic culture has survived for centuries through animal husbandry, traditions, and hospitality. Families live in traditional gers and move seasonally with their livestock.</p><p>When guests enter a ger, they are welcomed with buuz, aaruul, tea, and airag. We connect travelers with authentic experiences such as staying with herder families, milking animals, riding horses, and learning how to set up a ger.</p>"
+        }
+      ]
+    },
+    {
+      "title": "Монгол аялалд юу авч явах вэ?",
+      "slug": "what-to-pack-for-a-mongolia-tour",
+      "excerpt": "Тал хээр, цөл, ууланд хийх аялалд тохирсон багаж, хувцас, хувийн хэрэгслийн жагсаалт.",
+      "content": "<p>Монголын цаг агаар хувьсах боломжтой тул давхарласан хувцас авч явах нь чухал. Дараах зүйлсийг санал болгож байна:</p><ul><li>Хүчтэй нарнаас хамгаалах тос болон малгай</li><li>Ус нэвтрүүлдэггүй, зузаан гутал</li><li>Хөнгөн, агаар нэвтрүүлдэг хувцас</li><li>Даарсан үед өмсөх зузаан куртка</li><li>Хувийн эмийн багц болон антибиотик</li><li>Камера болон нөөц батарей</li><li>Өөрийн усны сав</li></ul>",
+      "translations": [
+        {
+          "language": "en",
+          "title": "What to Pack for a Mongolia Tour",
+          "excerpt": "A practical checklist of gear, clothing, and personal items for steppe, desert, and mountain travel.",
+          "content": "<p>Mongolia's weather can change quickly, so layered clothing is essential. Here is what we recommend:</p><ul><li>Strong sunscreen and a wide-brimmed hat</li><li>Waterproof, sturdy hiking boots</li><li>Lightweight, breathable clothing</li><li>Warm fleece or down jacket for cold mornings</li><li>Personal first-aid kit and any medications</li><li>Camera and spare batteries</li><li>Reusable water bottle</li></ul>"
+        }
+      ]
+    }
+  ]
+}

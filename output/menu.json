@@ -1,0 +1,100 @@
+[
+  {
+    "label": "Нүүр",
+    "url": "/",
+    "order": 1,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "Home" }]
+  },
+  {
+    "label": "Бидний тухай",
+    "url": "/about",
+    "order": 2,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "About" }]
+  },
+  {
+    "label": "Үйлчилгээ",
+    "url": "/services",
+    "order": 3,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "Services" }]
+  },
+  {
+    "label": "Аяллууд",
+    "url": "/portfolio",
+    "order": 4,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "Tours" }]
+  },
+  {
+    "label": "Блог",
+    "url": "/blog",
+    "order": 5,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "Blog" }]
+  },
+  {
+    "label": "Холбоо барих",
+    "url": "/contact",
+    "order": 6,
+    "kind": "header",
+    "translations": [{ "language": "en", "title": "Contact" }]
+  },
+  {
+    "label": "Нүүр",
+    "url": "/",
+    "order": 1,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Home" }]
+  },
+  {
+    "label": "Бидний тухай",
+    "url": "/about",
+    "order": 2,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "About" }]
+  },
+  {
+    "label": "Үйлчилгээ",
+    "url": "/services",
+    "order": 3,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Services" }]
+  },
+  {
+    "label": "Асуулт хариулт",
+    "url": "/faq",
+    "order": 4,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "FAQ" }]
+  },
+  {
+    "label": "Блог",
+    "url": "/blog",
+    "order": 5,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Blog" }]
+  },
+  {
+    "label": "Холбоо барих",
+    "url": "/contact",
+    "order": 6,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Contact" }]
+  },
+  {
+    "label": "Нууцлалын бодлого",
+    "url": "/privacy",
+    "order": 7,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Privacy Policy" }]
+  },
+  {
+    "label": "Үйлчилгээний нөхцөл",
+    "url": "/terms",
+    "order": 8,
+    "kind": "footer",
+    "translations": [{ "language": "en", "title": "Terms & Conditions" }]
+  }
+]

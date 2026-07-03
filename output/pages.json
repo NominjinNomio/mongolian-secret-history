@@ -1,0 +1,102 @@
+[
+  {
+    "section": "home",
+    "name": "Нүүр хуудас",
+    "slug": "home",
+    "description": "Монголын Нууц Түүх - Монголд хийх аялал, соёл, адал явдлын төлөөллийн сайт",
+    "content": "<section class=\"hero\"><h1>Монголыг нээ</h1><p>Мөнхийн хөх тэнгэрийн нутаг дэвсгэрээр хийх аялал. Баталгаат аяллууд, нүүдэлчин соёл, Монголын мартагдашгүй дүр зургүүд.</p><a href=\"/services\">Аяллуудыг судлах</a></section>",
+    "translations": [
+      { "language": "en", "title": "Home", "content": "<section class=\"hero\"><h1>Discover Mongolia</h1><p>Journeys across the land of the eternal blue sky. Authentic tours, nomadic culture, and unforgettable Mongolian landscapes.</p><a href=\"/services\">Explore Tours</a></section>" }
+    ]
+  },
+  {
+    "section": "about",
+    "name": "Бидний тухай",
+    "slug": "about",
+    "description": "Монголын Нууц Түүх аяллын компанийн танилцуулга",
+    "content": "<p>Бид Монгол улсад суурилсан аяллын компани бөгөөд улс орны хамгийн алдартай болон хязгааргүй газруудаар жинхэнэ, өнгөрүүлэх аяллуудыг зохион байгуулдаг. Бидний зорилго бол дэлхий даяар аялагчдад Монголын өргөн уудам газар нутаг, нүүдэлчин соёл, баялаг түүхийг хуваалцах юм.</p><p>Та соёлын уулзалт, тал хээр дэх адал явдал, эсвэл байгаль дахь амар спорт хайж байсан ч гэсэн бид стандарт аяллаас давсан туршлагыг бүтээдэг. Аялал бүр орон нутгийн мэргэжилтнүүдээр удирдуулж, аюулгүй байдал, тав тух, утга учиртай холбоог бий болгоно.</p>",
+    "translations": [
+      { "language": "en", "title": "About Us", "content": "<p>We are a Mongolia-based travel company specializing in authentic, immersive journeys across the country’s most iconic and remote destinations. Our mission is to share the beauty of Mongolia’s vast landscapes, nomadic culture, and rich history with travelers from around the world.</p><p>Whether you are seeking cultural encounters, adventure in the open steppe, or peaceful moments in nature, we design experiences that go beyond standard tourism. Every journey is guided by local experts who ensure safety, comfort, and meaningful connections along the way.</p>" }
+    ]
+  },
+  {
+    "section": "services",
+    "name": "Үйлчилгээ",
+    "slug": "services",
+    "description": "Монголын Нууц Түүх-ийн үзүүлдэг аяллын үйлчилгээ",
+    "content": "<h2>Бидний санал болгож буй зүйлс</h2><ul><li><strong>Бүлгийн аяллууд</strong> – Монголын топ чиглэлүүдийг хамарсан урьдчилан төлөвлөсөн хөтөлбөр</li><li><strong>Хувийн &amp; тооцоолсон аяллууд</strong> – Таны сонирхол, хуваарийн дагуу тохируулсан аялал</li><li><strong>Соёлын туршлага</strong> – Нүүдэлчин гэрт хонох, уламжлалт хоол, орон нутгийн амьдралд орох</li><li><strong>Адал явдалт аяллууд</strong> – Морь унах, тэмээ унах, аялал, үндэсний хүрээлэл судлах</li><li><strong>Тээвэр &amp; хөтөч</strong> – Мэргэжлийн англи хэлний хөтөч, туршлагатай жолооч</li><li><strong>Байршил зохион байгуулах</strong> – Улаанбаатарын зочид буудлаас хөдөөний гэрэн цогцолбор хүртэл</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Services", "content": "<h2>What We Offer</h2><ul><li><strong>Group Tours</strong> – Pre-designed itineraries covering Mongolia's top destinations</li><li><strong>Private &amp; Custom Tours</strong> – Tailor-made travel based on your interests and schedule</li><li><strong>Cultural Experiences</strong> – Nomadic homestays, traditional meals, and local lifestyle immersion</li><li><strong>Adventure Activities</strong> – Horse riding, camel trekking, hiking, and national park exploration</li><li><strong>Transportation &amp; Guides</strong> – Professional English-speaking guides and experienced drivers</li><li><strong>Accommodation Arrangement</strong> – From hotels in Ulaanbaatar to ger camps in remote regions</li></ul>" }
+    ]
+  },
+  {
+    "section": "portfolio",
+    "name": "Аяллууд",
+    "slug": "portfolio",
+    "description": "Монголын Нууц Түүх-ийн онцлох аяллууд",
+    "content": "<h2>Онцлох аяллууд</h2><p>Монголын хамгийн алдартай аяллуудаас сонгох эсвэл өөрийн хүссэн хөтөлбөрийг биднээр тохируулаарай.</p><ul><li><strong>Говийн цөлийн адал явдал</strong> – 8 өдөр, $1,100</li><li><strong>Төв Монголын өв соёлын аялал</strong> – 6 өдөр, $950</li><li><strong>Хустай &amp; Тэрэлжийн үндэсний хүрээлэл</strong> – 4 өдөр, $700</li><li><strong>Нүүдэлчин амьдралын туршлага</strong> – 3 өдөр, $650</li><li><strong>Монголын онцлох 10 өдрийн аялал</strong> – 10 өдөр, $1,500+</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Tours", "content": "<h2>Featured Journeys</h2><p>Choose from our most popular Mongolia tours or let us design a custom itinerary just for you.</p><ul><li><strong>Gobi Desert Adventure</strong> – 8 days, $1,100</li><li><strong>Central Mongolia Heritage Tour</strong> – 6 days, $950</li><li><strong>Khustai &amp; Terelj National Parks</strong> – 4 days, $700</li><li><strong>Nomadic Lifestyle Experience</strong> – 3 days, $650</li><li><strong>10-Day Highlights of Mongolia</strong> – 10 days, $1,500+</li></ul>" }
+    ]
+  },
+  {
+    "section": "gallery",
+    "name": "Зургийн цомог",
+    "slug": "gallery",
+    "description": "Монголын үзэсгэлэнт газрууд, нүүдэлчин амьдрал, аяллуудын зургууд",
+    "content": "<h2>Монголын мөчүүд</h2><p>Аяллуудынхаа үеэр авсан өндөр чанартай зургуудаас сонирхоорой.</p>",
+    "translations": [
+      { "language": "en", "title": "Gallery", "content": "<h2>Moments from Mongolia</h2><p>Browse high-quality images captured during our tours and across Mongolia's stunning landscapes.</p>" }
+    ]
+  },
+  {
+    "section": "pricing",
+    "name": "Үнэ",
+    "slug": "pricing",
+    "description": "Монголын Нууц Түүх-ийн аяллын үнийн мэдээлэл",
+    "content": "<h2>Ил тод &amp; уян хатан үнэ</h2><ul><li><strong>Богино аяллууд</strong> (2–5 өдөр): $700–$900</li><li><strong>Дунд хугацааны аяллууд</strong> (6–9 өдөр): $900–$1,300</li><li><strong>Урт хугацааны аяллууд</strong> (10+ өдөр): $1,500+</li></ul><p>Эцсийн үнэ нь сонгосон маршрут, байршлын төрөл, нэмэлт үйлчилгээнээс хамаарна. Төсөв болон сонирхолд тохируулсан хувийн аяллын багцууд бас боломжтой.</p>",
+    "translations": [
+      { "language": "en", "title": "Pricing", "content": "<h2>Transparent &amp; Flexible Pricing</h2><ul><li><strong>Short Tours</strong> (2–5 days): $700–$900</li><li><strong>Mid-Length Tours</strong> (6–9 days): $900–$1,300</li><li><strong>Extended Tours</strong> (10+ days): $1,500+</li></ul><p>Final pricing depends on your chosen itinerary, accommodation type, and additional services. Custom tour packages tailored to your budget and preferences are also available.</p>" }
+    ]
+  },
+  {
+    "section": "team",
+    "name": "Баг",
+    "slug": "team",
+    "description": "Монголын Нууц Түүх-ийн хөтөч, жолооч, үүсгэн байгуулагчид",
+    "content": "<h2>Хөтөчүүдтэй танилц</h2><p>Манай баг Монголын тал хээр, цөл, уулын бүс нутагт олон жилийн туршлагатай мэргэжилтнүүдээс бүрддэг.</p><ul><li><strong>Болдбаатар</strong> – Үүсгэн байгуулагч &amp; тэргүүлэх хөтөч. 20+ жилийн туршлага.</li><li><strong>Оюунгэрэл</strong> – Соёлын хөтөч. Монголын түүх, уламжлалын мэргэжилтэн.</li><li><strong>Ганболд</strong> – Адал явдалын хөтөч. Аялал, морь, тэмээ, цөлийн аяллын мэргэжилтэн.</li><li><strong>Энхтуяа</strong> – Үйл ажиллагаа хариуцсан менежер. Аялал бүр тав тухтай өнгөрөхийг хангана.</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Team", "content": "<h2>Meet Your Guides</h2><p>Our team is made up of experienced professionals who know Mongolia's steppe, desert, and mountain regions inside out.</p><ul><li><strong>Boldbaatar</strong> – Founder &amp; Lead Guide. 20+ years leading tours.</li><li><strong>Oyungerel</strong> – Cultural Guide. Specialist in Mongolian history and traditions.</li><li><strong>Ganbold</strong> – Adventure Guide. Expert in trekking, horses, camels, and desert travel.</li><li><strong>Enkhtuya</strong> – Operations Manager. Ensures every journey runs smoothly.</li></ul>" }
+    ]
+  },
+  {
+    "section": "testimonials",
+    "name": "Сэтгэгдэл",
+    "slug": "testimonials",
+    "description": "Аялагчдын сэтгэгдэл",
+    "content": "<h2>Аялагчид юу гэж хэлдэг</h2><blockquote><p>Аяллынхаа үед олсон шинэ найзуудаасаа илүү гайхалтай зүйл бол хөтөчүүд маань байсан.</p><footer>Sarah &amp; Tom, АНУ</footer></blockquote><blockquote><p>Монголын Нууц Түүх багийн үзүүлсэн өндөр чанартай үйлчилгээ энэ аяллыг мартагдашгүй дурсамж болголоо.</p><footer>Marie, Франц</footer></blockquote><blockquote><p>Говиор хийсэн мартагдашгүй аялал. Өдөр бүр шинэ, жинхэнэ зүйл хүлээж байсан.</p><footer>David, Их Британи</footer></blockquote>",
+    "translations": [
+      { "language": "en", "title": "Testimonials", "content": "<h2>What Our Travelers Say</h2><blockquote><p>Of all the awesome new friends we made on our trip, the guides were the best.</p><footer>Sarah &amp; Tom, USA</footer></blockquote><blockquote><p>The high level of service that the team at Mongolian Secret History provided made this a happy memory.</p><footer>Marie, France</footer></blockquote><blockquote><p>An unforgettable journey through the Gobi. Every day brought something new and authentic.</p><footer>David, UK</footer></blockquote>" }
+    ]
+  },
+  {
+    "section": "faq",
+    "name": "Түгээмэл асуулт",
+    "slug": "faq",
+    "description": "Аялагчдын түгээмэл асуулт, хариулт",
+    "content": "<h2>Түгээмэл асуултууд</h2><dl><dt>Монголд хэзээ аялах хамгийн тохиромжтой вэ?</dt><dd>Зун (6–8 сар) аялах хамгийн тохиромжтой. Өдөр нь урт, цаг агаар тайван байдаг.</dd><dt>Монголд виз хэрэгтэй юу?</dt><dd>Олон улсын аялагчдад виз шаардлагатай байж болох ч зарим улсын иргэд визгүй нэвтэрдэг. Бид танд мэдээлэл өгөх болно.</dd><dt>Аялалд юу авч явах вэ?</dt><dd>Хүүхэлдайн хувцас, нарнаас хамгаалах тос, малгай, гутал, хувийн эмийн багц зэргийг авч яваарай.</dd><dt>Гэр бүлээр аялахад тохиромжтой юу?</dt><dd>Тийм ээ, бид бүх насны аялагчдад зориулсан аяллуудыг зохион байгуулдаг.</dd><dt>Хөтөлбөрийг өөрчлөх боломжтой юу?</dt><dd>Тийм ээ, бид таны сонирхол, хуваарь, төсөвт тохируулан хувийн хөтөлбөр боловсруулдаг.</dd></dl>",
+    "translations": [
+      { "language": "en", "title": "FAQ", "content": "<h2>Common Questions</h2><dl><dt>What is the best time to visit Mongolia?</dt><dd>Summer (June–August) is the most popular season, with long days and mild weather.</dd><dt>Do I need a visa to travel to Mongolia?</dt><dd>Some nationalities need a visa, while others can enter visa-free. We can guide you through the requirements.</dd><dt>What should I pack for a tour?</dt><dd>Bring layered clothing, sun protection, a hat, sturdy shoes, and any personal medications.</dd><dt>Are the tours suitable for families?</dt><dd>Yes, we offer tours suitable for travelers of all ages, including families.</dd><dt>Can I customize my itinerary?</dt><dd>Yes, we design private itineraries based on your interests, schedule, and budget.</dd></dl>" }
+    ]
+  },
+  {
+    "section": "contact",
+    "name": "Холбоо барих",
+    "slug": "contact",
+    "description": "Монголын Нууц Түүх-ийн холбоо барих мэдээлэл, асуулга илгээх",
+    "content": "<h2>Монголын адал явдлаа эхэл</h2><p>Та доорх маягтыг бөглөж эсвэл бидэнтэй шууд холбоо барьж болно.</p><ul><li><strong>Хаяг:</strong> Акума төв, Ажилчдын гудамж, Улаанбаатар</li><li><strong>Утас:</strong> +976 70000450</li><li><strong>Имэйл:</strong> info@mongoliansecrethistory.mn</li><li><strong>Ажлын цаг:</strong> Да–Ба, 9:00 – 18:00 (GMT+8)</li></ul>",
+    "translations": [
+      { "language": "en", "title": "Contact", "content": "<h2>Start Your Mongolia Adventure</h2><p>Fill out the form below or reach out to us directly.</p><ul><li><strong>Address:</strong> Akuma center and Workers street, Ulaanbaatar</li><li><strong>Phone:</strong> +976 70000450</li><li><strong>Email:</strong> info@mongoliansecrethistory.mn</li><li><strong>Working Hours:</strong> Mon–Fri, 9:00 AM – 6:00 PM (GMT+8)</li></ul>" }
+    ]
+  }
+]
