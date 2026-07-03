@@ -6,14 +6,15 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string } >;
 }
 
-export default async function TermsPage({ params }: PageProps) {
+export default async function GenericPage({ params }: PageProps) {
   const { locale } = await params;
-  const t = await getTranslations("terms");
   const page = await getCmsPage(locale, "terms");
   if (!page) notFound();
+
+  const t = await getTranslations("legal");
 
   return (
     <InnerPageLayout>

@@ -6,20 +6,21 @@ import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 
 interface PageProps {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string } >;
 }
 
 export default async function PrivacyPage({ params }: PageProps) {
   const { locale } = await params;
-  const t = await getTranslations("privacy");
   const page = await getCmsPage(locale, "privacy");
   if (!page) notFound();
+
+  const t = await getTranslations("legal");
 
   return (
     <InnerPageLayout>
       <PageHero
         label={t("heroLabel")}
-        title={page.name || t("heroTitle")}
+        title={page.name || t("privacyTitle")}
         subtitle={page.description || t("heroSubtitle")}
       />
       <section className="bg-white py-20 lg:py-[120px]">
