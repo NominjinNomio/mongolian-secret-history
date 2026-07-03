@@ -9,5 +9,5 @@ export async function getCmsPage(locale: string, slug: string) {
     variables: { slug, language: locale },
     context: { fetchOptions: { next: { revalidate: 60 } } },
   });
-  return data?.cpPage ?? null;
+  return data?.cpCmsPageDetail ?? null;
 }

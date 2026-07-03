@@ -55,3 +55,48 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  font-family: var(--font-display);
+  color: var(--foreground);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.prose p {
+  margin-bottom: 1em;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.prose ul, .prose ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+.prose li {
+  margin-bottom: 0.35em;
+  color: var(--muted-foreground);
+}
+.prose a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.prose strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  color: var(--muted-foreground);
+}
+.prose dl dt {
+  font-weight: 600;
+  color: var(--foreground);
+  margin-top: 1em;
+}
+.prose dl dd {
+  margin-left: 0;
+  margin-bottom: 0.5em;
+  color: var(--muted-foreground);
+}
