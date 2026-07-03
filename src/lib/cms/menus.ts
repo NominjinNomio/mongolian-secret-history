@@ -23,6 +23,13 @@ export async function getCmsMenus(locale: string) {
   const sort = (items: MenuItem[] = []) =>
     items
       .filter((item) => !item.parentId)
+      .reduce<MenuItem[]>((acc, item) => {
+        const url = item.url || "/";
+        if (!acc.some((existing) => (existing.url || "/") === url)) {
+          acc.push(item);
+        }
+        return acc;
+      }, [])
       .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
 
   return {
