@@ -1,9 +1,5 @@
-import InnerPageLayout from "@/components/layout/InnerPageLayout";
-import PageHero from "@/components/sections/PageHero";
-import CmsContent from "@/components/cms/CmsContent";
 import { getCmsPage } from "@/lib/cms/page";
-import { notFound } from "next/navigation";
-import { getTranslations } from "next-intl/server";
+import CmsPageShell from "@/components/cms/CmsPageShell";
 
 interface PageProps {
   params: Promise<{ locale: string } >;
@@ -12,22 +8,5 @@ interface PageProps {
 export default async function AccommodationPage({ params }: PageProps) {
   const { locale } = await params;
   const page = await getCmsPage(locale, "accommodation");
-  if (!page) notFound();
-
-  const t = await getTranslations("accommodation");
-
-  return (
-    <InnerPageLayout>
-      <PageHero
-        label={t("heroLabel")}
-        title={page.name || t("heroTitle")}
-        subtitle={page.description || t("heroSubtitle")}
-      />
-      <section className="bg-white py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-0">
-          <CmsContent html={page.content || ""} />
-        </div>
-      </section>
-    </InnerPageLayout>
-  );
+  return <CmsPageShell page={page} namespace="accommodation" />;
 }
