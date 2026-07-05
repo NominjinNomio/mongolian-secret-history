@@ -34,18 +34,10 @@ export default function Footer({ navItems }: FooterProps) {
           </nav>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-10">
-          <p className="text-sm text-white/50 text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-end gap-4 pt-10">
+          <p className="text-sm text-white/50 text-center md:text-right">
             {tf("copyright")}
           </p>
-          <div className="flex items-center gap-6">
-            <Link href={`/${locale}/privacy`} className="text-sm text-white/50 hover:text-white transition-colors">
-              {tf("privacy")}
-            </Link>
-            <Link href={`/${locale}/terms`} className="text-sm text-white/50 hover:text-white transition-colors">
-              {tf("terms")}
-            </Link>
-          </div>
         </div>
       </div>
     </footer>
