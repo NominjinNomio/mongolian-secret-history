@@ -32,7 +32,7 @@ export default function Header({ navItems }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
-      <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-6 lg:pl-[87px] lg:pr-[213px]">
+      <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-6 lg:pl-[60px] lg:pr-[100px]">
         <Link href={`/${locale}`} className="font-display text-2xl text-foreground">
           Mongolian Secret History
         </Link>
