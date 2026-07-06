@@ -24,7 +24,7 @@ export default function Footer() {
             Mongolian Secret History
           </Link>
 
-          <nav className="flex flex-wrap items-center justify-center gap-8">
+          <nav className="flex flex-wrap items-center justify-center gap-6">
             {footerLinks.map((item) => (
               <Link
                 key={item.url}
@@ -41,7 +41,7 @@ export default function Footer() {
           <p className="text-sm text-white/50 text-center md:text-left">
             {tf("copyright")}
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             <Link href={`/${locale}/privacy`} className="text-sm text-white/50 hover:text-white transition-colors">
               {tf("privacy")}
             </Link>

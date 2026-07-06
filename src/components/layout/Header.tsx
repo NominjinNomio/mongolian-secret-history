@@ -37,7 +37,7 @@ export default function Header({ navItems }: HeaderProps) {
           Mongolian Secret History
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-7">
           {navItems.map((item) => {
             const itemHref = `/${locale}${item.url || "/"}`;
             const isActive = pathWithoutLocale === (item.url || "/");
