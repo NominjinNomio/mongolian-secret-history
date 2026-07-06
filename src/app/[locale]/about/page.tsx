@@ -41,30 +41,22 @@ export default async function AboutPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-white py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+      <section className="relative py-20 lg:py-[120px]">
+        <Image
+          src="mongolia-destinations-bg.jpg"
+          alt={t("destinationsTitle")}
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-[#0f1e32]/55" />
+
+        <div className="relative z-10 mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-14">
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("destinationsLabel")}</span>
-            <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3">{t("destinationsTitle")}</h2>
+            <span className="text-sm tracking-[3px] text-accent uppercase">{t("destinationsLabel")}</span>
+            <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3 text-white">{t("destinationsTitle")}</h2>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <MongoliaMap />
-            <div className="flex flex-col gap-4">
-              {[
-                { title: t("centralMongolia"), desc: t("CentralMongoliaProvinces") },
-                { title: t("northernMongolia"), desc: t("NorthernMongoliaProvinces") },
-                { title: t("easternMongolia"), desc: t("EasternMongoliaProvinces") },
-                { title: t("westernMongolia"), desc: t("WesternMongoliaProvinces") },
-                { title: t("southernMongolia"), desc: t("SouthernMongoliaProvinces") },
-              ].map((region) => (
-                <div key={region.title} className="bg-[#F8F6F1] rounded-xl p-5">
-                  <h3 className="font-display text-lg text-foreground">{region.title}</h3>
-                  <p className="text-sm text-muted-foreground mt-1">{region.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <MongoliaMap />
         </div>
       </section>
 
