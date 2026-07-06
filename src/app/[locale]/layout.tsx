@@ -32,7 +32,7 @@ export default async function LocaleLayout({
           <ApolloClientProvider>
             <Header navItems={header} />
             <main className="flex-1">{children}</main>
-            <Footer navItems={footer} />
+            <Footer />
           </ApolloClientProvider>
         </NextIntlClientProvider>
       </body>
