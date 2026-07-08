@@ -91,6 +91,7 @@
     "galleryTitle": "Moments from Mongolia",
     "testimonialsLabel": "Testimonials",
     "testimonialsTitle": "What Our Travelers Say",
+    "viewAllTestimonials": "View All Testimonials",
     "faqLabel": "FAQ",
     "faqTitle": "Common Questions",
     "blogLabel": "Travel Journal",
@@ -131,16 +132,17 @@
     "winterDesc": "Bitterly cold with temperatures below -30°C. Experience ice festivals and winter nomadic life.",
     "Ulaanbaatar": "Ulaanbaatar",
     "UlaanbaatarProvinces": "Capital city, Chinggis Khaan Airport",
-    "Central Mongolia": "Central Mongolia",
+    "centralMongolia": "Central Mongolia",
     "CentralMongoliaProvinces": "Arkhangai, Uvurkhangai, Tuv, Bulgan, Selenge",
-    "Eastern Mongolia": "Eastern Mongolia",
+    "easternMongolia": "Eastern Mongolia",
     "EasternMongoliaProvinces": "Dornod, Khentii, Sukhbaatar",
-    "Northern Mongolia": "Northern Mongolia",
+    "northernMongolia": "Northern Mongolia",
     "NorthernMongoliaProvinces": "Khuvsgul, Zavkhan",
-    "Southern Mongolia": "Southern Mongolia",
+    "southernMongolia": "Southern Mongolia",
     "SouthernMongoliaProvinces": "Omnogovi, Dundgovi, Dornogovi, Bayankhongor",
-    "Western Mongolia": "Western Mongolia",
-    "WesternMongoliaProvinces": "Bayan-Ulgii, Khovd, Uvs, Govi-Altai"
+    "westernMongolia": "Western Mongolia",
+    "WesternMongoliaProvinces": "Bayan-Ulgii, Khovd, Uvs, Govi-Altai",
+    "provincesLabel": "Provinces:"
   },
   "services": {
     "heroLabel": "What We Offer",
@@ -181,8 +183,11 @@
     "days": "days",
     "onRequest": "On request"
   },
-  "tourDetail": {
-    "heroLabel": "Tour Details",
+  "testimonials": {
+    "heroLabel": "Traveler Stories",
+    "heroTitle": "What Our Guests Say",
+    "heroSubtitle": "Real experiences from real travelers"
+  },
     "overviewLabel": "Overview",
     "atAGlance": "At a Glance",
     "duration": "Duration",
@@ -190,6 +195,21 @@
     "price": "Price",
     "bestSeason": "Best Season",
     "bookThisTour": "Book This Tour"
+  },
+  "pricing": {
+    "heroLabel": "Transparent Pricing",
+    "heroTitle": "Tour Pricing",
+    "heroSubtitle": "Flexible pricing for every kind of Mongolia adventure"
+  },
+  "faq": {
+    "heroLabel": "Questions",
+    "heroTitle": "Frequently Asked Questions",
+    "heroSubtitle": "Everything you need to know before your Mongolia adventure"
+  },
+  "gallery": {
+    "heroLabel": "Visual Journey",
+    "heroTitle": "Gallery",
+    "heroSubtitle": "Moments and landscapes from our Mongolia tours"
   },
   "accommodation": {
     "heroLabel": "Stay With Us",
@@ -238,7 +258,7 @@
     "authorBio": "Historian and storyteller who brings ancient Mongolia to life through words and journeys."
   },
   "contact": {
-    "heroLabel": "Get in Touch",
+    "heroLabel": "Contact",
     "heroTitle": "Contact Us",
     "heroSubtitle": "Start planning your Mongolia adventure today",
     "formTitle": "Send Us a Message",

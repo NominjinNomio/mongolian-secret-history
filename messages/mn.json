@@ -91,6 +91,7 @@
     "galleryTitle": "Монголын мөчүүд",
     "testimonialsLabel": "Сэтгэгдэл",
     "testimonialsTitle": "Аялагчид юу гэж хэлдэг",
+    "viewAllTestimonials": "Бүх сэтгэгдэл үзэх",
     "faqLabel": "Түгээмэл асуулт",
     "faqTitle": "Түгээмэл асуултууд",
     "blogLabel": "Аяллын өдрийн тэмдэглэл",
@@ -131,16 +132,17 @@
     "winterDesc": "-30°C хүртэл хүйтэн. Мөсний баяр, өвлийн нүүдэлчин амьдралыг мэдрэх боломж.",
     "Ulaanbaatar": "Улаанбаатар",
     "UlaanbaatarProvinces": "Нийслэл хот, Чингис хаан нисэх онгоцны буудал",
-    "Central Mongolia": "Төв Монгол",
+    "centralMongolia": "Төв Монгол",
     "CentralMongoliaProvinces": "Архангай, Өвөрхангай, Төв, Булган, Сэлэнгэ",
-    "Eastern Mongolia": "Зүүн Монгол",
+    "easternMongolia": "Зүүн Монгол",
     "EasternMongoliaProvinces": "Дорнод, Хэнтий, Сүхбаатар",
-    "Northern Mongolia": "Хойд Монгол",
+    "northernMongolia": "Хойд Монгол",
     "NorthernMongoliaProvinces": "Хөвсгөл, Завхан",
-    "Southern Mongolia": "Өмнөд Монгол",
+    "southernMongolia": "Өмнөд Монгол",
     "SouthernMongoliaProvinces": "Өмнөговь, Дундговь, Дорноговь, Баянхонгор",
-    "Western Mongolia": "Баруун Монгол",
-    "WesternMongoliaProvinces": "Баян-Өлгий, Ховд, Увс, Говь-Алтай"
+    "westernMongolia": "Баруун Монгол",
+    "WesternMongoliaProvinces": "Баян-Өлгий, Ховд, Увс, Говь-Алтай",
+    "provincesLabel": "Аймаг:"
   },
   "services": {
     "heroLabel": "Бидний санал болгож буй зүйлс",
@@ -181,8 +183,11 @@
     "days": "өдөр",
     "onRequest": "Хүсэлтээр"
   },
-  "tourDetail": {
-    "heroLabel": "Аяллын дэлгэрэнгүй",
+  "testimonials": {
+    "heroLabel": "Аялагчдын түүх",
+    "heroTitle": "Зочид юу гэж хэлдэг",
+    "heroSubtitle": "Жинхэнэ аялагчдын жинхэнэ туршлага"
+  },
     "overviewLabel": "Ерөнхий",
     "atAGlance": "Товч мэдээлэл",
     "duration": "Хугацаа",
@@ -190,6 +195,21 @@
     "price": "Үнэ",
     "bestSeason": "Хамгийн тохиромжтой улирал",
     "bookThisTour": "Энэ аяллыг захиалах"
+  },
+  "pricing": {
+    "heroLabel": "Ил тод үнэ",
+    "heroTitle": "Аяллын үнэ",
+    "heroSubtitle": "Монголын адал явдал бүрийн уян хатан үнэ"
+  },
+  "faq": {
+    "heroLabel": "Асуултууд",
+    "heroTitle": "Түгээмэл асуултууд",
+    "heroSubtitle": "Монголын адал явдлаа эхлэхээс өмнө мэдэх ёстой бүх зүйл"
+  },
+  "gallery": {
+    "heroLabel": "Дүр зургийн аялал",
+    "heroTitle": "Зургийн цомог",
+    "heroSubtitle": "Монголын аяллуудаас авсан мөчүүд болон ландшафтууд"
   },
   "accommodation": {
     "heroLabel": "Бидэнтэй хамт хоно",

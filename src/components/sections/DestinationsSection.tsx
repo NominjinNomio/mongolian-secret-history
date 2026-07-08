@@ -6,6 +6,9 @@ import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
 
+import { useLocale } from "next-intl";
+import Link from "next/link";
+
 const regionKeys = [
   { name: "westernMongolia", desc: "westernMongoliaDesc" },
   { name: "northernMongolia", desc: "northernMongoliaDesc" },
@@ -29,6 +32,7 @@ const item = {
 
 export default function DestinationsSection() {
   const t = useTranslations("home");
+  const locale = useLocale();
 
   return (
     <section className="relative py-20 lg:py-[80px]">
@@ -68,9 +72,12 @@ export default function DestinationsSection() {
         </motion.div>
 
         <div className="mt-12 flex justify-center">
-          <Button href="/portfolio" variant="primary">
+          <Link
+            href={`/${locale}/about#regions`}
+            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
+          >
             {t("destinationsButton")}
-          </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { Phone } from "lucide-react";
 
 export default function ContactForm() {
   const t = useTranslations("contact");
@@ -22,7 +23,7 @@ export default function ContactForm() {
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full rounded-xl border border-border bg-[#F8F6F1] px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors"
+            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors"
             required
           />
         </div>
@@ -32,7 +33,7 @@ export default function ContactForm() {
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full rounded-xl border border-border bg-[#F8F6F1] px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors"
+            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors"
             required
           />
         </div>
@@ -42,13 +43,13 @@ export default function ContactForm() {
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             rows={5}
-            className="w-full rounded-xl border border-border bg-[#F8F6F1] px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors resize-none"
+            className="w-full rounded-xl border border-border bg-white px-4 py-3 text-[15px] text-foreground outline-none focus:border-primary-dark transition-colors resize-none"
             required
           />
         </div>
         <button
           type="submit"
-          className="self-start rounded-full bg-[#1A2B4A] px-7 py-3 text-sm font-medium text-white hover:bg-[#1A2B4A]/90 transition-colors"
+          className="self-start rounded-full bg-[#2D5A4A] px-7 py-3 text-sm font-medium text-white hover:bg-[#244A3D] transition-colors"
         >
           {t("sendInquiry")}
         </button>

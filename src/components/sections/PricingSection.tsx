@@ -5,6 +5,8 @@ import { Check } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Button from "@/components/ui/Button";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
+import Link from "next/link";
 
 const plans = [
   {
@@ -45,6 +47,7 @@ const item = {
 
 export default function PricingSection() {
   const t = useTranslations("home");
+  const locale = useLocale();
 
   return (
     <section className="bg-white py-20 lg:py-[140px]">
@@ -81,9 +84,12 @@ export default function PricingSection() {
                 ))}
               </ul>
               <div className="mt-4">
-                <Button href="/contact" variant="dark" className="w-full">
+                <Link
+                  href={`/${locale}/pricing`}
+                  className="inline-flex items-center justify-center rounded-full w-full px-7 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                >
                   {t("requestQuote")}
-                </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -100,9 +106,12 @@ export default function PricingSection() {
             <h3 className="font-display text-2xl lg:text-[28px] text-white">{t("pricingCtaTitle")}</h3>
             <p className="text-white/85 mt-2 leading-relaxed">{t("pricingCtaDesc")}</p>
           </div>
-          <Button href="/contact" variant="primary">
+          <Link
+            href={`/${locale}/pricing`}
+            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
+          >
             {t("pricingCtaButton")}
-          </Button>
+          </Link>
         </motion.div>
       </div>
     </section>

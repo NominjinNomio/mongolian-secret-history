@@ -6,11 +6,12 @@ import Link from "next/link";
 import SectionHeader from "@/components/ui/SectionHeader";
 import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 
 const tours = [
-  { title: "Gobi Desert Adventure", duration: "8 days", price: "$1,100" },
-  { title: "Central Mongolia Heritage Tour", duration: "6 days", price: "$950" },
-  { title: "Khustai & Terelj National Parks", duration: "4 days", price: "$700" },
+  { title: "Gobi Desert Adventure", duration: "8 days", price: "$1,100", slug: "gobi-desert-adventure" },
+  { title: "Central Mongolia Heritage Tour", duration: "6 days", price: "$950", slug: "central-mongolia-heritage" },
+  { title: "Khustai & Terelj National Parks", duration: "4 days", price: "$700", slug: "khustai-terelj" },
 ];
 
 const container = {
@@ -28,6 +29,7 @@ const item = {
 
 export default function PortfolioSection() {
   const t = useTranslations("home");
+  const locale = useLocale();
 
   return (
     <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
@@ -65,7 +67,7 @@ export default function PortfolioSection() {
                 <div className="flex items-center justify-between mt-2">
                   <span className="text-primary-dark font-display text-lg">{tour.price}</span>
                   <Link
-                    href="/portfolio"
+                    href={`/${locale}/portfolio`}
                     className="flex items-center gap-1 text-sm text-accent hover:text-accent-dark transition-colors"
                   >
                     {t("toursButton")} <ArrowRight size={14} />

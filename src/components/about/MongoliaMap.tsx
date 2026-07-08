@@ -4,16 +4,59 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const regions = [
-  { id: "ulaanbaatar", name: "Ulaanbaatar", x: 68, y: 46 },
-  { id: "central", name: "Central Mongolia", x: 60, y: 52 },
-  { id: "eastern", name: "Eastern Mongolia", x: 80, y: 52 },
-  { id: "northern", name: "Northern Mongolia", x: 54, y: 30 },
-  { id: "southern", name: "Southern Mongolia", x: 52, y: 74 },
-  { id: "western", name: "Western Mongolia", x: 24, y: 48 },
+  {
+    id: "western",
+    name: "Western Mongolia",
+    fill: "#7EB37F",
+    path: "M15,32 L25,28 L35,28 L38,48 L45,48 L42,58 L42,70 L35,78 L18,75 L12,60 Z",
+    starX: 26,
+    starY: 48,
+    labelX: 26,
+    labelY: 54,
+  },
+  {
+    id: "northern",
+    name: "Northern Mongolia",
+    fill: "#7BC4E0",
+    path: "M25,28 L55,25 L72,28 L68,52 L58,52 L45,48 L38,48 L35,28 Z",
+    starX: 52,
+    starY: 34,
+    labelX: 52,
+    labelY: 40,
+  },
+  {
+    id: "central",
+    name: "Central Mongolia",
+    fill: "#F5D65A",
+    path: "M38,48 L45,48 L58,52 L62,60 L62,70 L55,74 L42,70 L42,58 Z",
+    starX: 50,
+    starY: 64,
+    labelX: 50,
+    labelY: 70,
+  },
+  {
+    id: "eastern",
+    name: "Eastern Mongolia",
+    fill: "#F29B50",
+    path: "M72,28 L85,32 L90,45 L88,60 L80,72 L62,82 L62,70 L62,60 L58,52 L68,52 Z",
+    starX: 76,
+    starY: 48,
+    labelX: 76,
+    labelY: 54,
+  },
+  {
+    id: "southern",
+    name: "Southern Mongolia",
+    fill: "#8B7FB8",
+    path: "M18,75 L35,78 L42,70 L55,74 L62,70 L62,82 L55,90 L38,88 L25,82 Z",
+    starX: 42,
+    starY: 82,
+    labelX: 42,
+    labelY: 88,
+  },
 ];
 
-function StarMarker({ x, y, active }: { x: number; y: number; active: boolean }) {
-  const size = active ? 2.2 : 1.8;
+function StarMarker({ x, y, fill = "#ffffff", size = 2 }: { x: number; y: number; fill?: string; size?: number }) {
   const points = [
     `${x},${y - size}`,
     `${x + size * 0.3},${y - size * 0.3}`,
@@ -27,63 +70,103 @@ function StarMarker({ x, y, active }: { x: number; y: number; active: boolean })
     `${x - size * 0.3},${y - size * 0.3}`,
   ].join(" ");
 
-  return <polygon points={points} fill={active ? "#C9A227" : "#ffffff"} />;
+  return <polygon points={points} fill={fill} />;
 }
 
 export default function MongoliaMap() {
   const t = useTranslations("about");
   const [active, setActive] = useState("central");
 
+  const regionList = [
+    { id: "ulaanbaatar", title: t("Ulaanbaatar"), provinces: t("UlaanbaatarProvinces") },
+    { id: "central", title: t("centralMongolia"), provinces: t("CentralMongoliaProvinces") },
+    { id: "eastern", title: t("easternMongolia"), provinces: t("EasternMongoliaProvinces") },
+    { id: "northern", title: t("northernMongolia"), provinces: t("NorthernMongoliaProvinces") },
+    { id: "southern", title: t("southernMongolia"), provinces: t("SouthernMongoliaProvinces") },
+    { id: "western", title: t("westernMongolia"), provinces: t("WesternMongoliaProvinces") },
+  ];
+
+  const provincesLabel = t("provincesLabel");
+
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-      <div className="relative aspect-[4/3]">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-[1100px] mx-auto">
+      <div className="lg:col-span-7 relative aspect-[4/3] rounded-3xl bg-[#E8ECF0] overflow-hidden flex items-center justify-center">
         <svg
           viewBox="0 0 100 100"
-          className="w-full h-full"
+          className="h-full w-auto max-w-full"
           preserveAspectRatio="xMidYMid meet"
         >
-          <path
-            d="M18,28 Q24,18 34,22 Q44,12 54,16 Q64,10 74,18 Q84,16 88,26 Q95,32 90,44 Q94,56 84,64 Q88,76 76,82 Q66,88 54,84 Q42,90 30,82 Q20,76 18,64 Q12,54 16,42 Q14,32 18,28 Z"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="0.6"
-            strokeDasharray="1.5 1"
-          />
-          <path
-            d="M42,22 Q48,18 54,24 Q60,20 66,28 M34,28 Q42,32 48,40 Q56,34 64,40 M28,44 Q38,42 46,50 Q54,44 62,52 M30,60 Q40,56 48,62 Q56,58 64,64 M42,72 Q50,68 58,74"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="0.4"
-            strokeDasharray="1 1"
-          />
           {regions.map((region) => (
             <g
               key={region.id}
-              className="cursor-pointer"
+              className="cursor-pointer transition-opacity"
               onMouseEnter={() => setActive(region.id)}
+              style={{ opacity: active === region.id ? 1 : 0.92 }}
             >
-              <StarMarker x={region.x} y={region.y} active={active === region.id} />
+              <path
+                d={region.path}
+                fill={region.fill}
+                stroke="#ffffff"
+                strokeWidth="0.9"
+                strokeLinejoin="round"
+              />
+              <StarMarker x={region.starX} y={region.starY} />
+              <text
+                x={region.labelX}
+                y={region.labelY}
+                textAnchor="middle"
+                fontSize="3"
+                fill="#ffffff"
+                fontWeight="500"
+                className="pointer-events-none"
+              >
+                {region.name}
+              </text>
             </g>
           ))}
+
+          <g onMouseEnter={() => setActive("ulaanbaatar")}>
+            <StarMarker x={50} y={54} fill="#C9A227" size={2.4} />
+            <text
+              x={50}
+              y={60}
+              textAnchor="middle"
+              fontSize="3"
+              fill="#ffffff"
+              fontWeight="500"
+              className="pointer-events-none"
+            >
+              Ulaanbaatar
+            </text>
+          </g>
         </svg>
       </div>
 
-      <div className="flex flex-col gap-4">
-        {regions.map((region) => (
+      <div className="lg:col-span-5 flex flex-col gap-4">
+        {regionList.map((region) => (
           <div
             key={region.id}
-            className={`flex items-center gap-3 transition-colors ${
-              active === region.id ? "text-white" : "text-white/80"
+            className={`rounded-xl p-5 transition-colors ${
+              active === region.id ? "bg-[#F8F6F1]" : "bg-[#F8F6F1]/70"
             }`}
             onMouseEnter={() => setActive(region.id)}
           >
-            <svg width="16" height="16" viewBox="0 0 16 16">
-              <polygon
-                points="8,0 9.8,5.2 16,5.9 11.2,9.6 12.7,16 8,12.3 3.3,16 4.8,9.6 0,5.9 6.2,5.2"
-                fill={active === region.id ? "#C9A227" : "#ffffff"}
-              />
-            </svg>
-            <span className="text-lg font-display">{region.name}</span>
+            <div className="flex items-center gap-2.5">
+              <svg width="16" height="16" viewBox="0 0 12 12">
+                <polygon
+                  points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
+                  fill="#C9A227"
+                />
+              </svg>
+              <h3 className="font-display text-[22px] font-normal text-foreground">
+                {region.title}
+              </h3>
+            </div>
+
+            <p className="text-[15px] text-[#5A5A5A] mt-1.5 pl-[26px]">
+              <span className="font-medium text-foreground/80">{provincesLabel}</span>{" "}
+              {region.provinces}
+            </p>
           </div>
         ))}
       </div>

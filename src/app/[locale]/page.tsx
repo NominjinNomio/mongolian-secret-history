@@ -9,6 +9,7 @@ import GallerySection from "@/components/sections/GallerySection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import BlogSection from "@/components/sections/BlogSection";
+import BuildYourTourSection from "@/components/sections/BuildYourTourSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
       <AboutSection />
       <DestinationsSection />
       <ServicesSection />
+      <BuildYourTourSection />
       <PortfolioSection />
       <PricingSection />
       <TeamSection />

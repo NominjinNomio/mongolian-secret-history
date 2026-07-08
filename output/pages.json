@@ -90,6 +90,16 @@
     ]
   },
   {
+    "section": "blog",
+    "name": "Блог",
+    "slug": "blog",
+    "description": "Монголын аялал, соёл, байгаль, зөвлөгөөнүүд",
+    "content": "<h2>Блог</h2><p>Монголын аялал, соёл, байгаль, амьдралын хэв маяг, зөвлөгөөнүүдийг хуваалцдаг блог.</p>",
+    "translations": [
+      { "language": "en", "title": "Blog", "content": "<h2>Blog</h2><p>Stories, travel tips, culture, wildlife, and nomadic life from Mongolia.</p>" }
+    ]
+  },
+  {
     "section": "contact",
     "name": "Холбоо барих",
     "slug": "contact",

@@ -2,24 +2,27 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X, Globe, Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
-import type { MenuItem } from "@/graphql/cms/queries/menu";
 
 const languages = [
   { code: "en", label: "EN" },
   { code: "mn", label: "MN" },
 ];
 
-interface HeaderProps {
-  navItems: MenuItem[];
-}
+const navLinks = [
+  { label: "Home", url: "/" },
+  { label: "Tours", url: "/portfolio" },
+  { label: "About Mongolia", url: "/about" },
+  { label: "Accommodation", url: "/accommodation" },
+  { label: "Blog & News", url: "/blog" },
+];
 
-export default function Header({ navItems }: HeaderProps) {
+export default function Header() {
   const t = useTranslations("nav");
   const th = useTranslations("header");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,25 +35,25 @@ export default function Header({ navItems }: HeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
-      <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-6 lg:pl-[20px] lg:pr-[20px]">
+      <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-[2px]">
         <Link href={`/${locale}`} className="font-display text-2xl text-foreground">
           Mongolian Secret History
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7">
-          {navItems.map((item) => {
-            const itemHref = `/${locale}${item.url || "/"}`;
-            const isActive = pathWithoutLocale === (item.url || "/");
+        <nav className="hidden lg:flex items-center gap-6">
+          {navLinks.map((item) => {
+            const itemHref = `/${locale}${item.url}`;
+            const isActive = pathWithoutLocale === item.url;
             return (
               <Link
-                key={item._id}
+                key={item.url}
                 href={itemHref}
                 className={cn(
-                  "relative text-[15px] font-medium transition-colors duration-200 py-1 group",
+                  "relative text-[14px] font-medium transition-colors duration-200 py-1 group whitespace-nowrap",
                   isActive ? "text-[#1A2B4A]" : "text-[#5C5C5C] hover:text-[#1A2B4A]"
                 )}
               >
-                {item.label || t(item.url?.replace("/", "") || "home")}
+                {item.label}
                 <span
                   className={cn(
                     "absolute left-0 -bottom-1 h-[3px] bg-[#1A2B4A] rounded-full transition-all duration-300",
@@ -63,6 +66,13 @@ export default function Header({ navItems }: HeaderProps) {
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
+          <Link
+            href={`/${locale}/search`}
+            className="text-[#5C5C5C] hover:text-[#1A2B4A] transition-colors"
+            aria-label={t("search")}
+          >
+            <Search size={20} />
+          </Link>
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
@@ -113,12 +123,12 @@ export default function Header({ navItems }: HeaderProps) {
             className="lg:hidden bg-[#F8F5F0] border-t border-border"
           >
             <nav className="flex flex-col items-center gap-6 py-8">
-              {navItems.map((item) => {
-                const itemHref = `/${locale}${item.url || "/"}`;
-                const isActive = pathWithoutLocale === (item.url || "/");
+              {navLinks.map((item) => {
+                const itemHref = `/${locale}${item.url}`;
+                const isActive = pathWithoutLocale === item.url;
                 return (
                   <Link
-                    key={item._id}
+                    key={item.url}
                     href={itemHref}
                     className={cn(
                       "relative text-lg font-medium py-1 group",
@@ -126,7 +136,7 @@ export default function Header({ navItems }: HeaderProps) {
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
-                    {item.label || t(item.url?.replace("/", "") || "home")}
+                    {item.label}
                     <span
                       className={cn(
                         "absolute left-1/2 -translate-x-1/2 -bottom-1 h-[3px] bg-[#1A2B4A] rounded-full transition-all duration-300",
