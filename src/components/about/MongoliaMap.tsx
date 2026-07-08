@@ -90,7 +90,7 @@ export default function MongoliaMap() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-[1100px] mx-auto">
-      <div className="lg:col-span-7 relative aspect-[4/3] rounded-3xl bg-[#E8ECF0] overflow-hidden flex items-center justify-center">
+      <div className="lg:col-span-7 relative aspect-[4/3] rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
         <svg
           viewBox="0 0 100 100"
           className="h-full w-auto max-w-full"
@@ -107,8 +107,9 @@ export default function MongoliaMap() {
                 d={region.path}
                 fill={region.fill}
                 stroke="#ffffff"
-                strokeWidth="0.9"
+                strokeWidth="2.2"
                 strokeLinejoin="round"
+                strokeLinecap="round"
               />
               <StarMarker x={region.starX} y={region.starY} />
               <text
