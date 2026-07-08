@@ -196,6 +196,7 @@ const provinces = [
     region: "southern",
     name: "Govisümber",
     mnName: "Говьсүмбэр",
+    fill: "#D35400",
     labelX: 1135.3,
     labelY: 452.1,
     cx: 1135.3,
@@ -207,6 +208,7 @@ const provinces = [
     region: "central",
     name: "Ulaanbaatar",
     mnName: "Улаанбаатар",
+    fill: "#8E44AD",
     labelX: 1050.6,
     labelY: 344.8,
     cx: 1050.6,
@@ -218,6 +220,7 @@ const provinces = [
     region: "central",
     name: "Darkhan-Uul",
     mnName: "Дархан-Уул",
+    fill: "#7D3C98",
     labelX: 1013.0,
     labelY: 233.7,
     cx: 1013.0,
@@ -229,6 +232,7 @@ const provinces = [
     region: "khangai",
     name: "Orkhon",
     mnName: "Орхон",
+    fill: "#148F77",
     labelX: 907.2,
     labelY: 261.1,
     cx: 907.2,
@@ -256,7 +260,7 @@ export default function MongoliaMap() {
           <path
             key={index}
             d={province.d}
-            fill={regions.find((r) => r.id === province.region)?.fill}
+            fill={province.fill ?? regions.find((r) => r.id === province.region)?.fill}
             stroke="#ffffff"
             strokeWidth="2"
             strokeLinejoin="round"
