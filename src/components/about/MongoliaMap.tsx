@@ -244,7 +244,13 @@ export default function MongoliaMap() {
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center items-center gap-6 md:gap-10 flex-wrap mb-8">
         {regions.map((region) => (
-          <div key={region.id} className="flex items-center gap-2">
+          <div
+            key={region.id}
+            className="flex items-center gap-2 cursor-pointer transition-opacity"
+            onMouseEnter={() => setActive(region.id)}
+            onMouseLeave={() => setActive(null)}
+            style={{ opacity: active === null || active === region.id ? 1 : 0.5 }}
+          >
             <span
               className="inline-block rounded-full"
               style={{ backgroundColor: region.fill, width: 12, height: 12 }}
