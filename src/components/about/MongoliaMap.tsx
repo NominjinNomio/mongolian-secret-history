@@ -328,10 +328,6 @@ export default function MongoliaMap() {
                 {region.title}
               </h3>
             </div>
-
-            <p className="text-[14px] text-[#5A5A5A] mt-1.5 pl-[26px]">
-              {region.provinces}
-            </p>
           </div>
         ))}
       </div>
