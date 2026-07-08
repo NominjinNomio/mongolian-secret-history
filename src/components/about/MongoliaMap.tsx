@@ -140,13 +140,13 @@ export default function MongoliaMap() {
   const provincesLabel = t("provincesLabel");
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-[1100px] mx-auto">
-      <div className="lg:col-span-7 relative aspect-square rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
-        <svg
-          viewBox="-50 -40 800 830"
-          className="max-w-[98%] max-h-[98%] w-auto h-auto"
-          preserveAspectRatio="xMidYMid meet"
-        >
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-[1100px] mx-auto">
+        <div className="lg:col-span-7 relative aspect-[2/1] rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
+          <svg
+            viewBox="48 124 760 380"
+            className="max-w-[98%] max-h-[98%] w-auto h-auto"
+            preserveAspectRatio="xMidYMid meet"
+          >
           {provinces.map((province, index) => (
             <path
               key={index}
