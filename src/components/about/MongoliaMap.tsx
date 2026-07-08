@@ -307,27 +307,27 @@ export default function MongoliaMap() {
         </svg>
       </div>
 
-      <div className="lg:col-span-5 flex flex-col gap-4">
+      <div className="lg:col-span-5 flex flex-col gap-5">
         {regionList.map((region) => (
           <div
             key={region.id}
-            className={`rounded-xl p-5 transition-colors ${
-              active === region.id ? "bg-[#F8F6F1]" : "bg-[#F8F6F1]/70"
-            }`}
+            className="flex items-center gap-3 cursor-pointer transition-colors"
             onMouseEnter={() => setActive(region.id)}
             onMouseLeave={() => setActive(null)}
           >
-            <div className="flex items-center gap-2.5">
-              <svg width="16" height="16" viewBox="0 0 12 12">
-                <polygon
-                  points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
-                  fill="#C9A227"
-                />
-              </svg>
-              <h3 className="font-display text-[20px] font-normal text-foreground">
-                {region.title}
-              </h3>
-            </div>
+            <svg width="20" height="20" viewBox="0 0 12 12">
+              <polygon
+                points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
+                fill={active === region.id ? "#C9A227" : "#9CA3AF"}
+              />
+            </svg>
+            <h3
+              className={`font-display text-[20px] font-normal transition-colors ${
+                active === region.id ? "text-[#2D5A4A]" : "text-foreground"
+              }`}
+            >
+              {region.title}
+            </h3>
           </div>
         ))}
       </div>
