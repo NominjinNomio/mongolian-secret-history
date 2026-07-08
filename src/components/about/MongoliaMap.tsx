@@ -298,6 +298,19 @@ export default function MongoliaMap() {
             >
               {province.mnName}
             </text>
+            <text
+              x={province.labelX ?? province.cx}
+              y={(province.labelY ?? province.cy + 14) + 14}
+              textAnchor="middle"
+              fontSize="11"
+              fontFamily="Inter, sans-serif"
+              fontWeight="500"
+              fill="#ffffff"
+              filter="url(#text-shadow)"
+              className="pointer-events-none"
+            >
+              {province.name}
+            </text>
           </g>
         ))}
       </svg>
