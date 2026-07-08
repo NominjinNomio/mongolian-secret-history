@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 const regions = [
-  { id: "western", name: "Western Mongolia", fill: "#3B99D9" },
-  { id: "khangai", name: "Khangai Mongolia", fill: "#1ABC9C" },
-  { id: "central", name: "Central Mongolia", fill: "#9B59B6" },
-  { id: "eastern", name: "Eastern Mongolia", fill: "#2ECC71" },
+  { id: "western", name: "Western Region", fill: "#3B99D9" },
+  { id: "khangai", name: "Khangai Region", fill: "#1ABC9C" },
+  { id: "central", name: "Central Region", fill: "#9B59B6" },
+  { id: "eastern", name: "Eastern Region", fill: "#2ECC71" },
   { id: "southern", name: "Gobi Region", fill: "#F39C12" },
 ];
 
@@ -242,12 +242,24 @@ export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="flex justify-center items-center w-full">
-      <svg
-        viewBox="0 0 1600 800"
-        className="w-[90%] h-auto"
-        preserveAspectRatio="xMidYMid meet"
-      >
+    <div className="flex flex-col items-center w-full">
+      <div className="flex justify-center items-center gap-6 md:gap-10 flex-wrap mb-8">
+        {regions.map((region) => (
+          <div key={region.id} className="flex items-center gap-2">
+            <span
+              className="inline-block rounded-full"
+              style={{ backgroundColor: region.fill, width: 12, height: 12 }}
+            />
+            <span className="text-sm md:text-base text-gray-700 font-medium">{region.name}</span>
+          </div>
+        ))}
+      </div>
+      <div className="flex justify-center items-center w-full">
+        <svg
+          viewBox="0 0 1600 800"
+          className="w-[90%] h-auto"
+          preserveAspectRatio="xMidYMid meet"
+        >
         <defs>
           <filter id="text-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#000000" floodOpacity="0.4" />
@@ -298,6 +310,7 @@ export default function MongoliaMap() {
           </g>
         ))}
       </svg>
+      </div>
     </div>
   );
 }
