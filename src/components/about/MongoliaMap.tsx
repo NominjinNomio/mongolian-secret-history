@@ -93,7 +93,7 @@ export default function MongoliaMap() {
       <div className="lg:col-span-7 relative aspect-square rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
         <svg
           viewBox="0 0 1088 580"
-          className="max-w-[95%] max-h-[95%] w-auto h-auto"
+          className="max-w-[85%] max-h-[85%] w-auto h-auto"
           preserveAspectRatio="xMidYMid meet"
         >
           {regions.map((region) => (
