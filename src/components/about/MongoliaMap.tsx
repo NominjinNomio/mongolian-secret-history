@@ -99,18 +99,26 @@ export default function MongoliaMap() {
           {regions.map((region) => (
             <g
               key={region.id}
-              className="cursor-pointer transition-opacity"
+              className="cursor-pointer"
               onMouseEnter={() => setActive(region.id)}
-              style={{ opacity: active === region.id ? 1 : 0.92 }}
             >
-              <path
-                d={region.d}
-                fill={region.fill}
-                stroke="#ffffff"
-                strokeWidth="2.5"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-              />
+              <g
+                style={{
+                  transformOrigin: `${region.starX}px ${region.starY}px`,
+                  transform: active === region.id ? "scale(1.04)" : "scale(1)",
+                  transition: "transform 0.3s ease, opacity 0.3s ease",
+                  opacity: active === region.id ? 1 : 0.85,
+                }}
+              >
+                <path
+                  d={region.d}
+                  fill={region.fill}
+                  stroke="#ffffff"
+                  strokeWidth="2.5"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+              </g>
               <StarMarker x={region.starX} y={region.starY} size={10} />
               <text
                 x={region.labelX}
@@ -127,7 +135,15 @@ export default function MongoliaMap() {
           ))}
 
           <g onMouseEnter={() => setActive("ulaanbaatar")}>
-            <StarMarker x={560} y={280} fill="#C9A227" size={12} />
+            <g
+              style={{
+                transformOrigin: "560px 280px",
+                transform: active === "ulaanbaatar" ? "scale(1.3)" : "scale(1)",
+                transition: "transform 0.3s ease",
+              }}
+            >
+              <StarMarker x={560} y={280} fill="#C9A227" size={12} />
+            </g>
             <text
               x={560}
               y={300}
