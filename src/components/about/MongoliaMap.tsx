@@ -196,7 +196,6 @@ const provinces = [
     region: "southern",
     name: "Govisümber",
     mnName: "Говьсүмбэр",
-    fill: "#D35400",
     labelX: 1135.3,
     labelY: 452.1,
     cx: 1135.3,
