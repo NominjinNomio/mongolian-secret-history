@@ -246,12 +246,11 @@ export default function MongoliaMap() {
 
   return (
     <div className="flex justify-center items-center w-full">
-      <div className="relative aspect-[2/1] w-[97%]">
-        <svg
-          viewBox="0 0 1600 800"
-          className="w-full h-auto"
-          preserveAspectRatio="xMidYMid meet"
-        >
+      <svg
+        viewBox="0 0 1600 800"
+        className="w-[97%] h-auto"
+        preserveAspectRatio="xMidYMid meet"
+      >
         <defs>
           <filter id="text-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#000000" floodOpacity="0.4" />
@@ -302,7 +301,6 @@ export default function MongoliaMap() {
           </g>
         ))}
       </svg>
-      </div>
     </div>
   );
 }
