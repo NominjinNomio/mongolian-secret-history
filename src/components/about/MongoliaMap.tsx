@@ -248,7 +248,7 @@ export default function MongoliaMap() {
     <div className="flex justify-center items-center w-full">
       <svg
         viewBox="0 0 1600 800"
-        className="w-[97%] h-auto"
+        className="w-[90%] h-auto"
         preserveAspectRatio="xMidYMid meet"
       >
         <defs>
