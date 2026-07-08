@@ -132,16 +132,16 @@
     "winterDesc": "-30°C хүртэл хүйтэн. Мөсний баяр, өвлийн нүүдэлчин амьдралыг мэдрэх боломж.",
     "Ulaanbaatar": "Улаанбаатар",
     "UlaanbaatarProvinces": "Нийслэл хот, Чингис хаан нисэх онгоцны буудал",
-    "centralMongolia": "Төв Монгол",
+    "centralMongolia": "Төвийн бүс",
     "CentralMongoliaProvinces": "Архангай, Өвөрхангай, Төв, Булган, Сэлэнгэ",
     "khangaiRegion": "Хангайн бүс",
-    "easternMongolia": "Зүүн Монгол",
+    "easternMongolia": "Зүүн бүс",
     "EasternMongoliaProvinces": "Дорнод, Хэнтий, Сүхбаатар",
     "northernMongolia": "Хойд Монгол",
     "NorthernMongoliaProvinces": "Хөвсгөл, Завхан",
-    "southernMongolia": "Өмнөд Монгол",
+    "southernMongolia": "Говийн бүс",
     "SouthernMongoliaProvinces": "Өмнөговь, Дундговь, Дорноговь, Баянхонгор",
-    "westernMongolia": "Баруун Монгол",
+    "westernMongolia": "Баруун бүс",
     "WesternMongoliaProvinces": "Баян-Өлгий, Ховд, Увс, Говь-Алтай",
     "provincesLabel": "Аймаг:"
   },
@@ -182,13 +182,7 @@
     "winterTours": "Өвлийн аяллууд",
     "classicTours": "Сонгодог аяллууд",
     "days": "өдөр",
-    "onRequest": "Хүсэлтээр"
-  },
-  "testimonials": {
-    "heroLabel": "Аялагчдын түүх",
-    "heroTitle": "Зочид юу гэж хэлдэг",
-    "heroSubtitle": "Жинхэнэ аялагчдын жинхэнэ туршлага"
-  },
+    "onRequest": "Хүсэлтээр",
     "overviewLabel": "Ерөнхий",
     "atAGlance": "Товч мэдээлэл",
     "duration": "Хугацаа",
@@ -196,6 +190,11 @@
     "price": "Үнэ",
     "bestSeason": "Хамгийн тохиромжтой улирал",
     "bookThisTour": "Энэ аяллыг захиалах"
+  },
+  "testimonials": {
+    "heroLabel": "Аялагчдын түүх",
+    "heroTitle": "Зочид юу гэж хэлдэг",
+    "heroSubtitle": "Жинхэнэ аялагчдын жинхэнэ туршлага"
   },
   "pricing": {
     "heroLabel": "Ил тод үнэ",

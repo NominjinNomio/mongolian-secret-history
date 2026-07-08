@@ -132,16 +132,16 @@
     "winterDesc": "Bitterly cold with temperatures below -30°C. Experience ice festivals and winter nomadic life.",
     "Ulaanbaatar": "Ulaanbaatar",
     "UlaanbaatarProvinces": "Capital city, Chinggis Khaan Airport",
-    "centralMongolia": "Central Mongolia",
+    "centralMongolia": "Central Region",
     "CentralMongoliaProvinces": "Arkhangai, Uvurkhangai, Tuv, Bulgan, Selenge",
     "khangaiRegion": "Khangai Region",
-    "easternMongolia": "Eastern Mongolia",
+    "easternMongolia": "Eastern Region",
     "EasternMongoliaProvinces": "Dornod, Khentii, Sukhbaatar",
     "northernMongolia": "Northern Mongolia",
     "NorthernMongoliaProvinces": "Khuvsgul, Zavkhan",
-    "southernMongolia": "Southern Mongolia",
+    "southernMongolia": "Gobi Region",
     "SouthernMongoliaProvinces": "Omnogovi, Dundgovi, Dornogovi, Bayankhongor",
-    "westernMongolia": "Western Mongolia",
+    "westernMongolia": "Western Region",
     "WesternMongoliaProvinces": "Bayan-Ulgii, Khovd, Uvs, Govi-Altai",
     "provincesLabel": "Provinces:"
   },
@@ -182,13 +182,7 @@
     "winterTours": "Winter tours",
     "classicTours": "classic tours",
     "days": "days",
-    "onRequest": "On request"
-  },
-  "testimonials": {
-    "heroLabel": "Traveler Stories",
-    "heroTitle": "What Our Guests Say",
-    "heroSubtitle": "Real experiences from real travelers"
-  },
+    "onRequest": "On request",
     "overviewLabel": "Overview",
     "atAGlance": "At a Glance",
     "duration": "Duration",
@@ -196,6 +190,11 @@
     "price": "Price",
     "bestSeason": "Best Season",
     "bookThisTour": "Book This Tour"
+  },
+  "testimonials": {
+    "heroLabel": "Traveler Stories",
+    "heroTitle": "What Our Guests Say",
+    "heroSubtitle": "Real experiences from real travelers"
   },
   "pricing": {
     "heroLabel": "Transparent Pricing",

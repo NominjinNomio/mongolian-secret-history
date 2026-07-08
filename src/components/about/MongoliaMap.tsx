@@ -119,7 +119,7 @@ const provinces = [
     name: "Bulgan",
     mnName: "Булган",
     labelX: 450,
-    labelY: 265,
+    labelY: 260,
     cx: 416.96,
     cy: 242.71,
   },
@@ -228,7 +228,7 @@ const provinces = [
     region: "eastern",
     name: "Sükhbaatar",
     mnName: "Сүхбаатар",
-    labelX: 720,
+    labelX: 760,
     labelY: 330,
     cx: 513.58,
     cy: 279.46,
@@ -240,11 +240,11 @@ export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
 
   const regionList = [
-    { id: "central", title: t("centralMongolia"), provinces: "Сэлэнгэ, Дархан-Уул, Төв, Говьсүмбэр" },
-    { id: "khangai", title: t("khangaiRegion"), provinces: "Хөвсгөл, Архангай, Булган, Өвөрхангай, Орхон, Баянхонгор" },
-    { id: "eastern", title: t("easternMongolia"), provinces: "Дорнод, Хэнтий, Сүхбаатар" },
-    { id: "southern", title: t("southernMongolia"), provinces: "Дундговь, Дорноговь, Өмнөговь" },
-    { id: "western", title: t("westernMongolia"), provinces: "Баян-Өлгий, Увс, Ховд, Завхан, Говь-Алтай" },
+    { id: "western", title: t("westernMongolia"), provinces: "Баян-Өлгий, Говь-Алтай, Завхан, Увс, Ховд" },
+    { id: "khangai", title: t("khangaiRegion"), provinces: "Архангай, Баянхонгор, Булган, Орхон, Өвөрхангай, Хөвсгөл" },
+    { id: "central", title: t("centralMongolia"), provinces: "Говьсүмбэр, Дархан-Уул, Сэлэнгэ, Төв" },
+    { id: "southern", title: t("southernMongolia"), provinces: "Дорноговь, Дундговь, Өмнөговь" },
+    { id: "eastern", title: t("easternMongolia"), provinces: "Дорнод, Сүхбаатар, Хэнтий" },
   ];
 
   return (
