@@ -245,12 +245,13 @@ export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="relative aspect-[2/1] w-full">
-      <svg
-        viewBox="0 0 1600 800"
-        className="w-full h-auto"
-        preserveAspectRatio="xMidYMid meet"
-      >
+    <div className="flex justify-center items-center w-full">
+      <div className="relative aspect-[2/1] w-[97%]">
+        <svg
+          viewBox="0 0 1600 800"
+          className="w-full h-auto"
+          preserveAspectRatio="xMidYMid meet"
+        >
         <defs>
           <filter id="text-shadow" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#000000" floodOpacity="0.4" />
@@ -289,7 +290,7 @@ export default function MongoliaMap() {
               x={province.labelX ?? province.cx}
               y={province.labelY ?? province.cy + 14}
               textAnchor="middle"
-              fontSize="11"
+              fontSize="13"
               fontFamily="Inter, sans-serif"
               fontWeight="600"
               fill="#ffffff"
@@ -301,6 +302,7 @@ export default function MongoliaMap() {
           </g>
         ))}
       </svg>
+      </div>
     </div>
   );
 }
