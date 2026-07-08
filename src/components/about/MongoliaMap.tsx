@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 
 const regions = [
   { id: "western", name: "Western Mongolia", fill: "#3B99D9" },
@@ -236,26 +235,15 @@ const provinces = [
 ];
 
 export default function MongoliaMap() {
-  const t = useTranslations("about");
   const [active, setActive] = useState<string | null>(null);
 
-  const regionList = [
-    { id: "ulaanbaatar", title: t("Ulaanbaatar"), provinces: "" },
-    { id: "western", title: t("westernMongolia"), provinces: "Баян-Өлгий, Говь-Алтай, Завхан, Увс, Ховд" },
-    { id: "khangai", title: t("khangaiRegion"), provinces: "Архангай, Баянхонгор, Булган, Орхон, Өвөрхангай, Хөвсгөл" },
-    { id: "central", title: t("centralMongolia"), provinces: "Говьсүмбэр, Дархан-Уул, Сэлэнгэ, Төв" },
-    { id: "southern", title: t("southernMongolia"), provinces: "Дорноговь, Дундговь, Өмнөговь" },
-    { id: "eastern", title: t("easternMongolia"), provinces: "Дорнод, Сүхбаатар, Хэнтий" },
-  ];
-
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-[1100px] mx-auto">
-      <div className="lg:col-span-7 relative aspect-[2/1] rounded-[24px] bg-[#F5F5F5] overflow-hidden flex items-center justify-center shadow-sm">
-        <svg
-          viewBox="48 124 760 380"
-          className="max-w-[98%] max-h-[98%] w-auto h-auto"
-          preserveAspectRatio="xMidYMid meet"
-        >
+    <div className="relative aspect-[2/1] w-full">
+      <svg
+        viewBox="48 124 760 380"
+        className="w-full h-auto"
+        preserveAspectRatio="xMidYMid meet"
+      >
           <defs>
             <filter id="text-shadow" x="-20%" y="-20%" width="140%" height="140%">
               <feDropShadow dx="0" dy="1" stdDeviation="1" floodColor="#000000" floodOpacity="0.4" />
@@ -307,37 +295,5 @@ export default function MongoliaMap() {
           ))}
         </svg>
       </div>
-
-      <div className="lg:col-span-5 flex flex-col gap-5">
-        {regionList.map((region) => (
-            <div
-              key={region.id}
-              className={`flex items-center gap-3 transition-colors ${
-                region.id === "ulaanbaatar" ? "" : "cursor-pointer"
-              }`}
-              onMouseEnter={() =>
-                region.id === "ulaanbaatar" ? undefined : setActive(region.id)
-              }
-              onMouseLeave={() =>
-                region.id === "ulaanbaatar" ? undefined : setActive(null)
-              }
-            >
-              <svg width="20" height="20" viewBox="0 0 12 12">
-                <polygon
-                  points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
-                  fill={active === region.id ? "#C9A227" : "#9CA3AF"}
-                />
-              </svg>
-              <h3
-                className={`font-display text-[20px] font-normal transition-colors ${
-                  active === region.id ? "text-[#2D5A4A]" : "text-foreground"
-                }`}
-              >
-                {region.title}
-              </h3>
-            </div>
-        ))}
-      </div>
-    </div>
   );
 }
