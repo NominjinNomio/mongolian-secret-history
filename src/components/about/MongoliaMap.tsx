@@ -159,12 +159,12 @@ export default function MongoliaMap() {
                   fill="#C9A227"
                 />
               </svg>
-              <h3 className="font-display text-[22px] font-normal text-foreground">
+              <h3 className="font-display text-[20px] font-normal text-foreground">
                 {region.title}
               </h3>
             </div>
 
-            <p className="text-[15px] text-[#5A5A5A] mt-1.5 pl-[26px]">
+            <p className="text-[14px] text-[#5A5A5A] mt-1.5 pl-[26px]">
               <span className="font-medium text-foreground/80">{provincesLabel}</span>{" "}
               {region.provinces}
             </p>
