@@ -240,6 +240,7 @@ export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
 
   const regionList = [
+    { id: "ulaanbaatar", title: t("Ulaanbaatar"), provinces: "" },
     { id: "western", title: t("westernMongolia"), provinces: "Баян-Өлгий, Говь-Алтай, Завхан, Увс, Ховд" },
     { id: "khangai", title: t("khangaiRegion"), provinces: "Архангай, Баянхонгор, Булган, Орхон, Өвөрхангай, Хөвсгөл" },
     { id: "central", title: t("centralMongolia"), provinces: "Говьсүмбэр, Дархан-Уул, Сэлэнгэ, Төв" },
@@ -309,26 +310,32 @@ export default function MongoliaMap() {
 
       <div className="lg:col-span-5 flex flex-col gap-5">
         {regionList.map((region) => (
-          <div
-            key={region.id}
-            className="flex items-center gap-3 cursor-pointer transition-colors"
-            onMouseEnter={() => setActive(region.id)}
-            onMouseLeave={() => setActive(null)}
-          >
-            <svg width="20" height="20" viewBox="0 0 12 12">
-              <polygon
-                points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
-                fill={active === region.id ? "#C9A227" : "#9CA3AF"}
-              />
-            </svg>
-            <h3
-              className={`font-display text-[20px] font-normal transition-colors ${
-                active === region.id ? "text-[#2D5A4A]" : "text-foreground"
+            <div
+              key={region.id}
+              className={`flex items-center gap-3 transition-colors ${
+                region.id === "ulaanbaatar" ? "" : "cursor-pointer"
               }`}
+              onMouseEnter={() =>
+                region.id === "ulaanbaatar" ? undefined : setActive(region.id)
+              }
+              onMouseLeave={() =>
+                region.id === "ulaanbaatar" ? undefined : setActive(null)
+              }
             >
-              {region.title}
-            </h3>
-          </div>
+              <svg width="20" height="20" viewBox="0 0 12 12">
+                <polygon
+                  points="6,0 7.5,4 12,4.5 8.5,7.5 9.5,12 6,9.5 2.5,12 3.5,7.5 0,4.5 4.5,4"
+                  fill={active === region.id ? "#C9A227" : "#9CA3AF"}
+                />
+              </svg>
+              <h3
+                className={`font-display text-[20px] font-normal transition-colors ${
+                  active === region.id ? "text-[#2D5A4A]" : "text-foreground"
+                }`}
+              >
+                {region.title}
+              </h3>
+            </div>
         ))}
       </div>
     </div>
