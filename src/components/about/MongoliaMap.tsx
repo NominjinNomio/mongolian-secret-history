@@ -239,6 +239,9 @@ const provinces = [
 
 export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(null);
+
+  const currentRegion = selected ?? active;
 
   return (
     <div className="flex flex-col items-center w-full">
@@ -246,10 +249,11 @@ export default function MongoliaMap() {
         {regions.map((region) => (
           <div
             key={region.id}
-            className="flex items-center gap-2 cursor-pointer transition-opacity"
+            className="flex items-center gap-2 cursor-pointer transition-opacity select-none"
+            onClick={() => setSelected(selected === region.id ? null : region.id)}
             onMouseEnter={() => setActive(region.id)}
             onMouseLeave={() => setActive(null)}
-            style={{ opacity: active === null || active === region.id ? 1 : 0.5 }}
+            style={{ opacity: currentRegion === null || currentRegion === region.id ? 1 : 0.5 }}
           >
             <span
               className="inline-block rounded-full"
@@ -281,8 +285,8 @@ export default function MongoliaMap() {
             strokeLinecap="round"
             className="cursor-pointer transition-all duration-300 ease-out"
             style={{
-              opacity: active === null || active === province.region ? 1 : 0.6,
-              filter: active === province.region ? "brightness(1.05)" : "brightness(1)",
+              opacity: currentRegion === null || currentRegion === province.region ? 1 : 0.6,
+              filter: currentRegion === province.region ? "brightness(1.05)" : "brightness(1)",
             }}
             onMouseEnter={() => setActive(province.region)}
             onMouseLeave={() => setActive(null)}
