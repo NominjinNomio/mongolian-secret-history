@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 
 const regions = [
@@ -76,24 +76,7 @@ function StarMarker({ x, y, fill = "#ffffff", size = 10 }: { x: number; y: numbe
 export default function MongoliaMap() {
   const t = useTranslations("about");
   const [active, setActive] = useState("central");
-  const [clicked, setClicked] = useState<string | null>(null);
-  const cardRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
-  const handleRegionClick = (id: string) => {
-    setClicked(id);
-    setActive(id);
-    const card = cardRefs.current[id];
-    if (card) {
-      card.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-
-  useEffect(() => {
-    if (clicked) {
-      const timer = setTimeout(() => setClicked(null), 2000);
-      return () => clearTimeout(timer);
-    }
-  }, [clicked]);
   const regionList = [
     { id: "ulaanbaatar", title: t("Ulaanbaatar"), provinces: t("UlaanbaatarProvinces") },
     { id: "central", title: t("centralMongolia"), provinces: t("CentralMongoliaProvinces") },
@@ -110,25 +93,32 @@ export default function MongoliaMap() {
       <div className="lg:col-span-7 relative aspect-square rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
         <svg
           viewBox="0 0 1088 580"
-          className="max-w-[85%] max-h-[85%] w-auto h-auto"
+          className="max-w-[98%] max-h-[98%] w-auto h-auto"
           preserveAspectRatio="xMidYMid meet"
         >
           {regions.map((region) => (
             <g
               key={region.id}
-              className="cursor-pointer transition-opacity"
+              className="cursor-pointer"
               onMouseEnter={() => setActive(region.id)}
-              onClick={() => handleRegionClick(region.id)}
-              style={{ opacity: active === region.id ? 1 : 0.92 }}
             >
-              <path
-                d={region.d}
-                fill={region.fill}
-                stroke="#ffffff"
-                strokeWidth="2.5"
-                strokeLinejoin="round"
-                strokeLinecap="round"
-              />
+              <g
+                style={{
+                  transformOrigin: `${region.starX}px ${region.starY}px`,
+                  transform: active === region.id ? "scale(1.04)" : "scale(1)",
+                  transition: "transform 0.3s ease, opacity 0.3s ease",
+                  opacity: active === region.id ? 1 : 0.85,
+                }}
+              >
+                <path
+                  d={region.d}
+                  fill={region.fill}
+                  stroke="#ffffff"
+                  strokeWidth="2.5"
+                  strokeLinejoin="round"
+                  strokeLinecap="round"
+                />
+              </g>
               <StarMarker x={region.starX} y={region.starY} size={10} />
               <text
                 x={region.labelX}
@@ -145,7 +135,15 @@ export default function MongoliaMap() {
           ))}
 
           <g onMouseEnter={() => setActive("ulaanbaatar")}>
-            <StarMarker x={560} y={280} fill="#C9A227" size={12} />
+            <g
+              style={{
+                transformOrigin: "560px 280px",
+                transform: active === "ulaanbaatar" ? "scale(1.3)" : "scale(1)",
+                transition: "transform 0.3s ease",
+              }}
+            >
+              <StarMarker x={560} y={280} fill="#C9A227" size={12} />
+            </g>
             <text
               x={560}
               y={300}
@@ -165,17 +163,10 @@ export default function MongoliaMap() {
         {regionList.map((region) => (
           <div
             key={region.id}
-            ref={(el) => { cardRefs.current[region.id] = el; }}
-            id={`region-card-${region.id}`}
-            className={`rounded-xl p-5 transition-all cursor-pointer ${
-              active === region.id
-                ? clicked === region.id
-                  ? "bg-[#F8F6F1] ring-2 ring-[#C9A227] shadow-md"
-                  : "bg-[#F8F6F1]"
-                : "bg-[#F8F6F1]/70 hover:bg-[#F8F6F1]"
+            className={`rounded-xl p-5 transition-colors ${
+              active === region.id ? "bg-[#F8F6F1]" : "bg-[#F8F6F1]/70"
             }`}
             onMouseEnter={() => setActive(region.id)}
-            onClick={() => handleRegionClick(region.id)}
           >
             <div className="flex items-center gap-2.5">
               <svg width="16" height="16" viewBox="0 0 12 12">
