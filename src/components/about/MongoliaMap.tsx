@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
-const regions = [
-  { id: "western", name: "Баруун бүс", fill: "#3B99D9" },
-  { id: "khangai", name: "Хангайн бүс", fill: "#2ECC71" },
-  { id: "central", name: "Төвийн бүс", fill: "#9B59B6" },
-  { id: "southern", name: "Говийн бүс", fill: "#F39C12" },
-  { id: "eastern", name: "Зүүн бүс", fill: "#1ABC9C" },
+const regions = (t: (key: string) => string) => [
+  { id: "western", name: t("westernRegion"), fill: "#3B99D9" },
+  { id: "khangai", name: t("khangaiRegion"), fill: "#2ECC71" },
+  { id: "central", name: t("centralRegion"), fill: "#9B59B6" },
+  { id: "southern", name: t("gobiRegion"), fill: "#F39C12" },
+  { id: "eastern", name: t("easternRegion"), fill: "#1ABC9C" },
 ];
 
 const provinces = [
@@ -240,13 +241,16 @@ const provinces = [
 export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
+  const t = useTranslations("about");
+
+  const regionList = regions(t);
 
   const currentRegion = selected ?? active;
 
   return (
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center items-center gap-6 md:gap-10 flex-wrap mb-8">
-        {regions.map((region) => (
+        {regionList.map((region) => (
           <div
             key={region.id}
             className="flex items-center gap-2 cursor-pointer transition-opacity select-none"
@@ -278,7 +282,7 @@ export default function MongoliaMap() {
           <path
             key={index}
             d={province.d}
-            fill={province.fill ?? regions.find((r) => r.id === province.region)?.fill}
+            fill={province.fill ?? regionList.find((r) => r.id === province.region)?.fill}
             stroke="#ffffff"
             strokeWidth="2"
             strokeLinejoin="round"
