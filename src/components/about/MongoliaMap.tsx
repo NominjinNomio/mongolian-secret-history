@@ -90,10 +90,10 @@ export default function MongoliaMap() {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-[1100px] mx-auto">
-      <div className="lg:col-span-7 relative aspect-[4/3] rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
+      <div className="lg:col-span-7 relative aspect-square rounded-[24px] bg-[#E8E8E8] overflow-hidden flex items-center justify-center shadow-sm">
         <svg
           viewBox="0 0 1088 580"
-          className="max-w-[92%] max-h-[92%] w-auto h-auto"
+          className="max-w-[95%] max-h-[95%] w-auto h-auto"
           preserveAspectRatio="xMidYMid meet"
         >
           {regions.map((region) => (
