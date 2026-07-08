@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 const regions = [
-  { id: "western", name: "Western Region", fill: "#3B99D9" },
-  { id: "khangai", name: "Khangai Region", fill: "#1ABC9C" },
-  { id: "central", name: "Central Region", fill: "#9B59B6" },
-  { id: "eastern", name: "Eastern Region", fill: "#2ECC71" },
-  { id: "southern", name: "Gobi Region", fill: "#F39C12" },
+  { id: "western", name: "Баруун бүс", fill: "#3B99D9" },
+  { id: "khangai", name: "Хангайн бүс", fill: "#2ECC71" },
+  { id: "central", name: "Төвийн бүс", fill: "#9B59B6" },
+  { id: "southern", name: "Говийн бүс", fill: "#F39C12" },
+  { id: "eastern", name: "Зүүн бүс", fill: "#1ABC9C" },
 ];
 
 const provinces = [
@@ -255,7 +255,7 @@ export default function MongoliaMap() {
       </div>
       <div className="flex justify-center items-center w-full">
         <svg
-          viewBox="0 0 1600 800"
+          viewBox="-20 -25 1800 900"
           className="w-[90%] h-auto"
           preserveAspectRatio="xMidYMid meet"
         >
