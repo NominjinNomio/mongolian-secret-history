@@ -139,7 +139,6 @@
     "easternRegion": "Eastern Region",
     "centralMongolia": "Central Region",
     "CentralMongoliaProvinces": "Arkhangai, Uvurkhangai, Tuv, Bulgan, Khentii",
-    "khangaiRegion": "Khangai Region",
     "easternMongolia": "Eastern Region",
     "EasternMongoliaProvinces": "Dornod, Khentii, Sukhbaatar",
     "northernMongolia": "Northern Mongolia",
@@ -148,7 +147,14 @@
     "SouthernMongoliaProvinces": "Omnogovi, Dundgovi, Dornogovi, Bayankhongor",
     "westernMongolia": "Western Region",
     "WesternMongoliaProvinces": "Bayan-Ulgii, Khovd, Uvs, Govi-Altai",
-    "provincesLabel": "Provinces:"
+    "provincesLabel": "Provinces:",
+    "regionLabel": "Region",
+    "regionBackToAbout": "Back to About",
+    "westernRegionDesc": "Explore the rugged Altai Mountains, eagle hunters, and pristine lakes of Western Mongolia.",
+    "khangaiRegionDesc": "Discover the forested Khangai mountains, ancient monasteries, and nomadic heartland.",
+    "centralRegionDesc": "Visit the historic capital region, rolling steppes, and the birthplace of Mongolian civilization.",
+    "gobiRegionDesc": "Experience the dramatic dunes, canyons, and dinosaur fossils of the Gobi Desert.",
+    "easternRegionDesc": "Wander the vast grasslands and historic sites of Eastern Mongolia."
   },
   "services": {
     "heroLabel": "What We Offer",

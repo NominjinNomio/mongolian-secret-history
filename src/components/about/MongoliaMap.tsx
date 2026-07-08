@@ -1,15 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
+import { regions } from "@/lib/regions";
 
-const regions = (t: (key: string) => string) => [
-  { id: "western", name: t("westernRegion"), fill: "#3B99D9" },
-  { id: "khangai", name: t("khangaiRegion"), fill: "#2ECC71" },
-  { id: "central", name: t("centralRegion"), fill: "#9B59B6" },
-  { id: "southern", name: t("gobiRegion"), fill: "#F39C12" },
-  { id: "eastern", name: t("easternRegion"), fill: "#1ABC9C" },
-];
+const regionList = (t: (key: string) => string) =>
+  regions.map((r) => ({ ...r, name: t(r.nameKey) }));
 
 const provinces = [
   {
@@ -240,31 +237,29 @@ const provinces = [
 
 export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
-  const [selected, setSelected] = useState<string | null>(null);
   const t = useTranslations("about");
+  const locale = useLocale();
 
-  const regionList = regions(t);
-
-  const currentRegion = selected ?? active;
+  const list = regionList(t);
 
   return (
     <div className="flex flex-col items-center w-full">
       <div className="flex justify-center items-center gap-6 md:gap-10 flex-wrap mb-8">
-        {regionList.map((region) => (
-          <div
+        {list.map((region) => (
+          <Link
             key={region.id}
+            href={`/${locale}/${region.slug}`}
             className="flex items-center gap-2 cursor-pointer transition-opacity select-none"
-            onClick={() => setSelected(selected === region.id ? null : region.id)}
             onMouseEnter={() => setActive(region.id)}
             onMouseLeave={() => setActive(null)}
-            style={{ opacity: currentRegion === null || currentRegion === region.id ? 1 : 0.5 }}
+            style={{ opacity: active === null || active === region.id ? 1 : 0.5 }}
           >
             <span
               className="inline-block rounded-full"
               style={{ backgroundColor: region.fill, width: 12, height: 12 }}
             />
             <span className="text-sm md:text-base text-gray-700 font-medium">{region.name}</span>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex justify-center items-center w-full">
@@ -282,15 +277,15 @@ export default function MongoliaMap() {
           <path
             key={index}
             d={province.d}
-            fill={province.fill ?? regionList.find((r) => r.id === province.region)?.fill}
+            fill={province.fill ?? list.find((r) => r.id === province.region)?.fill}
             stroke="#ffffff"
             strokeWidth="2"
             strokeLinejoin="round"
             strokeLinecap="round"
             className="cursor-pointer transition-all duration-300 ease-out"
             style={{
-              opacity: currentRegion === null || currentRegion === province.region ? 1 : 0.6,
-              filter: currentRegion === province.region ? "brightness(1.05)" : "brightness(1)",
+              opacity: active === null || active === province.region ? 1 : 0.6,
+              filter: active === province.region ? "brightness(1.05)" : "brightness(1)",
             }}
             onMouseEnter={() => setActive(province.region)}
             onMouseLeave={() => setActive(null)}

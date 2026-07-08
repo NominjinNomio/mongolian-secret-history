@@ -139,7 +139,6 @@
     "easternRegion": "Зүүн бүс",
     "centralMongolia": "Төвийн бүс",
     "CentralMongoliaProvinces": "Архангай, Өвөрхангай, Төв, Булган, Сэлэнгэ",
-    "khangaiRegion": "Хангайн бүс",
     "easternMongolia": "Зүүн бүс",
     "EasternMongoliaProvinces": "Дорнод, Хэнтий, Сүхбаатар",
     "northernMongolia": "Хойд Монгол",
@@ -148,7 +147,14 @@
     "SouthernMongoliaProvinces": "Өмнөговь, Дундговь, Дорноговь, Баянхонгор",
     "westernMongolia": "Баруун бүс",
     "WesternMongoliaProvinces": "Баян-Өлгий, Ховд, Увс, Говь-Алтай",
-    "provincesLabel": "Аймаг:"
+    "provincesLabel": "Аймаг:",
+    "regionLabel": "Бүс нутаг",
+    "regionBackToAbout": "Бидний тухай руу буцах",
+    "westernRegionDesc": "Алтайн нуруу, бүргэдчин анчид, цэвэр нуур бүхий Баруун Монголыг судла.",
+    "khangaiRegionDesc": "Ойн Хангайн нуруу, эртний хийдүүд, нүүдэлчин зүрхэн нутаг",
+    "centralRegionDesc": "Түүхэн нийслэлийн бүс, өргөн тал хээр, Монголын соёл иргэншлийн төрсөн газар",
+    "gobiRegionDesc": "Драматик дюн, хавцал, динозаврын искэр бүхий Говийн цөлийн туршлага",
+    "easternRegionDesc": "Өргөн өвс ногоон тал, түүхэн дурсгалууд бүхий Зүүн Монголоор зугаал"
   },
   "services": {
     "heroLabel": "Бидний санал болгож буй зүйлс",
