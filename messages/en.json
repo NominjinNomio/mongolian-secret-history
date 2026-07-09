@@ -154,7 +154,11 @@
     "khangaiRegionDesc": "Discover the forested Khangai mountains, ancient monasteries, and nomadic heartland.",
     "centralRegionDesc": "Visit the historic capital region, rolling steppes, and the birthplace of Mongolian civilization.",
     "gobiRegionDesc": "Experience the dramatic dunes, canyons, and dinosaur fossils of the Gobi Desert.",
-    "easternRegionDesc": "Wander the vast grasslands and historic sites of Eastern Mongolia."
+    "easternRegionDesc": "Wander the vast grasslands and historic sites of Eastern Mongolia.",
+    "regionMapTitle": "Region Map",
+    "provincesInRegion": "Provinces in this Region",
+    "topAttractions": "Top Attractions",
+    "popularTours": "Popular Tours"
   },
   "services": {
     "heroLabel": "What We Offer",
