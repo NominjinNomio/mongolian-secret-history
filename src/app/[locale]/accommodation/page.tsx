@@ -13,6 +13,7 @@ const accommodations = [
     index: "01",
     province: "Tuv Province",
     name: "Silk road resort",
+    slug: "secret-of-the-silk-road",
     description:
       "A luxurious resort of 45 gers that lets you feel the unique spirit of the Silk Road.",
     price: "₮250,000",
