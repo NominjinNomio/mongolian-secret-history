@@ -7,6 +7,7 @@ import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import UsefulLinks from "@/components/blog/UsefulLinks";
 
 const categories = [
   { id: "all", label: "All" },
@@ -232,6 +233,8 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <UsefulLinks />
     </InnerPageLayout>
   );
 }
