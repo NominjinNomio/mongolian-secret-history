@@ -12,7 +12,6 @@ import UsefulLinks from "@/components/blog/UsefulLinks";
 const categories = [
   { id: "all", label: "All" },
   { id: "travel", label: "Travel" },
-  { id: "camps", label: "Camps Info" },
   { id: "culture", label: "Culture" },
   { id: "nature", label: "Nature" },
   { id: "tips", label: "Tips" },
