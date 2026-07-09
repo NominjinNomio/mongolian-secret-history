@@ -61,7 +61,7 @@ export default function UsefulLinks() {
           Useful Links
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 md:grid-flow-col gap-6 lg:gap-7">
           {embassyLinks.map((link) => (
             <LinkCard key={link.url} icon={link.icon} title={link.title} url={link.url} />
           ))}
