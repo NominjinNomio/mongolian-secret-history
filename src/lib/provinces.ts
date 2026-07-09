@@ -302,7 +302,6 @@ export const provinces: Province[] = [
     labelY: 261.1,
     cx: 907.2,
     cy: 261.1,
-    hideLabel: true,
     description: "A small province along the Orkhon River, rich in history, waterfalls, and pastoral landscapes.",
     topAttractions: ["Orkhon Waterfall", "Uurt Canyon", "Baga Gazriin Chuluu", "Kharkhorin (nearby)", "Orkhon Valley"],
     popularTours: ["Orkhon Valley Waterfall Tour", "Horse Riding in the Orkhon Valley", "Nomadic Family Stay"]
