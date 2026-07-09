@@ -17,7 +17,7 @@ export default function RegionMap({ regionId }: RegionMapProps) {
     <div className="flex justify-center items-center w-full">
       <svg
         viewBox={region.viewBox}
-        className="w-full h-auto max-w-2xl"
+        className="w-[70%] h-auto max-w-2xl"
         preserveAspectRatio="xMidYMid meet"
       >
         <defs>
