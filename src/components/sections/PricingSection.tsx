@@ -72,7 +72,7 @@ export default function PricingSection() {
               className="rounded-[20px] bg-[#F8F6F1] border border-border p-10 flex flex-col gap-4 transition-shadow"
             >
               <span className="text-sm text-muted-foreground">{plan.duration}</span>
-              <span className="font-display text-[44px] text-primary-dark">{plan.price}</span>
+              <span className="font-display text-3xl text-primary-dark">{plan.price}</span>
               <h3 className="font-display text-2xl text-foreground">{plan.title}</h3>
               <p className="text-[15px] text-muted-foreground leading-relaxed">{plan.desc}</p>
               <ul className="flex flex-col gap-3 mt-2">
