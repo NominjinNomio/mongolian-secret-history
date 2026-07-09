@@ -14,7 +14,7 @@ const paymentMethods = [
   { id: "happypay" as PaymentMethod, label: "Happy Pay", icon: "H" },
   { id: "socialpay" as PaymentMethod, label: "SocialPay", icon: "S" },
   { id: "qpay" as PaymentMethod, label: "QPay", icon: "Q" },
-  { id: "card" as PaymentMethod, label: "Карт", icon: "💳" },
+  { id: "card" as PaymentMethod, label: "Card", icon: "💳" },
 ];
 
 export default function PaymentPage() {

@@ -11,41 +11,41 @@ interface PageProps {
 const accommodations = [
   {
     index: "01",
-    province: "Төв аймаг",
+    province: "Tuv Province",
     name: "Silk road resort",
     description:
-      "Торгоны замын өвөрмөц сунсийг мэдрүүлэх, тансаг зэрэглэлийн 45 гэрээс бүрдсэн амралтын газар.",
+      "A luxurious resort of 45 gers that lets you feel the unique spirit of the Silk Road.",
     price: "₮250,000",
-    unit: "шөнө",
+    unit: "night",
     image: "gallery-1.jpg",
   },
   {
     index: "02",
-    province: "Хэнтий аймаг",
+    province: "Khentii Province",
     name: "Mongolian secret history camp",
     description:
-      "Намрын алтан ойн дунд байрлах уламжлалт гэр бааз, түүхэн газруудад ойрхон.",
+      "A traditional ger camp located among the golden autumn forests, close to historic sites.",
     price: "₮180,000",
-    unit: "шөнө",
+    unit: "night",
     image: "gallery-2.jpg",
   },
   {
     index: "03",
-    province: "Өвөрхангай аймаг",
+    province: "Ovorkhangai Province",
     name: "Secret of Ongi tourist camp",
     description:
-      "Од харах шөнөийн тэнгэрийн дор амрах, тайван бүх орчингтой гэрийн бааз.",
+      "A peaceful ger camp where you can rest under a star-filled night sky.",
     price: "₮160,000",
-    unit: "шөнө",
+    unit: "night",
     image: "gallery-3.jpg",
   },
   {
     index: "04",
-    province: "Ресторан",
+    province: "Restaurant",
     name: "MSH restaurant",
     description:
-      "Уламжлалт болон орчин үеийн Монгол хоолыг тансаг орчинд амталж үзээрэй.",
-    price: "Ширээ захиалгаар",
+      "Enjoy traditional and modern Mongolian cuisine in an elegant setting.",
+    price: "By reservation",
     unit: "",
     image: "gallery-4.jpg",
   },
@@ -109,7 +109,7 @@ export default async function AccommodationPage({ params }: PageProps) {
                           href={`/${locale}/book-online`}
                           className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
                         >
-                          Захиалах
+                          Book Now
                         </Link>
                       </div>
                     </div>

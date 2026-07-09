@@ -14,7 +14,7 @@ export default function ProvinceCard({ province }: ProvinceCardProps) {
   return (
     <div className="bg-[#F8F6F1] rounded-2xl p-7 md:p-8">
       <h3 className="font-display text-2xl md:text-3xl text-foreground">
-        {province.name} {province.mnName ? `(${province.mnName})` : ""}
+        {province.name}
       </h3>
       <p className="text-[15px] md:text-[17px] text-muted-foreground mt-3 leading-relaxed">
         {province.description}
