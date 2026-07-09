@@ -4,8 +4,8 @@ import { ArrowUpRight, Plane } from "lucide-react";
 
 const embassyLinks = [
   { icon: "🇺🇸", title: "US Embassy", url: "https://mn.usembassy.gov" },
-  { icon: "🇬🇧", title: "UK Embassy", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
   { icon: "🇦🇺", title: "Australian Embassy", url: "https://www.dfat.gov.au" },
+  { icon: "🇬🇧", title: "UK Embassy", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
 ];
 
 const infoLinks = [
