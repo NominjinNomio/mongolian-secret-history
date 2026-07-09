@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { regions } from "@/lib/regions";
 import { provinces } from "@/lib/provinces";
@@ -9,14 +10,22 @@ import { provinces } from "@/lib/provinces";
 const regionList = (t: (key: string) => string) =>
   regions.map((r) => ({ ...r, name: t(r.nameKey) }));
 
+const slugByRegionId = Object.fromEntries(regions.map((r) => [r.id, r.slug]));
+
 
 
 export default function MongoliaMap() {
   const [active, setActive] = useState<string | null>(null);
   const t = useTranslations("about");
   const locale = useLocale();
+  const router = useRouter();
 
   const list = regionList(t);
+
+  const navigateToRegion = (regionId: string) => {
+    const slug = slugByRegionId[regionId];
+    if (slug) router.push(`/${locale}/${slug}`);
+  };
 
   return (
     <div className="flex flex-col items-center w-full">
@@ -65,6 +74,7 @@ export default function MongoliaMap() {
             }}
             onMouseEnter={() => setActive(province.region)}
             onMouseLeave={() => setActive(null)}
+            onClick={() => navigateToRegion(province.region)}
           />
         ))}
         {provinces.map((province, index) => (
