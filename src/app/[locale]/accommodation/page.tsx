@@ -1,11 +1,12 @@
-"use client";
-
-import { useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import Link from "next/link";
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
 
 const accommodations = [
   {
@@ -48,37 +49,11 @@ const accommodations = [
     unit: "",
     image: "gallery-4.jpg",
   },
-  {
-    index: "05",
-    province: "Хөвсгөл аймаг",
-    name: "Khuvsgul Lake Lodge",
-    description:
-      "Хөвсгөл нуурын эрэгт байрлах, тав тухтай байрлал, байгалийн үзэсгэлэнг бүрэн мэдрэх боломжтой.",
-    price: "₮220,000",
-    unit: "шөнө",
-    image: "gallery-5.jpg",
-  },
-  {
-    index: "06",
-    province: "Баян-Өлгий аймаг",
-    name: "Altai Eagle Camp",
-    description:
-      "Алтайн нуруунд байрлах, бүргэдчин анчидтай танилцах, уламжлалт гэрт хонох боломжтой.",
-    price: "₮190,000",
-    unit: "шөнө",
-    image: "gallery-6.jpg",
-  },
 ];
 
-const INITIAL_COUNT = 4;
-
-export default function AccommodationPage() {
-  const t = useTranslations("accommodation");
-  const locale = useLocale();
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
-
-  const visibleItems = accommodations.slice(0, visibleCount);
-  const hasMore = visibleCount < accommodations.length;
+export default async function AccommodationPage({ params }: PageProps) {
+  const { locale } = await params;
+  const t = await getTranslations("accommodation");
 
   return (
     <InnerPageLayout>
@@ -91,7 +66,7 @@ export default function AccommodationPage() {
       <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col gap-16 lg:gap-20">
-            {visibleItems.map((item, i) => {
+            {accommodations.map((item, i) => {
               const isEven = i % 2 === 0;
               return (
                 <div
@@ -135,17 +110,6 @@ export default function AccommodationPage() {
               );
             })}
           </div>
-
-          {hasMore && (
-            <div className="mt-16 flex justify-center">
-              <button
-                onClick={() => setVisibleCount(accommodations.length)}
-                className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
-              >
-                More
-              </button>
-            </div>
-          )}
         </div>
       </section>
     </InnerPageLayout>
