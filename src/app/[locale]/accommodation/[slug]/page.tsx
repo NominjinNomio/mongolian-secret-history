@@ -149,6 +149,70 @@ const details: Record<
       },
     ],
   },
+  "secret-of-ongi": {
+    title: "SECRET OF ONGI TOURIST CAMP",
+    subtitle:
+      "Spiritual tranquility, natural harmony, and cultural legacy on the banks of the Ongi River",
+    image: "gallery-3.jpg",
+    intro:
+      "Secret of Ongi tourist camp founded in 2008 as a restored cultural heritage site on the banks of the Ongi River and the historical Ongi Monastery, brings together spiritual tranquility, natural harmony, and cultural legacy all in one place.",
+    sections: [
+      {
+        title: "Location",
+        content: [
+          "The Secret of Ongi tourist camp is located in Saikhan-Ovoo soum, Dundgovi province at N 45°19’57” / E 104°00’55”, next to the ancient ruins of Ongi Monastery, surrounded by unique natural formations.",
+        ],
+      },
+      {
+        title: "Capacity",
+        content: [
+          "98 beds in 13th-century style Mongolian gers",
+          "MSH Restaurant with a capacity of 90 guests",
+          "Comfortable VIP room for 12 guests",
+          "30 shower rooms",
+          "17 toilets (separate for men & women)",
+          "Sauna",
+          "Art shop",
+          "Mobicom network coverage",
+          "Connected to the central power system",
+          "7-stage wastewater treatment system producing eco-friendly greywater",
+        ],
+      },
+      {
+        title: "Services & Facilities",
+        content: [
+          "Information Center introducing the 250-year history and culture of Ongi Monastery",
+          "Conference hall for meetings and seminars",
+          "Photo sessions with traditional tsam mask costumes and Mongolian national outfits",
+          "Handicraft shop",
+          "Mongolian traditional games",
+          "Internet service",
+          "Steam sauna and relaxing massage services",
+        ],
+      },
+      {
+        title: "Trips",
+        content: [
+          "Visit to the ruins of Ongi Monastery and explore the surrounding sacred landscape",
+          "Hike to Yangiirtai Mountain, learn local legends about nature, wildlife, and plants",
+          "Explore the Ongi River valley – observe Gobi landscapes and local birdlife",
+          "Discover ancient rock paintings, meditation caves used by monks, and historical graves & burial mounds",
+          "Experience the strong natural energy concentration believed to exist around the Ongi Monastery area",
+        ],
+      },
+      {
+        title: "Distinctive Features & Advantages",
+        content: [
+          "Ideal environment for relaxation, meditation, and energy rejuvenation",
+          "Serves fresh organic vegetables, dairy products, and meat sourced from its own farm",
+          "Clean drinking water from a 107-meter deep artesian well",
+          "Skilled, polite, and professional service team",
+          "Connected to the central power grid; Mobicom, G-Mobile, Skytel networks available",
+          "Strategically located at the crossroads of major tourist routes connecting Övörkhangai and Ömnögovi provinces",
+        ],
+      },
+    ],
+  },
 };
 
 export async function generateStaticParams() {
@@ -157,6 +221,8 @@ export async function generateStaticParams() {
     { locale: "mn", slug: "mongolian-secret-history-camp" },
     { locale: "en", slug: "secret-of-the-silk-road" },
     { locale: "mn", slug: "secret-of-the-silk-road" },
+    { locale: "en", slug: "secret-of-ongi" },
+    { locale: "mn", slug: "secret-of-ongi" },
   ];
 }
 

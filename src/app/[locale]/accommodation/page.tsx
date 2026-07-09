@@ -35,6 +35,7 @@ const accommodations = [
     index: "03",
     province: "Ovorkhangai Province",
     name: "Secret of Ongi tourist camp",
+    slug: "secret-of-ongi",
     description:
       "A peaceful ger camp where you can rest under a star-filled night sky.",
     price: "₮160,000",
