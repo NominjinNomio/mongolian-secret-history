@@ -1,17 +1,55 @@
 "use client";
 
-import { ArrowUpRight, Globe, Plane } from "lucide-react";
+import { ArrowUpRight, Plane } from "lucide-react";
 
-const links = [
-  { icon: "🇺🇸", title: "U.S. Embassy in Mongolia", url: "https://mn.usembassy.gov" },
-  { icon: "🇬🇧", title: "UK Embassy in Mongolia", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
-  { icon: "🇦🇺", title: "Australian Consulate in Mongolia", url: "https://www.dfat.gov.au" },
-  { icon: "🌍", title: "Mongolian Tourism Association", url: "https://www.travelmongolia.org" },
-  { icon: "🌐", title: "UK Travel Advice for Mongolia", url: "https://www.gov.uk/foreign-travel-advice/mongolia" },
-  { icon: "✈", title: "MIAT Mongolian Airlines", url: "https://www.miat.com" },
-  { icon: "✈", title: "Aero Mongolia", url: "https://www.aeromongolia.mn" },
-  { icon: "✈", title: "Hunnu Air", url: "https://www.hunnuair.com" },
+const embassyLinks = [
+  { icon: "🇺🇸", title: "US Embassy", url: "https://mn.usembassy.gov" },
+  { icon: "🇬🇧", title: "UK Embassy", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
+  { icon: "🇦🇺", title: "Australian Embassy", url: "https://www.dfat.gov.au" },
 ];
+
+const infoLinks = [
+  { icon: "🌍", title: "Tourism Association", url: "https://www.travelmongolia.org", label: "Official Website" },
+  { icon: "🇬🇧", title: "UK Travel Advice", url: "https://www.gov.uk/foreign-travel-advice/mongolia", label: "GOV.UK" },
+];
+
+const airlines = [
+  { name: "MIAT", url: "https://www.miat.com" },
+  { name: "Aero Mongolia", url: "https://www.aeromongolia.mn" },
+  { name: "Hunnu Air", url: "https://www.hunnuair.com" },
+];
+
+function LinkCard({
+  icon,
+  title,
+  url,
+  label,
+}: {
+  icon: string | React.ReactNode;
+  title: string;
+  url: string;
+  label?: React.ReactNode;
+}) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
+    >
+      <div className="flex items-center gap-2.5">
+        <span className="text-xl leading-none">{icon}</span>
+        <span className="font-sans font-bold text-[17px] lg:text-[18px] text-foreground">
+          {title}
+        </span>
+      </div>
+      <div className="flex items-center gap-1 text-[14px] lg:text-[15px] text-blue-600 mt-4">
+        <span className="group-hover:underline">{label ?? "Official Website"}</span>
+        <ArrowUpRight className="w-3.5 h-3.5" />
+      </div>
+    </a>
+  );
+}
 
 export default function UsefulLinks() {
   return (
@@ -24,28 +62,41 @@ export default function UsefulLinks() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
-          {links.map((link) => (
-            <a
-              key={link.url}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-start justify-between gap-4 rounded-2xl bg-[#F7F7F7] p-6 lg:p-7 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
-            >
-              <div className="flex items-start gap-4">
-                <span className="text-2xl leading-none mt-0.5">{link.icon}</span>
-                <div className="flex flex-col gap-1">
-                  <span className="font-sans font-bold text-[18px] lg:text-[20px] text-foreground leading-tight">
-                    {link.title}
-                  </span>
-                  <span className="text-[14px] lg:text-[15px] text-blue-600 group-hover:text-blue-700 group-hover:underline break-all">
-                    {link.url}
-                  </span>
-                </div>
-              </div>
-              <ArrowUpRight className="w-5 h-5 text-muted-foreground flex-shrink-0 mt-1 transition-colors group-hover:text-foreground" />
-            </a>
+          {embassyLinks.map((link) => (
+            <LinkCard key={link.url} icon={link.icon} title={link.title} url={link.url} />
           ))}
+
+          {infoLinks.map((link) => (
+            <LinkCard
+              key={link.url}
+              icon={link.icon}
+              title={link.title}
+              url={link.url}
+              label={link.label}
+            />
+          ))}
+
+          <div className="flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
+            <div className="flex items-center gap-2.5">
+              <Plane className="w-5 h-5 text-foreground" />
+              <span className="font-sans font-bold text-[17px] lg:text-[18px] text-foreground">
+                Airlines
+              </span>
+            </div>
+            <div className="flex flex-col gap-1 mt-4">
+              {airlines.map((airline) => (
+                <a
+                  key={airline.url}
+                  href={airline.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[14px] lg:text-[15px] text-blue-600 hover:underline"
+                >
+                  {airline.name}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
