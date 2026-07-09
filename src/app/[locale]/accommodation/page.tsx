@@ -65,10 +65,6 @@ export default async function AccommodationPage({ params }: PageProps) {
 
       <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-          <h2 className="font-display text-center text-3xl md:text-[44px] leading-[1.15] mb-16">
-            Байрлах газрууд
-          </h2>
-
           <div className="flex flex-col gap-16 lg:gap-20">
             {accommodations.map((item, i) => {
               const isEven = i % 2 === 0;
