@@ -23,6 +23,7 @@ const accommodations = [
     index: "02",
     province: "Khentii Province",
     name: "Mongolian secret history camp",
+    slug: "mongolian-secret-history-camp",
     description:
       "A traditional ger camp located among the golden autumn forests, close to historic sites.",
     price: "₮180,000",
@@ -101,15 +102,19 @@ export default async function AccommodationPage({ params }: PageProps) {
                       <div className="flex items-center gap-3">
                         <Link
                           href={`/${locale}/book-online`}
-                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors border border-[#1A2B4A] text-[#1A2B4A] hover:bg-[#1A2B4A]/5"
-                        >
-                          More
-                        </Link>
-                        <Link
-                          href={`/${locale}/book-online`}
                           className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
                         >
                           Book Now
+                        </Link>
+                        <Link
+                          href={
+                            item.slug
+                              ? `/${locale}/accommodation/${item.slug}`
+                              : `/${locale}/book-online`
+                          }
+                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors border border-[#1A2B4A] text-[#1A2B4A] hover:bg-[#1A2B4A]/5"
+                        >
+                          More
                         </Link>
                       </div>
                     </div>
