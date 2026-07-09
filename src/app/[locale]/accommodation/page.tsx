@@ -98,12 +98,20 @@ export default async function AccommodationPage({ params }: PageProps) {
                           <span className="text-muted-foreground text-base ml-1">/ {item.unit}</span>
                         )}
                       </div>
-                      <Link
-                        href={`/${locale}/book-online`}
-                        className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
-                      >
-                        Захиалах
-                      </Link>
+                      <div className="flex items-center gap-3">
+                        <Link
+                          href={`/${locale}/book-online`}
+                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                        >
+                          Захиалах
+                        </Link>
+                        <Link
+                          href={`/${locale}/book-online`}
+                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors border border-[#1A2B4A] text-[#1A2B4A] hover:bg-[#1A2B4A]/5"
+                        >
+                          More
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
