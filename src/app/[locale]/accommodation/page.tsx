@@ -2,31 +2,53 @@ import { getTranslations } from "next-intl/server";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
+import Link from "next/link";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
 }
 
-const roomTypes = [
+const accommodations = [
   {
-    title: "Hotel Rooms",
-    description: "Comfortable hotel-style rooms with modern amenities, en-suite bathrooms, and scenic views.",
+    index: "01",
+    province: "Төв аймаг",
+    name: "Silk road resort",
+    description:
+      "Торгоны замын өвөрмөц сунсийг мэдрүүлэх, тансаг зэрэглэлийн 45 гэрээс бүрдсэн амралтын газар.",
+    price: "₮250,000",
+    unit: "шөнө",
+    image: "gallery-1.jpg",
+  },
+  {
+    index: "02",
+    province: "Хэнтий аймаг",
+    name: "Mongolian secret history camp",
+    description:
+      "Намрын алтан ойн дунд байрлах уламжлалт гэр бааз, түүхэн газруудад ойрхон.",
+    price: "₮180,000",
+    unit: "шөнө",
     image: "gallery-2.jpg",
   },
   {
-    title: "Traditional Ger",
-    description: "Authentic Mongolian felt tents with cozy beds, traditional décor, and a true nomadic atmosphere.",
+    index: "03",
+    province: "Өвөрхангай аймаг",
+    name: "Secret of Ongi tourist camp",
+    description:
+      "Од харах шөнөийн тэнгэрийн дор амрах, тайван бүх орчингтой гэрийн бааз.",
+    price: "₮160,000",
+    unit: "шөнө",
     image: "gallery-3.jpg",
   },
-];
-
-const facilities = [
-  { title: "Authentic Dining", description: "Traditional Mongolian meals prepared with local ingredients." },
-  { title: "Relaxation Areas", description: "Lounges and outdoor spaces to unwind after a day of adventure." },
-  { title: "Cultural Activities", description: "Experience local customs, music, and storytelling with hosts." },
-  { title: "Guided Excursions", description: "Daily tours to nearby landmarks and natural wonders." },
-  { title: "Transportation", description: "Airport transfers and transport support for all guests." },
-  { title: "24/7 Support", description: "Round-the-clock assistance for bookings and special requests." },
+  {
+    index: "04",
+    province: "Ресторан",
+    name: "MSH restaurant",
+    description:
+      "Уламжлалт болон орчин үеийн Монгол хоолыг тансаг орчинд амталж үзээрэй.",
+    price: "Ширээ захиалгаар",
+    unit: "",
+    image: "gallery-4.jpg",
+  },
 ];
 
 export default async function AccommodationPage({ params }: PageProps) {
@@ -41,101 +63,56 @@ export default async function AccommodationPage({ params }: PageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-16 lg:py-20">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-0 text-center">
-          <p className="text-base md:text-lg leading-[1.8] text-muted-foreground">
-            Experience the perfect blend of comfort and tradition during your Mongolian journey. From modern hotel rooms in Ulaanbaatar to authentic ger camps under the stars, we offer carefully selected accommodations for every type of traveler.
-          </p>
-        </div>
-      </section>
+      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+          <h2 className="font-display text-center text-3xl md:text-[44px] leading-[1.15] mb-16">
+            Байрлах газрууд
+          </h2>
 
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-[1100px] px-6 lg:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-            <div className="flex flex-col gap-5">
-              <span className="text-xs font-semibold uppercase tracking-[3px] text-muted-foreground">Featured Stay</span>
-              <h2 className="font-display text-3xl md:text-[40px] leading-tight text-foreground">
-                Nayon Mountain Top Entcamp
-              </h2>
-              <p className="text-base leading-[1.8] text-muted-foreground">
-                Nestled in the breathtaking landscapes of central Mongolia, Nayon Mountain Top Entcamp offers an unforgettable blend of wilderness comfort and nomadic hospitality. Wake up to panoramic mountain views, enjoy traditional meals by the stove, and fall asleep under a sky full of stars.
-              </p>
-              <p className="text-base leading-[1.8] text-muted-foreground">
-                Each ger is furnished with cozy bedding, warm blankets, and hand-crafted traditional details. Shared modern bathroom facilities, a central dining ger, and friendly local hosts make this the ideal base for exploring the surrounding valleys and horse trails.
-              </p>
-            </div>
-            <div className="relative h-[320px] lg:h-[420px] rounded-[20px] overflow-hidden">
-              <Image src="gallery-1.jpg" alt="Nayon Mountain Top Entcamp" fill className="object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
+          <div className="flex flex-col gap-16 lg:gap-20">
+            {accommodations.map((item, i) => {
+              const isEven = i % 2 === 0;
+              return (
+                <div
+                  key={item.name}
+                  className={`flex flex-col ${
+                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
+                  } items-center gap-10 lg:gap-16 pb-16 lg:pb-20 border-b border-border last:border-b-0 last:pb-0`}
+                >
+                  <div className="w-full lg:w-1/2">
+                    <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#E8E4DC]">
+                      <Image src={item.image} alt={item.name} fill className="object-cover" />
+                    </div>
+                  </div>
 
-      <section className="bg-[#F8F5F0] py-16 lg:py-24">
-        <div className="mx-auto max-w-[1100px] px-6 lg:px-0">
-          <h2 className="font-display text-2xl md:text-3xl text-center text-foreground mb-12">Room Types</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {roomTypes.map((room) => (
-              <div key={room.title} className="bg-white rounded-[20px] border border-border overflow-hidden">
-                <div className="relative h-[240px] w-full">
-                  <Image src={room.image} alt={room.title} fill className="object-cover" />
+                  <div className="w-full lg:w-1/2 flex flex-col gap-4">
+                    <span className="text-sm tracking-[2px] text-muted-foreground uppercase">
+                      {item.index} · {item.province}
+                    </span>
+                    <h3 className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground">
+                      {item.name}
+                    </h3>
+                    <p className="text-[15px] md:text-[17px] text-muted-foreground leading-[1.7]">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-2">
+                      <div className="text-foreground">
+                        <span className="font-display text-2xl md:text-3xl">{item.price}</span>
+                        {item.unit && (
+                          <span className="text-muted-foreground text-base ml-1">/ {item.unit}</span>
+                        )}
+                      </div>
+                      <Link
+                        href={`/${locale}/book-online`}
+                        className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                      >
+                        Захиалах
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="font-display text-xl text-foreground mb-2">{room.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{room.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 lg:py-24">
-        <div className="mx-auto max-w-[1100px] px-6 lg:px-0">
-          <h2 className="font-display text-2xl md:text-3xl text-center text-foreground mb-12">Services & Facilities</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {facilities.map((facility) => (
-              <div key={facility.title} className="bg-[#F8F5F0] rounded-[16px] p-6">
-                <h3 className="font-display text-lg text-foreground mb-2">{facility.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{facility.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#1A2B4A] py-14">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-0">
-          <div className="grid grid-cols-3 gap-6 text-center">
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-[#C9A227]">16</p>
-              <p className="text-sm text-white/70 mt-1">Partner Stays</p>
-            </div>
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-[#C9A227]">53</p>
-              <p className="text-sm text-white/70 mt-1">Traditional Gers</p>
-            </div>
-            <div>
-              <p className="font-display text-4xl md:text-5xl text-[#C9A227]">69</p>
-              <p className="text-sm text-white/70 mt-1">Hotel Rooms</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8F5F0] py-16 lg:py-20">
-        <div className="mx-auto max-w-[900px] px-6 lg:px-0">
-          <div className="bg-white rounded-[20px] border border-border p-8 lg:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div>
-              <h3 className="font-display text-2xl text-foreground mb-2">Book Your Stay</h3>
-              <p className="text-sm text-muted-foreground">Ready to experience authentic Mongolian hospitality? Reserve your accommodation today.</p>
-            </div>
-            <a
-              href={`/${locale}/book-online`}
-              className="inline-block bg-[#C9A227] hover:bg-[#b08f22] text-white rounded-full px-8 py-3 text-sm font-medium transition-colors"
-            >
-              Book Now
-            </a>
+              );
+            })}
           </div>
         </div>
       </section>
