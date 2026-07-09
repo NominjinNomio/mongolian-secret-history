@@ -5,6 +5,8 @@ import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import Link from "next/link";
 
+import ExpandableSection from "@/components/accommodation/ExpandableSection";
+
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
 }
@@ -16,7 +18,7 @@ const details: Record<
     subtitle: string;
     image: string;
     intro: string;
-    sections: { title: string; content: string[] }[];
+    sections: { title: string; content: string[]; expandable?: boolean }[];
   }
 > = {
   "mongolian-secret-history-camp": {
@@ -29,6 +31,7 @@ const details: Record<
     sections: [
       {
         title: "Location",
+        expandable: true,
         content: [
           "The complex is located in Jargalant soum, Tuv province, at longitude 106° and latitude 48°, approximately 114 km from Ulaanbaatar on the road to Darkhan.",
           "The area is known as Noyon Mountain, rising about 1500 meters above sea level. It is home to abundant wildlife including deer, elk, wild boar, lynx, corsac fox, hare, red fox, pika, polecat, wolf, marmot, and various bird species.",
@@ -37,6 +40,7 @@ const details: Record<
       },
       {
         title: "Capacity",
+        expandable: true,
         content: [
           "Hotel with luxury and standard rooms: 16 beds",
           "13th-century style traditional pointed-top gers: 53 beds",
@@ -93,6 +97,7 @@ const details: Record<
     sections: [
       {
         title: "Location",
+        expandable: true,
         content: [
           "The camp is located in Kharkhorin soum, Övörkhangai province, in the area known as Ongotson Ukhaa, historically used as the horse training grounds of Prince Sain Noyon Gombosüren’s royal lineage.",
           "Being close to Kharkhorin, the ancient capital of the Mongol Empire, visitors can explore surrounding historical sites, archaeological remains, museums, and scenic landscapes.",
@@ -100,6 +105,7 @@ const details: Record<
       },
       {
         title: "Capacity",
+        expandable: true,
         content: [
           "Deluxe en-suite 45 gers",
           "Standard 15 gers",
@@ -159,12 +165,14 @@ const details: Record<
     sections: [
       {
         title: "Location",
+        expandable: true,
         content: [
           "The Secret of Ongi tourist camp is located in Saikhan-Ovoo soum, Dundgovi province at N 45°19’57” / E 104°00’55”, next to the ancient ruins of Ongi Monastery, surrounded by unique natural formations.",
         ],
       },
       {
         title: "Capacity",
+        expandable: true,
         content: [
           "98 beds in 13th-century style Mongolian gers",
           "MSH Restaurant with a capacity of 90 guests",
@@ -251,19 +259,33 @@ export default async function AccommodationDetailPage({ params }: PageProps) {
             {data.intro}
           </p>
 
-          <div className="mt-16 flex flex-col gap-14">
-            {data.sections.map((section) => (
-              <div key={section.title}>
-                <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5">
-                  {section.title}
-                </h2>
+          <div className="mt-16 flex flex-col gap-6">
+            {data.sections.map((section) => {
+              const content = (
                 <ul className="list-disc list-inside space-y-2 text-[15px] md:text-[17px] text-muted-foreground leading-[1.8]">
                   {section.content.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
-              </div>
-            ))}
+              );
+
+              if (section.expandable) {
+                return (
+                  <ExpandableSection key={section.title} title={section.title}>
+                    {content}
+                  </ExpandableSection>
+                );
+              }
+
+              return (
+                <div key={section.title} className="border-b border-border pb-6">
+                  <h2 className="font-display text-2xl md:text-3xl text-foreground mb-5">
+                    {section.title}
+                  </h2>
+                  {content}
+                </div>
+              );
+            })}
           </div>
 
           <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
