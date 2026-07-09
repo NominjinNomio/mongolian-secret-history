@@ -13,9 +13,11 @@ export default function RegionMap({ regionId }: RegionMapProps) {
 
   const regionProvinces = provinces.filter((p) => p.region === regionId);
 
-  return (
+    const containerClass = regionId === "khangai" ? "w-full max-w-3xl aspect-[4/3]" : "w-full max-w-2xl aspect-[4/3]";
+
+    return (
     <div className="flex justify-center items-center w-full">
-      <div className="w-full max-w-2xl aspect-[4/3]">
+      <div className={containerClass}>
         <svg
           viewBox={region.viewBox}
           className="w-full h-full"
