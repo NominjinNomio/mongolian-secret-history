@@ -16,8 +16,11 @@ export default function RegionMap({ regionId }: RegionMapProps) {
     const containerClass = regionId === "khangai" ? "w-full max-w-3xl aspect-[4/3]" : "w-full max-w-2xl aspect-[4/3]";
 
     return (
-    <div className="flex justify-center items-center w-full">
-      <div className={containerClass}>
+    <div className="flex justify-center items-center w-full [perspective:1000px]">
+      <div
+        className={`${containerClass} transition-transform duration-500 ease-out [transform-style:preserve-3d] hover:[transform:rotateX(4deg)_rotateY(-4deg)]`}
+        style={{ filter: "drop-shadow(0 25px 40px rgba(0,0,0,0.15))" }}
+      >
         <svg
           viewBox={region.viewBox}
           className="w-full h-full"
