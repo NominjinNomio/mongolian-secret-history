@@ -19,9 +19,9 @@ export default function TestimonialsSection() {
   const locale = useLocale();
 
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
+    <section className="bg-[#F8F5F0] py-20 lg:py-[160px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-        <div className="text-center mb-14">
+        <div className="text-center mb-16 lg:mb-20">
           <span className="text-sm tracking-[4px] text-primary-dark uppercase">
             {t("testimonialsLabel")}
           </span>
@@ -30,12 +30,12 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="relative mx-auto min-h-[900px] max-w-[1100px] lg:min-h-[700px]">
+        <div className="relative mx-auto min-h-[1100px] max-w-[1300px] lg:min-h-[860px]">
           {/* 5 Stars badge */}
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
-            className="left-0 top-0 z-10 flex items-center gap-3 rounded-full bg-[#1a1a1a] px-4 py-2 text-white lg:absolute"
+            className="left-4 top-0 z-10 flex items-center gap-3 rounded-full bg-[#1a1a1a] px-4 py-2 text-white lg:absolute"
           >
             <span className="flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-[#1a1a1a]">
               <Star className="h-3 w-3 fill-[#1a1a1a]" />
@@ -48,18 +48,18 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="right-0 top-0 z-10 max-w-[340px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+            className="right-4 top-0 z-10 max-w-[380px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
           >
             <div className="flex items-center gap-4">
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl bg-[#E8E4DC]">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-[#E8E4DC]">
                 <Image src="team-placeholder.jpg" alt="Marie" fill className="object-cover" />
               </div>
               <div>
-                <h3 className="font-display text-lg">Marie Dupont</h3>
+                <h3 className="font-display text-xl">Marie Dupont</h3>
                 <span className="text-sm text-muted-foreground">Cultural Traveler, France</span>
               </div>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-[15px] leading-relaxed text-muted-foreground">
               The high level of service that the team provided made this a happy memory to take on my next adventure.
             </p>
           </motion.div>
@@ -68,13 +68,13 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="left-0 top-[220px] z-10 max-w-[280px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+            className="left-4 top-[260px] z-10 max-w-[320px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Compass className="h-5 w-5 text-[#1a1a1a]" />
             </div>
-            <h3 className="font-display mt-4 text-xl">Authentic Journeys</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <h3 className="font-display mt-5 text-2xl">Authentic Journeys</h3>
+            <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
               Every trip is crafted to connect you with Mongolia’s landscapes, culture, and nomadic traditions.
             </p>
           </motion.div>
@@ -83,11 +83,11 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="relative z-20 mx-auto my-12 flex h-[520px] w-[280px] flex-col overflow-hidden rounded-[40px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
+            className="relative z-20 mx-auto my-16 flex h-[580px] w-[320px] flex-col overflow-hidden rounded-[48px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
           >
-            <div className="relative flex h-10 items-center justify-between bg-[#1a1a1a] px-5 text-white">
+            <div className="relative flex h-11 items-center justify-between bg-[#1a1a1a] px-5 text-white">
               <span className="text-sm font-medium">9:41</span>
-              <div className="absolute left-1/2 top-1/2 h-5 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
+              <div className="absolute left-1/2 top-1/2 h-5 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
               <div className="flex items-center gap-1.5">
                 <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C9.243 2 7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3v3H9V7c0-1.654 1.346-3 3-3z" />
@@ -106,8 +106,8 @@ export default function TestimonialsSection() {
             </div>
 
             <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-5">
-              <div className="rounded-[20px] bg-[#2a2a2a] p-4">
-                <div className="relative aspect-square w-full overflow-hidden rounded-[16px]">
+              <div className="rounded-[24px] bg-[#2a2a2a] p-4">
+                <div className="relative aspect-square w-full overflow-hidden rounded-[20px]">
                   <Image src="team-placeholder.jpg" alt="Featured guide" fill className="object-cover" />
                 </div>
                 <div className="mt-4 text-white">
@@ -116,17 +116,17 @@ export default function TestimonialsSection() {
                 </div>
               </div>
 
-              <div className="rounded-[20px] bg-white p-5">
-                <h3 className="font-display text-lg text-[#1a1a1a]">Dr. James McKelvie</h3>
+              <div className="rounded-[24px] bg-white p-6">
+                <h3 className="font-display text-xl text-[#1a1a1a]">Dr. James McKelvie</h3>
                 <p className="mt-1 text-sm text-[#1a1a1a]/70">Specialist in Advanced Mongolia Expeditions</p>
-                <div className="mt-4 flex items-center gap-2">
+                <div className="mt-5 flex items-center gap-2">
                   <Link
                     href={`/${locale}/book-online`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-4 py-2 text-sm font-medium text-white transition-transform hover:scale-105"
+                    className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105"
                   >
                     Book Now
                   </Link>
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1a1a1a]/20">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#1a1a1a]/20">
                     <span className="h-2 w-2 rounded-full bg-[#1a1a1a]" />
                   </span>
                 </div>
@@ -138,13 +138,13 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="right-0 top-[220px] z-10 max-w-[280px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+            className="right-4 top-[260px] z-10 max-w-[320px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Award className="h-5 w-5 text-[#1a1a1a]" />
             </div>
-            <h3 className="font-display mt-4 text-xl">Why Travelers Choose Us</h3>
-            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+            <h3 className="font-display mt-5 text-2xl">Why Travelers Choose Us</h3>
+            <ul className="mt-4 space-y-3 text-[15px] text-muted-foreground">
               <li className="flex items-start gap-2">
                 <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
                 20+ years of experience
@@ -164,33 +164,32 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-            className="left-0 bottom-0 z-10 max-w-[340px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+            className="left-4 bottom-0 z-10 max-w-[380px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
           >
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Mail className="h-5 w-5 text-[#1a1a1a]" />
             </div>
-            <blockquote className="font-display mt-4 text-lg leading-relaxed text-foreground">
+            <blockquote className="font-display mt-5 text-xl leading-relaxed text-foreground">
               &ldquo;Of all the awesome new friends we made, the guides were the best. We plan to return and head East.&rdquo;
             </blockquote>
-            <span className="mt-4 block text-sm text-muted-foreground">Sarah & Tom, USA</span>
+            <span className="mt-5 block text-sm text-muted-foreground">Sarah & Tom, USA</span>
           </motion.div>
 
           {/* Bottom-right offer card */}
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            className="right-0 bottom-0 z-10 max-w-[340px] rounded-[24px] bg-[#1a1a1a] p-6 text-white shadow-lg lg:absolute"
+            className="right-4 bottom-0 z-10 max-w-[380px] rounded-[28px] bg-[#111111] p-7 text-white shadow-lg lg:absolute border border-white/10"
           >
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold">FREE</span>
+              <span className="text-3xl font-bold">FREE</span>
               <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium">Zero Cost Guarantee</span>
             </div>
-            <h3 className="font-display mt-4 text-xl">Custom Itinerary Planning</h3>
-            <p className="mt-2 text-sm leading-relaxed text-white/70">
+            <h3 className="font-display mt-5 text-2xl">Custom Itinerary Planning</h3>
+            <p className="mt-3 text-[15px] leading-relaxed text-white/70">
               Get a personalized trip plan with no upfront fees. We design it around your dates and interests.
             </p>
-            <div className="mt-5 flex flex-wrap items-center gap-3"
->
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href={`/${locale}/testimonials`}
                 className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-transform hover:scale-105"
