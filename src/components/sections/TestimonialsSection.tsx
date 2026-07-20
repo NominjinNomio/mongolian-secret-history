@@ -5,7 +5,7 @@ import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Link from "next/link";
-import { Star, Mail, Globe, Award, Shield, Compass } from "lucide-react";
+import { Star, Mail, Award, Compass } from "lucide-react";
 
 const float = {
   initial: { opacity: 0, y: 20 },
@@ -85,8 +85,24 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             className="relative z-20 mx-auto my-12 flex h-[520px] w-[280px] flex-col overflow-hidden rounded-[40px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
           >
-            <div className="flex h-10 items-center justify-center gap-2 bg-[#1a1a1a]">
-              <div className="h-5 w-20 rounded-full bg-black" />
+            <div className="relative flex h-10 items-center justify-between bg-[#1a1a1a] px-5 text-white">
+              <span className="text-sm font-medium">9:41</span>
+              <div className="absolute left-1/2 top-1/2 h-5 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
+              <div className="flex items-center gap-1.5">
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C9.243 2 7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5zm0 2c1.654 0 3 1.346 3 3v3H9V7c0-1.654 1.346-3 3-3z" />
+                </svg>
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                </svg>
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.95 7.08 2.95 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z" />
+                </svg>
+                <svg className="h-4 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <rect x="2" y="6" width="18" height="12" rx="2" ry="2" />
+                  <rect x="4" y="8" width="14" height="8" fill="#1a1a1a" />
+                </svg>
+              </div>
             </div>
 
             <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-5">
