@@ -5,39 +5,13 @@ import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import Link from "next/link";
-import { Star } from "lucide-react";
+import { Star, Mail, Globe, Award, Shield, Compass } from "lucide-react";
 
-const testimonials = [
-  {
-    quote: "Of all the awesome new friends we made on our trip, the guides were the best. We plan to return in a few years and head East.",
-    author: "Sarah & Tom, USA",
-    featured: true,
-  },
-  {
-    quote: "The high level of service that the team at Mongolian Secret History provided made this a happy memory to take on my next adventure.",
-    author: "Marie, France",
-  },
-  {
-    quote: "An unforgettable journey through the Gobi. Every day brought something new and authentic.",
-    author: "David, UK",
-  },
-  {
-    quote: "From the horses to the ger camps, every detail was perfectly arranged. We felt safe, welcomed, and inspired.",
-    author: "Linda & Peter, Australia",
-  },
-];
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+const float = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-50px" },
+  transition: { duration: 0.6, ease: "easeOut" as const },
 };
 
 export default function TestimonialsSection() {
@@ -56,69 +30,154 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-        >
-          {testimonials.map((testimonial, i) => {
-            const isFeatured = i === 0;
-            return (
-              <motion.div
-                key={testimonial.author}
-                variants={item}
-                whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.08)" }}
-                className={`rounded-[24px] bg-white border border-border p-8 flex flex-col gap-5 transition-shadow ${
-                  isFeatured ? "md:col-span-2 lg:col-span-2 lg:row-span-2 lg:p-10" : ""
-                }`}
-              >
-                <div className="flex items-center gap-1">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-[#F39C12] text-[#F39C12]" />
-                  ))}
-                </div>
-
-                <blockquote className={`font-display leading-relaxed text-foreground ${
-                  isFeatured ? "text-xl lg:text-2xl" : "text-lg"
-                }`}
-                >
-                  &ldquo;{testimonial.quote}&rdquo;
-                </blockquote>
-
-                <div className="mt-auto flex items-center gap-3">
-                  <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#E8E4DC]">
-                    <Image src="team-placeholder.jpg" alt={testimonial.author} fill className="object-cover" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">{testimonial.author}</span>
-                </div>
-              </motion.div>
-            );
-          })}
-
+        <div className="relative mx-auto min-h-[900px] max-w-[1100px] lg:min-h-[700px]">
+          {/* 5 Stars badge */}
           <motion.div
-            variants={item}
-            whileHover={{ y: -4, boxShadow: "0 20px 40px -12px rgba(0,0,0,0.08)" }}
-            className="rounded-[24px] bg-[#1A2B4A] text-white p-8 flex flex-col justify-between gap-6 transition-shadow"
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
+            className="left-0 top-0 z-10 flex items-center gap-3 rounded-full bg-[#1a1a1a] px-4 py-2 text-white lg:absolute"
           >
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium">
-                <Star className="h-3.5 w-3.5 fill-white" />
-                5 Stars
-              </span>
-              <p className="mt-5 font-display text-xl leading-relaxed">
-                Trusted by travelers worldwide for authentic Mongolia experiences.
-              </p>
+            <span className="flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-[#1a1a1a]">
+              <Star className="h-3 w-3 fill-[#1a1a1a]" />
+              5 Stars
+            </span>
+            <span className="text-sm">Trusted by travelers worldwide</span>
+          </motion.div>
+
+          {/* Top-right reviewer card */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="right-0 top-0 z-10 max-w-[340px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+          >
+            <div className="flex items-center gap-4">
+              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl bg-[#E8E4DC]">
+                <Image src="team-placeholder.jpg" alt="Marie" fill className="object-cover" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg">Marie Dupont</h3>
+                <span className="text-sm text-muted-foreground">Cultural Traveler, France</span>
+              </div>
             </div>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              The high level of service that the team provided made this a happy memory to take on my next adventure.
+            </p>
+          </motion.div>
+
+          {/* Left feature card */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="left-0 top-[220px] z-10 max-w-[280px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+              <Compass className="h-5 w-5 text-[#1a1a1a]" />
+            </div>
+            <h3 className="font-display mt-4 text-xl">Authentic Journeys</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Every trip is crafted to connect you with Mongolia’s landscapes, culture, and nomadic traditions.
+            </p>
+          </motion.div>
+
+          {/* Center phone mockup */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="relative z-20 mx-auto my-12 flex h-[520px] w-[280px] flex-col overflow-hidden rounded-[40px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
+          >
+            <div className="flex h-10 items-center justify-center gap-2 bg-[#1a1a1a]">
+              <div className="h-5 w-20 rounded-full bg-black" />
+            </div>
+
+            <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-5">
+              <div className="rounded-[20px] bg-[#2a2a2a] p-4">
+                <div className="relative aspect-square w-full overflow-hidden rounded-[16px]">
+                  <Image src="team-placeholder.jpg" alt="Featured guide" fill className="object-cover" />
+                </div>
+                <div className="mt-4 text-white">
+                  <h3 className="font-display text-lg">Boldbaatar</h3>
+                  <span className="text-xs uppercase tracking-wider text-white/60">Founder & Lead Guide</span>
+                </div>
+              </div>
+
+              <div className="rounded-[20px] bg-white p-5">
+                <h3 className="font-display text-lg text-[#1a1a1a]">Dr. James McKelvie</h3>
+                <p className="mt-1 text-sm text-[#1a1a1a]/70">Specialist in Advanced Mongolia Expeditions</p>
+                <div className="mt-4 flex items-center gap-2">
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-4 py-2 text-sm font-medium text-white">
+                    Book Now
+                  </span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1a1a1a]/20">
+                    <span className="h-2 w-2 rounded-full bg-[#1a1a1a]" />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right info card */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+            className="right-0 top-[220px] z-10 max-w-[280px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+              <Award className="h-5 w-5 text-[#1a1a1a]" />
+            </div>
+            <h3 className="font-display mt-4 text-xl">Why Travelers Choose Us</h3>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                20+ years of experience
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                Local expert guides
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                Sustainable tourism
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* Bottom-left quote card */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+            className="left-0 bottom-0 z-10 max-w-[340px] rounded-[24px] bg-white p-6 shadow-lg lg:absolute"
+          >
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#F8F5F0]">
+              <Mail className="h-5 w-5 text-[#1a1a1a]" />
+            </div>
+            <blockquote className="font-display mt-4 text-lg leading-relaxed text-foreground">
+              &ldquo;Of all the awesome new friends we made, the guides were the best. We plan to return and head East.&rdquo;
+            </blockquote>
+            <span className="mt-4 block text-sm text-muted-foreground">Sarah & Tom, USA</span>
+          </motion.div>
+
+          {/* Bottom-right offer card */}
+          <motion.div
+            {...float}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+            className="right-0 bottom-0 z-10 max-w-[340px] rounded-[24px] bg-[#1a1a1a] p-6 text-white shadow-lg lg:absolute"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold">FREE</span>
+              <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium">Zero Cost Guarantee</span>
+            </div>
+            <h3 className="font-display mt-4 text-xl">Custom Itinerary Planning</h3>
+            <p className="mt-2 text-sm leading-relaxed text-white/70">
+              Get a personalized trip plan with no upfront fees. We design it around your dates and interests.
+            </p>
             <Link
-              href={`/${locale}/testimonials`}
-              className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#1A2B4A] transition-transform hover:scale-105"
+              href={`/${locale}/contact`}
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white underline underline-offset-4"
             >
-              View All Testimonials
+              Start Planning
             </Link>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
