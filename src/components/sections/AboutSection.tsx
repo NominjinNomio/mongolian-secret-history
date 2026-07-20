@@ -40,29 +40,14 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="w-full max-w-[420px]"
+            className="relative w-full max-w-[600px] aspect-[5/4] rounded-3xl overflow-hidden"
           >
-            <div className="overflow-hidden rounded-[32px] bg-white p-4 shadow-lg">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[24px]">
-                <Image
-                  src="about-nomads.jpg"
-                  alt={t("aboutTitle")}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex flex-col items-center px-2 pb-2 pt-6 text-center">
-                <h3 className="font-display text-2xl text-foreground">
-                  {t("aboutCardName")}
-                </h3>
-                <span className="mt-1 text-sm text-muted-foreground">
-                  {t("aboutCardRole")}
-                </span>
-                <Button href="/team" variant="primary" className="mt-5">
-                  {t("aboutCardButton")}
-                </Button>
-              </div>
-            </div>
+            <Image
+              src="about-nomads.jpg"
+              alt={t("aboutTitle")}
+              fill
+              className="object-cover"
+            />
           </motion.div>
         </div>
       </div>
