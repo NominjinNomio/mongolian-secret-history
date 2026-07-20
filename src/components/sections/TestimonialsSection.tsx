@@ -186,12 +186,21 @@ export default function TestimonialsSection() {
             <p className="mt-2 text-sm leading-relaxed text-white/70">
               Get a personalized trip plan with no upfront fees. We design it around your dates and interests.
             </p>
-            <Link
-              href={`/${locale}/contact`}
-              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white underline underline-offset-4"
-            >
-              Start Planning
-            </Link>
+            <div className="mt-5 flex flex-wrap items-center gap-3"
+>
+              <Link
+                href={`/${locale}/testimonials`}
+                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#1a1a1a] transition-transform hover:scale-105"
+              >
+                View All Testimonials
+              </Link>
+              <Link
+                href={`/${locale}/contact`}
+                className="inline-flex items-center gap-2 text-sm font-medium text-white underline underline-offset-4"
+              >
+                Start Planning
+              </Link>
+            </div>
           </motion.div>
         </div>
       </div>
