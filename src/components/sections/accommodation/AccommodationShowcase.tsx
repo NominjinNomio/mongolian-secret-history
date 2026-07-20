@@ -52,88 +52,81 @@ const accommodations = [
 
 export default function AccommodationShowcase({ locale }: { locale: string }) {
   return (
-    <section className="py-20 lg:py-[140px]">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
-        <div className="mb-16 flex flex-col gap-5 lg:mb-24 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <span className="text-sm tracking-[4px] text-white/50 uppercase">
-              Our Spaces
-            </span>
-            <h2 className="font-display mt-4 max-w-[720px] text-4xl text-white md:text-5xl lg:text-6xl">
-              Where Comfort Meets the Steppe
-            </h2>
-          </div>
-          <p className="max-w-[420px] text-base leading-relaxed text-white/60">
-            From luxury Silk Road gers to quiet riverside camps, each stay is designed to bring you closer to Mongolia.
-          </p>
-        </div>
+    <section className="px-6 pb-12">
+      <div className="mx-auto max-w-[1400px]">
+        {accommodations.map((item, i) => {
+          const isEven = i % 2 === 0;
+          return (
+            <motion.article
+              key={item.name}
+              initial={{ opacity: 0, y: 60 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="grid gap-10 border-t border-[#1a1a1a]/10 py-16 lg:grid-cols-2 lg:gap-20 lg:py-24"
+            >
+              <div className={isEven ? "" : "lg:order-2"}>
+                <div className="group relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-[#e8e4dc]">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+              </div>
 
-        <div className="flex flex-col gap-24 lg:gap-32">
-          {accommodations.map((item, i) => {
-            const isEven = i % 2 === 0;
-            return (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ${
-                  isEven ? "" : "lg:grid-flow-dense"
-                }`}
-              >
-                <div className={isEven ? "" : "lg:col-start-2"}>
-                  <div className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-white/5">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
+              <div className={`flex flex-col justify-center ${isEven ? "lg:pl-8" : "lg:order-1 lg:pr-8"}`}>
+                <span className="text-sm tracking-[3px] text-[#1a1a1a]/40 uppercase">
+                  {item.index} · {item.province}
+                </span>
+                <h2 className="font-display mt-5 text-4xl leading-[1.1] text-[#1a1a1a] md:text-5xl lg:text-6xl">
+                  {item.name}
+                </h2>
+                <p className="mt-6 max-w-[480px] text-[17px] leading-[1.8] text-[#1a1a1a]/65">
+                  {item.description}
+                </p>
+                <div className="mt-8 flex flex-col gap-5 sm:flex-row sm:items-center">
+                  <div className="text-[#1a1a1a]">
+                    <span className="font-display text-3xl md:text-4xl">{item.price}</span>
+                    {item.unit && (
+                      <span className="ml-2 text-[#1a1a1a]/50">/ {item.unit}</span>
+                    )}
                   </div>
                 </div>
 
-                <div className={isEven ? "" : "lg:col-start-1 lg:row-start-1"}>
-                  <div className="flex flex-col gap-5">
-                    <span className="text-sm tracking-[3px] text-white/40 uppercase">
-                      {item.index} · {item.province}
-                    </span>
-                    <h3 className="font-display text-3xl text-white md:text-4xl lg:text-5xl">
-                      {item.name}
-                    </h3>
-                    <p className="max-w-[520px] text-[17px] leading-[1.8] text-white/60">
-                      {item.description}
-                    </p>
-                    <div className="mt-2 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-                      <div className="text-white">
-                        <span className="font-display text-3xl md:text-4xl">{item.price}</span>
-                        {item.unit && (
-                        <span className="ml-2 text-white/50">/ {item.unit}</span>
-                        )}
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <Link
-                          href={`/${locale}/book-online`}
-                          className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-[#0a0a0a] transition-transform hover:scale-105"
-                        >
-                          Book Now
-                        </Link>
-                        {item.slug && (
-                          <Link
-                            href={`/${locale}/accommodation/${item.slug}`}
-                            className="inline-flex items-center justify-center rounded-full border border-white/30 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-                          >
-                            More
-                          </Link>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <Link
+                    href={item.slug ? `/${locale}/accommodation/${item.slug}` : `/${locale}/book-online`}
+                    className="group inline-flex items-center gap-2 text-base font-semibold text-[#1a1a1a] underline decoration-[#1a1a1a]/30 underline-offset-8 transition-colors hover:decoration-[#1a1a1a]"
+                  >
+                    View Stay
+                    <svg
+                      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 8H13M13 8L9 4M13 8L9 12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </Link>
+                  <Link
+                    href={`/${locale}/book-online`}
+                    className="inline-flex items-center justify-center rounded-full border border-[#1a1a1a]/20 px-7 py-3.5 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#1a1a1a]/5"
+                  >
+                    Book Now
+                  </Link>
                 </div>
-              </motion.div>
-            );
-          })}
-        </div>
+              </div>
+            </motion.article>
+          );
+        })}
       </div>
     </section>
   );

@@ -1,10 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "@/components/common/Image";
 import Link from "next/link";
-import AccommodationMarquee from "@/components/sections/accommodation/AccommodationMarquee";
 import AccommodationShowcase from "@/components/sections/accommodation/AccommodationShowcase";
-import AccommodationTestimonials from "@/components/sections/accommodation/AccommodationTestimonials";
-import AccommodationCTA from "@/components/sections/accommodation/AccommodationCTA";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -15,57 +12,43 @@ export default async function AccommodationPage({ params }: PageProps) {
   const t = await getTranslations("accommodation");
 
   return (
-    <main className="bg-[#0a0a0a] text-white">
+    <main className="bg-[#F8F5F0] text-[#1a1a1a]">
       {/* Hero */}
-      <section className="relative flex min-h-[85vh] items-end justify-start overflow-hidden pb-20 lg:pb-28">
-        <Image
-          src="hero-steppe.jpg"
-          alt={t("heroTitle")}
-          fill
-          className="object-cover opacity-60"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/40 to-transparent" />
-
-        <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 lg:px-12">
-          <span className="mb-6 inline-block text-sm tracking-[4px] text-white/60 uppercase">
+      <section className="relative flex min-h-[70vh] flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
+        <div className="mx-auto max-w-[1100px]">
+          <span className="mb-6 inline-block text-sm tracking-[4px] text-[#1a1a1a]/50 uppercase">
             {t("heroLabel")}
           </span>
-          <h1 className="font-display max-w-[1000px] text-5xl leading-[1.05] text-white md:text-7xl lg:text-[92px]">
+          <h1 className="font-display text-5xl leading-[1.05] text-[#1a1a1a] md:text-7xl lg:text-8xl">
             {t("heroTitle")}
           </h1>
-          <p className="mt-8 max-w-[600px] text-lg leading-relaxed text-white/70 md:text-xl">
+          <p className="mx-auto mt-8 max-w-[620px] text-lg leading-relaxed text-[#1a1a1a]/70">
             {t("heroSubtitle")}
           </p>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Link
-              href={`/${locale}/book-online`}
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-[#0a0a0a] transition-transform hover:scale-105"
-            >
-              Book Your Stay
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center rounded-full border border-white/30 px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
-              Contact Us
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Marquee */}
-      <AccommodationMarquee />
-
-      {/* Showcase */}
       <AccommodationShowcase locale={locale} />
 
-      {/* Testimonials */}
-      <AccommodationTestimonials />
-
-      {/* CTA */}
-      <AccommodationCTA locale={locale} />
+      {/* Bottom CTA */}
+      <section className="border-t border-[#1a1a1a]/10 px-6 py-24 lg:py-32">
+        <div className="mx-auto flex max-w-[1400px] flex-col items-start gap-8 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <h2 className="font-display max-w-[800px] text-4xl leading-[1.1] md:text-5xl lg:text-6xl">
+              Ready to book your stay?
+            </h2>
+            <p className="mt-5 max-w-[520px] text-[17px] leading-[1.8] text-[#1a1a1a]/60">
+              Contact us to check availability and reserve your room or ger at our camp.
+            </p>
+          </div>
+          <Link
+            href={`/${locale}/book-online`}
+            className="inline-flex items-center justify-center rounded-full bg-[#1A2B4A] px-10 py-5 text-base font-semibold text-white transition-transform hover:scale-105"
+          >
+            Book Now
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
