@@ -6,9 +6,21 @@ import GalleryMarquee from "@/components/sections/GalleryMarquee";
 import { useTranslations } from "next-intl";
 
 const rows = [
-  ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"],
-  ["gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg"],
-  ["gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg"],
+  {
+    images: ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"],
+    cardWidth: "w-[260px] md:w-[390px]",
+    cardHeight: "h-[200px] md:h-[260px]",
+  },
+  {
+    images: ["gallery-4.jpg", "gallery-5.jpg"],
+    cardWidth: "w-[340px] md:w-[590px]",
+    cardHeight: "h-[240px] md:h-[320px]",
+  },
+  {
+    images: ["gallery-2.jpg", "gallery-3.jpg", "gallery-1.jpg"],
+    cardWidth: "w-[260px] md:w-[390px]",
+    cardHeight: "h-[200px] md:h-[260px]",
+  },
 ];
 
 export default function GalleryPage() {

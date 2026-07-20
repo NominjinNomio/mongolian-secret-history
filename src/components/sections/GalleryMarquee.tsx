@@ -3,23 +3,30 @@
 import { motion } from "framer-motion";
 import Image from "@/components/common/Image";
 
+export interface GalleryRow {
+  images: string[];
+  cardWidth: string;
+  cardHeight: string;
+}
+
 interface GalleryMarqueeProps {
-  rows: string[][];
-  imageHeight?: string;
-  cardWidth?: string;
+  rows: GalleryRow[];
   linkWrapper?: (children: React.ReactNode) => React.ReactNode;
 }
 
 export default function GalleryMarquee({
   rows,
-  imageHeight = "h-[240px] md:h-[300px]",
-  cardWidth = "w-[320px] md:w-[420px]",
   linkWrapper,
 }: GalleryMarqueeProps) {
   return (
     <div className="flex flex-col gap-4 overflow-hidden">
       {rows.map((row, rowIndex) => {
-        const items = [...row, ...row, ...row, ...row];
+        const items = [
+          ...row.images,
+          ...row.images,
+          ...row.images,
+          ...row.images,
+        ];
         const moveLeft = rowIndex % 2 !== 0;
 
         return (
@@ -39,7 +46,7 @@ export default function GalleryMarquee({
             {items.map((src, i) => {
               const card = (
                 <div
-                  className={`relative ${cardWidth} ${imageHeight} shrink-0 overflow-hidden rounded-xl`}
+                  className={`relative ${row.cardWidth} ${row.cardHeight} shrink-0 overflow-hidden rounded-xl`}
                 >
                   <Image src={src} alt="Gallery" fill className="object-cover" />
                 </div>
