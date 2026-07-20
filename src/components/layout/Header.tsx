@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
+import Image from "@/components/common/Image";
 
 const languages = [
   { code: "en", label: "EN" },
@@ -36,8 +37,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-[#F8F5F0]">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-[2px]">
-        <Link href={`/${locale}`} className="font-display text-2xl text-foreground">
-          Mongolian Secret History
+        <Link href={`/${locale}`} className="flex items-center h-[60px] w-auto">
+          <Image
+            src="logo.png"
+            alt="Mongolian Secret History"
+            height={60}
+            width={60}
+            className="h-full w-auto object-contain"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6">
