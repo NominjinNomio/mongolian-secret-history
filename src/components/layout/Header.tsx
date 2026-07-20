@@ -57,7 +57,7 @@ export default function Header() {
                 href={itemHref}
                 className={cn(
                   "relative text-[14px] font-medium transition-colors duration-200 py-1 group whitespace-nowrap",
-                  isActive ? "text-[#0047AB]" : "text-[#0047AB]/80 hover:text-[#0047AB]"
+                  isActive ? "text-[#1A2B4A]" : "text-[#5C5C5C] hover:text-[#1A2B4A]"
                 )}
               >
                 {item.label}
@@ -75,7 +75,7 @@ export default function Header() {
         <div className="hidden lg:flex items-center gap-5">
           <Link
             href={`/${locale}/search`}
-            className="text-[#0047AB]/80 hover:text-[#0047AB] transition-colors"
+            className="text-[#5C5C5C] hover:text-[#1A2B4A] transition-colors"
             aria-label={t("search")}
           >
             <Search size={20} />
@@ -83,7 +83,7 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-2 text-sm text-[#0047AB]/80 hover:text-[#0047AB]"
+              className="flex items-center gap-2 text-sm text-[#5C5C5C] hover:text-foreground"
               aria-label={th("language")}
             >
               <Globe size={16} />
@@ -97,7 +97,7 @@ export default function Header() {
                       href={`/${lang.code}${pathWithoutLocale}`}
                       className={cn(
                         "block px-4 py-2 text-sm hover:bg-[#F8F6F1] transition-colors",
-                        locale === lang.code ? "text-[#0047AB] font-medium" : "text-[#0047AB]/80"
+                        locale === lang.code ? "text-primary-dark font-medium" : "text-[#5C5C5C]"
                       )}
                       onClick={() => setLangOpen(false)}
                     >
@@ -139,7 +139,7 @@ export default function Header() {
                     href={itemHref}
                     className={cn(
                       "relative text-lg font-medium py-1 group",
-                      isActive ? "text-[#0047AB]" : "text-[#0047AB]/80 hover:text-[#0047AB]"
+                      isActive ? "text-[#1A2B4A]" : "text-foreground hover:text-[#1A2B4A]"
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -161,8 +161,8 @@ export default function Header() {
                     className={cn(
                       "text-sm px-3 py-1 rounded-full border",
                       locale === lang.code
-                        ? "bg-[#0047AB] text-white border-[#0047AB]"
-                        : "text-[#0047AB]/80 border-[#0047AB]/30 hover:border-[#0047AB]"
+                        ? "bg-primary-dark text-white border-primary-dark"
+                        : "text-[#5C5C5C] border-border hover:border-primary-dark"
                     )}
                     onClick={() => setMobileOpen(false)}
                   >
