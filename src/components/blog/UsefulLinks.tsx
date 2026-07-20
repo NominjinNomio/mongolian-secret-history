@@ -1,16 +1,17 @@
 "use client";
 
-import { ArrowUpRight, Plane } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Plane, Flag, Globe, Shield, Building2 } from "lucide-react";
 
 const embassyLinks = [
-  { icon: "🇺🇸", title: "US Embassy", url: "https://mn.usembassy.gov" },
-  { icon: "🇦🇺", title: "Australian Embassy", url: "https://www.dfat.gov.au" },
-  { icon: "🇬🇧", title: "UK Embassy", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
+  { icon: Building2, title: "US Embassy", url: "https://mn.usembassy.gov" },
+  { icon: Flag, title: "Australian Embassy", url: "https://www.dfat.gov.au" },
+  { icon: Flag, title: "UK Embassy", url: "https://www.gov.uk/world/organisations/british-embassy-ulaanbaatar" },
 ];
 
 const infoLinks = [
-  { icon: "🌍", title: "Tourism Association", url: "https://www.travelmongolia.org", label: "Official Website" },
-  { icon: "🇬🇧", title: "UK Travel Advice", url: "https://www.gov.uk/foreign-travel-advice/mongolia", label: "GOV.UK" },
+  { icon: Globe, title: "Tourism Association", url: "https://www.travelmongolia.org", label: "Official Website" },
+  { icon: Shield, title: "UK Travel Advice", url: "https://www.gov.uk/foreign-travel-advice/mongolia", label: "GOV.UK" },
 ];
 
 const airlines = [
@@ -19,35 +20,60 @@ const airlines = [
   { name: "Hunnu Air", url: "https://www.hunnuair.com" },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
 function LinkCard({
-  icon,
+  icon: Icon,
   title,
   url,
   label,
 }: {
-  icon: string | React.ReactNode;
+  icon: React.ComponentType<{ className?: string }>;
   title: string;
   url: string;
   label?: React.ReactNode;
 }) {
   return (
-    <a
+    <motion.a
+      variants={item}
       href={url}
       target="_blank"
       rel="noopener noreferrer"
       className="group flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
     >
       <div className="flex items-center gap-2.5">
-        <span className="text-xl leading-none">{icon}</span>
+        <motion.div
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground shadow-sm"
+          whileHover={{ scale: 1.15, rotate: 5 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Icon className="h-5 w-5" />
+        </motion.div>
         <span className="font-sans font-bold text-[17px] lg:text-[18px] text-foreground">
           {title}
         </span>
       </div>
       <div className="flex items-center gap-1 text-[14px] lg:text-[15px] text-blue-600 mt-4">
         <span className="group-hover:underline">{label ?? "Official Website"}</span>
-        <ArrowUpRight className="w-3.5 h-3.5" />
+        <motion.span
+          whileHover={{ x: 2, y: -2 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </motion.span>
       </div>
-    </a>
+    </motion.a>
   );
 }
 
@@ -57,11 +83,23 @@ export default function UsefulLinks() {
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <hr className="border-border mb-14" />
 
-        <h2 className="font-display text-center text-3xl md:text-4xl lg:text-[36px] leading-[1.15] mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="font-display text-center text-3xl md:text-4xl lg:text-[36px] leading-[1.15] mb-12"
+        >
           Useful Links
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-7"
+        >
           {embassyLinks.map((link) => (
             <LinkCard key={link.url} icon={link.icon} title={link.title} url={link.url} />
           ))}
@@ -76,9 +114,18 @@ export default function UsefulLinks() {
             />
           ))}
 
-          <div className="flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]">
+          <motion.div
+            variants={item}
+            className="flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
+          >
             <div className="flex items-center gap-2.5">
-              <Plane className="w-5 h-5 text-foreground" />
+              <motion.div
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground shadow-sm"
+                whileHover={{ scale: 1.15, rotate: -5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Plane className="w-5 h-5" />
+              </motion.div>
               <span className="font-sans font-bold text-[17px] lg:text-[18px] text-foreground">
                 Airlines
               </span>
@@ -96,8 +143,8 @@ export default function UsefulLinks() {
                 </a>
               ))}
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         <p className="mt-10 text-center text-sm text-muted-foreground">
           Official resources that may be helpful before and during your visit to Mongolia.
