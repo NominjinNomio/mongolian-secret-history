@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
   const locale = useLocale();
 
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[160px]">
+    <section className="bg-[#F8F5F0] py-20 lg:py-[150px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="text-center mb-16 lg:mb-20">
           <span className="text-sm tracking-[4px] text-primary-dark uppercase">
@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
           </h2>
         </div>
 
-        <div className="relative mx-auto min-h-[1100px] max-w-[1300px] lg:min-h-[860px]">
+        <div className="relative mx-auto min-h-[1080px] max-w-[1280px] lg:min-h-[840px]">
           {/* 5 Stars badge */}
           <motion.div
             {...float}
@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="right-4 top-0 z-10 max-w-[380px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
+            className="right-3 top-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
           >
             <div className="flex items-center gap-4">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-[#E8E4DC]">
@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="left-4 top-[260px] z-10 max-w-[320px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
+            className="left-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Compass className="h-5 w-5 text-[#1a1a1a]" />
@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="relative z-20 mx-auto my-16 flex h-[580px] w-[320px] flex-col overflow-hidden rounded-[48px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
+            className="relative z-20 mx-auto my-14 flex h-[570px] w-[310px] flex-col overflow-hidden rounded-[44px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
           >
             <div className="relative flex h-11 items-center justify-between bg-[#1a1a1a] px-5 text-white">
               <span className="text-sm font-medium">9:41</span>
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="right-4 top-[260px] z-10 max-w-[320px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
+            className="right-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Award className="h-5 w-5 text-[#1a1a1a]" />
@@ -164,7 +164,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-            className="left-4 bottom-0 z-10 max-w-[380px] rounded-[28px] bg-white p-7 shadow-lg lg:absolute"
+            className="left-3 bottom-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
               <Mail className="h-5 w-5 text-[#1a1a1a]" />
@@ -179,7 +179,7 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            className="right-4 bottom-0 z-10 max-w-[380px] rounded-[28px] bg-[#111111] p-7 text-white shadow-lg lg:absolute border border-white/10"
+            className="right-3 bottom-0 z-10 max-w-[370px] rounded-[26px] bg-[#111111] p-6 text-white shadow-lg lg:absolute border border-white/10"
           >
             <div className="flex items-center gap-2">
               <span className="text-3xl font-bold">FREE</span>
