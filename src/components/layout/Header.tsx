@@ -18,6 +18,7 @@ const navLinks = [
   { label: "Home", url: "/" },
   { label: "Tours", url: "/portfolio" },
   { label: "About Mongolia", url: "/about" },
+  { label: "Accommodation", url: "/accommodation" },
   { label: "Blog & News", url: "/blog" },
 ];
 
