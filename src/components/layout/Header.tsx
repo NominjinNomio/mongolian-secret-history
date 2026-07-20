@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
+import ThemeToggle from "@/components/common/ThemeToggle";
 
 const languages = [
   { code: "en", label: "EN" },
@@ -170,7 +171,8 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-              <Button href={`/${locale}/login`} variant="primary">
+          <ThemeToggle />
+          <Button href={`/${locale}/login`} variant="primary">
                 {th("login")}
               </Button>
             </nav>
