@@ -1,7 +1,7 @@
 "use client";
 
 import SectionHeader from "@/components/ui/SectionHeader";
-import TeamMarquee from "@/components/sections/TeamMarquee";
+import TeamCarousel from "@/components/sections/TeamCarousel";
 import { useTranslations } from "next-intl";
 
 export default function TeamSection() {
@@ -17,7 +17,7 @@ export default function TeamSection() {
       </div>
 
       <div className="mt-14">
-        <TeamMarquee />
+        <TeamCarousel />
       </div>
     </section>
   );
