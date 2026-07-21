@@ -35,7 +35,7 @@ export default function ClimateWheel({ label, title, seasons }: ClimateWheelProp
 
   return (
     <section
-      className="relative overflow-hidden bg-primary-dark py-20 lg:py-[100px]"
+      className="relative overflow-hidden bg-[#FAFAF8] py-20 lg:py-[100px]"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -43,7 +43,7 @@ export default function ClimateWheel({ label, title, seasons }: ClimateWheelProp
         <div className="text-center mb-10">
           <span className="section-label text-gold">{label}</span>
           <span className="gold-line mx-auto mt-3" />
-          <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3 text-white">
+          <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3 text-foreground">
             {title}
           </h2>
         </div>
@@ -64,7 +64,7 @@ export default function ClimateWheel({ label, title, seasons }: ClimateWheelProp
                     opacity: Math.abs(angle) > 90 ? 0 : isActive ? 1 : 0.35,
                     fontSize: isActive ? "clamp(18px, 2.2vw, 26px)" : "clamp(13px, 1.5vw, 17px)",
                     fontWeight: isActive ? 800 : 500,
-                    color: isActive ? "#C8A24A" : "#FFFFFF",
+                    color: isActive ? "#C8A24A" : "#0A2C7A",
                     pointerEvents: Math.abs(angle) > 90 ? "none" : "auto",
                     zIndex: isActive ? 10 : 1,
                   }}
@@ -94,13 +94,13 @@ export default function ClimateWheel({ label, title, seasons }: ClimateWheelProp
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-display text-3xl md:text-4xl text-white">
+                <h3 className="font-display text-3xl md:text-4xl text-foreground">
                   {current.season}
                 </h3>
                 <p className="text-sm text-gold uppercase tracking-[0.2em]">
                   {current.months}
                 </p>
-                <p className="text-white/85 leading-[1.8] max-w-lg">
+                <p className="text-muted-foreground leading-[1.8] max-w-lg">
                   {current.desc}
                 </p>
               </motion.div>
