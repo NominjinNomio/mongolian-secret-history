@@ -59,7 +59,7 @@ export default function SpaSection({
             transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             className="flex flex-col justify-center bg-white p-8 md:p-12 lg:p-16"
           >
-            <h3 className="font-elegant text-3xl md:text-4xl font-medium text-foreground">
+            <h3 className="font-elegant text-3xl md:text-4xl font-medium text-[#0A2C7A]">
               {title}
             </h3>
             <p className="text-[#5A5A5A] leading-[1.8] text-sm md:text-base mt-5">
