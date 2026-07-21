@@ -8,7 +8,7 @@ interface WelcomeIntroProps {
 
 export default function WelcomeIntro({ text }: WelcomeIntroProps) {
   return (
-    <section className="bg-white py-20 md:py-28 lg:py-36">
+    <section className="flex min-h-[50vh] items-center justify-center bg-white py-20 md:py-28 lg:py-36">
       <div className="container-custom max-w-6xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
