@@ -9,10 +9,10 @@ export default function HeroHome() {
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-[40%_1fr]">
         {/* Pattern panel */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.92 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
           className="relative flex aspect-square items-center justify-center overflow-hidden bg-[#FAFAF8] p-6 lg:aspect-auto lg:min-h-[520px]"
         >
           <MongolianPattern className="h-full w-full max-w-[420px] text-[#C9C3B8]" />
@@ -20,19 +20,26 @@ export default function HeroHome() {
 
         {/* Hero image */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.1 }}
+          transition={{ duration: 1 }}
           className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[520px]"
         >
-          <Image
-            src="hero-steppe.jpg"
-            alt="Mongolian Secret History dining"
-            fill
-            className="object-cover"
-            priority
-          />
+          <motion.div
+            initial={{ scale: 1.15 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 2.2, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src="hero-steppe.jpg"
+              alt="Mongolian Secret History dining"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
         </motion.div>
       </div>
 
