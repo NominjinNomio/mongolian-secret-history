@@ -61,7 +61,7 @@ export default async function PricingPage({ params }: PageProps) {
                 className="rounded-[20px] bg-white border border-border p-10 flex flex-col gap-4 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
               >
                 <span className="text-sm text-muted-foreground">{plan.duration}</span>
-                <span className="font-display text-[44px] text-primary">{plan.price}</span>
+                <span className="font-display text-2xl md:text-3xl text-primary">{plan.price}</span>
                 <h3 className="font-display text-2xl text-foreground">{plan.title}</h3>
                 <p className="text-[15px] text-muted-foreground leading-relaxed">{plan.desc}</p>
                 <ul className="flex flex-col gap-3 mt-2">
@@ -83,13 +83,9 @@ export default async function PricingPage({ params }: PageProps) {
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      <section className="bg-primary-dark py-12 lg:py-14">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="max-w-[700px] text-center lg:text-left">
+          <div className="mt-12 rounded-[20px] bg-primary-dark p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="max-w-[700px]">
               <h3 className="font-display text-2xl lg:text-[28px] text-white">Need a Custom Itinerary?</h3>
               <p className="text-white/85 mt-2 leading-relaxed">
                 Tell us your travel dates, interests, and budget. We'll design a tailor-made Mongolia journey just for you.
