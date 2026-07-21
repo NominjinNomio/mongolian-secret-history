@@ -1,3 +1,4 @@
+import HeroHome from "@/components/sections/HeroHome";
 import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
 import DoubleImageSection from "@/components/sections/DoubleImageSection";
@@ -6,6 +7,8 @@ import SpaSection from "@/components/sections/SpaSection";
 export default function HomePage() {
   return (
     <>
+      <HeroHome />
+
       <WelcomeIntro
         text="Immerse yourself in the captivating beauty of Mongolia at Mongolian Secret History. A unique retreat set within the vast steppe, offering authentic ger accommodation, refined Mongolian cuisine, and curated cultural journeys."
       />
