@@ -15,7 +15,7 @@ export default function WelcomeIntro({ text }: WelcomeIntroProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="font-elegant text-2xl md:text-3xl lg:text-4xl font-light leading-[1.45] text-center text-[#0A2C7A]"
+          className="font-elegant text-2xl md:text-3xl lg:text-4xl font-light leading-[1.45] text-center text-foreground"
         >
           {text}
         </motion.p>
