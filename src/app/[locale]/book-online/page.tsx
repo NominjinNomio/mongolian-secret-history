@@ -4,6 +4,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
+import BuildYourTourSection from "@/components/sections/BuildYourTourSection";
+import PricingSection from "@/components/sections/PricingSection";
+import TeamCarousel from "@/components/sections/TeamCarousel";
+import GalleryMarquee from "@/components/sections/GalleryMarquee";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import FAQSection from "@/components/sections/FAQSection";
+import BlogSection from "@/components/sections/BlogSection";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
@@ -52,6 +59,36 @@ export default function BookOnlinePage() {
         title="Book Online"
         subtitle="Reserve your tour, accommodation, or travel services with our team"
       />
+
+      <BuildYourTourSection />
+      <PricingSection />
+      <TeamCarousel />
+
+      <section className="bg-background py-20 lg:py-[100px] overflow-hidden">
+        <div className="text-center mb-12">
+          <span className="section-label">Gallery</span>
+          <span className="gold-line mx-auto mt-3" />
+          <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3">Moments from Mongolia</h2>
+        </div>
+        <GalleryMarquee
+          rows={[
+            {
+              images: ["/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg"],
+              cardWidth: "w-[320px] md:w-[400px]",
+              cardHeight: "h-[200px] md:h-[240px]",
+            },
+            {
+              images: ["/images/tour-5.jpg", "/images/tour-6.jpg", "/images/hero-steppe.jpg", "/images/about-nomads.jpg"],
+              cardWidth: "w-[320px] md:w-[400px]",
+              cardHeight: "h-[200px] md:h-[240px]",
+            },
+          ]}
+        />
+      </section>
+
+      <TestimonialsSection />
+      <FAQSection />
+      <BlogSection />
 
       <section className="bg-background pt-16 pb-12 lg:pt-[80px] lg:pb-[60px]">
         <div className="mx-auto max-w-[800px] px-6 lg:px-0 text-center">
