@@ -21,7 +21,7 @@ const navLinks = [
   { label: "Tours", url: "/portfolio" },
   { label: "About Mongolia", url: "/about" },
   { label: "Accommodation", url: "/accommodation" },
-  { label: "Plan your trip", url: "/book-online" },
+  { label: "Plan your trip", url: "/plan-your-trip" },
   { label: "Blog & News", url: "/blog" },
 ];
 
