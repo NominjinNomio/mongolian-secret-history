@@ -36,7 +36,7 @@ export default function Header() {
   const currentLang = languages.find((l) => l.code === locale) || languages[0];
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F5F2EC] shadow-sm">
+    <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-4 lg:px-6">
         <Link href={`/${locale}`} className="flex items-center">
           <span className="font-elegant text-2xl md:text-3xl font-medium text-foreground">
@@ -87,7 +87,7 @@ export default function Header() {
               {currentLang.label} ▾
             </button>
             {langOpen && (
-              <div className="absolute right-0 top-full mt-2 w-28 rounded-xl bg-[#F5F2EC] border border-border shadow-lg py-2">
+              <div className="absolute right-0 top-full mt-2 w-28 rounded-xl bg-white border border-border shadow-lg py-2">
                 {languages.map((lang) => (
                     <Link
                       key={lang.code}
@@ -125,7 +125,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-[#F5F2EC] border-t border-border"
+            className="lg:hidden bg-white border-t border-border"
           >
             <nav className="flex flex-col items-center gap-6 py-8">
               {navLinks.map((item) => {
