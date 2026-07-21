@@ -878,3 +878,104 @@ Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `e
 
  GET /en/about 200 in 12.9s (next.js: 461ms, proxy.ts: 5ms, generate-params: 76ms, application-code: 12.4s)
 ✓ Compiled in 303.2s
+[browser] Image with src "/images/placeholder.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:80:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  78 |             href={`/${locale}/search`}
+  79 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 80 |             aria-label={t("search")}
+     |                         ^
+  81 |           >
+  82 |             <Search size={20} />
+  83 |           </Link> (src/components/layout/Header.tsx:80:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:80:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  78 |             href={`/${locale}/search`}
+  79 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 80 |             aria-label={t("search")}
+     |                         ^
+  81 |           >
+  82 |             <Search size={20} />
+  83 |           </Link> (src/components/layout/Header.tsx:80:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/en/about" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+-                         className="h-full antialiased light"
+-                         lang="en"
+-                         style={{color-scheme:"light"}}
+                        >
+                          <body
+-                           className="min-h-full flex flex-col bg-background text-foreground"
+                          >
+                  ...
+ 
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:80:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  78 |             href={`/${locale}/search`}
+  79 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 80 |             aria-label={t("search")}
+     |                         ^
+  81 |           >
+  82 |             <Search size={20} />
+  83 |           </Link> (src/components/layout/Header.tsx:80:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:80:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  78 |             href={`/${locale}/search`}
+  79 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 80 |             aria-label={t("search")}
+     |                         ^
+  81 |           >
+  82 |             <Search size={20} />
+  83 |           </Link> (src/components/layout/Header.tsx:80:25)
+
+<--- Last few GCs --->
+
+[563946:0x5f8cf3404000]   427799 ms: Scavenge 7140.6 (7610.8) -> 7132.6 (7614.1) MB, pooled: 0 MB, 18.26 / 0.00 ms  (average mu = 0.242, current mu = 0.201) allocation failure; 
+[563946:0x5f8cf3404000]   430805 ms: Mark-Compact 7145.8 (7615.6) -> 7096.2 (7595.9) MB, pooled: 10 MB, 2978.80 / 15.19 ms  (average mu = 0.213, current mu = 0.183) allocation failure; scavenge might not succeed
+
+
+<--- JS stacktrace --->
+
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 0x79308b746804 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 2: 0x79308be6f754 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 3: 0x79308be6fa4a v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 4: 0x79308c0b8a9b  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 5: 0x79308c0b8ad8 v8::internal::Heap::ReportIneffectiveMarkCompactIfNeeded() [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 6: 0x79308c0d0e6e  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 7: 0x79308c0d3a1c  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+ 8: 0x79308c9fbf47  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
