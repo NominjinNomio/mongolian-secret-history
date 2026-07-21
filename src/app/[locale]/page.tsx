@@ -1,22 +1,20 @@
-import Hero from "@/components/sections/Hero";
-import WelcomeSection from "@/components/sections/WelcomeSection";
-import SplitFeatureSection from "@/components/sections/SplitFeatureSection";
-import ThreeImageFeature from "@/components/sections/ThreeImageFeature";
-import TextImageFeature from "@/components/sections/TextImageFeature";
-import FullBleedFeature from "@/components/sections/FullBleedFeature";
+import HeroHome from "@/components/sections/HeroHome";
+import WelcomeIntro from "@/components/sections/WelcomeIntro";
+import SplitCardSection from "@/components/sections/SplitCardSection";
+import DoubleImageSection from "@/components/sections/DoubleImageSection";
+import SpaSection from "@/components/sections/SpaSection";
 
 export default function HomePage() {
   return (
     <>
-      <Hero />
+      <HeroHome />
 
-      <WelcomeSection
-        eyebrow="Welcome to Mongolia"
+      <WelcomeIntro
         title="Immerse yourself in the captivating beauty of Mongolia"
-        description="Mongolian Secret History invites you to experience the timeless landscapes, ancient traditions, and warm hospitality of the Mongolian steppe. From authentic ger camps to curated cultural journeys, every detail is crafted for an unforgettable stay."
+        description="Mongolian Secret History invites you to discover a unique retreat where ancient nomadic traditions meet refined comfort. Set amidst the vast steppe, our camp offers an authentic yet elegant gateway to Mongolia's timeless landscapes and warm hospitality."
       />
 
-      <SplitFeatureSection
+      <SplitCardSection
         eyebrow="Ger Camp Accommodation"
         title="Stay in authentic Mongolian gers"
         description="Experience traditional Mongolian living in our beautifully appointed gers. Each one blends heritage craftsmanship with modern comfort, offering panoramic views of the surrounding steppe and a peaceful retreat after a day of adventure."
@@ -26,7 +24,7 @@ export default function HomePage() {
         cta="View Accommodation"
       />
 
-      <ThreeImageFeature
+      <DoubleImageSection
         eyebrow="Mongolian Cuisine"
         title="Savor authentic flavors"
         description="Our kitchen celebrates the rich culinary heritage of Mongolia. From hand-rolled buuz and hearty khorkhog to fresh dairy dishes and modern interpretations, every meal is a journey through the country's nomadic traditions."
@@ -37,9 +35,10 @@ export default function HomePage() {
         ]}
         href="/services"
         cta="Explore Dining"
+        reversed
       />
 
-      <TextImageFeature
+      <SplitCardSection
         eyebrow="Discover Mongolia"
         title="Land of endless horizons"
         description="Mongolia is a country of dramatic contrasts — vast deserts, rolling grasslands, pristine lakes, and ancient forests. Discover the rich tapestry of nomadic culture, UNESCO-listed sites, and untouched wilderness that has captivated travelers for centuries."
@@ -49,17 +48,32 @@ export default function HomePage() {
         cta="About Mongolia"
       />
 
-      <FullBleedFeature
-        eyebrow="Restaurant & Dining"
-        title="An unforgettable culinary journey"
-        description="Step into our restaurant where traditional Mongolian hospitality meets refined dining. Our chefs source local ingredients and ancestral recipes to create dishes that tell the story of the steppe, served in an atmosphere of understated elegance."
-        image="culture-nomads.jpg"
-        imageAlt="Restaurant interior"
-        href="/services"
-        cta="View Dining"
+      <DoubleImageSection
+        eyebrow="Recreation & Activities"
+        title="Experience the steppe"
+        description="Enjoy a refined stay with access to exceptional indoor and outdoor experiences. Horseback riding across the open plains, archery, traditional crafts, and evenings of folk music — there is something unforgettable for every traveler."
+        images={[
+          { src: "mongolia-destinations-bg.jpg", alt: "Horseback riding" },
+          { src: "hero-steppe.jpg", alt: "Steppe activity" },
+          { src: "about-nomads.jpg", alt: "Cultural experience" },
+        ]}
+        href="/portfolio"
+        cta="Recreation & Activities"
       />
 
-      <SplitFeatureSection
+      <SpaSection
+        eyebrow="Wellness & Relaxation"
+        title="Restore balance in nature"
+        description="Our wellness spaces exist to restore balance — not through indulgence, but through quiet care. Unwind in a serene setting, reconnect with nature, and enjoy treatments inspired by Mongolian traditions and the healing power of the landscape."
+        images={[
+          { src: "culture-nomads.jpg", alt: "Wellness space" },
+          { src: "hero-steppe.jpg", alt: "Relaxation area" },
+        ]}
+        href="/services"
+        cta="View Wellness"
+      />
+
+      <SplitCardSection
         eyebrow="Tours & Experiences"
         title="Curated journeys across the steppe"
         description="From horseback riding across the open plains to visiting ancient monasteries and meeting local nomadic families, our tours are designed to connect you with the soul of Mongolia. Choose from ready-made itineraries or let us craft a custom adventure."
