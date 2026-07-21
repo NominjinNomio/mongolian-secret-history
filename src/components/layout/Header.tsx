@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
+import Logo from "@/components/common/Logo";
 import ThemeToggle from "@/components/common/ThemeToggle";
 
 const languages = [
@@ -38,8 +39,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-4 lg:px-6">
-        <Link href={`/${locale}`} className="flex items-center">
-          <span className="font-elegant text-2xl md:text-3xl font-medium text-foreground">
+        <Link href={`/${locale}`} className="flex items-center gap-3">
+          <Logo className="h-[56px] w-[56px]" />
+          <span className="font-elegant text-xl md:text-2xl font-medium text-foreground hidden sm:block">
             Mongolian Secret History
           </span>
         </Link>
