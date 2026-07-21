@@ -84,14 +84,14 @@ export default async function PricingPage({ params }: PageProps) {
             ))}
           </div>
 
-          <div className="mt-12 rounded-[20px] bg-primary-dark p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="mt-12 rounded-[20px] bg-gold p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-[700px]">
-              <h3 className="font-display text-2xl lg:text-[28px] text-white">Need a Custom Itinerary?</h3>
-              <p className="text-white/85 mt-2 leading-relaxed">
+              <h3 className="font-display text-2xl lg:text-[28px] text-[#0A2C7A]">Need a Custom Itinerary?</h3>
+              <p className="text-[#0A2C7A]/85 mt-2 leading-relaxed">
                 Tell us your travel dates, interests, and budget. We'll design a tailor-made Mongolia journey just for you.
               </p>
             </div>
-            <Button href={`/${locale}/contact`} variant="gold">
+            <Button href={`/${locale}/contact`} variant="primary">
               Request Custom Quote
             </Button>
           </div>
