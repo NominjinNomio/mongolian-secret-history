@@ -48,9 +48,9 @@ export default function ClimateWheel({ seasons }: ClimateWheelProps) {
                 <button
                   key={s.season}
                   onClick={() => setActive(i)}
-                  className="absolute left-1/2 top-1/2 origin-left whitespace-nowrap uppercase tracking-[0.15em] transition-all duration-700 ease-out"
+                  className="absolute left-1/2 top-1/2 whitespace-nowrap uppercase tracking-[0.15em] transition-all duration-700 ease-out"
                   style={{
-                    transform: `translateY(-50%) rotate(${angle}deg) translateX(min(38vw, 420px)) rotate(0deg)`,
+                    transform: `translate(-50%, -50%) rotate(${angle}deg) translateX(-min(24vw, 240px))`,
                     opacity: Math.abs(angle) > 90 ? 0 : isActive ? 1 : 0.35,
                     fontSize: isActive ? "clamp(18px, 2.2vw, 26px)" : "clamp(13px, 1.5vw, 17px)",
                     fontWeight: isActive ? 800 : 500,
