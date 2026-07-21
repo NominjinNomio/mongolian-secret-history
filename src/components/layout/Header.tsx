@@ -19,7 +19,6 @@ const languages = [
 
 const navLinks = [
   { label: "Tours", url: "/portfolio" },
-  { label: "Home", url: "/" },
   { label: "About Mongolia", url: "/about" },
   { label: "Accommodation", url: "/accommodation" },
   { label: "Blog & News", url: "/blog" },
