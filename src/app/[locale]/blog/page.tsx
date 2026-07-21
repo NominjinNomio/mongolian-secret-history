@@ -1,37 +1,68 @@
-import { getServerApolloClient } from "@/lib/apollo/server-client";
-import { CP_POSTS, type CpPostsData, type CpPostsVariables, type Post } from "@/graphql/cms/queries/post";
 import BlogPageClient from "@/components/blog/BlogPageClient";
 import UsefulLinks from "@/components/blog/UsefulLinks";
+import type { Post } from "@/graphql/cms/queries/post";
 
-interface PageProps {
-  params: Promise<{ locale: string }>;
-}
+const staticPosts: Post[] = [
+  {
+    _id: "1",
+    clientPortalId: "",
+    title: "The Nomadic Way: A Journey Through Mongolian Culture",
+    slug: "nomadic-way-journey",
+    excerpt: "Discover the traditions, hospitality, and timeless lifestyle that have shaped Mongolia's nomadic heritage for thousands of years.",
+    publishedDate: "2024-09-15",
+    thumbnail: { name: "", url: "about-nomads.jpg", type: "image", size: 0 },
+  },
+  {
+    _id: "2",
+    clientPortalId: "",
+    title: "Tasting the Steppe: Iconic Mongolian Dishes",
+    slug: "tasting-steppe-dishes",
+    excerpt: "From buuz to khorkhog, explore the rich flavors and ancient cooking techniques behind Mongolia's most beloved culinary traditions.",
+    publishedDate: "2024-08-22",
+    thumbnail: { name: "", url: "culture-nomads.jpg", type: "image", size: 0 },
+  },
+  {
+    _id: "3",
+    clientPortalId: "",
+    title: "Ger Living: Architecture of the Mongolian Steppe",
+    slug: "ger-living-architecture",
+    excerpt: "Learn how the traditional Mongolian ger is designed to withstand extreme climates while offering a warm, circular family living space.",
+    publishedDate: "2024-07-10",
+    thumbnail: { name: "", url: "hero-steppe.jpg", type: "image", size: 0 },
+  },
+  {
+    _id: "4",
+    clientPortalId: "",
+    title: "Horseback Across Mongolia: An Unforgettable Adventure",
+    slug: "horseback-adventure",
+    excerpt: "Experience the freedom of exploring Mongolia's vast open landscapes on horseback, just as nomads have done for centuries.",
+    publishedDate: "2024-06-05",
+    thumbnail: { name: "", url: "mongolia-destinations-bg.jpg", type: "image", size: 0 },
+  },
+  {
+    _id: "5",
+    clientPortalId: "",
+    title: "Naadam Festival: The Three Games of Men",
+    slug: "naadam-festival",
+    excerpt: "A celebration of wrestling, horse racing, and archery — Naadam is Mongolia's most colorful and exciting national festival.",
+    publishedDate: "2024-05-18",
+    thumbnail: { name: "", url: "blog-placeholder.jpg", type: "image", size: 0 },
+  },
+  {
+    _id: "6",
+    clientPortalId: "",
+    title: "Sustainable Travel in Mongolia",
+    slug: "sustainable-travel-mongolia",
+    excerpt: "How to explore Mongolia responsibly while supporting local communities, preserving nature, and honoring nomadic traditions.",
+    publishedDate: "2024-04-30",
+    thumbnail: { name: "", url: "blog-placeholder.jpg", type: "image", size: 0 },
+  },
+];
 
-export default async function BlogPage({ params }: PageProps) {
-  const { locale } = await params;
-  const client = await getServerApolloClient();
-
-  let posts: Post[] = [];
-  try {
-    const { data } = await client.query<CpPostsData, CpPostsVariables>({
-      query: CP_POSTS,
-      variables: {
-        language: locale,
-        webId: "6a4794b1d4a990261f448fe6",
-        status: "published",
-        limit: 100,
-        sortField: "publishedDate",
-        sortDirection: "desc",
-      },
-    });
-    posts = data?.cpPosts ?? [];
-  } catch (error) {
-    console.error("Failed to fetch CMS posts:", error);
-  }
-
+export default function BlogPage() {
   return (
     <>
-      <BlogPageClient posts={posts} />
+      <BlogPageClient posts={staticPosts} />
       <UsefulLinks />
     </>
   );
