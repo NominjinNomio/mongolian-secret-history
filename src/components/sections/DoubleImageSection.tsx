@@ -39,7 +39,7 @@ export default function DoubleImageSection({
               reversed ? "lg:order-2" : "lg:order-1"
             }`}
           >
-            <h3 className="font-elegant text-3xl md:text-4xl font-medium text-[#0A2C7A]">
+            <h3 className="font-elegant text-3xl md:text-4xl font-medium text-foreground">
               {title}
             </h3>
             <p className="text-[#5A5A5A] leading-[1.8] text-sm md:text-base mt-5">

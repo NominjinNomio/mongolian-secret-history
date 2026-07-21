@@ -44,7 +44,7 @@ export default function HeroHome() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="pb-8 pt-4 text-right lg:pb-12 lg:pt-6"
         >
-          <span className="font-elegant text-2xl md:text-3xl font-light italic text-[#0A2C7A]">
+          <span className="font-elegant text-2xl md:text-3xl font-light italic text-foreground">
             Welcome to Mongolia
           </span>
         </motion.div>
