@@ -45,7 +45,7 @@ export default function BlogDetailPageClient({ post, relatedPosts }: BlogDetailP
                 className="relative aspect-[16/9] rounded-[20px] overflow-hidden border border-border mb-8"
               >
                 <Image
-                  src={post.thumbnail?.url || "blog-placeholder.jpg"}
+                  src={post.thumbnail?.url || "/images/tour-2.jpg"}
                   alt={post.title || ""}
                   fill
                   className="object-cover"
@@ -76,7 +76,7 @@ export default function BlogDetailPageClient({ post, relatedPosts }: BlogDetailP
                 className="rounded-2xl bg-muted p-7 flex flex-col items-center text-center border border-border"
               >
                 <div className="relative w-20 h-20 rounded-full overflow-hidden mb-3 border border-border">
-                  <Image src="team-placeholder.jpg" alt="Author" fill className="object-cover" />
+                  <Image src="/images/tour-6.jpg" alt="Author" fill className="object-cover" />
                 </div>
                 <h3 className="font-display text-xl text-foreground">{t("authorName")}</h3>
                 <span className="text-sm text-primary">{t("authorRole")}</span>

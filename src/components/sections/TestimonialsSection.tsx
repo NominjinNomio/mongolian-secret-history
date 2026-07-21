@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
           >
             <div className="flex items-center gap-4">
               <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-muted">
-                <Image src="team-placeholder.jpg" alt="Marie" fill className="object-cover" />
+                <Image src="/images/tour-6.jpg" alt="Marie" fill className="object-cover" />
               </div>
               <div>
                 <h3 className="font-display text-xl">Marie Dupont</h3>
@@ -110,7 +110,7 @@ export default function TestimonialsSection() {
             <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-5">
               <div className="rounded-[24px] bg-primary-dark p-4">
                 <div className="relative aspect-square w-full overflow-hidden rounded-[20px]">
-                  <Image src="team-placeholder.jpg" alt="Featured guide" fill className="object-cover" />
+                  <Image src="/images/tour-6.jpg" alt="Featured guide" fill className="object-cover" />
                 </div>
                 <div className="mt-4 text-white">
                   <h3 className="font-display text-lg">Boldbaatar</h3>

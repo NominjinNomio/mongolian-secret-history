@@ -13,7 +13,7 @@ const posts = [
     slug: "10-reasons-to-visit-mongolia-this-summer",
     title: "10 Reasons to Visit Mongolia This Summer",
     date: "June 15, 2026",
-    image: "gallery-1.jpg",
+    image: "/images/tour-1.jpg",
     content: [
       { type: "p", text: "Summer in Mongolia is unlike anywhere else on Earth. From endless steppe under a deep blue sky to ancient nomadic culture, here are ten reasons why this season is the perfect time to visit." },
       { type: "h3", text: "1. Endless Blue Sky" },
@@ -32,7 +32,7 @@ const posts = [
     slug: "guide-to-mongolian-nomadic-culture",
     title: "A Guide to Mongolian Nomadic Culture",
     date: "May 22, 2026",
-    image: "gallery-2.jpg",
+    image: "/images/tour-2.jpg",
     content: [
       { type: "p", text: "Nomadic culture is the heart of Mongolia. For thousands of years, families have moved with the seasons, raising livestock and living in portable gers." },
       { type: "h3", text: "1. Ger Life" },
@@ -47,7 +47,7 @@ const posts = [
     slug: "what-to-pack-for-a-mongolia-tour",
     title: "What to Pack for a Mongolia Tour",
     date: "April 10, 2026",
-    image: "gallery-3.jpg",
+    image: "/images/tour-3.jpg",
     content: [
       { type: "p", text: "Packing right can make your Mongolia trip far more comfortable. The weather can change quickly, so layers are essential." },
       { type: "h3", text: "1. Layers" },
@@ -62,7 +62,7 @@ const posts = [
     slug: "highlights-of-the-mongolian-festivals",
     title: "Highlights of the Mongolian Festivals",
     date: "March 5, 2026",
-    image: "gallery-4.jpg",
+    image: "/images/tour-4.jpg",
     content: [
       { type: "p", text: "Mongolia's festivals offer a vivid window into the country's traditions, sports, and spiritual life." },
       { type: "h3", text: "1. Naadam" },
@@ -75,7 +75,7 @@ const posts = [
     slug: "horse-trekking-in-orkhon-valley",
     title: "Horse Trekking in Orkhon Valley",
     date: "February 18, 2026",
-    image: "gallery-5.jpg",
+    image: "/images/tour-5.jpg",
     content: [
       { type: "p", text: "The Orkhon Valley is one of Mongolia's most beautiful trekking regions, rich with history, waterfalls, and nomadic camps." },
       { type: "h3", text: "1. Orkhon Waterfall" },
@@ -88,7 +88,7 @@ const posts = [
     slug: "best-time-to-see-wild-horses-in-khustai",
     title: "Best Time to See Wild Horses in Khustai",
     date: "January 12, 2026",
-    image: "about-nomads.jpg",
+    image: "/images/about-nomads.jpg",
     content: [
       { type: "p", text: "Khustai National Park is home to the takhi, or Przewalski's horse, the only truly wild horse species in the world." },
       { type: "h3", text: "1. Early Morning" },

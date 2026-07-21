@@ -25,7 +25,7 @@ const details: Record<
     title: "MONGOLIAN SECRET HISTORY CAMP",
     subtitle:
       "A year-round tourist complex inspired by Mongolian heritage and tradition",
-    image: "gallery-2.jpg",
+    image: "/images/tour-2.jpg",
     intro:
       "The Mongolian Secret History tourist complex has been operating since November 2005. Open year-round, the complex welcomes travelers and vacationers in a comfortable natural environment while offering high-quality and unique services inspired by Mongolian heritage and tradition.",
     sections: [
@@ -91,7 +91,7 @@ const details: Record<
     title: "SECRET OF THE SILK ROAD RESORT",
     subtitle:
       "A unique resort blending nomadic culture, historical heritage, and modern comfort",
-    image: "gallery-1.jpg",
+    image: "/images/tour-1.jpg",
     intro:
       "The Secret of the Silk Road resort was established in 2020 in honor of the 800th anniversary of Kharkhorin. The complex is uniquely designed based on the architectural style of Ögedei Khan’s Tumen Amgalant Palace, featuring the symbolic Silver Tree, traditionally represented with four dragon fountains and a celestial figure at the top. The camp offers visitors a blend of authentic nomadic culture, historical heritage, and modern comfort.",
     sections: [
@@ -159,7 +159,7 @@ const details: Record<
     title: "SECRET OF ONGI TOURIST CAMP",
     subtitle:
       "Spiritual tranquility, natural harmony, and cultural legacy on the banks of the Ongi River",
-    image: "gallery-3.jpg",
+    image: "/images/tour-3.jpg",
     intro:
       "Secret of Ongi tourist camp founded in 2008 as a restored cultural heritage site on the banks of the Ongi River and the historical Ongi Monastery, brings together spiritual tranquility, natural harmony, and cultural legacy all in one place.",
     sections: [

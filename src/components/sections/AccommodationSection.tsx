@@ -17,7 +17,7 @@ const accommodations = [
       "A luxurious resort of 45 gers that lets you feel the unique spirit of the Silk Road.",
     price: "₮250,000",
     unit: "night",
-    image: "gallery-1.jpg",
+    image: "/images/tour-1.jpg",
   },
   {
     index: "02",
@@ -28,7 +28,7 @@ const accommodations = [
       "A traditional ger camp located among the golden autumn forests, close to historic sites.",
     price: "₮180,000",
     unit: "night",
-    image: "gallery-2.jpg",
+    image: "/images/tour-2.jpg",
   },
   {
     index: "03",
@@ -39,7 +39,7 @@ const accommodations = [
       "A peaceful ger camp where you can rest under a star-filled night sky.",
     price: "₮160,000",
     unit: "night",
-    image: "gallery-3.jpg",
+    image: "/images/tour-3.jpg",
   },
 ];
 

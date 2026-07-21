@@ -53,7 +53,7 @@ export default function BlogSection() {
             >
               <div className="relative h-[220px] w-full overflow-hidden">
                 <Image
-                  src="blog-placeholder.jpg"
+                  src="/images/tour-2.jpg"
                   alt={post.title}
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"

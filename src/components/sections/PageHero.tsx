@@ -13,7 +13,7 @@ export default function PageHero({ label, title, subtitle }: PageHeroProps) {
   return (
     <section className="relative flex min-h-[480px] items-center justify-center overflow-hidden">
       <Image
-        src="page-hero-bg.jpg"
+        src="/images/tour-3.jpg"
         alt={title}
         fill
         className="object-cover"

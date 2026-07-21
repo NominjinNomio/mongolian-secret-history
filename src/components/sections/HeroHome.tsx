@@ -33,7 +33,7 @@ export default function HeroHome() {
             className="absolute inset-0"
           >
             <Image
-              src="hero-steppe.jpg"
+              src="/images/hero-steppe.jpg"
               alt="Mongolian Secret History dining"
               fill
               className="object-cover"

@@ -16,7 +16,7 @@ export default function LoginPage() {
     <InnerPageLayout>
       <section className="min-h-[calc(100vh-88px)] flex flex-col lg:flex-row">
         <div className="relative w-full lg:w-1/2 min-h-[300px] lg:min-h-full flex items-center justify-center overflow-hidden">
-          <Image src="mongolia-landscape.jpg" alt={t("welcomeTitle")} fill className="object-cover" />
+          <Image src="/images/tour-4.jpg" alt={t("welcomeTitle")} fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 to-primary-dark/70" />
           <motion.div
             initial={{ opacity: 0, y: 24 }}

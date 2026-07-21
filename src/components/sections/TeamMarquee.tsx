@@ -60,7 +60,7 @@ export default function TeamMarquee() {
                 <div className="relative h-[120px] w-[120px] shrink-0 overflow-hidden rounded-full border border-border"
                 >
                   <Image
-                    src="team-placeholder.jpg"
+                    src="/images/tour-6.jpg"
                     alt={member.name}
                     fill
                     className="object-cover"

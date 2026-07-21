@@ -38,7 +38,7 @@ const tours = [
     category: "Adventure Tours",
     duration: "8 days",
     price: "$1,100",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
   },
   {
     title: "Central Mongolia Heritage Tour",
@@ -46,7 +46,7 @@ const tours = [
     category: "classic tours",
     duration: "6 days",
     price: "$950",
-    image: "about-nomads.jpg",
+    image: "/images/about-nomads.jpg",
   },
   {
     title: "Khustai & Terelj National Parks",
@@ -54,7 +54,7 @@ const tours = [
     category: "Best Sellers",
     duration: "4 days",
     price: "$700",
-    image: "culture-nomads.jpg",
+    image: "/images/culture-nomads.jpg",
   },
   {
     title: "Nomadic Lifestyle Experience",
@@ -62,7 +62,7 @@ const tours = [
     category: "Tailored Tours",
     duration: "5 days",
     price: "$850",
-    image: "about-nomads.jpg",
+    image: "/images/about-nomads.jpg",
   },
   {
     title: "10-Day Highlights of Mongolia",
@@ -70,7 +70,7 @@ const tours = [
     category: "Best Sellers",
     duration: "10 days",
     price: "$1,500",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
   },
   {
     title: "Naadam Festival Tour",
@@ -78,7 +78,7 @@ const tours = [
     category: "Festival tours",
     duration: "7 days",
     price: "$1,250",
-    image: "culture-nomads.jpg",
+    image: "/images/culture-nomads.jpg",
   },
   {
     title: "Winter Mongolia Expedition",
@@ -86,7 +86,7 @@ const tours = [
     category: "Winter tours",
     duration: "9 days",
     price: "$1,350",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
   },
   {
     title: "Horse Trekking in the Altai",
@@ -94,7 +94,7 @@ const tours = [
     category: "Adventure Tours",
     duration: "12 days",
     price: "$1,800",
-    image: "gallery-1.jpg",
+    image: "/images/tour-1.jpg",
   },
   {
     title: "Golden Eagle Festival Journey",
@@ -102,7 +102,7 @@ const tours = [
     category: "Festival tours",
     duration: "10 days",
     price: "$1,650",
-    image: "gallery-2.jpg",
+    image: "/images/tour-2.jpg",
   },
   {
     title: "Khuvsgul Lake Winter Adventure",
@@ -110,7 +110,7 @@ const tours = [
     category: "Winter tours",
     duration: "6 days",
     price: "$980",
-    image: "gallery-3.jpg",
+    image: "/images/tour-3.jpg",
   },
   {
     title: "Custom Private Mongolia Tour",
@@ -118,7 +118,7 @@ const tours = [
     category: "Tailored Tours",
     duration: "Flexible",
     price: "On request",
-    image: "gallery-4.jpg",
+    image: "/images/tour-4.jpg",
   },
   {
     title: "Classic Mongolia Discovery",
@@ -126,7 +126,7 @@ const tours = [
     category: "classic tours",
     duration: "8 days",
     price: "$1,150",
-    image: "gallery-5.jpg",
+    image: "/images/tour-5.jpg",
   },
 ];
 

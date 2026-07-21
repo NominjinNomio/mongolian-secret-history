@@ -37,7 +37,7 @@ export default function DestinationsSection() {
   return (
     <section className="relative py-20 lg:py-[80px]">
       <Image
-        src="mongolia-map-bg.jpg"
+        src="/images/mongolia-destinations-bg.jpg"
         alt={t("destinationsTitle")}
         fill
         className="object-cover"

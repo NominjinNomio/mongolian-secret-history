@@ -43,7 +43,7 @@ export default function AboutSection() {
             className="relative w-full max-w-[600px] aspect-[5/4] rounded-3xl overflow-hidden border border-border shadow-lg"
           >
             <Image
-              src="about-nomads.jpg"
+              src="/images/about-nomads.jpg"
               alt={t("aboutTitle")}
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

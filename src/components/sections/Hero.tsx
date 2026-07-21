@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative flex min-h-[800px] items-center justify-center overflow-hidden">
       <Image
-        src="hero-steppe.jpg"
+        src="/images/hero-steppe.jpg"
         alt={t("heroTitle")}
         fill
         className="object-cover"

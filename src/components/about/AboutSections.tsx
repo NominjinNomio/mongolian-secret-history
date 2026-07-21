@@ -80,7 +80,7 @@ export default function AboutSections({ country, culture }: AboutSectionsProps) 
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <ParallaxImage src="about-nomads.jpg" alt={country.title} />
+            <ParallaxImage src="/images/about-nomads.jpg" alt={country.title} />
             <TextColumn content={country} />
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function AboutSections({ country, culture }: AboutSectionsProps) 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <TextColumn content={culture} order="order-2 lg:order-1" />
             <div className="order-1 lg:order-2">
-              <ParallaxImage src="culture-nomads.jpg" alt={culture.title} />
+              <ParallaxImage src="/images/culture-nomads.jpg" alt={culture.title} />
             </div>
           </div>
         </div>

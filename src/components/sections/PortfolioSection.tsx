@@ -55,7 +55,7 @@ export default function PortfolioSection() {
             >
               <div className="relative h-[280px] w-full overflow-hidden">
                 <Image
-                  src="tour-placeholder.jpg"
+                  src="/images/tour-1.jpg"
                   alt={tour.title}
                   fill
                   className="object-cover transition-transform duration-700 hover:scale-105"

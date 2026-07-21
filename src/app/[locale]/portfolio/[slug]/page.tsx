@@ -28,7 +28,7 @@ const tours: Record<string, TourData> = {
   "gobi-desert-adventure": {
     title: "Gobi Desert Adventure",
     subtitle: "Explore the dramatic dunes, canyons, and ancient sites of the Gobi",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
     overviewTitle: "A Desert Like No Other",
     overview: [
       "The Gobi Desert is one of the world's great wilderness areas, covering much of southern Mongolia. Despite its name, the Gobi is not just sand: it is a vast region of rocky plains, towering dunes, hidden canyons, and prehistoric sites.",
@@ -65,12 +65,12 @@ const tours: Record<string, TourData> = {
       { day: 7, title: "Return to Ulaanbaatar", desc: "Fly back to the capital with time for shopping or a cultural performance." },
       { day: 8, title: "Departure", desc: "Transfer to the airport after breakfast." },
     ],
-    gallery: ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg"],
+    gallery: ["/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg"],
   },
   "central-mongolia-heritage": {
     title: "Central Mongolia Heritage Tour",
     subtitle: "Ancient monasteries, imperial capitals, and the Orkhon Valley",
-    image: "about-nomads.jpg",
+    image: "/images/about-nomads.jpg",
     overviewTitle: "Walk Through Mongolian History",
     overview: [
       "Central Mongolia is the historical and spiritual heart of the country. This six-day tour visits Erdene Zuu Monastery, the ancient capital of Kharkhorin, the stunning Orkhon Waterfall, and Tsenkher Hot Springs.",
@@ -104,12 +104,12 @@ const tours: Record<string, TourData> = {
       { day: 5, title: "Khustai National Park", desc: "Search for wild Takhi horses and enjoy your final ger camp evening." },
       { day: 6, title: "Return to Ulaanbaatar", desc: "Drive back to the capital with stops for photos along the way." },
     ],
-    gallery: ["gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg"],
+    gallery: ["/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg"],
   },
   "khustai-terelj": {
     title: "Khustai & Terelj National Parks",
     subtitle: "Wild horses, granite mountains, and quick escape from the city",
-    image: "culture-nomads.jpg",
+    image: "/images/culture-nomads.jpg",
     overviewTitle: "Nature at Ulaanbaatar's Doorstep",
     overview: [
       "This short four-day tour is perfect for travelers with limited time. Visit Khustai National Park to see the world's last wild horses, then explore Gorkhi-Terelj National Park with its dramatic rock formations and traditional ger camps.",
@@ -141,12 +141,12 @@ const tours: Record<string, TourData> = {
       { day: 3, title: "Nomadic Family & Horse Riding", desc: "Ride horses through the park and visit a herder family for lunch." },
       { day: 4, title: "Return to Ulaanbaatar", desc: "Return to the capital with a stop at the giant Genghis Khan statue." },
     ],
-    gallery: ["gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg"],
+    gallery: ["/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg"],
   },
   "nomadic-lifestyle": {
     title: "Nomadic Lifestyle Experience",
     subtitle: "Live with herder families and discover authentic Mongolia",
-    image: "about-nomads.jpg",
+    image: "/images/about-nomads.jpg",
     overviewTitle: "Step Into a Living Tradition",
     overview: [
       "This five-day immersive tour offers a rare chance to live alongside Mongolian herder families. Help with daily chores, learn to make dairy products, sleep in gers, and experience hospitality that has defined the steppe for centuries.",
@@ -179,12 +179,12 @@ const tours: Record<string, TourData> = {
       { day: 4, title: "Traditions and Crafts", desc: "Learn traditional games, try Mongolian archery, and listen to folk stories." },
       { day: 5, title: "Return to Ulaanbaatar", desc: "Say goodbye to your hosts and drive back to the capital." },
     ],
-    gallery: ["gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"],
+    gallery: ["/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg"],
   },
   "highlights-of-mongolia": {
     title: "10-Day Highlights of Mongolia",
     subtitle: "An unforgettable journey through Mongolia's most iconic landscapes and nomadic traditions",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
     overviewTitle: "Experience the Best of Mongolia",
     overview: [
       "This carefully crafted 10-day tour takes you from the rolling steppes of central Mongolia to the dramatic dunes of the Gobi Desert. You will stay in traditional ger camps, visit ancient monasteries, meet nomadic families, and witness some of the most spectacular landscapes on Earth.",
@@ -223,12 +223,12 @@ const tours: Record<string, TourData> = {
       { day: 9, title: "Return to Ulaanbaatar", desc: "Fly back to the capital and enjoy a traditional folklore performance." },
       { day: 10, title: "Departure", desc: "Transfer to the airport with unforgettable memories of Mongolia." },
     ],
-    gallery: ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg"],
+    gallery: ["/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg"],
   },
   "naadam-festival-tour": {
     title: "Naadam Festival Tour",
     subtitle: "Witness Mongolia's biggest traditional sports festival",
-    image: "culture-nomads.jpg",
+    image: "/images/culture-nomads.jpg",
     overviewTitle: "The Three Games of Men",
     overview: [
       "Naadam is Mongolia's most famous festival, celebrating the traditional sports of wrestling, horse racing, and archery. This seven-day tour combines the excitement of the Ulaanbaatar opening ceremony with excursions to the open steppe.",
@@ -263,12 +263,12 @@ const tours: Record<string, TourData> = {
       { day: 6, title: "City Highlights", desc: "Explore Gandantegchinlen Monastery and the National Museum." },
       { day: 7, title: "Departure", desc: "Transfer to the airport after breakfast." },
     ],
-    gallery: ["gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg"],
+    gallery: ["/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg"],
   },
   "winter-mongolia-expedition": {
     title: "Winter Mongolia Expedition",
     subtitle: "Experience Mongolia's frozen landscapes and winter culture",
-    image: "tour-placeholder.jpg",
+    image: "/images/tour-1.jpg",
     overviewTitle: "The Magic of a Mongolian Winter",
     overview: [
       "This nine-day winter expedition takes you across frozen rivers, snow-covered steppe, and glittering lakes. Experience ice festivals, visit nomadic families in their winter camps, and discover a side of Mongolia few travelers see.",
@@ -305,12 +305,12 @@ const tours: Record<string, TourData> = {
       { day: 8, title: "Return to Ulaanbaatar", desc: "Fly back to the capital and enjoy a farewell dinner." },
       { day: 9, title: "Departure", desc: "Transfer to the airport." },
     ],
-    gallery: ["gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg"],
+    gallery: ["/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg"],
   },
   "altai-horse-trek": {
     title: "Horse Trekking in the Altai",
     subtitle: "Ride through the wild Altai Mountains of western Mongolia",
-    image: "gallery-1.jpg",
+    image: "/images/tour-1.jpg",
     overviewTitle: "Mountains, Eagles, and Open Valleys",
     overview: [
       "This twelve-day horse trek explores the remote Altai Mountains, home to Kazakh eagle hunters and snow-capped peaks. Travel by horseback between nomadic camps, cross high mountain passes, and camp beneath stars untouched by light pollution.",
@@ -352,12 +352,12 @@ const tours: Record<string, TourData> = {
       { day: 11, title: "Ulgii Town", desc: "Rest, visit the local market, and enjoy a hot shower." },
       { day: 12, title: "Departure", desc: "Fly back to Ulaanbaatar." },
     ],
-    gallery: ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg"],
+    gallery: ["/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg"],
   },
   "golden-eagle-festival": {
     title: "Golden Eagle Festival Journey",
     subtitle: "Join Mongolia's most iconic eagle hunting celebration",
-    image: "gallery-2.jpg",
+    image: "/images/tour-2.jpg",
     overviewTitle: "Eagles, Culture, and Kazakh Tradition",
     overview: [
       "The Golden Eagle Festival brings together Kazakh eagle hunters from across western Mongolia to compete in speed, accuracy, and tradition. This ten-day journey includes festival access, visits to hunter families, and rides through the Altai foothills.",
@@ -396,12 +396,12 @@ const tours: Record<string, TourData> = {
       { day: 9, title: "Return to Ulaanbaatar", desc: "Fly back to the capital and enjoy a farewell dinner." },
       { day: 10, title: "Departure", desc: "Transfer to the airport." },
     ],
-    gallery: ["gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg"],
+    gallery: ["/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg"],
   },
   "khuvsgul-winter": {
     title: "Khuvsgul Lake Winter Adventure",
     subtitle: "Frozen lake landscapes and northern Mongolian culture",
-    image: "gallery-3.jpg",
+    image: "/images/tour-3.jpg",
     overviewTitle: "The Blue Pearl in Winter",
     overview: [
       "Lake Khuvsgul is called the Blue Pearl of Mongolia, and in winter it becomes a vast frozen plain surrounded by snow-covered mountains. This six-day tour combines ice activities with visits to reindeer herders and warm ger hospitality.",
@@ -435,12 +435,12 @@ const tours: Record<string, TourData> = {
       { day: 5, title: "Return to Murun", desc: "Drive back to Murun and fly to Ulaanbaatar." },
       { day: 6, title: "Departure", desc: "Transfer to the airport." },
     ],
-    gallery: ["gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg"],
+    gallery: ["/images/tour-3.jpg", "/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg"],
   },
   "custom-private-tour": {
     title: "Custom Private Mongolia Tour",
     subtitle: "Design your own Mongolia journey with our team",
-    image: "gallery-4.jpg",
+    image: "/images/tour-4.jpg",
     overviewTitle: "Your Adventure, Your Way",
     overview: [
       "Tell us your travel dates, interests, and pace, and we will build a private tour just for you. Choose any region of Mongolia, add special activities, and travel with your own guide and vehicle.",
@@ -472,12 +472,12 @@ const tours: Record<string, TourData> = {
       { day: 3, title: "Booking Confirmation", desc: "Confirm your tour and make arrangements." },
       { day: 4, title: "Your Journey Begins", desc: "Arrive in Mongolia and start your custom adventure." },
     ],
-    gallery: ["gallery-4.jpg", "gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"],
+    gallery: ["/images/tour-4.jpg", "/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg"],
   },
   "classic-mongolia-discovery": {
     title: "Classic Mongolia Discovery",
     subtitle: "A well-rounded introduction to Mongolia's highlights",
-    image: "gallery-5.jpg",
+    image: "/images/tour-5.jpg",
     overviewTitle: "The Essential Mongolia Experience",
     overview: [
       "This eight-day classic tour covers the must-see destinations of central and northern Mongolia. Visit ancient monasteries, sleep in ger camps, meet nomadic families, and enjoy the vast open steppe.",
@@ -514,7 +514,7 @@ const tours: Record<string, TourData> = {
       { day: 7, title: "Return to Ulaanbaatar", desc: "Drive back to the capital with scenic stops." },
       { day: 8, title: "Departure", desc: "Transfer to the airport after breakfast." },
     ],
-    gallery: ["gallery-5.jpg", "gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg"],
+    gallery: ["/images/tour-5.jpg", "/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg", "/images/tour-4.jpg"],
   },
 };
 

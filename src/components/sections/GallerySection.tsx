@@ -8,12 +8,12 @@ import Link from "next/link";
 
 const rows = [
   {
-    images: ["gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg"],
+    images: ["/images/tour-1.jpg", "/images/tour-2.jpg", "/images/tour-3.jpg"],
     cardWidth: "w-[260px] md:w-[390px]",
     cardHeight: "h-[200px] md:h-[260px]",
   },
   {
-    images: ["gallery-4.jpg", "gallery-5.jpg"],
+    images: ["/images/tour-4.jpg", "/images/tour-5.jpg"],
     cardWidth: "w-[340px] md:w-[590px]",
     cardHeight: "h-[240px] md:h-[320px]",
   },

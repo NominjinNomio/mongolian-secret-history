@@ -89,7 +89,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
                 <div className="relative h-[220px] w-full overflow-hidden"
                 >
                   <Image
-                    src={post.thumbnail?.url || "blog-placeholder.jpg"}
+                    src={post.thumbnail?.url || "/images/tour-2.jpg"}
                     alt={post.title || ""}
                     fill
                     className="object-cover"

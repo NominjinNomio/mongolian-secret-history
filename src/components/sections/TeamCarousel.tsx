@@ -76,7 +76,7 @@ export default function TeamCarousel() {
                 <div className="relative h-[180px] w-[180px] md:h-[220px] md:w-[220px] shrink-0 overflow-hidden rounded-[24px] border border-border"
                 >
                   <Image
-                    src="team-placeholder.jpg"
+                    src="/images/tour-6.jpg"
                     alt={member.name}
                     fill
                     className="object-cover"
