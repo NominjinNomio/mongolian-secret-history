@@ -60,14 +60,10 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-4 lg:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           <div className="flex flex-col gap-5">
-            <Link href={`/${locale}`} className="flex items-center h-[60px] w-auto">
-              <Image
-                src="logo.png"
-                alt="Mongolian Secret History"
-                height={60}
-                width={60}
-                className="h-full w-auto object-contain"
-              />
+            <Link href={`/${locale}`} className="flex items-center">
+              <span className="font-elegant text-2xl md:text-3xl font-medium text-white">
+                Mongolian Secret History
+              </span>
             </Link>
             <p className="text-sm text-white/70 leading-relaxed max-w-xs">
               Authentic Mongolian heritage, timeless cuisine, and warm hospitality in an elegant setting.

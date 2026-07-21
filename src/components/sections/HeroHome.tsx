@@ -6,37 +6,37 @@ import Image from "@/components/common/Image";
 export default function HeroHome() {
   return (
     <section className="relative bg-[#F5F2EC]">
+      <div className="grid grid-cols-1 items-stretch lg:grid-cols-[40%_1fr]">
+        {/* Pattern panel */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative flex aspect-square items-center justify-center overflow-hidden bg-[#F5F2EC] p-6 lg:aspect-auto lg:min-h-[520px]"
+        >
+          <MongolianPattern className="h-full w-full max-w-[420px] text-[#C9C3B8]" />
+        </motion.div>
+
+        {/* Hero image */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[520px]"
+        >
+          <Image
+            src="hero-steppe.jpg"
+            alt="Mongolian Secret History dining"
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+      </div>
+
       <div className="container-custom">
-        <div className="grid items-stretch gap-0 lg:grid-cols-[42%_1fr]">
-          {/* Pattern panel */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative flex min-h-[280px] items-center justify-center overflow-hidden bg-[#F5F2EC] lg:min-h-[520px]"
-          >
-            <MongolianPattern className="h-full w-full max-w-[400px] text-[#C9C3B8]" />
-          </motion.div>
-
-          {/* Hero image */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[520px]"
-          >
-            <Image
-              src="hero-steppe.jpg"
-              alt="Mongolian Secret History dining"
-              fill
-              className="object-cover"
-              priority
-            />
-          </motion.div>
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,6 +63,7 @@ function MongolianPattern({ className }: { className?: string }) {
       preserveAspectRatio="xMidYMid meet"
     >
       <rect width="400" height="400" fill="currentColor" fillOpacity="0.08" />
+
       {/* Outer frame */}
       <rect x="20" y="20" width="360" height="360" stroke="currentColor" strokeWidth="8" fill="none" />
       <rect x="52" y="52" width="296" height="296" stroke="currentColor" strokeWidth="6" fill="none" />
@@ -80,10 +81,8 @@ function MongolianPattern({ className }: { className?: string }) {
       <g stroke="currentColor" strokeWidth="5" fill="none">
         <path d="M132 132h136v136H132V132z" />
         <path d="M168 132v-36M232 132v-36M132 168h-36M132 232h-36M268 168h36M268 232h36M168 268v36M232 268v36" />
-
         <path d="M168 168h64v64h-64V168z" />
         <rect x="184" y="184" width="32" height="32" />
-
         <path d="M148 168c0-11 9-20 20-20M252 168c0 11-9 20-20 20M148 232c0 11 9 20 20 20M252 232c0-11-9-20-20-20" />
       </g>
 

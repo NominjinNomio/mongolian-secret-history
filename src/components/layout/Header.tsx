@@ -38,14 +38,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-4 lg:px-6">
-        <Link href={`/${locale}`} className="flex items-center h-[60px] w-auto">
-          <Image
-            src="logo.png"
-            alt="Mongolian Secret History"
-            height={60}
-            width={60}
-            className="h-full w-auto object-contain"
-          />
+        <Link href={`/${locale}`} className="flex items-center">
+          <span className="font-elegant text-2xl md:text-3xl font-medium text-foreground">
+            Mongolian Secret History
+          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
