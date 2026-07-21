@@ -39,11 +39,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="mx-auto flex h-[88px] max-w-[1440px] items-center justify-between px-4 lg:px-6">
-        <Link href={`/${locale}`} className="flex items-center gap-3">
+        <Link href={`/${locale}`} className="flex items-center">
           <Logo className="h-[56px] w-[56px]" />
-          <span className="font-elegant text-xl md:text-2xl font-medium text-foreground hidden sm:block">
-            Mongolian Secret History
-          </span>
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
