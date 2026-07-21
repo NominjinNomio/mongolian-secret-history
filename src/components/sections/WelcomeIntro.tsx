@@ -9,7 +9,7 @@ interface WelcomeIntroProps {
 export default function WelcomeIntro({ text }: WelcomeIntroProps) {
   return (
     <section className="bg-white py-20 md:py-28 lg:py-36">
-      <div className="container-custom max-w-2xl text-center">
+      <div className="container-custom max-w-xl text-center">
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
