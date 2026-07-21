@@ -32,7 +32,7 @@ export default function PortfolioSection() {
   const locale = useLocale();
 
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
+    <section className="bg-background py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
           label={t("toursLabel")}
@@ -50,25 +50,25 @@ export default function PortfolioSection() {
             <motion.div
               key={tour.title}
               variants={item}
-              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
-              className="rounded-[20px] bg-white border border-border overflow-hidden transition-shadow"
+              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(18,63,174,0.08)" }}
+              className="rounded-[20px] bg-white border border-border overflow-hidden transition-all"
             >
-              <div className="relative h-[280px] w-full">
+              <div className="relative h-[280px] w-full overflow-hidden">
                 <Image
                   src="tour-placeholder.jpg"
                   alt={tour.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col gap-2">
                 <span className="text-sm text-muted-foreground">{tour.duration}</span>
                 <h3 className="font-display text-xl text-foreground">{tour.title}</h3>
                 <div className="flex items-center justify-between mt-2">
-                  <span className="text-primary-dark font-display text-lg">{tour.price}</span>
+                  <span className="text-primary font-display text-lg">{tour.price}</span>
                   <Link
                     href={`/${locale}/portfolio`}
-                    className="flex items-center gap-1 text-sm text-accent hover:text-accent-dark transition-colors"
+                    className="flex items-center gap-1 text-sm text-gold hover:text-gold-dark transition-colors"
                   >
                     {t("toursButton")} <ArrowRight size={14} />
                   </Link>

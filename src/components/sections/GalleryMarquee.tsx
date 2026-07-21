@@ -46,9 +46,9 @@ export default function GalleryMarquee({
             {items.map((src, i) => {
               const card = (
                 <div
-                  className={`relative ${row.cardWidth} ${row.cardHeight} shrink-0 overflow-hidden rounded-xl`}
+                  className={`relative ${row.cardWidth} ${row.cardHeight} shrink-0 overflow-hidden rounded-xl border border-border`}
                 >
-                  <Image src={src} alt="Gallery" fill className="object-cover" />
+                  <Image src={src} alt="Gallery" fill className="object-cover transition-transform duration-700 hover:scale-105" />
                 </div>
               );
               return (

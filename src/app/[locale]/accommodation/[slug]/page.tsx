@@ -251,7 +251,7 @@ export default async function AccommodationDetailPage({ params }: PageProps) {
 
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-0">
-          <div className="relative h-[320px] md:h-[420px] rounded-2xl overflow-hidden mb-12">
+          <div className="relative h-[320px] md:h-[420px] rounded-2xl overflow-hidden mb-12 border border-border shadow-lg">
             <Image src={data.image} alt={data.title} fill className="object-cover" />
           </div>
 
@@ -291,13 +291,13 @@ export default async function AccommodationDetailPage({ params }: PageProps) {
           <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href={`/${locale}/book-online`}
-              className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+              className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
             >
               Book Now
             </Link>
             <Link
               href={`/${locale}/accommodation`}
-              className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-medium transition-colors border border-[#1A2B4A] text-[#1A2B4A] hover:bg-[#1A2B4A]/5"
+              className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-medium transition-colors border border-primary text-primary hover:bg-primary-light"
             >
               Back to Stays
             </Link>

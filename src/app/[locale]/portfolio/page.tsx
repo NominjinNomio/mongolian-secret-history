@@ -9,6 +9,7 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 const categoryKeys = [
   "all",
@@ -150,7 +151,7 @@ export default function PortfolioPage() {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-10">
             <p className="text-lg leading-[1.7] text-muted-foreground">{t("intro")}</p>
@@ -161,11 +162,12 @@ export default function PortfolioPage() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2.5 rounded-sm text-sm font-medium border transition-colors ${
+                className={cn(
+                  "px-5 py-2.5 rounded-full text-sm font-medium border transition-colors",
                   activeCategory === category
-                    ? "bg-primary-dark text-white border-primary-dark"
-                    : "bg-white text-primary-dark border-primary-dark hover:bg-primary-dark/5"
-                }`}
+                    ? "bg-primary text-white border-primary"
+                    : "bg-white text-primary border-primary hover:bg-primary-light"
+                )}
               >
                 {t(category)}
               </button>
@@ -188,23 +190,23 @@ export default function PortfolioPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4 }}
-                  whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
-                  className="rounded-[20px] bg-white border border-border overflow-hidden transition-shadow"
+                  whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(18,63,174,0.08)" }}
+                  className="rounded-[20px] bg-white border border-border overflow-hidden transition-all"
                 >
-                  <div className="relative h-[240px] w-full">
-                    <Image src={tour.image} alt={tour.title} fill className="object-cover" />
+                  <div className="relative h-[240px] w-full overflow-hidden">
+                    <Image src={tour.image} alt={tour.title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                   </div>
                   <div className="p-6 flex flex-col gap-2">
                     <div className="flex items-center justify-between">
                       <span className="text-sm text-muted-foreground">{tour.duration}</span>
-                      <span className="text-xs px-2.5 py-1 rounded-full bg-[#F8F6F1] text-primary-dark">{tour.category}</span>
+                      <span className="text-xs px-2.5 py-1 rounded-full bg-muted text-primary">{tour.category}</span>
                     </div>
                     <h3 className="font-display text-xl text-foreground">{tour.title}</h3>
                     <div className="flex items-center justify-between mt-2">
-                      <span className="text-primary-dark font-display text-lg">{tour.price}</span>
+                      <span className="text-primary font-display text-lg">{tour.price}</span>
                       <Link
                         href={`/${locale}/portfolio/${tour.slug}`}
-                        className="flex items-center gap-1 text-sm text-accent hover:text-accent-dark transition-colors"
+                        className="flex items-center gap-1 text-sm text-gold hover:text-gold-dark transition-colors"
                       >
                         {tc("viewDetails")} <ArrowRight size={14} />
                       </Link>

@@ -557,7 +557,7 @@ export default function TourDetailPage() {
     <InnerPageLayout>
       <PageHero label="Tour Details" title={tour.title} subtitle={tour.subtitle} />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <motion.div
@@ -565,7 +565,7 @@ export default function TourDetailPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden"
+              className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-lg"
             >
               <Image src={tour.image} alt={tour.title} fill className="object-cover" />
             </motion.div>
@@ -577,7 +577,8 @@ export default function TourDetailPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="flex flex-col gap-5 max-w-[520px]"
             >
-              <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("overviewLabel")}</span>
+              <span className="section-label text-gold">{t("overviewLabel")}</span>
+              <span className="gold-line" />
               <h2 className="font-display text-3xl md:text-[40px] leading-[1.15]">{tour.overviewTitle}</h2>
               {tour.overview.map((paragraph, idx) => (
                 <p key={idx} className="text-base leading-[1.7] text-muted-foreground">
@@ -592,7 +593,8 @@ export default function TourDetailPage() {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">{t("atAGlance")}</h2>
+            <span className="section-label">{t("atAGlance")}</span>
+            <span className="gold-line mx-auto mt-3" />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -603,17 +605,17 @@ export default function TourDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="rounded-2xl bg-[#F8F6F1] p-7 text-center"
+                className="rounded-2xl bg-white border border-border p-7 text-center transition-shadow hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
               >
                 <p className="text-sm text-muted-foreground">{info.label}</p>
-                <p className="font-display text-[22px] text-primary-dark mt-2">{info.value}</p>
+                <p className="font-display text-[22px] text-primary mt-2">{info.value}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <motion.div
@@ -621,13 +623,13 @@ export default function TourDetailPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="rounded-[20px] bg-white p-10"
+              className="rounded-[20px] bg-white border border-border p-10"
             >
               <h3 className="font-display text-[28px] text-foreground mb-6">{tc("whatIsIncluded")}</h3>
               <ul className="flex flex-col gap-4">
                 {included.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-muted-foreground">
-                    <span className="text-primary-dark mt-0.5">✓</span>
+                    <span className="text-primary mt-0.5">✓</span>
                     {item}
                   </li>
                 ))}
@@ -639,13 +641,13 @@ export default function TourDetailPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="rounded-[20px] bg-white p-10"
+              className="rounded-[20px] bg-white border border-border p-10"
             >
               <h3 className="font-display text-[28px] text-foreground mb-6">{tc("notIncluded")}</h3>
               <ul className="flex flex-col gap-4">
                 {excluded.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-[15px] text-muted-foreground">
-                    <span className="text-[#B42318] mt-0.5">×</span>
+                    <span className="text-red-600 mt-0.5">×</span>
                     {item}
                   </li>
                 ))}
@@ -658,7 +660,8 @@ export default function TourDetailPage() {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[900px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">{tc("itinerary")}</h2>
+            <span className="section-label">{tc("itinerary")}</span>
+            <span className="gold-line mx-auto mt-3" />
           </div>
 
           <div className="flex flex-col gap-4">
@@ -669,9 +672,9 @@ export default function TourDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="rounded-xl bg-[#F8F6F1] p-6 flex flex-col sm:flex-row gap-6"
+                className="rounded-xl bg-white border border-border p-6 flex flex-col sm:flex-row gap-6"
               >
-                <span className="font-display text-2xl text-accent shrink-0">{tc("day", { day: day.day })}</span>
+                <span className="font-display text-2xl text-gold shrink-0">{tc("day", { day: day.day })}</span>
                 <div>
                   <h3 className="font-display text-xl text-foreground">{day.title}</h3>
                   <p className="text-[15px] text-muted-foreground mt-1 leading-relaxed">{day.desc}</p>
@@ -689,17 +692,18 @@ export default function TourDetailPage() {
               <h2 className="font-display text-[28px] text-white">{tc("readyToBook")}</h2>
               <p className="text-white/80 mt-2">{tc("reserveSpot")}</p>
             </div>
-            <Button href={`/${locale}/book-online`} variant="primary">
+            <Button href={`/${locale}/book-online`} variant="gold">
               {t("bookThisTour")}
             </Button>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-[44px]">{tc("gallery")}</h2>
+            <span className="section-label">{tc("gallery")}</span>
+            <span className="gold-line mx-auto mt-3" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -710,7 +714,7 @@ export default function TourDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="relative aspect-[3/2] rounded-xl overflow-hidden"
+                className="relative aspect-[3/2] rounded-xl overflow-hidden border border-border"
               >
                 <Image src={src} alt="Tour gallery" fill className="object-cover" />
               </motion.div>
@@ -724,7 +728,7 @@ export default function TourDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                className="relative aspect-[16/9] rounded-xl overflow-hidden"
+                className="relative aspect-[16/9] rounded-xl overflow-hidden border border-border"
               >
                 <Image src={src} alt="Tour gallery" fill className="object-cover" />
               </motion.div>

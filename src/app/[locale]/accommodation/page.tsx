@@ -64,7 +64,7 @@ export default async function AccommodationPage({ params }: PageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col gap-16 lg:gap-20">
             {accommodations.map((item, i) => {
@@ -77,7 +77,7 @@ export default async function AccommodationPage({ params }: PageProps) {
                   } items-center gap-10 lg:gap-16 pb-16 lg:pb-20 border-b border-border last:border-b-0 last:pb-0`}
                 >
                   <div className="w-full lg:w-1/2">
-                    <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-[#E8E4DC]">
+                    <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-muted border border-border shadow-lg">
                       <Image src={item.image} alt={item.name} fill className="object-cover" />
                     </div>
                   </div>
@@ -102,7 +102,7 @@ export default async function AccommodationPage({ params }: PageProps) {
                       <div className="flex items-center gap-3">
                         <Link
                           href={`/${locale}/book-online`}
-                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
                         >
                           Book Now
                         </Link>
@@ -112,7 +112,7 @@ export default async function AccommodationPage({ params }: PageProps) {
                               ? `/${locale}/accommodation/${item.slug}`
                               : `/${locale}/book-online`
                           }
-                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors border border-[#1A2B4A] text-[#1A2B4A] hover:bg-[#1A2B4A]/5"
+                          className="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-medium transition-colors border border-primary text-primary hover:bg-primary-light"
                         >
                           More
                         </Link>

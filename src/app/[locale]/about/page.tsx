@@ -20,10 +20,10 @@ export default async function AboutPage({ params }: PageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-[#E8E4DC]">
+            <div className="relative aspect-square rounded-3xl overflow-hidden bg-muted border border-border shadow-lg">
               <Image
                 src="about-nomads.jpg"
                 alt={t("countryTitle")}
@@ -32,7 +32,8 @@ export default async function AboutPage({ params }: PageProps) {
               />
             </div>
             <div className="flex flex-col gap-5">
-              <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("countryLabel")}</span>
+              <span className="section-label text-gold">{t("countryLabel")}</span>
+              <span className="gold-line" />
               <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">{t("countryTitle")}</h2>
               <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("countryDesc1")}</p>
               <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("countryDesc2")}</p>
@@ -44,7 +45,8 @@ export default async function AboutPage({ params }: PageProps) {
       <section id="regions" className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-14">
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("destinationsLabel")}</span>
+            <span className="section-label">{t("destinationsLabel")}</span>
+            <span className="gold-line mx-auto mt-3" />
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3">{t("destinationsTitle")}</h2>
           </div>
 
@@ -52,16 +54,17 @@ export default async function AboutPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="flex flex-col gap-5 order-2 lg:order-1">
-              <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("cultureLabel")}</span>
+              <span className="section-label text-gold">{t("cultureLabel")}</span>
+              <span className="gold-line" />
               <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">{t("cultureTitle")}</h2>
               <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("cultureDesc1")}</p>
               <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("cultureDesc2")}</p>
             </div>
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-[#E8E4DC] order-1 lg:order-2">
+            <div className="relative aspect-square rounded-3xl overflow-hidden bg-muted border border-border shadow-lg order-1 lg:order-2">
               <Image
                 src="culture-nomads.jpg"
                 alt={t("cultureTitle")}
@@ -76,7 +79,8 @@ export default async function AboutPage({ params }: PageProps) {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-14">
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("climateLabel")}</span>
+            <span className="section-label">{t("climateLabel")}</span>
+            <span className="gold-line mx-auto mt-3" />
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3">{t("climateTitle")}</h2>
           </div>
 
@@ -87,9 +91,9 @@ export default async function AboutPage({ params }: PageProps) {
               { season: t("autumn"), months: t("autumnMonths"), desc: t("autumnDesc") },
               { season: t("winter"), months: t("winterMonths"), desc: t("winterDesc") },
             ].map((item) => (
-              <div key={item.season} className="bg-[#F8F6F1] rounded-2xl p-8">
+              <div key={item.season} className="bg-white rounded-2xl border border-border p-8 transition-shadow hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]">
                 <h3 className="font-display text-2xl text-foreground">{item.season}</h3>
-                <p className="text-sm text-accent mt-1">{item.months}</p>
+                <p className="text-sm text-gold mt-1">{item.months}</p>
                 <p className="text-[15px] text-muted-foreground mt-4 leading-relaxed">{item.desc}</p>
               </div>
             ))}

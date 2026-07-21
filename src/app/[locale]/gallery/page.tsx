@@ -34,7 +34,7 @@ export default function GalleryPage() {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px] overflow-hidden">
+      <section className="bg-background py-20 lg:py-[120px] overflow-hidden">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
             <p className="text-lg leading-[1.7] text-muted-foreground">

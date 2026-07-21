@@ -73,7 +73,8 @@ export default function TeamCarousel() {
                   isActive ? "shadow-2xl" : "shadow-md"
                 }`}
               >
-                <div className="relative h-[180px] w-[180px] md:h-[220px] md:w-[220px] shrink-0 overflow-hidden rounded-[24px]">
+                <div className="relative h-[180px] w-[180px] md:h-[220px] md:w-[220px] shrink-0 overflow-hidden rounded-[24px] border border-border"
+                >
                   <Image
                     src="team-placeholder.jpg"
                     alt={member.name}
@@ -81,15 +82,17 @@ export default function TeamCarousel() {
                     className="object-cover"
                   />
                 </div>
-                <h3 className="font-display mt-6 text-[22px] md:text-[26px] text-foreground">
+                <h3 className="font-display mt-6 text-[22px] md:text-[26px] text-foreground"
+                >
                   {member.name}
                 </h3>
-                <span className="mt-1 text-sm text-primary-dark">{member.role}</span>
+                <span className="mt-1 text-sm text-primary">{member.role}</span>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {member.bio}
                 </p>
                 {isActive && (
-                  <button className="mt-5 rounded-full bg-[#1A2B4A] px-6 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105">
+                  <button className="mt-5 rounded-full bg-primary px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+                  >
                     Meet {member.name.split(" ")[0]}
                   </button>
                 )}
@@ -115,8 +118,8 @@ export default function TeamCarousel() {
               onClick={() => setActive(i)}
               className={`h-2 rounded-full transition-all ${
                 i === active
-                  ? "w-6 bg-[#1A2B4A]"
-                  : "w-2 bg-[#1A2B4A]/30 hover:bg-[#1A2B4A]/50"
+                  ? "w-6 bg-primary"
+                  : "w-2 bg-primary/30 hover:bg-primary/50"
               }`}
               aria-label={`Go to team member ${i + 1}`}
             />

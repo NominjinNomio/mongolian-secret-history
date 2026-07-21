@@ -6,6 +6,7 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import { useTranslations } from "next-intl";
 import { X } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 type TabKey = "tours" | "accommodation" | "travelServices";
 type CustomerType = "individual" | "organization";
@@ -18,8 +19,6 @@ const tabConfig: Record<TabKey, { title: string; label: string; placeholder: str
   accommodation: { title: "bookYourAccommodation", label: "preferredRoom", placeholder: "preferredRoomPlaceholder" },
   travelServices: { title: "bookYourTravelServices", label: "preferredService", placeholder: "preferredServicePlaceholder" },
 };
-
-const stepKeys = ["step1", "step2", "step3"];
 
 const paymentMethods = [
   { id: "digipay" as PaymentMethod, label: "DigiPay", icon: "D" },
@@ -54,7 +53,7 @@ export default function BookOnlinePage() {
         subtitle="Reserve your tour, accommodation, or travel services with our team"
       />
 
-      <section className="bg-[#F8F5F0] pt-16 pb-12 lg:pt-[80px] lg:pb-[60px]">
+      <section className="bg-background pt-16 pb-12 lg:pt-[80px] lg:pb-[60px]">
         <div className="mx-auto max-w-[800px] px-6 lg:px-0 text-center">
           <p className="text-base leading-[1.7] text-muted-foreground mb-8">
             When you have made your decision and are ready to book, please use this form to let us know your plans. The following services can be booked online through this page.
@@ -66,8 +65,8 @@ export default function BookOnlinePage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-6 py-2.5 rounded-full text-sm font-medium transition-colors ${
                   activeTab === tab
-                    ? "bg-[#1A2B4A] text-white"
-                    : "bg-white text-foreground hover:bg-white/80"
+                    ? "bg-primary text-white"
+                    : "bg-white text-foreground border border-border hover:border-primary hover:text-primary"
                 }`}
               >
                 {tab === "tours" ? "Tours" : tab === "accommodation" ? "Accommodation" : "Travel Services"}
@@ -77,7 +76,7 @@ export default function BookOnlinePage() {
         </div>
       </section>
 
-      <section className="bg-[#F8F5F0] pb-20 lg:pb-[120px]">
+      <section className="bg-background pb-20 lg:pb-[120px]">
         <div className="mx-auto max-w-[1100px] px-6 lg:px-0">
           <div className="flex flex-col lg:flex-row items-start justify-center gap-12 lg:gap-16">
             <motion.div
@@ -85,7 +84,7 @@ export default function BookOnlinePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="w-full max-w-[460px] rounded-[20px] bg-white p-8 lg:p-10"
+              className="w-full max-w-[460px] rounded-[20px] bg-white p-8 lg:p-10 border border-border"
             >
               <h2 className="font-display text-2xl text-foreground mb-6">
                 {activeTab === "tours" ? "Book Your Tour" : activeTab === "accommodation" ? "Book Your Accommodation" : "Book Travel Services"}
@@ -96,7 +95,7 @@ export default function BookOnlinePage() {
                   <label className="text-sm text-muted-foreground">Full Name</label>
                   <input
                     type="text"
-                    className="w-full h-[44px] rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-[#1A2B4A]"
+                    className="w-full h-[44px] rounded-[10px] bg-white border border-border px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="Full Name"
                   />
                 </div>
@@ -105,7 +104,7 @@ export default function BookOnlinePage() {
                   <label className="text-sm text-muted-foreground">Email Address</label>
                   <input
                     type="email"
-                    className="w-full h-[44px] rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-[#1A2B4A]"
+                    className="w-full h-[44px] rounded-[10px] bg-white border border-border px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="Email Address"
                   />
                 </div>
@@ -114,7 +113,7 @@ export default function BookOnlinePage() {
                   <label className="text-sm text-muted-foreground">Phone Number</label>
                   <input
                     type="tel"
-                    className="w-full h-[44px] rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-[#1A2B4A]"
+                    className="w-full h-[44px] rounded-[10px] bg-white border border-border px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="Phone Number"
                   />
                 </div>
@@ -125,7 +124,7 @@ export default function BookOnlinePage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full h-[44px] rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-[#1A2B4A]"
+                    className="w-full h-[44px] rounded-[10px] bg-white border border-border px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder={activeTab === "tours" ? "Preferred Tour" : activeTab === "accommodation" ? "Preferred Room" : "Preferred Service"}
                   />
                 </div>
@@ -134,7 +133,7 @@ export default function BookOnlinePage() {
                   <label className="text-sm text-muted-foreground">Travel Dates</label>
                   <input
                     type="text"
-                    className="w-full h-[44px] rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] px-4 text-sm outline-none focus:border-[#1A2B4A]"
+                    className="w-full h-[44px] rounded-[10px] bg-white border border-border px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                     placeholder="Travel Dates"
                   />
                 </div>
@@ -143,17 +142,15 @@ export default function BookOnlinePage() {
                   <label className="text-sm text-muted-foreground">Additional Requests</label>
                   <textarea
                     rows={3}
-                    className="w-full rounded-[10px] bg-[#F8F5F0] border border-[#E5E2DC] p-4 text-sm outline-none focus:border-[#1A2B4A] resize-none"
+                    className="w-full rounded-[10px] bg-white border border-border p-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
                     placeholder="Additional Requests"
                   />
                 </div>
 
-                <button
-                  type="submit"
-                  className="self-start inline-flex items-center justify-center rounded-full bg-[#9A8A42] text-white px-6 py-3 text-sm font-medium hover:bg-[#85763a] transition-colors mt-2"
+                <Button type="submit" variant="primary" className="mt-2"
                 >
                   Submit Booking Request
-                </button>
+                </Button>
               </form>
             </motion.div>
 
@@ -196,7 +193,7 @@ export default function BookOnlinePage() {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="relative z-10 w-full max-w-[480px] bg-[#1C1C1E] rounded-[24px] p-6 shadow-2xl max-h-[90vh] overflow-y-auto"
+            className="relative z-10 w-full max-w-[480px] bg-primary-dark rounded-[24px] p-6 shadow-2xl max-h-[90vh] overflow-y-auto"
           >
             <div className="flex items-center justify-end mb-6">
               <button
@@ -219,15 +216,15 @@ export default function BookOnlinePage() {
                   onClick={() => setCustomerType("individual")}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-colors ${
                     customerType === "individual"
-                      ? "border-[#C9A227] bg-white/5"
+                      ? "border-gold bg-white/5"
                       : "border-white/10 bg-white/5 hover:bg-white/10"
                   }`}
                 >
                   <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    customerType === "individual" ? "border-[#C9A227]" : "border-white/40"
+                    customerType === "individual" ? "border-gold" : "border-white/40"
                   }`}>
                     {customerType === "individual" && (
-                      <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                      <span className="w-2 h-2 rounded-full bg-gold" />
                     )}
                   </span>
                   <span className="text-sm text-white">Хувь хүн</span>
@@ -237,15 +234,15 @@ export default function BookOnlinePage() {
                   onClick={() => setCustomerType("organization")}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-colors ${
                     customerType === "organization"
-                      ? "border-[#C9A227] bg-white/5"
+                      ? "border-gold bg-white/5"
                       : "border-white/10 bg-white/5 hover:bg-white/10"
                   }`}
                 >
                   <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    customerType === "organization" ? "border-[#C9A227]" : "border-white/40"
+                    customerType === "organization" ? "border-gold" : "border-white/40"
                   }`}>
                     {customerType === "organization" && (
-                      <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                      <span className="w-2 h-2 rounded-full bg-gold" />
                     )}
                   </span>
                   <span className="text-sm text-white">Албан байгууллага</span>
@@ -257,13 +254,13 @@ export default function BookOnlinePage() {
                   <input
                     type="text"
                     placeholder="Байгууллагын регистр"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                   />
                 </div>
               )}
             </div>
 
-            <p className="text-xs text-[#C9A227]/80 mb-6">
+            <p className="text-xs text-gold/80 mb-6">
               *И Баримт таны бүртгэлийн и-мэйл хаягруу илгээгдэнэ
             </p>
 
@@ -276,16 +273,16 @@ export default function BookOnlinePage() {
                     onClick={() => setSelectedMethod(method.id)}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-colors ${
                       selectedMethod === method.id
-                        ? "border-[#C9A227] bg-white/5"
+                        ? "border-gold bg-white/5"
                         : "border-white/10 bg-white/5 hover:bg-white/10"
                     }`}
                   >
                     <span className="flex items-center gap-2">
                       <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                        selectedMethod === method.id ? "border-[#C9A227]" : "border-white/40"
+                        selectedMethod === method.id ? "border-gold" : "border-white/40"
                       }`}>
                         {selectedMethod === method.id && (
-                          <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                          <span className="w-2 h-2 rounded-full bg-gold" />
                         )}
                       </span>
                       <span className="text-sm text-white">{method.label}</span>
@@ -301,7 +298,7 @@ export default function BookOnlinePage() {
             {selectedMethod === "qpay" && (
               <div className="flex flex-col items-center gap-4 mb-6">
                 <div className="bg-white p-4 rounded-2xl">
-                  <div className="w-48 h-48 bg-[#F8F5F0] flex items-center justify-center text-sm text-muted-foreground">
+                  <div className="w-48 h-48 bg-background flex items-center justify-center text-sm text-muted-foreground">
                     QR Code Placeholder
                   </div>
                 </div>
@@ -316,18 +313,18 @@ export default function BookOnlinePage() {
                 <input
                   type="text"
                   placeholder="Card number"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                 />
                 <div className="grid grid-cols-2 gap-3">
                   <input
                     type="text"
                     placeholder="MM/YY"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                   />
                   <input
                     type="text"
                     placeholder="CVC"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                   />
                 </div>
               </div>
@@ -335,7 +332,7 @@ export default function BookOnlinePage() {
 
             <button
               onClick={handleCheckPayment}
-              className="w-full bg-[#C9A227] hover:bg-[#b08f22] text-white font-medium py-4 rounded-xl transition-colors"
+              className="w-full bg-gold hover:bg-gold-dark text-white font-medium py-4 rounded-xl transition-colors"
             >
               Төлбөр шалгах
             </button>

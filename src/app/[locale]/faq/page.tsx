@@ -46,7 +46,7 @@ export default function FAQPage() {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[900px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
             <p className="text-lg leading-[1.7] text-muted-foreground">
@@ -64,7 +64,7 @@ export default function FAQPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="rounded-xl bg-white border border-border overflow-hidden"
+                  className="rounded-xl bg-white border border-border overflow-hidden shadow-sm"
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -72,9 +72,9 @@ export default function FAQPage() {
                   >
                     <span className="font-display text-lg text-foreground pr-4">{faq.question}</span>
                     {isOpen ? (
-                      <Minus size={22} className="text-primary-dark shrink-0" />
+                      <Minus size={22} className="text-primary shrink-0" />
                     ) : (
-                      <Plus size={22} className="text-primary-dark shrink-0" />
+                      <Plus size={22} className="text-primary shrink-0" />
                     )}
                   </button>
                   <AnimatePresence>

@@ -34,7 +34,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
             <p className="text-lg leading-[1.7] text-muted-foreground">{t("intro")}</p>
@@ -48,10 +48,11 @@ export default function BlogPage({ posts }: BlogPageProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
-                className="rounded-[20px] bg-white border border-border overflow-hidden transition-shadow"
+                whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(18,63,174,0.08)" }}
+                className="rounded-[20px] bg-white border border-border overflow-hidden transition-all"
               >
-                <div className="relative h-[220px] w-full">
+                <div className="relative h-[220px] w-full overflow-hidden"
+                >
                   <Image
                     src={post.thumbnail?.url || "blog-placeholder.jpg"}
                     alt={post.title || ""}
@@ -62,7 +63,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
                 <div className="p-6 flex flex-col gap-2">
                   <span className="text-xs text-muted-foreground">{formatDate(post.publishedDate, locale)}</span>
                   <Link href={`/${locale}/blog/${post.slug}`} className="group">
-                    <h3 className="font-display text-xl text-foreground group-hover:text-primary-dark transition-colors">
+                    <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
                   </Link>

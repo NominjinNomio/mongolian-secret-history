@@ -26,12 +26,13 @@ export default function SectionHeader({
       className={`flex flex-col items-center gap-4 text-center ${className}`}
     >
       <span
-        className={`text-sm font-normal tracking-[3px] uppercase ${
-          light ? "text-accent" : "text-primary-dark"
+        className={`text-sm font-medium tracking-[0.2em] uppercase ${
+          light ? "text-gold" : "text-gold"
         }`}
       >
         {label}
       </span>
+      <span className="gold-line" />
       <h2
         className={`font-display text-3xl md:text-4xl lg:text-[44px] leading-tight ${
           light ? "text-white" : "text-foreground"

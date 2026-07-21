@@ -43,7 +43,7 @@ export default function SearchPage() {
     <InnerPageLayout>
       <PageHero label="Search" title="Search" subtitle="Find tours, blog posts, and pages across our site." />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[800px] px-6 lg:px-0">
           <div className="relative mb-12">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" size={20} />
@@ -52,7 +52,7 @@ export default function SearchPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search tours, blog posts, pages..."
-              className="w-full rounded-[12px] border border-border bg-white pl-12 pr-4 py-4 text-base text-foreground focus:outline-none focus:ring-2 focus:ring-[#2D5A4A]"
+              className="w-full rounded-[12px] border border-border bg-white pl-12 pr-4 py-4 text-base text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
               autoFocus
             />
           </div>
@@ -66,10 +66,10 @@ export default function SearchPage() {
                   <Link
                     key={item.url}
                     href={`/${locale}${item.url}`}
-                    className="bg-white rounded-[16px] border border-border p-5 transition-shadow hover:shadow-md"
+                    className="bg-white rounded-[16px] border border-border p-5 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
                   >
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-full bg-[#F8F5F0] text-[#2D5A4A]">
+                      <span className="text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-full bg-muted text-primary">
                         {item.type}
                       </span>
                     </div>

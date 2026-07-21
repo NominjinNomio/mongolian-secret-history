@@ -19,12 +19,13 @@ export default function TestimonialsSection() {
   const locale = useLocale();
 
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[150px]">
+    <section className="bg-background py-20 lg:py-[150px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="text-center mb-16 lg:mb-20">
-          <span className="text-sm tracking-[4px] text-primary-dark uppercase">
+          <span className="section-label">
             {t("testimonialsLabel")}
           </span>
+          <span className="gold-line mx-auto mt-4" />
           <h2 className="font-display mt-4 text-4xl md:text-5xl lg:text-6xl">
             {t("testimonialsTitle")}
           </h2>
@@ -35,10 +36,10 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0 }}
-            className="left-4 top-0 z-10 flex items-center gap-3 rounded-full bg-[#1a1a1a] px-4 py-2 text-white lg:absolute"
+            className="left-4 top-0 z-10 flex items-center gap-3 rounded-full bg-primary-dark px-4 py-2 text-white lg:absolute"
           >
-            <span className="flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-[#1a1a1a]">
-              <Star className="h-3 w-3 fill-[#1a1a1a]" />
+            <span className="flex items-center gap-1 rounded-full bg-white px-2 py-0.5 text-xs font-semibold text-primary-dark">
+              <Star className="h-3 w-3 fill-primary-dark" />
               5 Stars
             </span>
             <span className="text-sm">Trusted by travelers worldwide</span>
@@ -48,10 +49,10 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="right-3 top-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
+            className="right-3 top-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg border border-border lg:absolute"
           >
             <div className="flex items-center gap-4">
-              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-[#E8E4DC]">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-muted">
                 <Image src="team-placeholder.jpg" alt="Marie" fill className="object-cover" />
               </div>
               <div>
@@ -68,10 +69,11 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="left-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
+            className="left-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg border border-border lg:absolute"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
-              <Compass className="h-5 w-5 text-[#1a1a1a]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-muted"
+            >
+              <Compass className="h-5 w-5 text-primary" />
             </div>
             <h3 className="font-display mt-5 text-2xl">Authentic Journeys</h3>
             <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
@@ -83,9 +85,9 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-            className="relative z-20 mx-auto my-14 flex h-[570px] w-[310px] flex-col overflow-hidden rounded-[44px] border-[8px] border-[#1a1a1a] bg-[#1a1a1a] shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
+            className="relative z-20 mx-auto my-14 flex h-[570px] w-[310px] flex-col overflow-hidden rounded-[44px] border-[8px] border-foreground bg-foreground shadow-2xl lg:my-0 lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2 lg:absolute"
           >
-            <div className="relative flex h-11 items-center justify-between bg-[#1a1a1a] px-5 text-white">
+            <div className="relative flex h-11 items-center justify-between bg-foreground px-5 text-white">
               <span className="text-sm font-medium">9:41</span>
               <div className="absolute left-1/2 top-1/2 h-5 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black" />
               <div className="flex items-center gap-1.5">
@@ -100,13 +102,13 @@ export default function TestimonialsSection() {
                 </svg>
                 <svg className="h-4 w-6" viewBox="0 0 24 24" fill="currentColor">
                   <rect x="2" y="6" width="18" height="12" rx="2" ry="2" />
-                  <rect x="4" y="8" width="14" height="8" fill="#1a1a1a" />
+                  <rect x="4" y="8" width="14" height="8" fill="foreground" />
                 </svg>
               </div>
             </div>
 
             <div className="flex flex-1 flex-col gap-6 overflow-y-auto p-5">
-              <div className="rounded-[24px] bg-[#2a2a2a] p-4">
+              <div className="rounded-[24px] bg-primary-dark p-4">
                 <div className="relative aspect-square w-full overflow-hidden rounded-[20px]">
                   <Image src="team-placeholder.jpg" alt="Featured guide" fill className="object-cover" />
                 </div>
@@ -117,17 +119,17 @@ export default function TestimonialsSection() {
               </div>
 
               <div className="rounded-[24px] bg-white p-6">
-                <h3 className="font-display text-xl text-[#1a1a1a]">Dr. James McKelvie</h3>
-                <p className="mt-1 text-sm text-[#1a1a1a]/70">Specialist in Advanced Mongolia Expeditions</p>
+                <h3 className="font-display text-xl text-foreground">Dr. James McKelvie</h3>
+                <p className="mt-1 text-sm text-muted-foreground">Specialist in Advanced Mongolia Expeditions</p>
                 <div className="mt-5 flex items-center gap-2">
                   <Link
                     href={`/${locale}/book-online`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#1a1a1a] px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105"
+                    className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105"
                   >
                     Book Now
                   </Link>
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#1a1a1a]/20">
-                    <span className="h-2 w-2 rounded-full bg-[#1a1a1a]" />
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border">
+                    <span className="h-2 w-2 rounded-full bg-foreground" />
                   </span>
                 </div>
               </div>
@@ -138,23 +140,24 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
-            className="right-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
+            className="right-3 top-[250px] z-10 max-w-[310px] rounded-[26px] bg-white p-6 shadow-lg border border-border lg:absolute"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
-              <Award className="h-5 w-5 text-[#1a1a1a]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-muted"
+            >
+              <Award className="h-5 w-5 text-primary" />
             </div>
             <h3 className="font-display mt-5 text-2xl">Why Travelers Choose Us</h3>
             <ul className="mt-4 space-y-3 text-[15px] text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 20+ years of experience
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 Local expert guides
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1a1a1a]" />
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 Sustainable tourism
               </li>
             </ul>
@@ -164,10 +167,11 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
-            className="left-3 bottom-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg lg:absolute"
+            className="left-3 bottom-0 z-10 max-w-[370px] rounded-[26px] bg-white p-6 shadow-lg border border-border lg:absolute"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#F8F5F0]">
-              <Mail className="h-5 w-5 text-[#1a1a1a]" />
+            <div className="flex h-11 w-11 items-center justify-center rounded-full bg-muted"
+            >
+              <Mail className="h-5 w-5 text-primary" />
             </div>
             <blockquote className="font-display mt-5 text-xl leading-relaxed text-foreground">
               &ldquo;Of all the awesome new friends we made, the guides were the best. We plan to return and head East.&rdquo;
@@ -179,29 +183,29 @@ export default function TestimonialsSection() {
           <motion.div
             {...float}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            className="right-3 bottom-0 z-10 max-w-[370px] overflow-hidden rounded-[26px] bg-white shadow-lg lg:absolute border border-[#1a1a1a]/10"
+            className="right-3 bottom-0 z-10 max-w-[370px] overflow-hidden rounded-[26px] bg-white shadow-lg border border-border lg:absolute"
           >
-            <div className="bg-[#111111] px-6 py-4 text-white">
+            <div className="bg-foreground px-6 py-4 text-white">
               <div className="flex items-center gap-2">
                 <span className="text-2xl font-bold">FREE</span>
                 <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium">Zero Cost Guarantee</span>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="font-display text-2xl text-[#1a1a1a]">Custom Itinerary Planning</h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/65">
+              <h3 className="font-display text-2xl text-foreground">Custom Itinerary Planning</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">
                 Get a personalized trip plan with no upfront fees. We design it around your dates and interests.
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3">
                 <Link
                   href={`/${locale}/testimonials`}
-                  className="inline-flex items-center justify-center rounded-full bg-[#1A2B4A] px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
+                  className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105"
                 >
                   View All Testimonials
                 </Link>
                 <Link
                   href={`/${locale}/contact`}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-[#1a1a1a] underline underline-offset-4"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground underline underline-offset-4"
                 >
                   Start Planning
                 </Link>

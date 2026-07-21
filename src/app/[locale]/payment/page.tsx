@@ -30,10 +30,10 @@ export default function PaymentPage() {
 
   return (
     <InnerPageLayout>
-      <div className="min-h-screen bg-[#111111] py-12 px-4">
+      <div className="min-h-screen bg-primary-dark py-12 px-4">
         <div className="mx-auto max-w-[480px]"
         >
-          <div className="bg-[#1C1C1E] rounded-[24px] p-6 shadow-2xl"
+          <div className="bg-primary rounded-[24px] p-6 shadow-2xl"
           >
             <div className="flex items-center justify-end mb-6"
             >
@@ -63,16 +63,16 @@ export default function PaymentPage() {
                   onClick={() => setCustomerType("individual")}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-colors ${
                     customerType === "individual"
-                      ? "border-[#C9A227] bg-white/5"
+                      ? "border-gold bg-white/5"
                       : "border-white/10 bg-white/5 hover:bg-white/10"
                   }`}
                 >
                   <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    customerType === "individual" ? "border-[#C9A227]" : "border-white/40"
+                    customerType === "individual" ? "border-gold" : "border-white/40"
                   }`}
                   >
                     {customerType === "individual" && (
-                      <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                      <span className="w-2 h-2 rounded-full bg-gold" />
                     )}
                   </span>
                   <span className="text-sm text-white"
@@ -83,16 +83,16 @@ export default function PaymentPage() {
                   onClick={() => setCustomerType("organization")}
                   className={`flex items-center gap-3 px-4 py-3 rounded-xl border transition-colors ${
                     customerType === "organization"
-                      ? "border-[#C9A227] bg-white/5"
+                      ? "border-gold bg-white/5"
                       : "border-white/10 bg-white/5 hover:bg-white/10"
                   }`}
                 >
                   <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                    customerType === "organization" ? "border-[#C9A227]" : "border-white/40"
+                    customerType === "organization" ? "border-gold" : "border-white/40"
                   }`}
                   >
                     {customerType === "organization" && (
-                      <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                      <span className="w-2 h-2 rounded-full bg-gold" />
                     )}
                   </span>
                   <span className="text-sm text-white"
@@ -101,7 +101,7 @@ export default function PaymentPage() {
               </div>
             </div>
 
-            <p className="text-xs text-[#C9A227]/80 mb-6"
+            <p className="text-xs text-gold/80 mb-6"
             >
               *И Баримт таны бүртгэлийн и-мэйл хаягруу илгээгдэнэ
             </p>
@@ -118,18 +118,18 @@ export default function PaymentPage() {
                     onClick={() => setSelectedMethod(method.id)}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl border transition-colors ${
                       selectedMethod === method.id
-                        ? "border-[#C9A227] bg-white/5"
+                        ? "border-gold bg-white/5"
                         : "border-white/10 bg-white/5 hover:bg-white/10"
                     }`}
                   >
                     <span className="flex items-center gap-2"
                     >
                       <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                        selectedMethod === method.id ? "border-[#C9A227]" : "border-white/40"
+                        selectedMethod === method.id ? "border-gold" : "border-white/40"
                       }`}
                       >
                         {selectedMethod === method.id && (
-                          <span className="w-2 h-2 rounded-full bg-[#C9A227]" />
+                          <span className="w-2 h-2 rounded-full bg-gold" />
                         )}
                       </span>
                       <span className="text-sm text-white"
@@ -149,7 +149,7 @@ export default function PaymentPage() {
               >
                 <div className="bg-white p-4 rounded-2xl"
                 >
-                  <div className="w-48 h-48 bg-[#F8F5F0] flex items-center justify-center text-sm text-muted-foreground"
+                  <div className="w-48 h-48 bg-background flex items-center justify-center text-sm text-muted-foreground"
                   >
                     QR Code Placeholder
                   </div>
@@ -167,19 +167,19 @@ export default function PaymentPage() {
                 <input
                   type="text"
                   placeholder="Card number"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                 />
                 <div className="grid grid-cols-2 gap-3"
                 >
                   <input
                     type="text"
                     placeholder="MM/YY"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                   />
                   <input
                     type="text"
                     placeholder="CVC"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 focus:outline-none focus:border-[#C9A227]"
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/40 outline-none focus:border-gold"
                   />
                 </div>
               </div>
@@ -187,7 +187,7 @@ export default function PaymentPage() {
 
             <button
               onClick={handleCheckPayment}
-              className="w-full bg-[#C9A227] hover:bg-[#b08f22] text-white font-medium py-4 rounded-xl transition-colors"
+              className="w-full bg-gold hover:bg-gold-dark text-white font-medium py-4 rounded-xl transition-colors"
             >
               Төлбөр шалгах
             </button>

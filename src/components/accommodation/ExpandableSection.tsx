@@ -25,7 +25,7 @@ export default function ExpandableSection({
         <span className="font-display text-2xl md:text-3xl text-foreground">
           {title}
         </span>
-        <span className="flex items-center gap-2 text-sm text-blue-600 font-medium flex-shrink-0">
+        <span className="flex items-center gap-2 text-sm text-primary font-medium flex-shrink-0">
           {isOpen ? "Show less" : "Click for more"}
           {isOpen ? (
             <ChevronUp className="w-5 h-5" />

@@ -113,11 +113,11 @@ export default async function BlogDetailPage({ params }: PageProps) {
     <InnerPageLayout>
       <PageHero label="Travel Stories" title={post.title} subtitle={post.date} />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
             <article className="bg-white rounded-[20px] border border-border p-8 lg:p-10">
-              <div className="relative w-full h-[320px] lg:h-[420px] rounded-[16px] overflow-hidden mb-10">
+              <div className="relative w-full h-[320px] lg:h-[420px] rounded-[16px] overflow-hidden mb-10 border border-border">
                 <Image src={post.image} alt={post.title} fill className="object-cover" />
               </div>
 
@@ -134,8 +134,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <aside className="flex flex-col gap-6">
               <div className="bg-white rounded-[20px] border border-border p-6">
                 <h4 className="font-display text-lg text-foreground mb-4">About the Author</h4>
-                <div className="w-16 h-16 rounded-full bg-[#2D5A4A]/10 flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-[#2D5A4A]">
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
                     <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.657-10 5v2h20v-2c0-3.343-6.686-5-10-5z" fill="currentColor"/>
                   </svg>
                 </div>
@@ -150,7 +150,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
                   {related.map((item) => (
                     <li key={item.slug}>
                       <Link href={`/${locale}/blog/${item.slug}`} className="group">
-                        <p className="text-sm font-medium text-foreground group-hover:text-[#2D5A4A] transition-colors">{item.title}</p>
+                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{item.title}</p>
                         <p className="text-xs text-muted-foreground">{item.date}</p>
                       </Link>
                     </li>

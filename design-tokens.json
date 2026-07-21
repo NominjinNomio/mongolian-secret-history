@@ -1,56 +1,57 @@
 {
   "meta": {
     "siteName": "mongolian-secret-history",
-    "visualDirection": "organic-luxury",
+    "visualDirection": "mongolian-restaurant-luxury",
     "motionLevel": 2,
     "defaultLocale": "mn",
     "locales": ["mn", "en"]
   },
   "colors": {
     "brand": {
-      "primary": "#2D5A4A",
-      "accent": "#C9A227",
-      "primaryDark": "#1E3D31",
-      "accentDark": "#A8891F"
+      "primary": "#123FAE",
+      "primaryDark": "#0A2C7A",
+      "primaryLight": "#EAF1FF",
+      "accent": "#C8A24A",
+      "accentDark": "#A68A3D"
     },
     "neutral": {
-      "50": "#FAF9F6",
-      "100": "#F8F6F1",
-      "200": "#E5E2DC",
-      "300": "#C9C5BC",
-      "400": "#8A857A",
-      "500": "#5C5C5C",
-      "600": "#3D3D3D",
-      "700": "#1A1A1A",
-      "800": "#0F1412",
-      "900": "#0A0E0D"
+      "50": "#FAFAF8",
+      "100": "#F5F5F2",
+      "200": "#EAF1FF",
+      "300": "#C9D4EF",
+      "400": "#8A9ABE",
+      "500": "#6B7280",
+      "600": "#4B5563",
+      "700": "#374151",
+      "800": "#111827",
+      "900": "#0A192F"
     },
     "semantic": {
-      "background": "#F8F6F1",
-      "foreground": "#1A1A1A",
+      "background": "#FAFAF8",
+      "foreground": "#111827",
       "card": "#FFFFFF",
-      "cardForeground": "#1A1A1A",
+      "cardForeground": "#111827",
       "popover": "#FFFFFF",
-      "popoverForeground": "#1A1A1A",
-      "primary": "#2D5A4A",
+      "popoverForeground": "#111827",
+      "primary": "#123FAE",
       "primaryForeground": "#FFFFFF",
-      "secondary": "#F8F6F1",
-      "secondaryForeground": "#1A1A1A",
-      "muted": "#E5E2DC",
-      "mutedForeground": "#5C5C5C",
-      "accent": "#C9A227",
-      "accentForeground": "#1A1A1A",
-      "border": "#E5E2DC",
-      "input": "#E5E2DC",
-      "ring": "#2D5A4A",
-      "success": "#2D5A4A",
-      "warning": "#C9A227",
+      "secondary": "#EAF1FF",
+      "secondaryForeground": "#123FAE",
+      "muted": "#EAF1FF",
+      "mutedForeground": "#6B7280",
+      "accent": "#C8A24A",
+      "accentForeground": "#111827",
+      "border": "#EAF1FF",
+      "input": "#EAF1FF",
+      "ring": "#123FAE",
+      "success": "#123FAE",
+      "warning": "#C8A24A",
       "destructive": "#B42318"
     }
   },
   "typography": {
     "families": {
-      "display": "Playfair Display",
+      "display": "League Spartan",
       "body": "Inter",
       "mono": "JetBrains Mono"
     },
@@ -99,10 +100,10 @@
     "full": "9999px"
   },
   "shadows": {
-    "sm": "0 1px 2px 0 rgba(0,0,0,0.05)",
-    "md": "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1)",
-    "lg": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
-    "xl": "0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1)"
+    "sm": "0 1px 2px 0 rgba(18, 63, 174, 0.05)",
+    "md": "0 4px 6px -1px rgba(18, 63, 174, 0.08), 0 2px 4px -2px rgba(18, 63, 174, 0.08)",
+    "lg": "0 10px 15px -3px rgba(18, 63, 174, 0.08), 0 4px 6px -4px rgba(18, 63, 174, 0.08)",
+    "xl": "0 20px 25px -5px rgba(18, 63, 174, 0.12), 0 8px 10px -6px rgba(18, 63, 174, 0.12)"
   },
   "motion": {
     "duration": {
@@ -130,8 +131,8 @@
         "animate": { "transition": { "staggerChildren": 0.1 } }
       },
       "cardHover": {
-        "rest": { "y": 0, "boxShadow": "0 1px 2px rgba(0,0,0,0.05)" },
-        "hover": { "y": -4, "boxShadow": "0 10px 15px -3px rgba(0,0,0,0.1)" }
+        "rest": { "y": 0, "boxShadow": "0 1px 2px rgba(18,63,174,0.05)" },
+        "hover": { "y": -4, "boxShadow": "0 10px 15px -3px rgba(18,63,174,0.08)" }
       },
       "buttonHover": {
         "rest": { "scale": 1 },

@@ -18,7 +18,7 @@ export default function PageHero({ label, title, subtitle }: PageHeroProps) {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[#0f1e32]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary-dark/70 to-primary-dark/80" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -26,7 +26,8 @@ export default function PageHero({ label, title, subtitle }: PageHeroProps) {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="relative z-10 flex max-w-[640px] flex-col items-center gap-4 px-6 text-center"
       >
-        <span className="text-sm tracking-[4px] text-accent uppercase">{label}</span>
+        <span className="section-label text-white/90">{label}</span>
+        <span className="gold-line" />
         <h1 className="font-display text-4xl md:text-[56px] leading-tight text-white">
           {title}
         </h1>

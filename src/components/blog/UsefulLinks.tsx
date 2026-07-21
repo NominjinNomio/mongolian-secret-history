@@ -50,11 +50,11 @@ function LinkCard({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
+      className="group flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-muted p-5 lg:p-6 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
     >
       <div className="flex items-center gap-2.5">
         <motion.div
-          className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground shadow-sm"
+          className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary shadow-sm"
           whileHover={{ scale: 1.15, rotate: 5 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
@@ -64,7 +64,7 @@ function LinkCard({
           {title}
         </span>
       </div>
-      <div className="flex items-center gap-1 text-[14px] lg:text-[15px] text-blue-600 mt-4">
+      <div className="flex items-center gap-1 text-[14px] lg:text-[15px] text-primary mt-4">
         <span className="group-hover:underline">{label ?? "Official Website"}</span>
         <motion.span
           whileHover={{ x: 2, y: -2 }}
@@ -116,11 +116,11 @@ export default function UsefulLinks() {
 
           <motion.div
             variants={item}
-            className="flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-[#F7F7F7] p-5 lg:p-6 transition-shadow hover:shadow-[0_4px_20px_rgba(0,0,0,0.10)]"
+            className="flex flex-col justify-between h-full min-h-[120px] rounded-2xl bg-muted p-5 lg:p-6 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
           >
             <div className="flex items-center gap-2.5">
               <motion.div
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-foreground shadow-sm"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary shadow-sm"
                 whileHover={{ scale: 1.15, rotate: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -137,7 +137,7 @@ export default function UsefulLinks() {
                   href={airline.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[14px] lg:text-[15px] text-blue-600 hover:underline"
+                  className="text-[14px] lg:text-[15px] text-primary hover:underline"
                 >
                   {airline.name}
                 </a>

@@ -3,6 +3,7 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -44,7 +45,7 @@ export default async function PricingPage({ params }: PageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
             <p className="text-lg leading-[1.7] text-muted-foreground">
@@ -57,16 +58,16 @@ export default async function PricingPage({ params }: PageProps) {
             {plans.map((plan) => (
               <div
                 key={plan.title}
-                className="rounded-[20px] bg-white border border-border p-10 flex flex-col gap-4 transition-shadow hover:shadow-lg"
+                className="rounded-[20px] bg-white border border-border p-10 flex flex-col gap-4 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
               >
                 <span className="text-sm text-muted-foreground">{plan.duration}</span>
-                <span className="font-display text-[44px] text-primary-dark">{plan.price}</span>
+                <span className="font-display text-[44px] text-primary">{plan.price}</span>
                 <h3 className="font-display text-2xl text-foreground">{plan.title}</h3>
                 <p className="text-[15px] text-muted-foreground leading-relaxed">{plan.desc}</p>
                 <ul className="flex flex-col gap-3 mt-2">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Check size={16} className="text-primary-dark" />
+                      <Check size={16} className="text-primary" />
                       {feature}
                     </li>
                   ))}
@@ -74,7 +75,7 @@ export default async function PricingPage({ params }: PageProps) {
                 <div className="mt-4">
                   <Link
                     href={`/${locale}/contact`}
-                    className="inline-flex items-center justify-center rounded-full w-full px-7 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                    className="inline-flex items-center justify-center rounded-full w-full px-7 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
                   >
                     Request Quote
                   </Link>
@@ -85,7 +86,7 @@ export default async function PricingPage({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="bg-[#1A2B4A] py-12 lg:py-14">
+      <section className="bg-primary-dark py-12 lg:py-14">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-[700px] text-center lg:text-left">
@@ -94,12 +95,9 @@ export default async function PricingPage({ params }: PageProps) {
                 Tell us your travel dates, interests, and budget. We'll design a tailor-made Mongolia journey just for you.
               </p>
             </div>
-            <Link
-              href={`/${locale}/contact`}
-              className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
-            >
+            <Button href={`/${locale}/contact`} variant="gold">
               Request Custom Quote
-            </Link>
+            </Button>
           </div>
         </div>
       </section>

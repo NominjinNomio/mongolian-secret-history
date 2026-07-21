@@ -10,7 +10,7 @@ const MotionButton = motion.button;
 
 interface ButtonProps {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "outline" | "dark";
+  variant?: "primary" | "secondary" | "outline" | "dark" | "gold";
   href?: string;
   onClick?: () => void;
   className?: string;
@@ -26,13 +26,14 @@ export default function Button({
   type = "button",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors";
+    "inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
 
   const variants = {
-    primary: "bg-accent text-foreground hover:bg-accent-dark",
-    secondary: "bg-white/0 text-white border-2 border-white hover:bg-white/10",
-    outline: "bg-transparent text-primary border border-primary hover:bg-primary/5",
-    dark: "bg-primary-dark text-white hover:bg-primary",
+    primary: "bg-primary text-white hover:bg-primary-dark hover:shadow-md",
+    secondary: "bg-white text-primary border border-primary hover:bg-primary-light hover:text-primary-dark",
+    outline: "bg-transparent text-primary border border-primary hover:bg-primary-light",
+    dark: "bg-primary-dark text-white hover:bg-primary hover:shadow-md",
+    gold: "bg-gold text-white hover:bg-gold-dark hover:shadow-md",
   };
 
   const classes = cn(baseStyles, variants[variant], className);

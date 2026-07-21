@@ -8,9 +8,9 @@ import Footer from "@/components/layout/Footer";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Mongolian Secret History | Tours & Travel in Mongolia",
+  title: "Mongolian Secret History Restaurant | Authentic Mongolian Cuisine",
   description:
-    "Authentic, immersive journeys across Mongolia. Group tours, private adventures, and tailor-made itineraries across the steppe, desert, and nomadic heartland.",
+    "Experience authentic Mongolian cuisine in an elegant setting. Premium dining inspired by centuries of heritage, tradition, and the timeless flavors of the steppe.",
 };
 
 export function generateStaticParams() {

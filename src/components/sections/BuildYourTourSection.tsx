@@ -41,10 +41,11 @@ const itemVariants = {
 
 export default function BuildYourTourSection() {
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+    <section className="bg-background py-20 lg:py-[120px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="text-center max-w-[800px] mx-auto mb-16">
-          <span className="text-sm tracking-[3px] text-[#2D5A4A] uppercase">Plan Your Trip</span>
+          <span className="section-label text-gold">Plan Your Trip</span>
+          <span className="gold-line mx-auto mt-3" />
           <h2 className="font-display text-3xl md:text-[44px] leading-tight text-foreground mt-4 mb-5">
             Build your own tour
           </h2>
@@ -66,13 +67,13 @@ export default function BuildYourTourSection() {
               <motion.div key={index} variants={itemVariants} className="flex items-center gap-4 md:gap-2">
                 <div className="flex flex-col items-center gap-4 w-[150px]">
                   <motion.div
-                    className="w-20 h-20 rounded-full border-2 border-[#2D5A4A] flex items-center justify-center text-[#2D5A4A]"
+                    className="w-20 h-20 rounded-full border-2 border-primary flex items-center justify-center text-primary"
                     whileHover={{
                       scale: 1.15,
                       rotate: 5,
-                      backgroundColor: "#2D5A4A",
+                      backgroundColor: "#123FAE",
                       color: "#ffffff",
-                      borderColor: "#2D5A4A",
+                      borderColor: "#123FAE",
                     }}
                     transition={{ type: "spring", stiffness: 300, damping: 15 }}
                   >
@@ -88,7 +89,7 @@ export default function BuildYourTourSection() {
                   </p>
                 </div>
                 {index < steps.length - 1 && (
-                  <span className="hidden md:block text-[#C9A227] text-xl">→</span>
+                  <span className="hidden md:block text-gold text-xl">→</span>
                 )}
               </motion.div>
             );

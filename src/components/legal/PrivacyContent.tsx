@@ -30,14 +30,14 @@ export default function PrivacyContent() {
         ))}
       </div>
 
-      <div className="bg-[#1A2B4A] rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="bg-primary-dark rounded-2xl p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left">
           <h3 className="font-display text-2xl text-white">{t("questionsTitle")}</h3>
           <p className="text-sm text-white/70 mt-1">{t("questionsDesc")}</p>
         </div>
         <Link
           href={`/${locale}/contact`}
-          className="rounded-full bg-[#C9A227] px-7 py-3 text-sm font-medium text-white hover:bg-[#C9A227]/90 transition-colors"
+          className="rounded-full bg-gold px-7 py-3 text-sm font-medium text-white hover:bg-gold-dark transition-colors"
         >
           {t("contact")}
         </Link>

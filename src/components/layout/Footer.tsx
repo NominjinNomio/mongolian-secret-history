@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useTranslations } from "next-intl";
+import Image from "@/components/common/Image";
 
 const footerLinks = [
   { label: "About Us", url: "/about" },
@@ -55,26 +56,51 @@ export default function Footer() {
   const tf = useTranslations("footer");
 
   return (
-    <footer className="bg-[#171717] text-white">
-      <div className="mx-auto max-w-[1440px] px-[2px] py-12">
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 pb-4">
-          <Link href={`/${locale}`} className="font-display text-[26px] leading-tight">
-            Mongolian Secret History
-          </Link>
+    <footer className="bg-primary-dark text-white">
+      <div className="mx-auto max-w-[1440px] px-4 lg:px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
+          <div className="flex flex-col gap-5">
+            <Link href={`/${locale}`} className="flex items-center h-[60px] w-auto">
+              <Image
+                src="logo.png"
+                alt="Mongolian Secret History"
+                height={60}
+                width={60}
+                className="h-full w-auto object-contain"
+              />
+            </Link>
+            <p className="text-sm text-white/70 leading-relaxed max-w-xs">
+              Authentic Mongolian heritage, timeless cuisine, and warm hospitality in an elegant setting.
+            </p>
+          </div>
 
-          <div className="flex flex-col items-center md:items-end gap-4">
-            <nav className="flex flex-wrap items-center justify-center gap-6">
+          <div className="flex flex-col gap-4">
+            <h4 className="font-display text-lg text-white">Quick Links</h4>
+            <nav className="flex flex-col gap-3">
               {footerLinks.map((item) => (
                 <Link
                   key={item.url}
                   href={`/${locale}${item.url}`}
-                  className="text-sm text-white/80 hover:text-white transition-colors"
+                  className="text-sm text-white/70 hover:text-gold transition-colors"
                 >
                   {item.label}
                 </Link>
               ))}
             </nav>
+          </div>
 
+          <div className="flex flex-col gap-4">
+            <h4 className="font-display text-lg text-white">Contact</h4>
+            <div className="flex flex-col gap-3 text-sm text-white/70">
+              <span>Akuma center and Workers street, Ulaanbaatar</span>
+              <span>+976 70000450</span>
+              <span>info@mongoliansecrethistory.mn</span>
+              <span>Mon–Fri, 9:00 AM – 6:00 PM (GMT+8)</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="font-display text-lg text-white">Follow Us</h4>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
                 <a
@@ -83,7 +109,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-white/70 hover:text-gold transition-colors"
                 >
                   {social.icon}
                 </a>

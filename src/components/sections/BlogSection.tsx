@@ -48,21 +48,21 @@ export default function BlogSection() {
             <motion.div
               key={post.title}
               variants={item}
-              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
-              className="rounded-[20px] bg-[#F8F5F0] border border-border overflow-hidden transition-shadow"
+              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(18,63,174,0.08)" }}
+              className="rounded-[20px] bg-white border border-border overflow-hidden transition-all"
             >
-              <div className="relative h-[220px] w-full">
+              <div className="relative h-[220px] w-full overflow-hidden">
                 <Image
                   src="blog-placeholder.jpg"
                   alt={post.title}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
                 />
               </div>
               <div className="p-6 flex flex-col gap-2">
                 <span className="text-xs text-muted-foreground">{post.date}</span>
                 <Link href="/blog" className="group">
-                  <h3 className="font-display text-xl text-foreground group-hover:text-primary-dark transition-colors">
+                  <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>
                 </Link>

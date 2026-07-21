@@ -42,7 +42,7 @@ export default function DestinationsSection() {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-[#0f1e32]/80" />
+      <div className="absolute inset-0 bg-primary-dark/85" />
 
       <div className="relative z-10 mx-auto max-w-[1200px] px-6 lg:px-0">
         <SectionHeader
@@ -63,9 +63,11 @@ export default function DestinationsSection() {
             <motion.div
               key={region.name}
               variants={item}
-              className="rounded-2xl border border-white/30 bg-white/10 p-7 backdrop-blur-sm"
+              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.15)" }}
+              className="rounded-2xl border border-white/20 bg-white/10 p-7 backdrop-blur-sm transition-all"
             >
               <h3 className="font-display text-xl text-white mb-2">{t(region.name)}</h3>
+              <span className="gold-line mb-3" />
               <p className="text-sm text-white/80 leading-relaxed">{t(region.desc)}</p>
             </motion.div>
           ))}
@@ -74,7 +76,7 @@ export default function DestinationsSection() {
         <div className="mt-12 flex justify-center">
           <Link
             href={`/${locale}/about#regions`}
-            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
+            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-gold text-white hover:bg-gold-dark"
           >
             {t("destinationsButton")}
           </Link>

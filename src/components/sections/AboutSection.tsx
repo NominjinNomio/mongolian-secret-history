@@ -9,7 +9,7 @@ export default function AboutSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
+    <section className="bg-background py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           <motion.div
@@ -19,7 +19,7 @@ export default function AboutSection() {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-6 max-w-[520px]"
           >
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">
+            <span className="section-label text-gold">
               {t("aboutLabel")}
             </span>
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">
@@ -40,13 +40,13 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative w-full max-w-[600px] aspect-[5/4] rounded-3xl overflow-hidden"
+            className="relative w-full max-w-[600px] aspect-[5/4] rounded-3xl overflow-hidden border border-border shadow-lg"
           >
             <Image
               src="about-nomads.jpg"
               alt={t("aboutTitle")}
               fill
-              className="object-cover"
+              className="object-cover transition-transform duration-700 hover:scale-105"
             />
           </motion.div>
         </div>

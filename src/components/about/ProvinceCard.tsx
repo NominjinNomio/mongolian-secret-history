@@ -12,7 +12,7 @@ export default function ProvinceCard({ province }: ProvinceCardProps) {
   const t = useTranslations("about");
 
   return (
-    <div className="bg-[#F8F6F1] rounded-2xl p-7 md:p-8">
+    <div className="bg-white rounded-2xl border border-border p-7 md:p-8 transition-shadow hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]">
       <h3 className="font-display text-2xl md:text-3xl text-foreground">
         {province.name}
       </h3>
@@ -22,14 +22,14 @@ export default function ProvinceCard({ province }: ProvinceCardProps) {
 
       {province.topAttractions && province.topAttractions.length > 0 && (
         <div className="mt-6">
-          <div className="flex items-center gap-2 text-primary-dark font-semibold">
+          <div className="flex items-center gap-2 text-primary font-semibold">
             <MapPin className="w-4 h-4" />
             <span>{t("topAttractions")}</span>
           </div>
           <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {province.topAttractions.map((attr) => (
               <li key={attr} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                 <span>{attr}</span>
               </li>
             ))}
@@ -39,14 +39,14 @@ export default function ProvinceCard({ province }: ProvinceCardProps) {
 
       {province.popularTours && province.popularTours.length > 0 && (
         <div className="mt-6">
-          <div className="flex items-center gap-2 text-primary-dark font-semibold">
+          <div className="flex items-center gap-2 text-primary font-semibold">
             <Route className="w-4 h-4" />
             <span>{t("popularTours")}</span>
           </div>
           <ul className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
             {province.popularTours.map((tour) => (
               <li key={tour} className="flex items-start gap-2 text-sm text-muted-foreground">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0" />
                 <span>{tour}</span>
               </li>
             ))}

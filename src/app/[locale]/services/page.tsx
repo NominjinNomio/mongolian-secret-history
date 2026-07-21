@@ -51,7 +51,7 @@ export default async function ServicesPage({ params }: PageProps) {
         title={t("heroTitle")}
         subtitle={t("heroSubtitle")}
       />
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <p className="text-center text-muted-foreground max-w-[800px] mx-auto mb-16">
             {t("intro")}

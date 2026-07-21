@@ -52,9 +52,10 @@ export default function AccommodationSection() {
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="mb-14 flex flex-col items-start justify-between gap-6 lg:mb-20 lg:flex-row lg:items-end">
           <div>
-            <span className="text-sm tracking-[4px] text-muted-foreground uppercase">
+            <span className="section-label">
               Stay With Us
             </span>
+            <span className="gold-line mt-3" />
             <h2 className="font-display mt-4 text-4xl text-foreground md:text-5xl lg:text-6xl">
               Accommodation
             </h2>
@@ -75,7 +76,8 @@ export default function AccommodationSection() {
               className="group flex flex-col gap-5"
             >
               <Link href={`/${locale}/accommodation/${item.slug}`} className="block">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#E8E4DC]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted border border-border"
+                >
                   <Image
                     src={item.image}
                     alt={item.name}
@@ -89,7 +91,7 @@ export default function AccommodationSection() {
                   {item.province}
                 </span>
                 <Link href={`/${locale}/accommodation/${item.slug}`}>
-                  <h3 className="font-display text-2xl text-foreground transition-colors hover:text-[#1A2B4A]">
+                  <h3 className="font-display text-2xl text-foreground transition-colors hover:text-primary">
                     {item.name}
                   </h3>
                 </Link>
@@ -103,7 +105,7 @@ export default function AccommodationSection() {
                   </div>
                   <Link
                     href={`/${locale}/book-online`}
-                    className="inline-flex items-center justify-center rounded-full bg-[#1A2B4A] px-5 py-2.5 text-sm font-medium text-white transition-transform hover:scale-105"
+                    className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
                   >
                     Book
                   </Link>

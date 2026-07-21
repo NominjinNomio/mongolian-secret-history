@@ -95,7 +95,7 @@ export default function MongoliaMap() {
               fontSize="13"
               fontFamily="Inter, sans-serif"
               fontWeight="600"
-              fill="#ffffff"
+              fill="#111827"
               filter="url(#text-shadow)"
               className="pointer-events-none"
             >

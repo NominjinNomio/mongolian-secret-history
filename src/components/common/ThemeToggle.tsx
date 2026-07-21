@@ -39,8 +39,8 @@ export default function ThemeToggle() {
             aria-label={`Set ${label} mode`}
             className={`flex h-8 w-8 items-center justify-center rounded-full transition-colors ${
               active
-                ? "bg-[#1A2B4A] text-white"
-                : "text-[#5C5C5C] hover:bg-[#F8F5F0] hover:text-[#1A2B4A]"
+                ? "bg-primary text-white"
+                : "text-muted-foreground hover:bg-muted hover:text-primary"
             }`}
           >
             <Icon className="h-4 w-4" />

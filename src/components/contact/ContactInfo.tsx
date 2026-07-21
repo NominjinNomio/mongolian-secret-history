@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Phone } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 export default function ContactInfo() {
   const t = useTranslations("contact");
@@ -32,13 +33,11 @@ export default function ContactInfo() {
       <div className="pt-4">
         <h3 className="font-display text-xl text-foreground mb-2">{t("callTitle")}</h3>
         <p className="text-sm text-muted-foreground mb-4 max-w-[360px]">{t("callDesc")}</p>
-        <a
-          href={`tel:${t("phoneValue").replace(/\s/g, "")}`}
-          className="inline-flex items-center gap-2 rounded-full bg-[#C9A227] px-6 py-3 text-sm font-medium text-white hover:bg-[#C9A227]/90 transition-colors"
+        <Button href={`tel:${t("phoneValue").replace(/\s/g, "")}`} variant="gold" className="gap-2"
         >
           <Phone size={16} />
           {t("callButton")}
-        </a>
+        </Button>
       </div>
     </div>
   );

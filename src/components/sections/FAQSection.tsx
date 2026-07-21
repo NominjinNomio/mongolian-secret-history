@@ -54,7 +54,7 @@ export default function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="rounded-xl bg-[#F8F6F1] border border-border overflow-hidden"
+                className="rounded-xl bg-white border border-border overflow-hidden shadow-sm"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
@@ -62,9 +62,9 @@ export default function FAQSection() {
                 >
                   <span className="font-display text-lg text-foreground pr-4">{faq.question}</span>
                   {isOpen ? (
-                    <Minus size={22} className="text-primary-dark shrink-0" />
+                    <Minus size={22} className="text-primary shrink-0" />
                   ) : (
-                    <Plus size={22} className="text-primary-dark shrink-0" />
+                    <Plus size={22} className="text-primary shrink-0" />
                   )}
                 </button>
                 <AnimatePresence>
@@ -89,7 +89,7 @@ export default function FAQSection() {
         <div className="mt-10 flex justify-center">
           <Link
             href={`/${locale}/faq`}
-            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
           >
             View All FAQs
           </Link>

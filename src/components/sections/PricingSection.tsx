@@ -68,17 +68,17 @@ export default function PricingSection() {
             <motion.div
               key={plan.title}
               variants={item}
-              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.1)" }}
-              className="rounded-[20px] bg-[#F8F6F1] border border-border p-10 flex flex-col gap-4 transition-shadow"
+              whileHover={{ y: -4, boxShadow: "0 10px 15px -3px rgba(18,63,174,0.08)" }}
+              className="rounded-[20px] bg-white border border-border p-10 flex flex-col gap-4 transition-all"
             >
               <span className="text-sm text-muted-foreground">{plan.duration}</span>
-              <span className="font-display text-3xl text-primary-dark">{plan.price}</span>
+              <span className="font-display text-3xl text-primary">{plan.price}</span>
               <h3 className="font-display text-2xl text-foreground">{plan.title}</h3>
               <p className="text-[15px] text-muted-foreground leading-relaxed">{plan.desc}</p>
               <ul className="flex flex-col gap-3 mt-2">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <Check size={16} className="text-primary-dark" />
+                    <Check size={16} className="text-primary" />
                     {feature}
                   </li>
                 ))}
@@ -86,7 +86,7 @@ export default function PricingSection() {
               <div className="mt-4">
                 <Link
                   href={`/${locale}/pricing`}
-                  className="inline-flex items-center justify-center rounded-full w-full px-7 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+                  className="inline-flex items-center justify-center rounded-full w-full px-7 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
                 >
                   {t("requestQuote")}
                 </Link>
@@ -106,12 +106,9 @@ export default function PricingSection() {
             <h3 className="font-display text-2xl lg:text-[28px] text-white">{t("pricingCtaTitle")}</h3>
             <p className="text-white/85 mt-2 leading-relaxed">{t("pricingCtaDesc")}</p>
           </div>
-          <Link
-            href={`/${locale}/pricing`}
-            className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
-          >
+          <Button href={`/${locale}/pricing`} variant="gold">
             {t("pricingCtaButton")}
-          </Link>
+          </Button>
         </motion.div>
       </div>
     </section>

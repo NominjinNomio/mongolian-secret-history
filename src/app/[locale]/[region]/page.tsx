@@ -36,10 +36,10 @@ export default async function RegionPage({ params }: PageProps) {
         subtitle={t(descKey as any)}
       />
 
-      <section className="bg-[#F8F5F0] py-16 lg:py-24">
+      <section className="bg-background py-16 lg:py-24">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-10">
-            <h2 className="font-display text-2xl md:text-3xl text-foreground">{t("regionMapTitle")}</h2>
+            <span className="section-label">{t("regionMapTitle")}</span>
           </div>
           <RegionMap regionId={regionData.id} />
         </div>
@@ -48,7 +48,8 @@ export default async function RegionPage({ params }: PageProps) {
       <section className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center mb-14">
-            <span className="text-sm tracking-[3px] text-primary-dark uppercase">{t("provincesLabel")}</span>
+            <span className="section-label">{t("provincesLabel")}</span>
+            <span className="gold-line mx-auto mt-3" />
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3">{t("provincesInRegion")}</h2>
           </div>
 
@@ -61,7 +62,7 @@ export default async function RegionPage({ params }: PageProps) {
           <div className="mt-12 flex justify-center">
             <Link
               href={`/${locale}/about#regions`}
-              className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-accent text-foreground hover:bg-accent-dark"
+              className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
             >
               {t("regionBackToAbout")}
             </Link>

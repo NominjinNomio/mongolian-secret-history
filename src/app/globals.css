@@ -1,32 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #F8F6F1;
-  --foreground: #1A1A1A;
-  --primary: #2D5A4A;
-  --primary-dark: #1E3D31;
-  --accent: #C9A227;
-  --accent-dark: #A8891F;
+  --background: #FAFAF8;
+  --foreground: #111827;
+  --primary: #123FAE;
+  --primary-dark: #0A2C7A;
+  --primary-light: #EAF1FF;
+  --accent: #C8A24A;
+  --accent-dark: #A68A3D;
   --card: #FFFFFF;
-  --muted: #E5E2DC;
-  --muted-foreground: #5C5C5C;
-  --border: #E5E2DC;
-  --footer: #1A1A1A;
+  --muted: #EAF1FF;
+  --muted-foreground: #6B7280;
+  --border: #EAF1FF;
+  --input: #EAF1FF;
+  --ring: #123FAE;
+  --footer: #0A2C7A;
+  --footer-foreground: #FFFFFF;
+  --gold: #C8A24A;
+  --gold-dark: #A68A3D;
+  --white: #FFFFFF;
+  --text: #111827;
+  --text-muted: #6B7280;
 }
 
 .dark {
-  --background: #121212;
-  --foreground: #F8F6F1;
-  --primary: #4A9E82;
-  --primary-dark: #3A7F68;
+  --background: #0A192F;
+  --foreground: #FAFAF8;
+  --primary: #4A7FE8;
+  --primary-dark: #123FAE;
+  --primary-light: #1E3A5F;
   --accent: #D4AF37;
   --accent-dark: #B8972E;
-  --card: #1E1E1E;
-  --muted: #2A2A2A;
-  --muted-foreground: #A8A8A8;
-  --border: #333333;
-  --footer: #0A0A0A;
+  --card: #111827;
+  --muted: #1E3A5F;
+  --muted-foreground: #A3B6D4;
+  --border: #1E3A5F;
+  --input: #1E3A5F;
+  --ring: #4A7FE8;
+  --footer: #071220;
+  --footer-foreground: #FAFAF8;
+  --gold: #D4AF37;
+  --gold-dark: #B8972E;
+  --white: #FAFAF8;
+  --text: #FAFAF8;
+  --text-muted: #A3B6D4;
 }
 
 @theme inline {
@@ -34,15 +52,24 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-accent: var(--accent);
   --color-accent-dark: var(--accent-dark);
   --color-card: var(--card);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-gold: var(--gold);
+  --color-gold-dark: var(--gold-dark);
+  --color-white: var(--white);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Playfair Display', serif;
+  --font-display: 'League Spartan', sans-serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -59,6 +86,29 @@ body {
 
 .font-display {
   font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gold-line {
+  display: block;
+  width: 48px;
+  height: 2px;
+  background-color: var(--gold);
 }
 
 @media (prefers-reduced-motion: reduce) {

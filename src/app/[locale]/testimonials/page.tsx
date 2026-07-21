@@ -62,7 +62,7 @@ export default function TestimonialsPage() {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[900px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-12">
             <p className="text-lg leading-[1.7] text-muted-foreground">
@@ -81,13 +81,13 @@ export default function TestimonialsPage() {
               <motion.div
                 key={testimonial.author}
                 variants={item}
-                className="rounded-[20px] bg-white border border-border p-8 flex flex-col gap-4 transition-shadow hover:shadow-lg"
+                className="rounded-[20px] bg-white border border-border p-8 flex flex-col gap-4 transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
               >
                 <blockquote className="font-display text-lg lg:text-xl leading-relaxed text-foreground">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#1A2B4A] flex items-center justify-center text-white text-sm font-medium">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-sm font-medium">
                     {testimonial.author.charAt(0)}
                   </div>
                   <div className="flex flex-col">

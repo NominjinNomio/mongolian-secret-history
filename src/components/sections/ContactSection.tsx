@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 
 export default function ContactSection() {
   return (
-    <section className="bg-[#F8F5F0] py-20 lg:py-[140px]">
+    <section className="bg-background py-20 lg:py-[140px]">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
           <motion.form
@@ -16,7 +16,7 @@ export default function ContactSection() {
             transition={{ duration: 0.5 }}
             className="flex flex-col gap-6 w-full max-w-[520px]"
           >
-            <span className="text-sm tracking-[3px] text-[#2D5A4A] uppercase">Get in Touch</span>
+            <span className="section-label text-gold">Get in Touch</span>
             <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">
               Start Your Mongolia Adventure
             </h2>
@@ -25,7 +25,7 @@ export default function ContactSection() {
               <label className="text-sm text-muted-foreground">Name</label>
               <input
                 type="text"
-                className="h-[52px] rounded-xl border border-border bg-white px-4 text-foreground outline-none focus:border-[#2D5A4A]"
+                className="h-[52px] rounded-xl border border-border bg-white px-4 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                 placeholder="Your name"
               />
             </div>
@@ -34,7 +34,7 @@ export default function ContactSection() {
               <label className="text-sm text-muted-foreground">Email</label>
               <input
                 type="email"
-                className="h-[52px] rounded-xl border border-border bg-white px-4 text-foreground outline-none focus:border-[#2D5A4A]"
+                className="h-[52px] rounded-xl border border-border bg-white px-4 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
                 placeholder="your@email.com"
               />
             </div>
@@ -43,7 +43,7 @@ export default function ContactSection() {
               <label className="text-sm text-muted-foreground">Message</label>
               <textarea
                 rows={5}
-                className="rounded-xl border border-border bg-white p-4 text-foreground outline-none focus:border-[#2D5A4A] resize-none"
+                className="rounded-xl border border-border bg-white p-4 text-foreground outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
                 placeholder="Tell us about your trip..."
               />
             </div>

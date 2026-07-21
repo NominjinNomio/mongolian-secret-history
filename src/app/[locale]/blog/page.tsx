@@ -182,7 +182,7 @@ export default function BlogPage() {
         subtitle="Tales, inspiration, and tips from the heart of Mongolia."
       />
 
-      <section className="bg-[#F8F5F0] py-20 lg:py-[120px]">
+      <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="text-center max-w-[800px] mx-auto mb-10">
             <p className="text-lg leading-[1.7] text-muted-foreground">
@@ -198,8 +198,8 @@ export default function BlogPage() {
                 className={cn(
                   "px-5 py-2 rounded-full text-sm font-medium transition-colors",
                   activeCategory === category.id
-                    ? "bg-[#1A2B4A] text-white"
-                    : "bg-white text-[#5C5C5C] border border-border hover:border-[#1A2B4A] hover:text-[#1A2B4A]"
+                    ? "bg-primary text-white"
+                    : "bg-white text-muted-foreground border border-border hover:border-primary hover:text-primary"
                 )}
               >
                 {category.label}
@@ -212,15 +212,15 @@ export default function BlogPage() {
               <Link
                 key={post._id}
                 href={`/${locale}/blog/${post.slug}`}
-                className="rounded-[20px] bg-white border border-border overflow-hidden transition-shadow hover:shadow-lg"
+                className="rounded-[20px] bg-white border border-border overflow-hidden transition-all hover:shadow-[0_10px_15px_-3px_rgba(18,63,174,0.08)]"
               >
-                <div className="relative h-[220px] w-full">
-                  <Image src={post.image} alt={post.title} fill className="object-cover" />
+                <div className="relative h-[220px] w-full overflow-hidden">
+                  <Image src={post.image} alt={post.title} fill className="object-cover transition-transform duration-700 hover:scale-105" />
                 </div>
                 <div className="p-6 flex flex-col gap-2">
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-xs text-muted-foreground">{formatDate(post.publishedDate, locale)}</span>
-                    <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-1 rounded-full bg-[#F8F5F0] text-[#2D5A4A]">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold px-2 py-1 rounded-full bg-muted text-primary">
                       {categories.find((c) => c.id === post.category)?.label}
                     </span>
                   </div>

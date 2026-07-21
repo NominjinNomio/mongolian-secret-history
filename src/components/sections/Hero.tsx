@@ -17,7 +17,7 @@ export default function Hero() {
         className="object-cover"
         priority
       />
-      <div className="absolute inset-0 bg-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-dark/80 via-primary-dark/60 to-primary-dark/80" />
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
@@ -25,9 +25,10 @@ export default function Hero() {
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="relative z-10 flex max-w-[900px] flex-col items-center gap-6 px-6 text-center"
       >
-        <span className="text-sm tracking-[4px] text-white uppercase">
+        <span className="section-label text-white/90">
           {t("heroLabel")}
         </span>
+        <span className="gold-line" />
         <h1 className="font-display text-4xl md:text-6xl lg:text-[72px] leading-[1.1] text-white">
           {t("heroTitle")
             .split(" ")

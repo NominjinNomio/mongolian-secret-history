@@ -46,7 +46,7 @@ export default function GallerySection() {
       <div className="mt-10 flex justify-center">
         <Link
           href={`/${locale}/gallery`}
-          className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-[#1A2B4A] text-white hover:bg-[#1A2B4A]/90"
+          className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-medium transition-colors bg-primary text-white hover:bg-primary-dark"
         >
           View All Photos
         </Link>
