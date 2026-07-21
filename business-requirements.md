@@ -252,10 +252,13 @@ Home
 Modern, clean, and immersive. Use large photography of Mongolian landscapes and culture as the hero element. Typography-driven hierarchy with generous whitespace. Subtle motion to create a sense of journey and discovery without distracting from content. Improve on the reference site's layout by making CTAs more prominent, spacing more breathable, and the booking flow more obvious.
 
 ### 9.2 Color Palette
-- Primary: Deep earth/navy or forest green (to be extracted from reference during design)
-- Secondary: Warm sand or terracotta
-- Accent: Golden yellow or sunset orange
-- Neutral: Off-white, soft gray, charcoal
+- Primary: Royal blue `#123FAE`
+- Primary Dark: `#0A2C7A`
+- Primary Light: `#EAF1FF`
+- Accent: Gold `#C8A24A`
+- Background: `#FAFAF8`
+- Text: `#111827`
+- Muted Text: `#6B7280`
 
 ### 9.3 Typography
 - Headings: Bold, modern sans-serif with strong presence

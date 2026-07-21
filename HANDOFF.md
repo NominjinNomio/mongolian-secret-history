@@ -16,9 +16,13 @@
 - **Confirmation:** Homepage previews covered the full homepage section flow including Header, Hero, About, Services, Portfolio, Pricing, Team, Gallery, Testimonials, FAQ, Contact, and Footer.
 - **Confirmation:** `design.pen` and `design.png` came from the approved Option B direction.
 - **Locked constraints:**
-  - Primary color must remain forest green `#2D5A4A`
-  - Accent color must remain gold `#C9A227`
-  - Display font must be Playfair Display for headings
+  - Primary color must remain royal blue `#123FAE`
+  - Dark blue accent `#0A2C7A`
+  - Light blue background tint `#EAF1FF`
+  - Accent color must remain gold `#C8A24A`
+  - Background `#FAFAF8`
+  - Text `#111827`, muted text `#6B7280`
+  - Display font must be League Spartan for headings
   - Body font must be Inter
   - Rounded pill buttons for primary CTAs
   - Section padding rhythm of 120px vertical on desktop
@@ -28,17 +32,17 @@
 
 ## 1. Design Summary
 
-Mongolian Secret History is a modern, warm, and trustworthy tour website for international travelers seeking authentic Mongolia experiences. The approved direction (Option B — Improved) uses a light, breathable layout with large photography, generous whitespace, forest green primary actions, and gold accents. The design improves on the reference site by making CTAs more prominent, increasing spacing, and establishing clearer visual hierarchy.
+Mongolian Secret History is a premium Mongolian heritage brand with a refined restaurant-inspired identity. The approved direction uses a light, elegant layout with large photography, generous whitespace, royal blue primary actions, and gold accents. The design establishes a timeless, museum-quality aesthetic while keeping the existing travel/tour content and site structure intact.
 
 ---
 
 ## 2. Visual Direction
 
-- **Direction name:** Organic Luxury
-- **Mood:** Inspiring, adventurous, peaceful, excited
-- **Color energy:** Earthy and warm with forest green and gold
-- **Typography approach:** Editorial display font (Playfair Display) for headings paired with clean sans-serif (Inter) for body
-- **Layout feel:** Spacious, centered, image-forward
+- **Direction name:** Mongolian Restaurant Luxury
+- **Mood:** Premium, timeless, culturally authentic, elegant
+- **Color energy:** Royal blue and gold with warm cream backgrounds
+- **Typography approach:** Bold geometric display font (League Spartan) for headings paired with clean sans-serif (Inter) for body
+- **Layout feel:** Spacious, centered, image-forward, museum-quality
 - **Animation signature:** Smooth scroll-triggered fade-ins, subtle card lifts, gentle button scaling
 - **Complexity:** Medium — polished but performant for mobile
 
@@ -60,11 +64,11 @@ Mongolian Secret History is a modern, warm, and trustworthy tour website for int
 
 ## 4. Fonts
 
-- **Display:** Playfair Display — used for headings, logo, and quotes
+- **Display:** League Spartan — used for headings, logo, and quotes
 - **Body:** Inter — used for navigation, body text, labels, and CTAs
 - **Mono:** JetBrains Mono — optional for small technical details
 
-Both fonts support Latin characters. For Mongolian Cyrillic, ensure the deployed site loads a Cyrillic-compatible fallback or subset of Inter/Playfair Display.
+Both fonts support Latin characters. For Mongolian Cyrillic, ensure the deployed site loads a Cyrillic-compatible fallback or subset of Inter/League Spartan.
 
 ---
 
@@ -142,8 +146,8 @@ npx shadcn@latest add accordion button card input textarea
 - Background image with subtle dark overlay
 - Centered content
 - Label uppercase, letter-spacing 4px
-- Title 72px Playfair Display
-- Two CTAs: primary pill (gold) + secondary outline (white)
+- Title 72px League Spartan
+- Two CTAs: primary pill (blue) + secondary outline (white)
 
 ### About
 - Two-column: text left / image right on homepage
@@ -155,22 +159,22 @@ npx shadcn@latest add accordion button card input textarea
 ### Services
 - 3x2 grid on desktop
 - White or off-white cards
-- Diamond icon in accent gold
-- Title 22px Playfair
+- Outline icon in primary blue
+- Title 22px League Spartan
 - Description 15px Inter
 
 ### Portfolio
 - 3-column cards
 - Image top, info below
 - Border 1px
-- Price in primary green
+- Price in primary blue
 - "View Details →" in accent gold
 
 ### Pricing
 - 3 cards horizontally
 - Large price 44px
 - Pill CTA
-- Custom quote banner below in primary green
+- Custom quote banner below in dark blue
 
 ### Team
 - 4-column cards
@@ -185,7 +189,7 @@ npx shadcn@latest add accordion button card input textarea
 
 ### Testimonials
 - 3-column quote cards
-- Quote in Playfair 20px
+- Quote in League Spartan 20px
 - Author in Inter 14px
 - Border cards
 
@@ -274,8 +278,8 @@ npx shadcn@latest add accordion button card input textarea
 ## 13. Accessibility Notes
 
 - WCAG 2.1 AA target
-- Primary green `#2D5A4A` on white passes contrast
-- Gold accent `#C9A227` only used for non-essential text
+- Primary blue `#123FAE` on white passes contrast
+- Gold accent `#C8A24A` only used for non-essential text or decorative lines
 - All interactive elements keyboard accessible
 - Focus rings using primary color
 - Descriptive alt text for all images
@@ -366,10 +370,13 @@ npx shadcn@latest add accordion button card input textarea
 
 ## 17. Items That Must Not Change During Implementation
 
-- Primary green `#2D5A4A`
-- Accent gold `#C9A227`
-- Light background `#F8F6F1`
-- Playfair Display + Inter font pairing
+- Primary royal blue `#123FAE`
+- Dark blue `#0A2C7A`
+- Light blue tint `#EAF1FF`
+- Accent gold `#C8A24A`
+- Background `#FAFAF8`
+- Text `#111827`, muted `#6B7280`
+- League Spartan + Inter font pairing
 - Pill-shaped primary CTAs
 - 120px desktop section vertical rhythm
 - Homepage section order
