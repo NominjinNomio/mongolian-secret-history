@@ -56,52 +56,65 @@ export default function HeroHome() {
 function MongolianPattern({ className }: { className?: string }) {
   return (
     <svg
-      viewBox="0 0 400 400"
+      viewBox="0 0 420 420"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       preserveAspectRatio="xMidYMid meet"
     >
-      <rect width="400" height="400" fill="currentColor" fillOpacity="0.08" />
+      <rect width="420" height="420" fill="currentColor" fillOpacity="0.06" />
 
       {/* Outer frame */}
-      <rect x="20" y="20" width="360" height="360" stroke="currentColor" strokeWidth="8" fill="none" />
-      <rect x="52" y="52" width="296" height="296" stroke="currentColor" strokeWidth="6" fill="none" />
+      <rect x="10" y="10" width="400" height="400" stroke="currentColor" strokeWidth="6" fill="none" />
 
-      {/* Corner motifs */}
-      <g stroke="currentColor" strokeWidth="6" fill="none">
-        <path d="M52 116V52h64M52 284v64h64M348 116V52h-64M348 284v64h-64" />
-        <rect x="84" y="84" width="48" height="48" />
-        <rect x="268" y="84" width="48" height="48" />
-        <rect x="84" y="268" width="48" height="48" />
-        <rect x="268" y="268" width="48" height="48" />
-      </g>
-
-      {/* Central interlocking pattern */}
-      <g stroke="currentColor" strokeWidth="5" fill="none">
-        <path d="M132 132h136v136H132V132z" />
-        <path d="M168 132v-36M232 132v-36M132 168h-36M132 232h-36M268 168h36M268 232h36M168 268v36M232 268v36" />
-        <path d="M168 168h64v64h-64V168z" />
-        <rect x="184" y="184" width="32" height="32" />
-        <path d="M148 168c0-11 9-20 20-20M252 168c0 11-9 20-20 20M148 232c0 11 9 20 20 20M252 232c0-11-9-20-20-20" />
-      </g>
-
-      {/* Inner connecting lines */}
+      {/* Three vertical panels separated by gaps */}
       <g stroke="currentColor" strokeWidth="4" fill="none">
-        <path d="M100 100h48v48h-48zM252 100h48v48h-48zM100 252h48v48h-48zM252 252h48v48h-48z" />
-        <path d="M124 148v48M276 148v48M148 124h48M148 276h48" />
+        {/* Left panel */}
+        <rect x="30" y="30" width="110" height="360" />
+        <path d="M50 50h70v70h-70zM70 70h30v30h-30z" />
+        <path d="M50 290h70v70h-70zM70 310h30v30h-30z" />
+        <path d="M50 170h70v70h-70zM70 190h30v30h-30z" />
+
+        {/* Middle panel */}
+        <rect x="155" y="30" width="110" height="360" />
+        <path d="M175 50h70v70h-70zM195 70h30v30h-30z" />
+        <path d="M175 290h70v70h-70zM195 310h30v30h-30z" />
+        <path d="M175 170h70v70h-70zM195 190h30v30h-30z" />
+        <path d="M175 110h70M245 110v40M245 150h-70M175 150v-40M175 230h70M245 230v40M245 270h-70M175 270v-40" />
+
+        {/* Right panel */}
+        <rect x="280" y="30" width="110" height="360" />
+        <path d="M300 50h70v70h-70zM320 70h30v30h-30z" />
+        <path d="M300 290h70v70h-70zM320 310h30v30h-30z" />
+        <path d="M300 170h70v70h-70zM320 190h30v30h-30z" />
+      </g>
+
+      {/* Connecting horizontal lines between panels */}
+      <g stroke="currentColor" strokeWidth="3" fill="none">
+        <path d="M140 85h15M140 205h15M140 325h15" />
+        <path d="M265 85h15M265 205h15M265 325h15" />
       </g>
 
       {/* Decorative small squares */}
       <g fill="currentColor" fillOpacity="0.25">
-        <rect x="70" y="70" width="16" height="16" />
-        <rect x="314" y="70" width="16" height="16" />
-        <rect x="70" y="314" width="16" height="16" />
-        <rect x="314" y="314" width="16" height="16" />
-        <rect x="192" y="70" width="16" height="16" />
-        <rect x="70" y="192" width="16" height="16" />
-        <rect x="314" y="192" width="16" height="16" />
-        <rect x="192" y="314" width="16" height="16" />
+        <rect x="42" y="42" width="14" height="14" />
+        <rect x="42" y="162" width="14" height="14" />
+        <rect x="42" y="282" width="14" height="14" />
+        <rect x="167" y="42" width="14" height="14" />
+        <rect x="167" y="162" width="14" height="14" />
+        <rect x="167" y="282" width="14" height="14" />
+        <rect x="292" y="42" width="14" height="14" />
+        <rect x="292" y="162" width="14" height="14" />
+        <rect x="292" y="282" width="14" height="14" />
+        <rect x="114" y="42" width="14" height="14" />
+        <rect x="114" y="162" width="14" height="14" />
+        <rect x="114" y="282" width="14" height="14" />
+        <rect x="239" y="42" width="14" height="14" />
+        <rect x="239" y="162" width="14" height="14" />
+        <rect x="239" y="282" width="14" height="14" />
+        <rect x="364" y="42" width="14" height="14" />
+        <rect x="364" y="162" width="14" height="14" />
+        <rect x="364" y="282" width="14" height="14" />
       </g>
     </svg>
   );
