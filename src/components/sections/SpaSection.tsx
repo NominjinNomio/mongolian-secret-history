@@ -20,7 +20,7 @@ export default function SpaSection({
   cta,
 }: SpaSectionProps) {
   return (
-    <section className="bg-[#F5F2EC] py-6 md:py-10">
+    <section className="bg-[#FAFAF8] py-6 md:py-10">
       <div className="container-custom">
         <div className="grid items-stretch gap-6 lg:grid-cols-2">
           {/* Stacked images */}

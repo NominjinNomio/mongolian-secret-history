@@ -5,7 +5,7 @@ import Image from "@/components/common/Image";
 
 export default function HeroHome() {
   return (
-    <section className="relative bg-[#F5F2EC]">
+    <section className="relative bg-[#FAFAF8]">
       <div className="grid grid-cols-1 items-stretch lg:grid-cols-[40%_1fr]">
         {/* Pattern panel */}
         <motion.div
@@ -13,7 +13,7 @@ export default function HeroHome() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="relative flex aspect-square items-center justify-center overflow-hidden bg-[#F5F2EC] p-6 lg:aspect-auto lg:min-h-[520px]"
+          className="relative flex aspect-square items-center justify-center overflow-hidden bg-[#FAFAF8] p-6 lg:aspect-auto lg:min-h-[520px]"
         >
           <MongolianPattern className="h-full w-full max-w-[420px] text-[#C9C3B8]" />
         </motion.div>
