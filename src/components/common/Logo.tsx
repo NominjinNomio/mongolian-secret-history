@@ -2,75 +2,63 @@ interface LogoProps {
   className?: string;
 }
 
-export default function Logo({ className = "h-[60px] w-[60px]" }: LogoProps) {
+export default function Logo({ className = "h-[56px] w-[56px]" }: LogoProps) {
   return (
     <svg
       viewBox="0 0 200 200"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       role="img"
-      aria-label="Mongolian Secret History Restaurant"
+      aria-label="Mongolian Secret History"
     >
-      <defs>
-        <path id="logoTopArc" d="M 100,100 m -72,0 a 72,72 0 1,1 144,0 a 72,72 0 1,1 -144,0" />
-        <path id="logoBottomArc" d="M 100,100 m -60,0 a 60,60 0 1,0 120,0 a 60,60 0 1,0 -120,0" />
-      </defs>
-
-      {/* Outer circle */}
+      {/* Outer circle + ring */}
       <circle cx="100" cy="100" r="98" fill="#123FAE" />
-      <circle cx="100" cy="100" r="88" fill="none" stroke="#FFFFFF" strokeWidth="2.5" />
-      <circle cx="100" cy="100" r="58" fill="none" stroke="#FFFFFF" strokeWidth="2" />
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#FFFFFF" strokeWidth="3" />
 
-      {/* Top circular text */}
-      <text
-        fill="#FFFFFF"
-        fontSize="15.5"
-        fontWeight="700"
-        letterSpacing="3"
-        fontFamily="Arial, sans-serif"
-      >
-        <textPath href="#logoTopArc" startOffset="50%" textAnchor="middle" dominantBaseline="text-before-edge">
-          MONGOLIAN SECRET HISTORY
-        </textPath>
-      </text>
-
-      {/* Bottom circular text */}
-      <text
-        fill="#FFFFFF"
-        fontSize="17"
-        fontWeight="700"
-        letterSpacing="6"
-        fontFamily="Arial, sans-serif"
-      >
-        <textPath href="#logoBottomArc" startOffset="50%" textAnchor="middle" dominantBaseline="text-after-edge">
-          RESTAURANT
-        </textPath>
-      </text>
-
-      {/* Side dots */}
-      <circle cx="14" cy="100" r="5" fill="#FFFFFF" />
-      <circle cx="186" cy="100" r="5" fill="#FFFFFF" />
-
-      {/* Ger + trident icon */}
+      {/* Trident flame (soyombo) */}
       <g fill="#FFFFFF">
-        {/* Trident (soyombo flame) */}
-        <path d="M100 52 q-4 -10 0 -16 q4 6 0 16 z" />
-        <path d="M100 58 q-14 -6 -12 -20 q8 6 12 20 z" />
-        <path d="M100 58 q14 -6 12 -20 q-8 6 -12 20 z" />
-        <rect x="97.5" y="54" width="5" height="8" rx="1" />
-        {/* Ger roof */}
-        <path d="M62 88 q38 -26 76 0 l-4 6 q-34 -22 -68 0 z" />
-        {/* Ger body */}
-        <path d="M70 96 h60 v34 q0 4 -4 4 h-52 q-4 0 -4 -4 z" />
+        <ellipse cx="100" cy="38" rx="6" ry="9" />
+        <rect x="96.5" y="42" width="7" height="26" rx="2" />
+        <path d="M93 66 q-14 -4 -14 -20 q10 4 14 20 z" />
+        <path d="M107 66 q14 -4 14 -20 q-10 4 -14 20 z" />
       </g>
 
-      {/* SH letters cut out of ger body */}
-      <g fill="#123FAE">
-        <path d="M84 106 q-5 0 -5 4 q0 3 4 4 l4 1 q3 1 3 3 q0 2 -3 2 q-4 0 -6 -3 l-3 2 q3 4 9 4 q7 0 7 -6 q0 -4 -5 -5 l-4 -1 q-2 -1 -2 -2 q0 -1 2 -1 q3 0 5 2 l3 -2 q-3 -4 -9 -4 z" />
-        <rect x="104" y="104" width="5" height="20" />
-        <rect x="117" y="104" width="5" height="20" />
-        <rect x="104" y="111" width="18" height="5" />
-      </g>
+      {/* Ger roof */}
+      <path
+        d="M42 92 q14 -14 34 -18 q8 -2 14 2 q4 3 10 3 q6 0 10 -3 q6 -4 14 -2 q20 4 34 18 l-6 8 q-26 -16 -42 -16 q-16 0 -42 16 z"
+        fill="#FFFFFF"
+      />
+      <ellipse cx="100" cy="86" rx="26" ry="7" fill="#FFFFFF" />
+
+      {/* Ger body */}
+      <path
+        d="M52 104 h96 l-8 34 q-2 8 -10 8 h-60 q-8 0 -10 -8 z"
+        fill="#FFFFFF"
+      />
+
+      {/* Door opening in ger body */}
+      <path
+        d="M78 112 h44 v34 h-44 z"
+        fill="#123FAE"
+      />
+      <path
+        d="M78 112 q22 -10 44 0 l-22 14 z"
+        fill="#123FAE"
+      />
+
+      {/* SH letters */}
+      <text
+        x="100"
+        y="182"
+        textAnchor="middle"
+        fill="#FFFFFF"
+        fontSize="34"
+        fontWeight="800"
+        letterSpacing="4"
+        fontFamily="Arial, sans-serif"
+      >
+        SH
+      </text>
     </svg>
   );
 }
