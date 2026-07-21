@@ -56,7 +56,7 @@ export default function Footer() {
   const tf = useTranslations("footer");
 
   return (
-    <footer className="bg-[#1C1A17] text-white">
+    <footer className="bg-[#0A2C7A] text-white">
       <div className="mx-auto max-w-[1440px] px-4 lg:px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           <div className="flex flex-col gap-5">
