@@ -12,12 +12,14 @@ export interface ClimateSeason {
 }
 
 interface ClimateWheelProps {
+  label: string;
+  title: string;
   seasons: ClimateSeason[];
 }
 
 const STEP = 30;
 
-export default function ClimateWheel({ seasons }: ClimateWheelProps) {
+export default function ClimateWheel({ label, title, seasons }: ClimateWheelProps) {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
   const [radius, setRadius] = useState(220);
@@ -46,6 +48,14 @@ export default function ClimateWheel({ seasons }: ClimateWheelProps) {
       onMouseLeave={() => setPaused(false)}
     >
       <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+        <div className="text-center mb-10">
+          <span className="section-label text-gold">{label}</span>
+          <span className="gold-line mx-auto mt-3" />
+          <h2 className="font-display text-3xl md:text-[44px] leading-[1.15] mt-3 text-foreground">
+            {title}
+          </h2>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
           {/* Rotating wheel */}
           <div className="relative h-[420px] md:h-[520px]">

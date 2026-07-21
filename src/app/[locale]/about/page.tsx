@@ -49,6 +49,8 @@ export default async function AboutPage({ params }: PageProps) {
       </section>
 
       <ClimateWheel
+        label={t("climateLabel")}
+        title={t("climateTitle")}
         seasons={[
           { season: t("spring"), months: t("springMonths"), desc: t("springDesc"), image: "/images/tour-1.jpg" },
           { season: t("summer"), months: t("summerMonths"), desc: t("summerDesc"), image: "/images/tour-2.jpg" },
