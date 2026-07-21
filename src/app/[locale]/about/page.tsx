@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
-import Image from "@/components/common/Image";
 import MongoliaMap from "@/components/about/MongoliaMap";
+import AboutSections from "@/components/about/AboutSections";
 
 interface PageProps {
   params: Promise<{ locale: string } >;
@@ -20,27 +20,20 @@ export default async function AboutPage({ params }: PageProps) {
         subtitle={t("heroSubtitle")}
       />
 
-      <section className="bg-background py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-muted border border-border shadow-lg">
-              <Image
-                src="about-nomads.jpg"
-                alt={t("countryTitle")}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col gap-5">
-              <span className="section-label text-gold">{t("countryLabel")}</span>
-              <span className="gold-line" />
-              <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">{t("countryTitle")}</h2>
-              <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("countryDesc1")}</p>
-              <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("countryDesc2")}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <AboutSections
+        country={{
+          label: t("countryLabel"),
+          title: t("countryTitle"),
+          desc1: t("countryDesc1"),
+          desc2: t("countryDesc2"),
+        }}
+        culture={{
+          label: t("cultureLabel"),
+          title: t("cultureTitle"),
+          desc1: t("cultureDesc1"),
+          desc2: t("cultureDesc2"),
+        }}
+      />
 
       <section id="regions" className="bg-white py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
@@ -51,28 +44,6 @@ export default async function AboutPage({ params }: PageProps) {
           </div>
 
           <MongoliaMap />
-        </div>
-      </section>
-
-      <section className="bg-background py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="flex flex-col gap-5 order-2 lg:order-1">
-              <span className="section-label text-gold">{t("cultureLabel")}</span>
-              <span className="gold-line" />
-              <h2 className="font-display text-3xl md:text-[44px] leading-[1.15]">{t("cultureTitle")}</h2>
-              <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("cultureDesc1")}</p>
-              <p className="text-[17px] leading-[1.7] text-muted-foreground">{t("cultureDesc2")}</p>
-            </div>
-            <div className="relative aspect-square rounded-3xl overflow-hidden bg-muted border border-border shadow-lg order-1 lg:order-2">
-              <Image
-                src="culture-nomads.jpg"
-                alt={t("cultureTitle")}
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
         </div>
       </section>
 
