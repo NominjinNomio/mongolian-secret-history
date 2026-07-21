@@ -3,6 +3,7 @@ import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
 import DoubleImageSection from "@/components/sections/DoubleImageSection";
 import SpaSection from "@/components/sections/SpaSection";
+import ClimateWheelSection from "@/components/sections/ClimateWheelSection";
 
 export default function HomePage() {
   return (
@@ -76,6 +77,8 @@ export default function HomePage() {
         cta="Explore Tours"
         reversed
       />
+
+      <ClimateWheelSection />
     </>
   );
 }
