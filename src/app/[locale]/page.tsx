@@ -1,5 +1,3 @@
-import { getServerApolloClient } from "@/lib/apollo/server-client";
-import { CP_PAGE, type CpPageData, type CpPageVariables } from "@/graphql/cms/queries/page";
 import HeroHome from "@/components/sections/HeroHome";
 import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
@@ -13,37 +11,14 @@ interface PageProps {
 const fallbackIntro =
   "Immerse yourself in the captivating beauty of Mongolia at Mongolian Secret History. A unique retreat set within the vast steppe, offering authentic ger accommodation, refined Mongolian cuisine, and curated cultural journeys.";
 
-async function getCmsHome(locale: string) {
-  try {
-    const client = await getServerApolloClient();
-    const { data } = await client.query<CpPageData, CpPageVariables>({
-      query: CP_PAGE,
-      variables: { slug: "home_2", language: locale },
-    });
-    if (data?.cpCmsPageDetail) return data.cpCmsPageDetail;
-
-    const fallback = await client.query<CpPageData, CpPageVariables>({
-      query: CP_PAGE,
-      variables: { slug: "home", language: locale },
-    });
-    return fallback.data?.cpCmsPageDetail ?? null;
-  } catch (error) {
-    console.error("Failed to fetch CMS home page:", error);
-    return null;
-  }
-}
-
 export default async function HomePage({ params }: PageProps) {
-  const { locale } = await params;
-  const cmsHome = await getCmsHome(locale);
-
-  const introText = cmsHome?.description || fallbackIntro;
+  await params;
 
   return (
     <>
       <HeroHome />
 
-      <WelcomeIntro text={introText} />
+      <WelcomeIntro text={fallbackIntro} />
 
       <SplitCardSection
         title="Ger Camp Accommodation"
