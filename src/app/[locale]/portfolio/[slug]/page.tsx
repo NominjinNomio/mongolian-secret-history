@@ -1,12 +1,75 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
+
+function ParallaxImage({ src, alt }: { src: string; alt: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["12%", "-12%"]);
+
+  return (
+    <motion.div
+      initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+      className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-lg"
+    >
+      <motion.div
+        ref={ref}
+        initial={{ scale: 1.2 }}
+        whileInView={{ scale: 1.05 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{ y }}
+        className="absolute inset-[-15%]"
+      >
+        <Image src={src} alt={alt} fill className="object-cover" />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function RevealGalleryImage({
+  src,
+  delay = 0,
+  className = "",
+}: {
+  src: string;
+  delay?: number;
+  className?: string;
+}) {
+  return (
+    <motion.div
+      initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.8, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      className={`group relative overflow-hidden rounded-xl border border-border ${className}`}
+    >
+      <motion.div
+        initial={{ scale: 1.2 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 1.1, delay, ease: [0.25, 0.1, 0.25, 1] }}
+        className="absolute inset-0 transition-transform duration-700 group-hover:scale-105"
+      >
+        <Image src={src} alt="Tour gallery" fill className="object-cover" />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+    </motion.div>
+  );
+}
 
 interface TourData {
   title: string;
@@ -560,15 +623,7 @@ export default function TourDetailPage() {
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="relative w-full max-w-[560px] aspect-[4/3] rounded-3xl overflow-hidden border border-border shadow-lg"
-            >
-              <Image src={tour.image} alt={tour.title} fill className="object-cover" />
-            </motion.div>
+            <ParallaxImage src={tour.image} alt={tour.title} />
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -707,31 +762,13 @@ export default function TourDetailPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {tour.gallery.slice(0, 3).map((src) => (
-              <motion.div
-                key={src}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="relative aspect-[3/2] rounded-xl overflow-hidden border border-border"
-              >
-                <Image src={src} alt="Tour gallery" fill className="object-cover" />
-              </motion.div>
+            {tour.gallery.slice(0, 3).map((src, i) => (
+              <RevealGalleryImage key={src} src={src} delay={i * 0.15} className="aspect-[3/2]" />
             ))}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-            {tour.gallery.slice(3).map((src) => (
-              <motion.div
-                key={src}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4 }}
-                className="relative aspect-[16/9] rounded-xl overflow-hidden border border-border"
-              >
-                <Image src={src} alt="Tour gallery" fill className="object-cover" />
-              </motion.div>
+            {tour.gallery.slice(3).map((src, i) => (
+              <RevealGalleryImage key={src} src={src} delay={0.45 + i * 0.15} className="aspect-[16/9]" />
             ))}
           </div>
         </div>
