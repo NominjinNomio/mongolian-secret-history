@@ -25,7 +25,7 @@ export default function ClimateWheel({ label, seasons }: ClimateWheelProps) {
     if (paused) return;
     const id = setInterval(() => {
       setActive((prev) => (prev + 1) % seasons.length);
-    }, 4500);
+    }, 8000);
     return () => clearInterval(id);
   }, [paused, seasons.length]);
 
