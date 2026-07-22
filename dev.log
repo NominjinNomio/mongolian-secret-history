@@ -6,7 +6,7 @@
 - Local:         http://localhost:3000
 - Network:       http://192.168.55.154:3000
 - Environments: .env.local
-✓ Ready in 411ms
+✓ Ready in 819ms
 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 
 motion() is deprecated. Use motion.create() instead.
@@ -22,7 +22,7 @@ Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `e
   code: 'MISSING_MESSAGE',
   originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
 }
- GET /en 200 in 1301ms (next.js: 688ms, proxy.ts: 5ms, generate-params: 521ms, application-code: 608ms)
+ GET /en 200 in 2.3s (next.js: 1211ms, proxy.ts: 7ms, generate-params: 934ms, application-code: 1039ms)
 [browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
 [browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
     at Header (src/components/layout/Header.tsx:75:25)
@@ -82,23 +82,446 @@ https://react.dev/link/hydration-mismatch
                           >
                   ...
  
+ GET /en/portfolio 200 in 841ms (next.js: 741ms, proxy.ts: 10ms, generate-params: 699ms, application-code: 90ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /en 200 in 176ms (next.js: 83ms, proxy.ts: 12ms, generate-params: 64ms, application-code: 82ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
+}
+ GET /en 200 in 594ms (next.js: 80ms, proxy.ts: 7ms, generate-params: 69ms, application-code: 507ms)
+[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-<--- Last few GCs --->
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-[1021825:0x585bb2121000]   464069 ms: Scavenge 7044.7 (7607.7) -> 7036.5 (7607.7) MB, pooled: 1 MB, 17.25 / 0.00 ms  (average mu = 0.210, current mu = 0.205) allocation failure; 
-[1021825:0x585bb2121000]   467917 ms: Mark-Compact 7053.5 (7612.9) -> 7017.4 (7595.8) MB, pooled: 8 MB, 3806.26 / 10.58 ms  (average mu = 0.160, current mu = 0.117) allocation failure; scavenge might not succeed
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
+https://react.dev/link/hydration-mismatch
 
-<--- JS stacktrace --->
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/en" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+-                         className="h-full antialiased light"
+-                         lang="en"
+-                         style={{color-scheme:"light"}}
+                        >
+                          <body
+-                           className="min-h-full flex flex-col bg-background text-foreground"
+                          >
+                  ...
+ 
+ GET /en/about 200 in 857ms (next.js: 764ms, proxy.ts: 9ms, generate-params: 731ms, application-code: 84ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET /en/eastern-region 200 in 2.6s (next.js: 2.6s, proxy.ts: 6ms, generate-params: 763ms, application-code: 91ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+ GET /en/portfolio 200 in 356ms (next.js: 150ms, proxy.ts: 39ms, generate-params: 94ms, application-code: 166ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+○ Compiling /[locale]/portfolio/[slug] ...
+ GET /en/portfolio/gobi-desert-adventure 200 in 8.6s (next.js: 8.5s, proxy.ts: 8ms, application-code: 111ms)
+ GET /en/portfolio/gobi-desert-adventure 200 in 458ms (next.js: 131ms, proxy.ts: 5ms, application-code: 321ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:610:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:611:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:612:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:613:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:635:58)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:651:46)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:751:16)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:610:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:611:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:612:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:613:14)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:635:58)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:651:46)
+[browser] Error: MISSING_MESSAGE: Could not resolve `tourDetail` in messages for locale `en`.
+    at TourDetailPage (src/app/[locale]/portfolio/[slug]/page.tsx:604:28)
+  602 |   const params = useParams();
+  603 |   const locale = (params.locale as string) || "en";
+> 604 |   const t = useTranslations("tourDetail");
+      |                            ^
+  605 |   const tc = useTranslations("common");
+  606 |   const slug = (params.slug as string) || "highlights-of-mongolia";
+  607 |   const tour = tours[slug] || tours["highlights-of-mongolia"]; (src/app/[locale]/portfolio/[slug]/page.tsx:751:16)
+ GET /en/plan-your-trip 200 in 5.1s (next.js: 4.6s, proxy.ts: 289ms, generate-params: 2.3s, application-code: 210ms)
+⚠ Server is approaching the used memory threshold, restarting...
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://172.20.10.2:3000
+- Environments: .env.local
+✓ Ready in 726ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 
-FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
------ Native stack trace -----
+[?25h
+ ELIFECYCLE  Command failed.
+ WARN  The field "pnpm.ignoredBuiltDependencies" was found in /home/nominjin/intern/opencode/erxes-skills/content-plugin/headless/web/output/mongolian-secret-history/package.json. This will not take effect. You should configure "pnpm.ignoredBuiltDependencies" at the root of the workspace instead.
+Scope: all 2 workspace projects
 
- 1: 0x75cb5a946804 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 2: 0x75cb5b06f754 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 3: 0x75cb5b06fa4a v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 4: 0x75cb5b2b8a9b  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 5: 0x75cb5b2b8ad8 v8::internal::Heap::ReportIneffectiveMarkCompactIfNeeded() [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 6: 0x75cb5b2d0e6e  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 7: 0x75cb5b2d3a1c  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 8: 0x75cb5bbfbf47  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+Done in 550ms using pnpm v10.33.2

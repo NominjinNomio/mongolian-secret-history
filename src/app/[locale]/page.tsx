@@ -1,5 +1,4 @@
 import HeroHome from "@/components/sections/HeroHome";
-import GerCampFeature from "@/components/sections/GerCampFeature";
 import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
 import DoubleImageSection from "@/components/sections/DoubleImageSection";
@@ -18,8 +17,6 @@ export default async function HomePage({ params }: PageProps) {
   return (
     <>
       <HeroHome />
-
-      <GerCampFeature />
 
       <WelcomeIntro text={fallbackIntro} />
 
