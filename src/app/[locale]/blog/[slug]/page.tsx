@@ -10,6 +10,8 @@ import ResortPrice from "@/components/blog/ResortPrice";
 import OngiPrice from "@/components/blog/OngiPrice";
 import WinterWeatherGuide from "@/components/blog/WinterWeatherGuide";
 import TrainTimetable from "@/components/blog/TrainTimetable";
+import WinterInformation from "@/components/blog/WinterInformation";
+import OngiInfo from "@/components/blog/OngiInfo";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -304,6 +306,10 @@ export default async function BlogDetailPage({ params }: PageProps) {
         <WinterWeatherGuide />
       ) : slug === "mongolia-train-timetable" ? (
         <TrainTimetable />
+      ) : slug === "mongolia-winter-information" ? (
+        <WinterInformation />
+      ) : slug === "secret-of-ongi-camp-information" ? (
+        <OngiInfo />
       ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
