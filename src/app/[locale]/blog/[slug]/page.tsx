@@ -3,6 +3,7 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import Link from "next/link";
+import FoodMenu from "@/components/blog/FoodMenu";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -283,6 +284,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
     <InnerPageLayout>
       <PageHero label="Blog & News" title={post.title} subtitle={post.date} />
 
+      {slug === "msh-camp-food-menu" ? (
+        <FoodMenu />
+      ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
@@ -331,6 +335,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
           </div>
         </div>
       </section>
+      )}
     </InnerPageLayout>
   );
 }
