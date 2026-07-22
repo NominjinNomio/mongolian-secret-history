@@ -1,132 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "@/components/common/Image";
+import Link from "next/link";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 32 },
+  hidden: { opacity: 0, y: 28 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.3, delay, ease: "easeOut" as const },
+    transition: { duration: 0.6, delay, ease: "easeOut" as const },
   }),
 };
 
 export default function HeroHome() {
   return (
-    <section className="relative overflow-hidden bg-[#F8F5EF]">
-      {/* Parchment texture */}
-      <div
-        className="absolute inset-0 opacity-[0.5]"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse at 20% 10%, rgba(212,178,122,0.12) 0%, transparent 50%), radial-gradient(ellipse at 85% 90%, rgba(155,106,47,0.08) 0%, transparent 50%)",
-        }}
-      />
-
-      {/* Decorative corner ornaments */}
+    <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden">
+      {/* Background image */}
       <motion.div
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute left-8 top-8 opacity-30"
+        initial={{ scale: 1.12 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 2.4, ease: "easeOut" }}
+        className="absolute inset-0"
       >
-        <CornerOrnament className="h-24 w-24 text-[#9B6A2F]" />
+        <Image
+          src="/images/mongolia-destinations-bg.jpg"
+          alt="Mongolian steppe landscape"
+          fill
+          className="object-cover"
+          priority
+        />
       </motion.div>
-      <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-8 right-8 rotate-180 opacity-30"
-      >
-        <CornerOrnament className="h-24 w-24 text-[#9B6A2F]" />
-      </motion.div>
+      <div className="absolute inset-0 bg-black/50" />
 
-      <div className="relative mx-auto max-w-[1280px] px-6 py-20 lg:py-28">
-        <div className="flex flex-col items-center text-center">
-          {/* Badge */}
-          <motion.span
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0}
-            className="text-[12px] font-medium uppercase tracking-[0.35em] text-[#9B6A2F]"
-          >
-            Welcome to Mongolia
-          </motion.span>
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex max-w-[900px] flex-col items-center px-6 text-center">
+        <motion.span
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.1}
+          className="text-[12px] font-medium uppercase tracking-[0.35em] text-white/85"
+        >
+          Discover Mongolia
+        </motion.span>
 
-          {/* Heading */}
-          <motion.h1
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0.1}
-            className="font-elegant mt-6 text-[42px] leading-[1.15] text-[#2C2117] md:text-[56px] lg:text-[68px]"
-          >
-            Монголын Нууц Түүх
-          </motion.h1>
+        <motion.h1
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.25}
+          className="font-elegant mt-6 text-4xl leading-[1.15] text-white md:text-6xl lg:text-[68px]"
+        >
+          Journey Through Mongolia&apos;s Secret History
+        </motion.h1>
 
-          {/* Ornamental divider */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0.2}
-            className="mt-8 flex items-center gap-4"
-          >
-            <span className="h-px w-16 bg-[#D4B27A]" />
-            <Ornament className="h-5 w-5 text-[#9B6A2F]" />
-            <span className="h-px w-16 bg-[#D4B27A]" />
-          </motion.div>
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.4}
+          className="mt-6 max-w-[560px] text-base leading-[1.8] text-white/85 md:text-lg"
+        >
+          Group tours, private adventures, and tailor-made itineraries across
+          the steppe, desert, and nomadic heartland.
+        </motion.p>
 
-          {/* Subtitles */}
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0.3}
-            className="mt-8 max-w-[640px] text-lg leading-[1.8] text-[#2C2117]/85"
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.55}
+          className="mt-10 flex flex-col items-center gap-4 sm:flex-row"
+        >
+          <Link
+            href="/portfolio"
+            className="inline-flex items-center justify-center rounded-full bg-[#E8B62D] px-8 py-3.5 text-sm font-semibold text-[#2C2117] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#F5C845] hover:shadow-lg"
           >
-            Монголд хийх аялал, соёл, адал явдал болон уламжлалт өвийг танин
-            мэдэх онцгой туршлага.
-          </motion.p>
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={0.4}
-            className="mt-4 max-w-[560px] font-elegant text-base italic leading-[1.7] text-[#9B6A2F]"
+            Explore Tours
+          </Link>
+          <Link
+            href="/plan-your-trip"
+            className="inline-flex items-center justify-center rounded-full border border-white/70 px-8 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#2C2117] hover:shadow-lg"
           >
-            Discover Mongolia through authentic culture, unforgettable journeys,
-            and timeless traditions.
-          </motion.p>
-        </div>
+            Request Custom Trip
+          </Link>
+        </motion.div>
       </div>
     </section>
-  );
-}
-
-function Ornament({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className}>
-      <path
-        d="M12 2l2.4 4.8L19 8l-3.4 3.2L16.4 16 12 13.6 7.6 16l.8-4.8L5 8l4.6-1.2L12 2z"
-        stroke="currentColor"
-        strokeWidth="1.2"
-      />
-    </svg>
-  );
-}
-
-function CornerOrnament({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 96 96" fill="none" className={className}>
-      <path d="M4 92V40Q4 4 40 4h52" stroke="currentColor" strokeWidth="2" />
-      <path d="M16 92V48Q16 16 48 16h44" stroke="currentColor" strokeWidth="1.5" />
-      <rect x="28" y="28" width="12" height="12" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M52 28h16v16H52z" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
   );
 }
