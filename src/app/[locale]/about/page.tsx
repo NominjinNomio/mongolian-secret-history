@@ -52,10 +52,10 @@ export default async function AboutPage({ params }: PageProps) {
         label={t("climateLabel")}
         title={t("climateTitle")}
         seasons={[
-          { season: t("spring"), months: t("springMonths"), desc: t("springDesc"), image: "/images/tour-1.jpg" },
-          { season: t("summer"), months: t("summerMonths"), desc: t("summerDesc"), image: "/images/tour-2.jpg" },
-          { season: t("autumn"), months: t("autumnMonths"), desc: t("autumnDesc"), image: "/images/tour-3.jpg" },
-          { season: t("winter"), months: t("winterMonths"), desc: t("winterDesc"), image: "/images/tour-4.jpg" },
+          { season: t("spring"), months: t("springMonths"), desc: t("springDesc"), image: "/images/season-spring.jpg" },
+          { season: t("summer"), months: t("summerMonths"), desc: t("summerDesc"), image: "/images/season-summer.jpg" },
+          { season: t("autumn"), months: t("autumnMonths"), desc: t("autumnDesc"), image: "/images/season-autumn.jpg" },
+          { season: t("winter"), months: t("winterMonths"), desc: t("winterDesc"), image: "/images/season-winter.jpg" },
         ]}
       />
     </InnerPageLayout>
