@@ -5,26 +5,15 @@ import Image from "@/components/common/Image";
 
 export default function HeroHome() {
   return (
-    <section className="relative bg-[#FAFAF8]">
-      <div className="grid grid-cols-1 items-stretch lg:grid-cols-[40%_1fr]">
-        {/* Pattern panel */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.1, ease: "easeOut" }}
-          className="relative flex aspect-square items-center justify-center overflow-hidden bg-[#FAFAF8] p-6 lg:aspect-auto lg:min-h-[520px]"
-        >
-          <MongolianPattern className="h-full w-full max-w-[420px] text-[#C9C3B8]" />
-        </motion.div>
-
-        {/* Hero image */}
+    <section className="relative bg-[#FAFAF8] overflow-hidden">
+      <div className="relative min-h-[420px] lg:min-h-[560px]">
+        {/* Full-width hero image on the right */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative min-h-[320px] w-full overflow-hidden lg:min-h-[520px]"
+          className="absolute inset-y-0 right-0 w-full lg:w-[76%] overflow-hidden"
         >
           <motion.div
             initial={{ scale: 1.15 }}
@@ -40,6 +29,17 @@ export default function HeroHome() {
               priority
             />
           </motion.div>
+        </motion.div>
+
+        {/* Pattern overlapping the image from the left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.1, ease: "easeOut" }}
+          className="absolute left-[4%] top-1/2 -translate-y-1/2 z-10 w-[44%] max-w-[440px] pointer-events-none"
+        >
+          <MongolianPattern className="w-full h-auto text-[#D8D2C6]" />
         </motion.div>
       </div>
 
@@ -69,13 +69,13 @@ function MongolianPattern({ className }: { className?: string }) {
       className={className}
       preserveAspectRatio="xMidYMid meet"
     >
-      <rect width="420" height="420" fill="currentColor" fillOpacity="0.06" />
+      <rect width="420" height="420" fill="currentColor" fillOpacity="0.55" />
 
       {/* Outer frame */}
-      <rect x="10" y="10" width="400" height="400" stroke="currentColor" strokeWidth="6" fill="none" />
+      <rect x="10" y="10" width="400" height="400" stroke="#FAFAF8" strokeWidth="6" fill="none" />
 
-      {/* Three vertical panels separated by gaps */}
-      <g stroke="currentColor" strokeWidth="4" fill="none">
+      {/* Three vertical panels */}
+      <g stroke="#FAFAF8" strokeWidth="4" fill="none">
         {/* Left panel */}
         <rect x="30" y="30" width="110" height="360" />
         <path d="M50 50h70v70h-70zM70 70h30v30h-30z" />
@@ -96,14 +96,14 @@ function MongolianPattern({ className }: { className?: string }) {
         <path d="M300 170h70v70h-70zM320 190h30v30h-30z" />
       </g>
 
-      {/* Connecting horizontal lines between panels */}
-      <g stroke="currentColor" strokeWidth="3" fill="none">
+      {/* Connecting lines */}
+      <g stroke="#FAFAF8" strokeWidth="3" fill="none">
         <path d="M140 85h15M140 205h15M140 325h15" />
         <path d="M265 85h15M265 205h15M265 325h15" />
       </g>
 
-      {/* Decorative small squares */}
-      <g fill="currentColor" fillOpacity="0.25">
+      {/* Decorative squares */}
+      <g fill="#FAFAF8" fillOpacity="0.6">
         <rect x="42" y="42" width="14" height="14" />
         <rect x="42" y="162" width="14" height="14" />
         <rect x="42" y="282" width="14" height="14" />
