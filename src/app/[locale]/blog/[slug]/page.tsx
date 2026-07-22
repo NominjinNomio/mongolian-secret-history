@@ -12,6 +12,11 @@ import WinterWeatherGuide from "@/components/blog/WinterWeatherGuide";
 import TrainTimetable from "@/components/blog/TrainTimetable";
 import WinterInformation from "@/components/blog/WinterInformation";
 import OngiInfo from "@/components/blog/OngiInfo";
+import EthnicGroups from "@/components/blog/EthnicGroups";
+import WinterFestivals from "@/components/blog/WinterFestivals";
+import DeerStone from "@/components/blog/DeerStone";
+import GerGuide from "@/components/blog/GerGuide";
+import WrestlingGuide from "@/components/blog/WrestlingGuide";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -310,6 +315,16 @@ export default async function BlogDetailPage({ params }: PageProps) {
         <WinterInformation />
       ) : slug === "secret-of-ongi-camp-information" ? (
         <OngiInfo />
+      ) : slug === "mongolian-ethnic-groups-costumes" ? (
+        <EthnicGroups />
+      ) : slug === "winter-festivals" ? (
+        <WinterFestivals />
+      ) : slug === "bugan-hushuu-deer-stone" ? (
+        <DeerStone />
+      ) : slug === "mongolian-ger-yurt" ? (
+        <GerGuide />
+      ) : slug === "mongolian-wrestling" ? (
+        <WrestlingGuide />
       ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">

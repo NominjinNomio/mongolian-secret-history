@@ -6,7 +6,7 @@
 - Local:         http://localhost:3000
 - Network:       http://192.168.55.154:3000
 - Environments: .env.local
-✓ Ready in 362ms
+✓ Ready in 759ms
 ⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
 
 motion() is deprecated. Use motion.create() instead.
@@ -22,7 +22,33 @@ Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `e
   code: 'MISSING_MESSAGE',
   originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
 }
- GET /en 200 in 1321ms (next.js: 688ms, proxy.ts: 5ms, generate-params: 521ms, application-code: 629ms)
+Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
+}
+Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> {
+  code: 'MISSING_MESSAGE',
+  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
+}
+ GET /en 200 in 2.8s (next.js: 985ms, proxy.ts: 8ms, generate-params: 710ms, application-code: 1828ms)
+ GET /en 200 in 689ms (next.js: 105ms, proxy.ts: 6ms, generate-params: 42ms, application-code: 579ms)
+ GET /en 200 in 687ms (next.js: 174ms, proxy.ts: 7ms, generate-params: 46µs, application-code: 506ms)
 [browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
 [browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
     at Header (src/components/layout/Header.tsx:75:25)
@@ -84,7 +110,125 @@ https://react.dev/link/hydration-mismatch
  
 [browser] Image with src "/images/hero-steppe.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
- GET /en/blog 200 in 452ms (next.js: 395ms, proxy.ts: 6ms, generate-params: 371ms, application-code: 51ms)
+[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/en" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+-                         className="h-full antialiased light"
+-                         lang="en"
+-                         style={{color-scheme:"light"}}
+                        >
+                          <body
+-                           className="min-h-full flex flex-col bg-background text-foreground"
+                          >
+                  ...
+ 
+[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/en" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+-                         className="h-full antialiased light"
+-                         lang="en"
+-                         style={{color-scheme:"light"}}
+                        >
+                          <body
+-                           className="min-h-full flex flex-col bg-background text-foreground"
+                          >
+                  ...
+ 
+ GET /en/blog 200 in 771ms (next.js: 706ms, proxy.ts: 8ms, generate-params: 666ms, application-code: 57ms)
 [browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
     at Header (src/components/layout/Header.tsx:75:25)
     at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
@@ -126,222 +270,11 @@ Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
   77 |             <Search size={20} />
   78 |           </Link> (src/components/layout/Header.tsx:75:25)
 [browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> {
-  code: 'MISSING_MESSAGE',
-  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
-}
- GET /en/blog 200 in 320ms (next.js: 73ms, proxy.ts: 4ms, generate-params: 46ms, application-code: 244ms)
-[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Image with src "/images/tour-3.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[browser] Image with src "/images/hero-steppe.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/en/blog" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html
--                         className="h-full antialiased light"
--                         lang="en"
--                         style={{color-scheme:"light"}}
-                        >
-                          <body
--                           className="min-h-full flex flex-col bg-background text-foreground"
-                          >
-                  ...
- 
- GET /en/blog/msh-camp-information 200 in 2.3s (next.js: 2.2s, proxy.ts: 4ms, generate-params: 594ms, application-code: 150ms)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-⚠ Server is approaching the used memory threshold, restarting...
-▲ Next.js 16.2.4 (Turbopack)
-- Local:         http://localhost:3000
-- Network:       http://192.168.55.154:3000
-- Environments: .env.local
-✓ Ready in 401ms
-⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
-
-motion() is deprecated. Use motion.create() instead.
-Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> {
-  code: 'MISSING_MESSAGE',
-  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
-}
- GET /en/blog/msh-camp-price 200 in 1883ms (next.js: 1439ms, proxy.ts: 6ms, generate-params: 545ms, application-code: 438ms)
- GET /en/blog/msh-camp-price 200 in 217ms (next.js: 83ms, proxy.ts: 5ms, generate-params: 46ms, application-code: 129ms)
- GET /en/blog/msh-camp-price 200 in 2.7s (next.js: 1787ms, proxy.ts: 10ms, generate-params: 428ms, application-code: 941ms)
- GET /en/blog/msh-camp-price 200 in 211ms (next.js: 122ms, proxy.ts: 10ms, generate-params: 26µs, application-code: 80ms)
-[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] Image with src "/images/tour-3.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[browser] Image with src "/images/hero-steppe.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/en/blog/m..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html
--                         className="h-full antialiased light"
--                         lang="en"
--                         style={{color-scheme:"light"}}
-                        >
-                          <body
--                           className="min-h-full flex flex-col bg-background text-foreground"
-                          >
-                  ...
- 
-Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
-    at Header (src/components/layout/Header.tsx:75:25)
-  73 |             href={`/${locale}/search`}
-  74 |             className="text-muted-foreground hover:text-primary transition-colors"
-> 75 |             aria-label={t("search")}
-     |                         ^
-  76 |           >
-  77 |             <Search size={20} />
-  78 |           </Link> {
-  code: 'MISSING_MESSAGE',
-  originalMessage: 'Could not resolve `nav.search` in messages for locale `en`.'
-}
- GET /en/blog 200 in 1222ms (next.js: 979ms, proxy.ts: 11ms, generate-params: 433ms, application-code: 232ms)
-[browser] motion() is deprecated. Use motion.create() instead. (src/components/ui/Button.tsx:8:26)
+ GET /en/blog/secret-of-ongi-camp-information 200 in 876ms (next.js: 748ms, proxy.ts: 7ms, generate-params: 697ms, application-code: 121ms)
 [browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
     at Header (src/components/layout/Header.tsx:75:25)
     at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
@@ -362,61 +295,1833 @@ Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `e
   76 |           >
   77 |             <Search size={20} />
   78 |           </Link> (src/components/layout/Header.tsx:75:25)
-[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+ GET /en/blog/mongolian-ethnic-groups-costumes 200 in 183ms (next.js: 73ms, proxy.ts: 8ms, generate-params: 63ms, application-code: 103ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+ GET /en/blog 200 in 279ms (next.js: 92ms, proxy.ts: 7ms, generate-params: 81ms, application-code: 180ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+ GET /en/blog/winter-festivals 200 in 175ms (next.js: 83ms, proxy.ts: 4ms, generate-params: 75ms, application-code: 89ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+ GET /en/blog 200 in 305ms (next.js: 96ms, proxy.ts: 7ms, generate-params: 82ms, application-code: 201ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[browser] Error: MISSING_MESSAGE: Could not resolve `nav.search` in messages for locale `en`.
+    at Header (src/components/layout/Header.tsx:75:25)
+    at LocaleLayout (src/app/[locale]/layout.tsx:33:15)
+  73 |             href={`/${locale}/search`}
+  74 |             className="text-muted-foreground hover:text-primary transition-colors"
+> 75 |             aria-label={t("search")}
+     |                         ^
+  76 |           >
+  77 |             <Search size={20} />
+  78 |           </Link> (src/components/layout/Header.tsx:75:25)
+[?25h
+ ELIFECYCLE  Command failed.
+ WARN  The field "pnpm.ignoredBuiltDependencies" was found in /home/nominjin/intern/opencode/erxes-skills/content-plugin/headless/web/output/mongolian-secret-history/package.json. This will not take effect. You should configure "pnpm.ignoredBuiltDependencies" at the root of the workspace instead.
+Scope: all 2 workspace projects
 
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
-      <AppDevOverlayErrorBoundary globalError={[...]}>
-        <ReplaySsrOnlyErrors>
-        <DevRootHTTPAccessFallbackBoundary>
-          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
-            <HTTPAccessFallbackErrorBoundary pathname="/en/blog" notFound={<NotAllowedRootHTTPFallbackError>} ...>
-              <RedirectBoundary>
-                <RedirectErrorBoundary router={{...}}>
-                  <Head>
-                  <__next_root_layout_boundary__>
-                    <SegmentViewNode type="layout" pagePath="layout.tsx">
-                      <SegmentTrieNode>
-                      <script>
-                      <script>
-                      <RootLayout>
-                        <html
--                         className="h-full antialiased light"
--                         lang="en"
--                         style={{color-scheme:"light"}}
-                        >
-                          <body
--                           className="min-h-full flex flex-col bg-background text-foreground"
-                          >
-                  ...
- 
-
-<--- Last few GCs --->
-
-[843945:0x64783bb54000]   372897 ms: Scavenge (interleaved) 7029.5 (7607.6) -> 7021.2 (7607.6) MB, pooled: 2 MB, 75.22 / 0.00 ms  (average mu = 0.258, current mu = 0.230) allocation failure; 
-[843945:0x64783bb54000]   375842 ms: Mark-Compact 7038.4 (7612.9) -> 6995.7 (7588.0) MB, pooled: 8 MB, 2909.73 / 8.79 ms  (average mu = 0.204, current mu = 0.139) allocation failure; scavenge might not succeed
-
-
-<--- JS stacktrace --->
-
-FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
------ Native stack trace -----
-
- 1: 0x7f7f0eb46804 node::OOMErrorHandler(char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 2: 0x7f7f0f26f754 v8::Utils::ReportOOMFailure(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 3: 0x7f7f0f26fa4a v8::internal::V8::FatalProcessOutOfMemory(v8::internal::Isolate*, char const*, v8::OOMDetails const&) [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 4: 0x7f7f0f4b8a9b  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 5: 0x7f7f0f4b8ad8 v8::internal::Heap::ReportIneffectiveMarkCompactIfNeeded() [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 6: 0x7f7f0f4d0e6e  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 7: 0x7f7f0f4d3a1c  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
- 8: 0x7f7f0fdfbf47  [/usr/lib/x86_64-linux-gnu/libnode.so.127]
+Done in 1.2s using pnpm v10.33.2
