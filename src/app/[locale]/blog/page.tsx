@@ -11,7 +11,7 @@ const staticPosts: Post[] = [
     excerpt: "Discover the traditions, hospitality, and timeless lifestyle that have shaped Mongolia's nomadic heritage for thousands of years.",
     publishedDate: "2024-09-15",
     thumbnail: { name: "", url: "/images/about-nomads.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat1", name: "Culture", slug: "culture" }],
+    categories: [{ _id: "cat3", name: "Culture", slug: "culture" }],
   },
   {
     _id: "2",
@@ -21,7 +21,7 @@ const staticPosts: Post[] = [
     excerpt: "From buuz to khorkhog, explore the rich flavors and ancient cooking techniques behind Mongolia's most beloved culinary traditions.",
     publishedDate: "2024-08-22",
     thumbnail: { name: "", url: "/images/culture-nomads.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat2", name: "Cuisine", slug: "cuisine" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "3",
@@ -31,7 +31,7 @@ const staticPosts: Post[] = [
     excerpt: "Learn how the traditional Mongolian ger is designed to withstand extreme climates while offering a warm, circular family living space.",
     publishedDate: "2024-07-10",
     thumbnail: { name: "", url: "/images/hero-steppe.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat3", name: "Accommodation", slug: "accommodation" }],
+    categories: [{ _id: "cat2", name: "Price", slug: "price" }],
   },
   {
     _id: "4",
@@ -41,7 +41,7 @@ const staticPosts: Post[] = [
     excerpt: "Experience the freedom of exploring Mongolia's vast open landscapes on horseback, just as nomads have done for centuries.",
     publishedDate: "2024-06-05",
     thumbnail: { name: "", url: "/images/mongolia-destinations-bg.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat4", name: "Adventure", slug: "adventure" }],
+    categories: [{ _id: "cat4", name: "Nature", slug: "nature" }],
   },
   {
     _id: "5",
@@ -51,7 +51,7 @@ const staticPosts: Post[] = [
     excerpt: "A celebration of wrestling, horse racing, and archery — Naadam is Mongolia's most colorful and exciting national festival.",
     publishedDate: "2024-05-18",
     thumbnail: { name: "", url: "/images/season-summer.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat1", name: "Culture", slug: "culture" }],
+    categories: [{ _id: "cat3", name: "Culture", slug: "culture" }],
   },
   {
     _id: "6",
@@ -61,7 +61,7 @@ const staticPosts: Post[] = [
     excerpt: "How to explore Mongolia responsibly while supporting local communities, preserving nature, and honoring nomadic traditions.",
     publishedDate: "2024-04-30",
     thumbnail: { name: "", url: "/images/tour-1.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat5", name: "Travel", slug: "travel" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "7",
@@ -71,7 +71,7 @@ const staticPosts: Post[] = [
     excerpt: "Everything you need to know before visiting the Gobi — from the Flaming Cliffs to camel treks and unforgettable desert sunsets.",
     publishedDate: "2024-04-12",
     thumbnail: { name: "", url: "/images/tour-2.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat4", name: "Adventure", slug: "adventure" }],
+    categories: [{ _id: "cat4", name: "Nature", slug: "nature" }],
   },
   {
     _id: "8",
@@ -81,7 +81,7 @@ const staticPosts: Post[] = [
     excerpt: "Why a bowl of salty milk tea is the heart of every Mongolian home, and how to enjoy it like a local.",
     publishedDate: "2024-03-28",
     thumbnail: { name: "", url: "/images/culture-nomads.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat2", name: "Cuisine", slug: "cuisine" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "9",
@@ -91,7 +91,7 @@ const staticPosts: Post[] = [
     excerpt: "How Mongolian families stay cozy through -30°C winters, and what to expect on a winter ger camp stay.",
     publishedDate: "2024-03-10",
     thumbnail: { name: "", url: "/images/season-winter.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat3", name: "Accommodation", slug: "accommodation" }],
+    categories: [{ _id: "cat2", name: "Price", slug: "price" }],
   },
   {
     _id: "10",
@@ -101,7 +101,7 @@ const staticPosts: Post[] = [
     excerpt: "Crystal-clear waters, reindeer herders, and taiga forests — a complete guide to Mongolia's largest freshwater lake.",
     publishedDate: "2024-02-25",
     thumbnail: { name: "", url: "/images/tour-4.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat5", name: "Travel", slug: "travel" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "11",
@@ -111,7 +111,7 @@ const staticPosts: Post[] = [
     excerpt: "Explore khoomii throat singing and the horsehead fiddle — Mongolia's ancient musical traditions that echo across the plains.",
     publishedDate: "2024-02-08",
     thumbnail: { name: "", url: "/images/about-nomads.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat1", name: "Culture", slug: "culture" }],
+    categories: [{ _id: "cat3", name: "Culture", slug: "culture" }],
   },
   {
     _id: "12",
@@ -121,7 +121,7 @@ const staticPosts: Post[] = [
     excerpt: "Snow-capped peaks, golden eagles, and remote valleys — your guide to trekking in Mongolia's wild west.",
     publishedDate: "2024-01-20",
     thumbnail: { name: "", url: "/images/tour-3.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat4", name: "Adventure", slug: "adventure" }],
+    categories: [{ _id: "cat4", name: "Nature", slug: "nature" }],
   },
   {
     _id: "13",
@@ -131,7 +131,7 @@ const staticPosts: Post[] = [
     excerpt: "Dried curds, fermented mare's milk, and the ancient dairy crafts that sustain nomadic life on the steppe.",
     publishedDate: "2024-01-05",
     thumbnail: { name: "", url: "/images/culture-nomads.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat2", name: "Cuisine", slug: "cuisine" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "14",
@@ -141,7 +141,7 @@ const staticPosts: Post[] = [
     excerpt: "Follow in the footsteps of Chinggis Khaan through the golden birch forests of his homeland province.",
     publishedDate: "2023-12-15",
     thumbnail: { name: "", url: "/images/season-autumn.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat5", name: "Travel", slug: "travel" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
   {
     _id: "15",
@@ -151,7 +151,7 @@ const staticPosts: Post[] = [
     excerpt: "Essential gear and clothing for every season — a practical packing list for a comfortable journey across the steppe.",
     publishedDate: "2023-11-28",
     thumbnail: { name: "", url: "/images/season-spring.jpg", type: "image", size: 0 },
-    categories: [{ _id: "cat5", name: "Travel", slug: "travel" }],
+    categories: [{ _id: "cat1", name: "Info", slug: "info" }],
   },
 ];
 

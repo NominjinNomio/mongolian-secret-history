@@ -23,17 +23,21 @@ function formatDate(dateString?: string, locale = "en") {
   });
 }
 
+const CATEGORY_ORDER = ["All", "Info", "Price", "Culture", "Nature"];
+
 export default function BlogPage({ posts }: BlogPageProps) {
   const locale = useLocale();
   const t = useTranslations("blog");
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = useMemo(() => {
-    const names = posts
-      .flatMap((post) => post.categories ?? [])
-      .map((c) => c.name)
-      .filter((name): name is string => Boolean(name));
-    return ["All", ...Array.from(new Set(names))];
+    const names = new Set(
+      posts
+        .flatMap((post) => post.categories ?? [])
+        .map((c) => c.name)
+        .filter((name): name is string => Boolean(name))
+    );
+    return CATEGORY_ORDER.filter((c) => c === "All" || names.has(c));
   }, [posts]);
 
   const filteredPosts = useMemo(() => {
