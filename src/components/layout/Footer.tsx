@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import Image from "@/components/common/Image";
 
 const footerLinks = [
-  { label: "About Us", url: "/about" },
+  { label: "About Us", url: "/about-us" },
   { label: "Testimonials", url: "/testimonials" },
   { label: "Contact", url: "/contact" },
   { label: "Book Online", url: "/book-online" },
