@@ -38,24 +38,12 @@ export default async function HomePage({ params }: PageProps) {
   const cmsHome = await getCmsHome(locale);
 
   const introText = cmsHome?.description || fallbackIntro;
-  const cmsContent = cmsHome?.content?.trim() ? cmsHome.content : null;
 
   return (
     <>
       <HeroHome />
 
       <WelcomeIntro text={introText} />
-
-      {cmsContent && (
-        <section className="bg-white py-16">
-          <div className="container-custom max-w-4xl">
-            <div
-              className="prose max-w-none"
-              dangerouslySetInnerHTML={{ __html: cmsContent }}
-            />
-          </div>
-        </section>
-      )}
 
       <SplitCardSection
         title="Ger Camp Accommodation"
