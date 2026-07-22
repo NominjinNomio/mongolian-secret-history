@@ -4,6 +4,7 @@ import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import Link from "next/link";
 import FoodMenu from "@/components/blog/FoodMenu";
+import CampInfo from "@/components/blog/CampInfo";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -286,6 +287,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
       {slug === "msh-camp-food-menu" ? (
         <FoodMenu />
+      ) : slug === "msh-camp-information" ? (
+        <CampInfo />
       ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
