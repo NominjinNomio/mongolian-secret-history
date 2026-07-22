@@ -56,11 +56,11 @@ const notes = [
 
 export default function CampPrice() {
   return (
-    <section className="bg-[#FAF6F1] py-16 lg:py-24">
+    <section className="bg-primary py-16 lg:py-24">
       <div className="mx-auto max-w-[820px] px-6">
         {/* Title */}
         <div className="flex justify-center mb-16">
-          <h2 className="border border-[#C8A24A]/60 px-12 py-4 font-elegant text-2xl md:text-3xl tracking-[0.35em] text-[#5A4A3A]">
+          <h2 className="border border-white/50 px-12 py-4 font-elegant text-2xl md:text-3xl tracking-[0.35em] text-white">
             PRICE LIST
           </h2>
         </div>
@@ -70,7 +70,7 @@ export default function CampPrice() {
             <div key={category.title} className="flex gap-6 md:gap-10">
               {/* Vertical label */}
               <div className="flex items-start">
-                <span className="bg-[#B08D57] text-white text-[11px] tracking-[0.3em] uppercase px-2.5 py-4 [writing-mode:vertical-rl] rotate-180">
+                <span className="bg-[#C8A24A] text-white text-[11px] tracking-[0.3em] uppercase px-2.5 py-4 [writing-mode:vertical-rl] rotate-180">
                   {category.title}
                 </span>
               </div>
@@ -78,7 +78,7 @@ export default function CampPrice() {
               {/* Rows */}
               <div className="flex-1">
                 {category.twoColumns && (
-                  <div className="grid grid-cols-[1fr_auto_auto] gap-x-8 pb-3 mb-2 border-b border-[#C8A24A]/40 text-xs uppercase tracking-[0.15em] text-[#B08D57]">
+                  <div className="grid grid-cols-[1fr_auto_auto] gap-x-8 pb-3 mb-2 border-b border-white/30 text-xs uppercase tracking-[0.15em] text-[#C8A24A]">
                     <span />
                     <span className="text-right">1–2 people</span>
                     <span className="text-right">3–4 people</span>
@@ -90,12 +90,12 @@ export default function CampPrice() {
                       key={row.name}
                       className={`grid ${category.twoColumns ? "grid-cols-[1fr_auto_auto] gap-x-8" : "grid-cols-[1fr_auto] gap-x-8"} items-baseline`}
                     >
-                      <span className="text-[15px] text-[#5A4A3A]">{row.name}</span>
-                      <span className="text-[15px] font-medium text-[#5A4A3A] text-right">
+                      <span className="text-[15px] text-white">{row.name}</span>
+                      <span className="text-[15px] font-medium text-white text-right">
                         {row.price1}
                       </span>
                       {category.twoColumns && (
-                        <span className="text-[15px] font-medium text-[#5A4A3A] text-right">
+                        <span className="text-[15px] font-medium text-white text-right">
                           {row.price2}
                         </span>
                       )}
@@ -108,9 +108,9 @@ export default function CampPrice() {
         </div>
 
         {/* Notes */}
-        <div className="mt-16 border-t border-[#C8A24A]/40 pt-8 flex flex-col gap-3">
+        <div className="mt-16 border-t border-white/30 pt-8 flex flex-col gap-3">
           {notes.map((note, i) => (
-            <p key={i} className="text-[13px] leading-relaxed text-[#8A7A6A]">
+            <p key={i} className="text-[13px] leading-relaxed text-white/70">
               * {note}
             </p>
           ))}
