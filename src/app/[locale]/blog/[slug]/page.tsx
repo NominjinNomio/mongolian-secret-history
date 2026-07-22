@@ -8,6 +8,7 @@ import CampInfo from "@/components/blog/CampInfo";
 import CampPrice from "@/components/blog/CampPrice";
 import ResortPrice from "@/components/blog/ResortPrice";
 import OngiPrice from "@/components/blog/OngiPrice";
+import WinterWeatherGuide from "@/components/blog/WinterWeatherGuide";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -298,6 +299,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
         <ResortPrice />
       ) : slug === "secret-of-ongi-camp-price" ? (
         <OngiPrice />
+      ) : slug === "winter-weather-guide" ? (
+        <WinterWeatherGuide />
       ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
