@@ -17,6 +17,7 @@ import WinterFestivals from "@/components/blog/WinterFestivals";
 import DeerStone from "@/components/blog/DeerStone";
 import GerGuide from "@/components/blog/GerGuide";
 import WrestlingGuide from "@/components/blog/WrestlingGuide";
+import WinterTop10 from "@/components/blog/WinterTop10";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -325,6 +326,8 @@ export default async function BlogDetailPage({ params }: PageProps) {
         <GerGuide />
       ) : slug === "mongolian-wrestling" ? (
         <WrestlingGuide />
+      ) : slug === "top-10-winter-activities" ? (
+        <WinterTop10 />
       ) : (
       <section className="bg-background py-20 lg:py-[120px]">
         <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
