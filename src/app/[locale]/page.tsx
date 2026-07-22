@@ -1,4 +1,5 @@
 import HeroHome from "@/components/sections/HeroHome";
+import GerCampFeature from "@/components/sections/GerCampFeature";
 import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
 import DoubleImageSection from "@/components/sections/DoubleImageSection";
@@ -18,29 +19,9 @@ export default async function HomePage({ params }: PageProps) {
     <>
       <HeroHome />
 
+      <GerCampFeature />
+
       <WelcomeIntro text={fallbackIntro} />
-
-      <SplitCardSection
-        title="Ger Camp Accommodation"
-        description="Experience traditional Mongolian living in our beautifully appointed gers. Each one blends heritage craftsmanship with modern comfort, offering panoramic views of the surrounding steppe and a peaceful retreat after a day of adventure."
-        image="/images/hero-steppe.jpg"
-        imageAlt="Ger camp at sunset"
-        href="/accommodation"
-        cta="View Accommodation"
-      />
-
-      <DoubleImageSection
-        title="Mongolian Cuisine"
-        description="Our kitchen celebrates the rich culinary heritage of Mongolia. From hand-rolled buuz and hearty khorkhog to fresh dairy dishes and modern interpretations, every meal is a journey through the country's nomadic traditions."
-        images={[
-          { src: "/images/about-nomads.jpg", alt: "Traditional Mongolian dining" },
-          { src: "/images/culture-nomads.jpg", alt: "Mongolian food platter" },
-          { src: "/images/hero-steppe.jpg", alt: "Dining in the steppe" },
-        ]}
-        href="/services"
-        cta="Explore Dining"
-        reversed
-      />
 
       <SplitCardSection
         title="Discover Mongolia"
