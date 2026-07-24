@@ -4,6 +4,10 @@ import PageHero from "@/components/sections/PageHero";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -35,14 +39,15 @@ const plans = [
 
 export default async function PricingPage({ params }: PageProps) {
   const { locale } = await params;
+  const cms = await getCmsPage(locale, "pricing");
   const t = await getTranslations("pricing");
 
   return (
     <InnerPageLayout>
       <PageHero
         label={t("heroLabel")}
-        title={t("heroTitle")}
-        subtitle={t("heroSubtitle")}
+        title={cms?.name || t("heroTitle")}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || t("heroSubtitle")}
       />
 
       <section className="bg-background py-20 lg:py-[120px]">
@@ -88,7 +93,7 @@ export default async function PricingPage({ params }: PageProps) {
             <div className="max-w-[700px]">
               <h3 className="font-display text-2xl lg:text-[28px] text-[#0A2C7A]">Need a Custom Itinerary?</h3>
               <p className="text-[#0A2C7A]/85 mt-2 leading-relaxed">
-                Tell us your travel dates, interests, and budget. We'll design a tailor-made Mongolia journey just for you.
+                Tell us your travel dates, interests, and budget. We&apos;ll design a tailor-made Mongolia journey just for you.
               </p>
             </div>
             <Button href={`/${locale}/contact`} variant="primary">
@@ -99,4 +104,14 @@ export default async function PricingPage({ params }: PageProps) {
       </section>
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "pricing",
+    locale,
+    fallbackTitle: "Pricing",
+    fallbackDescription: "Transparent pricing for tours, camps, and custom itineraries.",
+  });
 }

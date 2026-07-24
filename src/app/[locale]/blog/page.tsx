@@ -1,6 +1,9 @@
 import BlogPageClient from "@/components/blog/BlogPageClient";
 import UsefulLinks from "@/components/blog/UsefulLinks";
 import type { Post } from "@/graphql/cms/queries/post";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
+import { getCmsPosts } from "@/lib/cms/posts";
 
 const staticPosts: Post[] = [
   {
@@ -155,11 +158,31 @@ const staticPosts: Post[] = [
   },
 ];
 
-export default function BlogPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function BlogPage({ params }: PageProps) {
+  const { locale } = await params;
+  const posts = await getCmsPosts(locale, 12);
   return (
     <>
-      <BlogPageClient posts={staticPosts} />
+      <BlogPageClient posts={posts.length ? posts : staticPosts} />
       <UsefulLinks />
     </>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "blog",
+    locale,
+    fallbackTitle: "Blog & News",
+    fallbackDescription: "Stories, guides, and updates from the steppe.",
+  });
 }

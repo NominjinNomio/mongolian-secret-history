@@ -2,6 +2,10 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Image from "@/components/common/Image";
 import { Compass, Tent, UtensilsCrossed, PartyPopper, Award } from "lucide-react";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
 const sections = [
   {
@@ -41,13 +45,19 @@ const sections = [
   },
 ];
 
-export default function AboutUsPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function AboutUsPage({ params }: PageProps) {
+  const { locale } = await params;
+  const cms = await getCmsPage(locale, "about-us");
   return (
     <InnerPageLayout>
       <PageHero
         label="Who we are"
-        title="About Us"
-        subtitle="Award-winning local tour agency since 2005"
+        title={cms?.name || "About Us"}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || "Award-winning local tour agency since 2005"}
       />
 
       <section className="bg-background py-16 lg:py-24">
@@ -70,10 +80,10 @@ export default function AboutUsPage() {
             <p className="text-base leading-[1.9] text-muted-foreground">
               We are an award-winning local tour agency with an experienced team who
               are passionate about travel and Mongolia. We started the Mongolian
-              Secret History company in 2005, naming ourselves after Mongolia's most
+              Secret History company in 2005, naming ourselves after Mongolia&apos;s most
               famous historical literary work,{" "}
               <span className="text-foreground font-medium">
-                "The Secret History of the Mongols"
+                &quot;The Secret History of the Mongols&quot;
               </span>{" "}
               — a registered UNESCO protected item of cultural heritage that details
               Mongolian history, tradition and culture through the story of Chinggis
@@ -122,4 +132,14 @@ export default function AboutUsPage() {
       </section>
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "about-us",
+    locale,
+    fallbackTitle: "About Us",
+    fallbackDescription: "Award-winning local tour agency since 2005.",
+  });
 }

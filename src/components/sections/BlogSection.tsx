@@ -7,7 +7,14 @@ import Button from "@/components/ui/Button";
 import Image from "@/components/common/Image";
 import { useTranslations } from "next-intl";
 
-const posts = [
+export interface BlogSectionPost {
+  title: string;
+  date: string;
+  excerpt: string;
+  slug?: string;
+}
+
+const defaultPosts: BlogSectionPost[] = [
   { title: "10 Reasons to Visit Mongolia This Summer", date: "June 15, 2026", excerpt: "Discover why summer is the perfect season to explore Mongolia." },
   { title: "A Guide to Mongolian Nomadic Culture", date: "May 28, 2026", excerpt: "Learn about ger life, hospitality, and timeless traditions." },
   { title: "What to Pack for a Mongolia Tour", date: "May 10, 2026", excerpt: "Essential items for a comfortable journey across the steppe." },
@@ -26,7 +33,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function BlogSection() {
+export default function BlogSection({ posts = defaultPosts }: { posts?: BlogSectionPost[] }) {
   const t = useTranslations("home");
 
   return (
@@ -61,7 +68,7 @@ export default function BlogSection() {
               </div>
               <div className="p-6 flex flex-col gap-2">
                 <span className="text-xs text-muted-foreground">{post.date}</span>
-                <Link href="/blog" className="group">
+                <Link href={post.slug ? `/blog/${post.slug}` : "/blog"} className="group">
                   <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
                     {post.title}
                   </h3>

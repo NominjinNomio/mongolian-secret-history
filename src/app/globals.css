@@ -171,3 +171,43 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
   color: var(--muted-foreground);
 }
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+.prose th, .prose td {
+  border: 1px solid var(--border);
+  padding: 0.6em 0.9em;
+  text-align: left;
+  color: var(--muted-foreground);
+}
+.prose th {
+  font-weight: 600;
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--muted) 40%, transparent);
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin: 1.5em 0;
+}
+.prose video, .prose iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 1.5em 0;
+  aspect-ratio: 16 / 9;
+}
+.prose pre {
+  background: var(--muted);
+  border-radius: 12px;
+  padding: 1em 1.25em;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+.prose code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}

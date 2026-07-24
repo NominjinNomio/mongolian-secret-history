@@ -60,7 +60,7 @@ export default function SearchPage() {
           {query.trim() && (
             <div className="flex flex-col gap-4">
               {results.length === 0 ? (
-                <p className="text-center text-muted-foreground">No results found for "{query}".</p>
+                <p className="text-center text-muted-foreground">No results found for &quot;{query}&quot;.</p>
               ) : (
                 results.map((item) => (
                   <Link

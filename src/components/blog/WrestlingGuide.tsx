@@ -79,7 +79,7 @@ export default function WrestlingGuide() {
         {/* Titles ladder */}
         <div className="mb-14">
           <h3 className="font-display text-2xl text-foreground mb-8">
-            Wrestlers' titles
+            Wrestlers&apos; titles
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {titles.map((title) => (

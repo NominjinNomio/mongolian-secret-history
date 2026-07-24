@@ -4,6 +4,10 @@ import PageHero from "@/components/sections/PageHero";
 import MongoliaMap from "@/components/about/MongoliaMap";
 import AboutSections from "@/components/about/AboutSections";
 import ClimateWheel from "@/components/about/ClimateWheel";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
 interface PageProps {
   params: Promise<{ locale: string } >;
@@ -11,14 +15,15 @@ interface PageProps {
 
 export default async function AboutPage({ params }: PageProps) {
   const { locale } = await params;
+  const cms = await getCmsPage(locale, "about");
   const t = await getTranslations("about");
 
   return (
     <InnerPageLayout>
       <PageHero
         label={t("heroLabel")}
-        title={t("heroTitle")}
-        subtitle={t("heroSubtitle")}
+        title={cms?.name || t("heroTitle")}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || t("heroSubtitle")}
       />
 
       <AboutSections
@@ -60,4 +65,14 @@ export default async function AboutPage({ params }: PageProps) {
       />
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "about",
+    locale,
+    fallbackTitle: "About Mongolia",
+    fallbackDescription: "Discover the land of eternal blue sky — culture, nature, and nomadic heritage.",
+  });
 }

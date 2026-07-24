@@ -7,14 +7,24 @@ import GalleryMarquee from "@/components/sections/GalleryMarquee";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import BlogSection from "@/components/sections/BlogSection";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
-export default function PlanYourTripPage() {
+interface PageProps {
+  params: Promise<{ locale: string }>;
+}
+
+export default async function PlanYourTripPage({ params }: PageProps) {
+  const { locale } = await params;
+  const cms = await getCmsPage(locale, "plan-your-trip");
   return (
     <InnerPageLayout>
       <PageHero
         label="Plan your trip"
-        title="Plan Your Trip"
-        subtitle="Design your perfect Mongolia journey with our team"
+        title={cms?.name || "Plan Your Trip"}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || "Design your perfect Mongolia journey with our team"}
       />
 
       <BuildYourTourSection />
@@ -48,4 +58,14 @@ export default function PlanYourTripPage() {
       <BlogSection />
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "plan-your-trip",
+    locale,
+    fallbackTitle: "Plan Your Trip",
+    fallbackDescription: "Design your perfect Mongolia journey with our team.",
+  });
 }

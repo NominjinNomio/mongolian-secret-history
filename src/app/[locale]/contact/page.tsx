@@ -3,6 +3,10 @@ import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import Button from "@/components/ui/Button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -10,6 +14,7 @@ interface PageProps {
 
 export default async function ContactPage({ params }: PageProps) {
   const { locale } = await params;
+  const cms = await getCmsPage(locale, "contact");
   const t = await getTranslations("contact");
 
   const contactInfo = [
@@ -23,8 +28,8 @@ export default async function ContactPage({ params }: PageProps) {
     <InnerPageLayout>
       <PageHero
         label={t("heroLabel")}
-        title={t("heroTitle")}
-        subtitle={t("heroSubtitle")}
+        title={cms?.name || t("heroTitle")}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || t("heroSubtitle")}
       />
 
       <section className="bg-background py-16 lg:py-20">
@@ -106,4 +111,14 @@ export default async function ContactPage({ params }: PageProps) {
       </section>
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "contact",
+    locale,
+    fallbackTitle: "Contact",
+    fallbackDescription: "Get in touch — we reply within one business day.",
+  });
 }

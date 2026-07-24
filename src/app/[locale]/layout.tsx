@@ -3,8 +3,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import ApolloClientProvider from "@/lib/apollo/provider";
 import ThemeProvider from "@/components/common/ThemeProvider";
+import SmoothScroll from "@/components/common/SmoothScroll";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { getCmsMenus } from "@/lib/cms/menus";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -17,12 +19,28 @@ export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "mn" }];
 }
 
+async function getMenuItems(kind: "header" | "footer", locale: string) {
+  try {
+    const menus = await getCmsMenus(locale);
+    const items = menus[kind]
+      .filter((m) => m.label && m.url)
+      .map((m) => ({ label: m.label as string, url: m.url as string }));
+    return items.length ? items : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export default async function LocaleLayout({
   children,
   params,
 }: LayoutProps<"/[locale]">) {
   const { locale } = await params;
   const messages = await getMessages();
+  const [headerMenu, footerMenu] = await Promise.all([
+    getMenuItems("header", locale),
+    getMenuItems("footer", locale),
+  ]);
 
   return (
     <html lang={locale} className="h-full antialiased" suppressHydrationWarning>
@@ -30,9 +48,10 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <ApolloClientProvider>
             <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-              <Header />
+              <SmoothScroll />
+              <Header menuItems={headerMenu} />
               <main className="flex-1">{children}</main>
-              <Footer />
+              <Footer menuItems={footerMenu} />
             </ThemeProvider>
           </ApolloClientProvider>
         </NextIntlClientProvider>

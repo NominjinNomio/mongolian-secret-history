@@ -48,7 +48,7 @@ export default function OngiInfo() {
         {/* Intro */}
         <div className="text-center max-w-[680px] mx-auto mb-14">
           <p className="font-elegant text-lg md:text-xl italic text-[#B08D57] leading-relaxed">
-            The "Secret of Ongi" tourist camp is located next to the famous Ongi
+            The &quot;Secret of Ongi&quot; tourist camp is located next to the famous Ongi
             temple in Saikhan Ovoo sum, Dundgobi province.
           </p>
         </div>

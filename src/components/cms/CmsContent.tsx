@@ -7,6 +7,14 @@ interface CmsContentProps {
   className?: string;
 }
 
+function toHtml(content: string): string {
+  if (content.includes("<")) return content;
+  return content
+    .split(/\n{2,}/)
+    .map((block) => `<p>${block.replace(/\n/g, "<br />")}</p>`)
+    .join("");
+}
+
 export default function CmsContent({ html, className = "" }: CmsContentProps) {
   if (!html) return null;
   return (
@@ -16,7 +24,7 @@ export default function CmsContent({ html, className = "" }: CmsContentProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.4 }}
       className={`prose prose-lg max-w-none ${className}`}
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: toHtml(html) }}
     />
   );
 }

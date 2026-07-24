@@ -19,24 +19,18 @@ interface ClimateWheelProps {
 
 export default function ClimateWheel({ label, seasons }: ClimateWheelProps) {
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
-    if (paused) return;
     const id = setInterval(() => {
       setActive((prev) => (prev + 1) % seasons.length);
-    }, 8000);
+    }, 5000);
     return () => clearInterval(id);
-  }, [paused, seasons.length]);
+  }, [seasons.length, active]);
 
   const current = seasons[active];
 
   return (
-    <section
-      className="relative min-h-[90vh] overflow-hidden flex items-center"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-    >
+    <section className="relative min-h-[90vh] overflow-hidden flex items-center">
       {/* Background image */}
       <AnimatePresence mode="popLayout">
         <motion.div

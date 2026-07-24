@@ -52,11 +52,11 @@ export default function GerGuide() {
             place to place by ox and camel carts.
           </p>
           <p className="text-base leading-[1.9] text-muted-foreground">
-            The ger's cover and mats are made of felt, which is good for human health —
+            The ger&apos;s cover and mats are made of felt, which is good for human health —
             Mongolians are called the Felt Nation. The look of the ger changed greatly
             when the iron stove and chimney were introduced around 1919, and felt
             covering and a glass window on the top (toono) were introduced in the
-            1940s. Even now, half of Mongolia's population lives in a ger, and most
+            1940s. Even now, half of Mongolia&apos;s population lives in a ger, and most
             tourist accommodation in the countryside uses gers.
           </p>
         </div>
@@ -87,7 +87,7 @@ export default function GerGuide() {
             Things to know before visiting Mongolian herders in a ger
           </h3>
           <p className="text-base text-muted-foreground mb-8">
-            There are certain dos and don'ts when you visit a nomadic family in a ger.
+            There are certain dos and don&apos;ts when you visit a nomadic family in a ger.
             Mongolians have been following these unwritten rules for centuries.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -108,7 +108,7 @@ export default function GerGuide() {
 
             {/* Don'ts */}
             <div className="rounded-[20px] bg-white border border-border p-7">
-              <h4 className="font-display text-lg text-[#C0392B] mb-5">Don't</h4>
+              <h4 className="font-display text-lg text-[#C0392B] mb-5">Don&apos;t</h4>
               <div className="flex flex-col gap-4">
                 {donts.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">

@@ -35,14 +35,14 @@ export default function EthnicGroups() {
         {/* Intro */}
         <div className="flex flex-col gap-5 mb-14">
           <p className="text-base leading-[1.9] text-muted-foreground">
-            Considering Mongolia's size, it is home to a surprising diversity of peoples.
+            Considering Mongolia&apos;s size, it is home to a surprising diversity of peoples.
             More than 20 different ethnic groups live across the country, each with its
             own dialect, customs, and distinctive traditional clothing shaped by
             centuries of nomadic life.
           </p>
           <p className="text-base leading-[1.9] text-muted-foreground">
             From the eagle hunters of the Altai to the reindeer herders of the taiga,
-            Mongolia's ethnic groups keep ancient traditions alive — and nowhere is this
+            Mongolia&apos;s ethnic groups keep ancient traditions alive — and nowhere is this
             more visible than in their costumes.
           </p>
         </div>
@@ -77,8 +77,8 @@ export default function EthnicGroups() {
           <p className="text-white/85 leading-[1.9] text-sm md:text-base">
             During Naadam and Tsagaan Sar, families wear their finest deels decorated
             with silver jewelry, coral, and intricate embroidery passed down through
-            generations. Men's deels are paired with a wide sash and leather boots,
-            while women's festival deels feature elaborate vests and headdresses that
+            generations. Men&apos;s deels are paired with a wide sash and leather boots,
+            while women&apos;s festival deels feature elaborate vests and headdresses that
             can weigh several kilograms — a breathtaking display of living heritage.
           </p>
         </div>

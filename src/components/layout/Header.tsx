@@ -25,7 +25,13 @@ const navLinks = [
   { label: "Blog & News", url: "/blog" },
 ];
 
-export default function Header() {
+export interface NavItem {
+  label: string;
+  url: string;
+}
+
+export default function Header({ menuItems }: { menuItems?: NavItem[] }) {
+  const links = menuItems?.length ? menuItems : navLinks;
   const t = useTranslations("nav");
   const th = useTranslations("header");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -44,7 +50,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((item) => {
+          {links.map((item) => {
             const itemHref = `/${locale}${item.url}`;
             const isActive = pathWithoutLocale === item.url;
             return (
@@ -127,7 +133,7 @@ export default function Header() {
             className="lg:hidden bg-white border-t border-border"
           >
             <nav className="flex flex-col items-center gap-6 py-8">
-              {navLinks.map((item) => {
+              {links.map((item) => {
                 const itemHref = `/${locale}${item.url}`;
                 const isActive = pathWithoutLocale === item.url;
                 return (

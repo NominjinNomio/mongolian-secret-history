@@ -12,6 +12,11 @@ const footerLinks = [
   { label: "Book Online", url: "/book-online" },
 ];
 
+export interface FooterNavItem {
+  label: string;
+  url: string;
+}
+
 const socialLinks = [
   {
     label: "Facebook",
@@ -51,9 +56,10 @@ const socialLinks = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({ menuItems }: { menuItems?: FooterNavItem[] }) {
   const locale = useLocale();
   const tf = useTranslations("footer");
+  const links = menuItems?.length ? menuItems : footerLinks;
 
   return (
     <footer className="bg-[#0A2C7A] text-white">
@@ -73,7 +79,7 @@ export default function Footer() {
           <div className="flex flex-col gap-4">
             <h4 className="font-display text-lg text-white">Quick Links</h4>
             <nav className="flex flex-col gap-3">
-              {footerLinks.map((item) => (
+              {links.map((item) => (
                 <Link
                   key={item.url}
                   href={`/${locale}${item.url}`}

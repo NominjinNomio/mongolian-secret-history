@@ -2,6 +2,10 @@ import { getTranslations } from "next-intl/server";
 import InnerPageLayout from "@/components/layout/InnerPageLayout";
 import PageHero from "@/components/sections/PageHero";
 import AccommodationSticky from "@/components/sections/AccommodationSticky";
+import { getCmsPage } from "@/lib/cms/page";
+import { stripHtml } from "@/lib/cms/html";
+import type { Metadata } from "next";
+import { getCmsMetadata } from "@/lib/cms/seo";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -53,17 +57,28 @@ const accommodations = [
 
 export default async function AccommodationPage({ params }: PageProps) {
   const { locale } = await params;
+  const cms = await getCmsPage(locale, "accommodation");
   const t = await getTranslations("accommodation");
 
   return (
     <InnerPageLayout>
       <PageHero
         label={t("heroLabel")}
-        title={t("heroTitle")}
-        subtitle={t("heroSubtitle")}
+        title={cms?.name || t("heroTitle")}
+        subtitle={(cms?.description ? stripHtml(cms.description) : "") || t("heroSubtitle")}
       />
 
       <AccommodationSticky items={accommodations} locale={locale} />
     </InnerPageLayout>
   );
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return getCmsMetadata({
+    slug: "accommodation",
+    locale,
+    fallbackTitle: "Accommodation",
+    fallbackDescription: "Stay in comfort — from city hotels to traditional ger camps under the stars.",
+  });
 }
