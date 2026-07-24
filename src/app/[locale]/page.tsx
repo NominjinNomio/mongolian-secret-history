@@ -3,18 +3,12 @@ import WelcomeIntro from "@/components/sections/WelcomeIntro";
 import SplitCardSection from "@/components/sections/SplitCardSection";
 import DoubleImageSection from "@/components/sections/DoubleImageSection";
 import SpaSection from "@/components/sections/SpaSection";
-import BlogSection, { type BlogSectionPost } from "@/components/sections/BlogSection";
 import { getServerApolloClient } from "@/lib/apollo/server-client";
 import {
   CP_PAGE,
   type CpPageData,
   type CpPageVariables,
 } from "@/graphql/cms/queries/page";
-import {
-  CP_POSTS,
-  type CpPostsData,
-  type CpPostsVariables,
-} from "@/graphql/cms/queries/post";
 import type { Metadata } from "next";
 import { getCmsMetadata } from "@/lib/cms/seo";
 
@@ -142,40 +136,9 @@ async function getHomeContent(locale: string): Promise<HomeContent> {
   }
 }
 
-async function getHomePosts(locale: string): Promise<BlogSectionPost[] | undefined> {
-  try {
-    const client = await getServerApolloClient();
-    const { data } = await client.query<CpPostsData, CpPostsVariables>({
-      query: CP_POSTS,
-      variables: { language: locale, status: "published" as const, limit: 20 },
-    });
-    const posts = data?.cpPosts;
-    if (!posts?.length) return undefined;
-    const tagged = posts.filter((p) => (p.tagIds?.length ?? 0) > 0);
-    const selected = (tagged.length >= 3 ? tagged : posts).slice(0, 3);
-    return selected.map((p) => ({
-      title: p.title ?? "",
-      date: p.publishedDate
-        ? new Date(p.publishedDate).toLocaleDateString("en-US", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
-        : "",
-      excerpt: p.excerpt ?? "",
-      slug: p.slug,
-    }));
-  } catch {
-    return undefined;
-  }
-}
-
 export default async function HomePage({ params }: PageProps) {
   const { locale } = await params;
-  const [cms, posts] = await Promise.all([
-    getHomeContent(locale),
-    getHomePosts(locale),
-  ]);
+  const cms = await getHomeContent(locale);
 
   return (
     <>
@@ -227,8 +190,6 @@ export default async function HomePage({ params }: PageProps) {
         cta={cms.tours.cta}
         reversed
       />
-
-      <BlogSection posts={posts} />
     </>
   );
 }
