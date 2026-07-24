@@ -168,7 +168,7 @@ interface PageProps {
 
 export default async function BlogPage({ params }: PageProps) {
   const { locale } = await params;
-  const posts = await getCmsPosts(locale, 12);
+  const posts = await getCmsPosts(locale, 15);
   return (
     <>
       <BlogPageClient posts={posts.length ? posts : staticPosts} />
