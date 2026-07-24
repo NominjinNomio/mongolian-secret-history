@@ -18,6 +18,9 @@ import DeerStone from "@/components/blog/DeerStone";
 import GerGuide from "@/components/blog/GerGuide";
 import WrestlingGuide from "@/components/blog/WrestlingGuide";
 import WinterTop10 from "@/components/blog/WinterTop10";
+import { getServerApolloClient } from "@/lib/apollo/server-client";
+import { CP_POST, type CpPostData, type CpPostVariables, type Post } from "@/graphql/cms/queries/post";
+import { getCmsPosts } from "@/lib/cms/posts";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -287,98 +290,210 @@ const posts: { slug: string; title: string; date: string; image: string; content
   },
 ];
 
+function formatDate(dateString?: string, locale = "en") {
+  if (!dateString) return "";
+  const date = new Date(dateString);
+  return date.toLocaleDateString(locale === "mn" ? "mn-MN" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+async function getCmsPostDetail(locale: string, slug: string): Promise<Post | null> {
+  try {
+    const client = await getServerApolloClient();
+    const { data } = await client.query<CpPostData, CpPostVariables>({
+      query: CP_POST,
+      variables: { slug, language: locale },
+      context: { fetchOptions: { next: { revalidate: 60 } } },
+    });
+    return data?.cpPost ?? null;
+  } catch (error) {
+    console.error("Failed to fetch CMS post detail:", error);
+    return null;
+  }
+}
+
 export default async function BlogDetailPage({ params }: PageProps) {
   const { locale, slug } = await params;
-  const post = posts.find((p) => p.slug === slug);
-  if (!post) notFound();
+  const staticPost = posts.find((p) => p.slug === slug);
+  if (staticPost) {
+    const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
+    return (
+      <InnerPageLayout>
+        <PageHero label="Blog & News" title={staticPost.title} subtitle={staticPost.date} />
+        {slug === "msh-camp-food-menu" ? (
+          <FoodMenu />
+        ) : slug === "msh-camp-information" ? (
+          <CampInfo />
+        ) : slug === "msh-camp-price" ? (
+          <CampPrice />
+        ) : slug === "silk-road-resort-price" ? (
+          <ResortPrice />
+        ) : slug === "secret-of-ongi-camp-price" ? (
+          <OngiPrice />
+        ) : slug === "winter-weather-guide" ? (
+          <WinterWeatherGuide />
+        ) : slug === "mongolia-train-timetable" ? (
+          <TrainTimetable />
+        ) : slug === "mongolia-winter-information" ? (
+          <WinterInformation />
+        ) : slug === "secret-of-ongi-camp-information" ? (
+          <OngiInfo />
+        ) : slug === "mongolian-ethnic-groups-costumes" ? (
+          <EthnicGroups />
+        ) : slug === "winter-festivals" ? (
+          <WinterFestivals />
+        ) : slug === "bugan-hushuu-deer-stone" ? (
+          <DeerStone />
+        ) : slug === "mongolian-ger-yurt" ? (
+          <GerGuide />
+        ) : slug === "mongolian-wrestling" ? (
+          <WrestlingGuide />
+        ) : slug === "top-10-winter-activities" ? (
+          <WinterTop10 />
+        ) : (
+          <StaticPostLayout locale={locale} post={staticPost} related={related} />
+        )}
+      </InnerPageLayout>
+    );
+  }
 
-  const related = posts.filter((p) => p.slug !== slug).slice(0, 3);
+  const cmsPost = await getCmsPostDetail(locale, slug);
+  if (!cmsPost) notFound();
+
+  const allCmsPosts = await getCmsPosts(locale, 100);
+  const related = allCmsPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <InnerPageLayout>
-      <PageHero label="Blog & News" title={post.title} subtitle={post.date} />
-
-      {slug === "msh-camp-food-menu" ? (
-        <FoodMenu />
-      ) : slug === "msh-camp-information" ? (
-        <CampInfo />
-      ) : slug === "msh-camp-price" ? (
-        <CampPrice />
-      ) : slug === "silk-road-resort-price" ? (
-        <ResortPrice />
-      ) : slug === "secret-of-ongi-camp-price" ? (
-        <OngiPrice />
-      ) : slug === "winter-weather-guide" ? (
-        <WinterWeatherGuide />
-      ) : slug === "mongolia-train-timetable" ? (
-        <TrainTimetable />
-      ) : slug === "mongolia-winter-information" ? (
-        <WinterInformation />
-      ) : slug === "secret-of-ongi-camp-information" ? (
-        <OngiInfo />
-      ) : slug === "mongolian-ethnic-groups-costumes" ? (
-        <EthnicGroups />
-      ) : slug === "winter-festivals" ? (
-        <WinterFestivals />
-      ) : slug === "bugan-hushuu-deer-stone" ? (
-        <DeerStone />
-      ) : slug === "mongolian-ger-yurt" ? (
-        <GerGuide />
-      ) : slug === "mongolian-wrestling" ? (
-        <WrestlingGuide />
-      ) : slug === "top-10-winter-activities" ? (
-        <WinterTop10 />
-      ) : (
-      <section className="bg-background py-20 lg:py-[120px]">
-        <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
-            <article className="bg-white rounded-[20px] border border-border p-8 lg:p-10">
-              <div className="relative w-full h-[320px] lg:h-[420px] rounded-[16px] overflow-hidden mb-10 border border-border">
-                <Image src={post.image} alt={post.title} fill className="object-cover" />
-              </div>
-
-              <div className="flex flex-col gap-6">
-                {post.content.map((block, idx) => {
-                  if (block.type === "h3") {
-                    return <h3 key={idx} className="font-display text-xl text-foreground mt-2">{block.text}</h3>;
-                  }
-                  return <p key={idx} className="text-base leading-[1.8] text-muted-foreground">{block.text}</p>;
-                })}
-              </div>
-            </article>
-
-            <aside className="flex flex-col gap-6">
-              <div className="bg-white rounded-[20px] border border-border p-6">
-                <h4 className="font-display text-lg text-foreground mb-4">About the Author</h4>
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
-                    <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.657-10 5v2h20v-2c0-3.343-6.686-5-10-5z" fill="currentColor"/>
-                  </svg>
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  Written by the travel team at Mongolian Secret History, sharing local insights and practical tips from years of exploring the steppe.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-[20px] border border-border p-6">
-                <h4 className="font-display text-lg text-foreground mb-4">Related Articles</h4>
-                <ul className="flex flex-col gap-4">
-                  {related.map((item) => (
-                    <li key={item.slug}>
-                      <Link href={`/${locale}/blog/${item.slug}`} className="group">
-                        <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{item.title}</p>
-                        <p className="text-xs text-muted-foreground">{item.date}</p>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </aside>
-          </div>
-        </div>
-      </section>
-      )}
+      <PageHero
+        label="Blog & News"
+        title={cmsPost.title || ""}
+        subtitle={formatDate(cmsPost.publishedDate, locale)}
+      />
+      <CmsPostLayout locale={locale} post={cmsPost} related={related} />
     </InnerPageLayout>
+  );
+}
+
+function StaticPostLayout({
+  locale,
+  post,
+  related,
+}: {
+  locale: string;
+  post: (typeof posts)[number];
+  related: (typeof posts);
+}) {
+  return (
+    <section className="bg-background py-20 lg:py-[120px]">
+      <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
+          <article className="bg-white rounded-[20px] border border-border p-8 lg:p-10">
+            <div className="relative w-full h-[320px] lg:h-[420px] rounded-[16px] overflow-hidden mb-10 border border-border">
+              <Image src={post.image} alt={post.title} fill className="object-cover" />
+            </div>
+
+            <div className="flex flex-col gap-6">
+              {post.content.map((block, idx) => {
+                if (block.type === "h3") {
+                  return <h3 key={idx} className="font-display text-xl text-foreground mt-2">{block.text}</h3>;
+                }
+                return <p key={idx} className="text-base leading-[1.8] text-muted-foreground">{block.text}</p>;
+              })}
+            </div>
+          </article>
+
+          <aside className="flex flex-col gap-6">
+            <div className="bg-white rounded-[20px] border border-border p-6">
+              <h4 className="font-display text-lg text-foreground mb-4">About the Author</h4>
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
+                  <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.657-10 5v2h20v-2c0-3.343-6.686-5-10-5z" fill="currentColor"/>
+                </svg>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Written by the travel team at Mongolian Secret History, sharing local insights and practical tips from years of exploring the steppe.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-[20px] border border-border p-6">
+              <h4 className="font-display text-lg text-foreground mb-4">Related Articles</h4>
+              <ul className="flex flex-col gap-4">
+                {related.map((item) => (
+                  <li key={item.slug}>
+                    <Link href={`/${locale}/blog/${item.slug}`} className="group">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{item.title}</p>
+                      <p className="text-xs text-muted-foreground">{item.date}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CmsPostLayout({
+  locale,
+  post,
+  related,
+}: {
+  locale: string;
+  post: Post;
+  related: Post[];
+}) {
+  const image = post.thumbnail?.url || "/images/tour-2.jpg";
+  return (
+    <section className="bg-background py-20 lg:py-[120px]">
+      <div className="mx-auto max-w-[1200px] px-6 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-10">
+          <article className="bg-white rounded-[20px] border border-border p-8 lg:p-10">
+            <div className="relative w-full h-[320px] lg:h-[420px] rounded-[16px] overflow-hidden mb-10 border border-border">
+              <Image src={image} alt={post.title || ""} fill className="object-cover" />
+            </div>
+
+            <div
+              className="prose prose-lg max-w-none text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: post.content || "" }}
+            />
+          </article>
+
+          <aside className="flex flex-col gap-6">
+            <div className="bg-white rounded-[20px] border border-border p-6">
+              <h4 className="font-display text-lg text-foreground mb-4">About the Author</h4>
+              <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-primary">
+                  <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.657-10 5v2h20v-2c0-3.343-6.686-5-10-5z" fill="currentColor"/>
+                </svg>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Written by the travel team at Mongolian Secret History, sharing local insights and practical tips from years of exploring the steppe.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-[20px] border border-border p-6">
+              <h4 className="font-display text-lg text-foreground mb-4">Related Articles</h4>
+              <ul className="flex flex-col gap-4">
+                {related.map((item) => (
+                  <li key={item.slug}>
+                    <Link href={`/${locale}/blog/${item.slug}`} className="group">
+                      <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">{item.title}</p>
+                      <p className="text-xs text-muted-foreground">{formatDate(item.publishedDate, locale)}</p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
   );
 }
 
