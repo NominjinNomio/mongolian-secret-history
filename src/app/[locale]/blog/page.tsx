@@ -168,10 +168,14 @@ interface PageProps {
 
 export default async function BlogPage({ params }: PageProps) {
   const { locale } = await params;
-  const posts = await getCmsPosts(locale, 12);
+  const cmsPosts = await getCmsPosts(locale, 15);
+  // Merge CMS posts with static fallback up to 15 cards total
+  const posts = cmsPosts.length
+    ? [...cmsPosts, ...staticPosts.filter((p) => !cmsPosts.some((c) => c.slug === p.slug))].slice(0, 15)
+    : staticPosts;
   return (
     <>
-      <BlogPageClient posts={posts.length ? posts : staticPosts} />
+      <BlogPageClient posts={posts} />
       <UsefulLinks />
     </>
   );
